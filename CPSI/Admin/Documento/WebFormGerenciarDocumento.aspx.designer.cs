@@ -7,37 +7,37 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace CPSI.Admin.Disciplina {
+namespace CPSI.Admin.Documento {
     
     
-    public partial class WebFormGerenciarCategoria {
+    public partial class WebFormGerenciarDocumento {
         
         /// <summary>
-        /// Controle TxtCodigo.
+        /// Controle txtIdDocumento.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtCodigo;
+        protected global::System.Web.UI.WebControls.TextBox txtIdDocumento;
         
         /// <summary>
-        /// Controle TxtNomeDisciplina.
+        /// Controle txtDocumento.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtNomeDisciplina;
+        protected global::System.Web.UI.WebControls.TextBox txtDocumento;
         
         /// <summary>
-        /// Controle GridViewDisciplina.
+        /// Controle GridViewDocumentos.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewDisciplina;
+        protected global::System.Web.UI.WebControls.GridView GridViewDocumentos;
         
         /// <summary>
         /// Controle ObjectDataSource1.

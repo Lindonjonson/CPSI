@@ -15,10 +15,13 @@ namespace CPSI.Modelo
             this.idDocumento = 0;
             this.documento = "";
         }
+
         public Documento(int idDocumento, string documento)
         {
             this.idDocumento = idDocumento;
             this.documento = documento;
         }
+
+       
     }
 }

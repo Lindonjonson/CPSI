@@ -69,6 +69,8 @@
   <ItemGroup>
     <Content Include="Admin\Disciplina\WebFormEditarDisciplina.aspx" />
     <Content Include="Admin\Disciplina\WebFormGerenciarDisciplina.aspx" />
+    <Content Include="Admin\Documento\WebFormEditarDocumento.aspx" />
+    <Content Include="Admin\Documento\WebFormGerenciarDocumento.aspx" />
     <Content Include="Assets\JS\Exclusao.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -88,6 +90,20 @@
     </Compile>
     <Compile Include="Admin\Disciplina\WebFormGerenciarDisciplina.aspx.designer.cs">
       <DependentUpon>WebFormGerenciarDisciplina.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Documento\WebFormEditarDocumento.aspx.cs">
+      <DependentUpon>WebFormEditarDocumento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Documento\WebFormEditarDocumento.aspx.designer.cs">
+      <DependentUpon>WebFormEditarDocumento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Documento\WebFormGerenciarDocumento.aspx.cs">
+      <DependentUpon>WebFormGerenciarDocumento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Documento\WebFormGerenciarDocumento.aspx.designer.cs">
+      <DependentUpon>WebFormGerenciarDocumento.aspx</DependentUpon>
     </Compile>
     <Compile Include="DAL\DALDisciplina.cs" />
     <Compile Include="DAL\DALDocumento.cs" />
@@ -114,7 +130,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Admin\Documento\" />
     <Folder Include="Assets\CSS\" />
   </ItemGroup>
   <PropertyGroup>

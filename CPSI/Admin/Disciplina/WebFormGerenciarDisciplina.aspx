@@ -8,7 +8,7 @@
     <label>Nome disciplina</label>
     <asp:TextBox runat="server" ID="TxtNomeDisciplina" PlaceHolder="nome disciplina"></asp:TextBox>
     <asp:Button runat="server" Text="Inserir" OnClick="Inserir_Click"> </asp:Button>
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" OnRowCommand="GridView1_RowCommand">
+    <asp:GridView ID="GridViewDisciplina" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" OnRowCommand="GridView1_RowCommand" EnableViewState="False" ShowHeaderWhenEmpty="True">
         <Columns>
             <asp:BoundField DataField="idDisciplina" HeaderText="idDisciplina" SortExpression="idDisciplina" />
             <asp:BoundField DataField="codigo" HeaderText="codigo" SortExpression="codigo" />

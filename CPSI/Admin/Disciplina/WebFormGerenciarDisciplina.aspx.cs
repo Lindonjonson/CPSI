@@ -21,7 +21,7 @@ namespace CPSI.Admin.Disciplina
             if (e.CommandName == "Editar")
             {
                 int index = Convert.ToInt32(e.CommandArgument);
-                string id = GridView1.Rows[index].Cells[0].Text;
+                string id = GridViewDisciplina.Rows[index].Cells[0].Text;
                 Response.Redirect("~\\Admin\\Disciplina\\WebFormEditarDisciplina.aspx?ID=" + id);
 
 
@@ -30,7 +30,7 @@ namespace CPSI.Admin.Disciplina
             {
   
                 int index = Convert.ToInt32(e.CommandArgument);
-                string id = GridView1.Rows[index].Cells[0].Text;
+                string id = GridViewDisciplina.Rows[index].Cells[0].Text;
                 disciplina.Delete(id);
                 Response.Redirect("~\\Admin\\Disciplina\\WebFormGerenciarDisciplina.aspx");
 

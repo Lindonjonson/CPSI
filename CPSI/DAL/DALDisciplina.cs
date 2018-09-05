@@ -53,24 +53,6 @@ namespace CPSI.DAL
         }
 
 
-        [DataObjectMethod(DataObjectMethodType.Delete)]
-        public void Delete(Modelo.Disciplina obj)
-        {
-           
-            SqlConnection conn = new SqlConnection(connectionString);
-
-            conn.Open();
-
-            SqlCommand com = conn.CreateCommand();
-  
-            SqlCommand cmd = new SqlCommand("DELETE FROM Disciplina WHERE idDisciplina = @idDisciplina", conn);
-            cmd.Parameters.AddWithValue("@idDisciplina", obj.idDisciplina);
-
- 
-            cmd.ExecuteNonQuery();
-
-        }
-
 
         [DataObjectMethod(DataObjectMethodType.Insert)]
         public void Insert(Modelo.Disciplina obj)
@@ -89,7 +71,7 @@ namespace CPSI.DAL
 
          
             cmd.ExecuteNonQuery();
-
+            conn.Close();
         }
 
         [DataObjectMethod(DataObjectMethodType.Update)]
@@ -106,8 +88,8 @@ namespace CPSI.DAL
             cmd.Parameters.AddWithValue("@idDisciplina", obj.idDisciplina);
             cmd.Parameters.AddWithValue("@Codigo", obj.codigo);
             cmd.Parameters.AddWithValue("@Disciplina", obj.disciplina);
-
             cmd.ExecuteNonQuery();
+            conn.Close();
         }
          
         [DataObjectMethod(DataObjectMethodType.Delete)]
@@ -122,10 +104,8 @@ namespace CPSI.DAL
 
             SqlCommand cmd = new SqlCommand("DELETE FROM Disciplina WHERE idDisciplina = @idDisciplina", conn);
             cmd.Parameters.AddWithValue("@idDisciplina", id);
-
-
             cmd.ExecuteNonQuery();
-
+            conn.Close();
         }
         [DataObjectMethod(DataObjectMethodType.Select)]
         public Modelo.Disciplina Select(string ID)
@@ -147,8 +127,9 @@ namespace CPSI.DAL
                         
 
             }
+            conn.Close();
             return disciplina;
-          
+           
 
         }
 
