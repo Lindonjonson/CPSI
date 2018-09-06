@@ -21,5 +21,28 @@ namespace CPSI.Admin.Documento
             insert.Insert(documento);
             Response.Redirect("~\\Admin\\Documento\\WebFormGerenciarDocumento.aspx");
         }
+
+        protected void GridViewDocumentos_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            DAL.DALDocumento DALDocumento = new DAL.DALDocumento();
+            if (e.CommandName == "Excluir")
+            {
+
+                int Index = Convert.ToInt32(e.CommandArgument);
+                string ID = GridViewDocumentos.Rows[Index].Cells[0].Text;
+                DALDocumento.Delete(ID);
+                Response.Redirect("~\\Admin\\Documento\\WebFormGerenciarDocumento.aspx");
+
+            }
+            if (e.CommandName=="Editar")
+            {
+
+
+                int Index = Convert.ToInt32(e.CommandArgument);
+                string ID = GridViewDocumentos.Rows[Index].Cells[0].Text;
+                Response.Redirect("~\\Admin\\Documento\\WebFormEditarDocumento.aspx?ID="+ID);
+
+            }
+        }
     }
 }

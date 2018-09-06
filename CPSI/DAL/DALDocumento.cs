@@ -49,6 +49,32 @@ namespace CPSI.DAL
 
             return ListaDocumento;
         }
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public Modelo.Documento Select(string ID)
+        {
+
+            Modelo.Documento documento = new Modelo.Documento();
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("select * from Documento where IdDocumento= @ID", conn);
+            cmd.Parameters.AddWithValue("@ID", ID);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+
+
+            while (dr.Read())
+            {
+                documento.idDocumento = int.Parse(dr["IdDocumento"].ToString());
+                documento.documento = dr["Documento"].ToString();
+
+            }
+
+
+
+            conn.Close();
+            dr.Close();
+            return documento;
+        }
         [DataObjectMethod(DataObjectMethodType.Insert)]
         public void Insert(Modelo.Documento obj)
         {
@@ -61,16 +87,17 @@ namespace CPSI.DAL
             cmd.ExecuteNonQuery();
             conn.Close();
 
-             
 
-        } 
+
+        }
         [DataObjectMethod(DataObjectMethodType.Delete)]
         public void Delete(string id)
         {
 
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            SqlCommand cmd = new SqlCommand($"DELETE FROM Documento WHERE IdDocumento ={id})", conn);
+            SqlCommand cmd = new SqlCommand("DELETE FROM Documento WHERE IdDocumento = @id", conn);
+            cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();
             conn.Close();
 
@@ -83,12 +110,14 @@ namespace CPSI.DAL
 
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            SqlCommand cmd = new SqlCommand($"UPDATE Disciplina SET Documento = {obj.documento} WHERE IdDocumento = {obj.idDocumento}", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Documento SET Documento = @documento WHERE IdDocumento = @id", conn);
+            cmd.Parameters.AddWithValue("@documento", obj.documento);
+            cmd.Parameters.AddWithValue("@id", obj.idDocumento);
             cmd.ExecuteNonQuery();
             conn.Close();
 
         }
-
+        
 
 
 
