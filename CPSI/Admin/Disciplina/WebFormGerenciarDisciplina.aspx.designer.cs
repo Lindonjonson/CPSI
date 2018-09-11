@@ -13,6 +13,15 @@ namespace CPSI.Admin.Disciplina {
     public partial class WebFormGerenciarCategoria {
         
         /// <summary>
+        /// Controle TxtIdDisciplina.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtIdDisciplina;
+        
+        /// <summary>
         /// Controle TxtCodigo.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,24 @@ namespace CPSI.Admin.Disciplina {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtNomeDisciplina;
+        
+        /// <summary>
+        /// Controle CheckBoxListDocumento.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxListDocumento;
+        
+        /// <summary>
+        /// Controle ObjectDataSource2.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource2;
         
         /// <summary>
         /// Controle GridViewDisciplina.

@@ -71,6 +71,8 @@
     <Content Include="Admin\Disciplina\WebFormGerenciarDisciplina.aspx" />
     <Content Include="Admin\Documento\WebFormEditarDocumento.aspx" />
     <Content Include="Admin\Documento\WebFormGerenciarDocumento.aspx" />
+    <Content Include="Admin\Turma\WebFormEditarTurma.aspx" />
+    <Content Include="Admin\Turma\WebFormGerenciarTurma.aspx" />
     <Content Include="Assets\JS\Exclusao.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -105,8 +107,24 @@
     <Compile Include="Admin\Documento\WebFormGerenciarDocumento.aspx.designer.cs">
       <DependentUpon>WebFormGerenciarDocumento.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Turma\WebFormEditarTurma.aspx.cs">
+      <DependentUpon>WebFormEditarTurma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Turma\WebFormEditarTurma.aspx.designer.cs">
+      <DependentUpon>WebFormEditarTurma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Turma\WebFormGerenciarTurma.aspx.cs">
+      <DependentUpon>WebFormGerenciarTurma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Turma\WebFormGerenciarTurma.aspx.designer.cs">
+      <DependentUpon>WebFormGerenciarTurma.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DAL\DALDisciplina.cs" />
     <Compile Include="DAL\DALDocumento.cs" />
+    <Compile Include="DAL\DALDocumentoDisciplina.cs" />
+    <Compile Include="DAL\DALTurma.cs" />
     <Compile Include="Master\Admin.Master.cs">
       <DependentUpon>Admin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -117,6 +135,7 @@
     <Compile Include="Modelo\Disciplina.cs" />
     <Compile Include="Modelo\Documento.cs" />
     <Compile Include="Modelo\DocumentoDisciplina.cs" />
+    <Compile Include="Modelo\Turma.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -23,11 +23,6 @@ namespace CPSI.Modelo
             this.disciplina = disciplina;
             this.codigo = codigo;
         }
-        public Disciplina(string disciplina, string codigo)
-        {
-            this.idDisciplina = idDisciplina;
-            this.disciplina = disciplina;
-            this.codigo = codigo;
-        }
+       
     }
 }

@@ -46,7 +46,6 @@ namespace CPSI.DAL
             }
       
             dr.Close();
-
             conn.Close();
 
             return aListDisciplina;
@@ -62,9 +61,9 @@ namespace CPSI.DAL
 
             conn.Open();
     
-            SqlCommand com = conn.CreateCommand();
+             
        
-            SqlCommand cmd = new SqlCommand("INSERT INTO Disciplina (Codigo, Disciplina) VALUES(@Codigo,@Disciplina)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Disciplina (IdDisciplina,Codigo, Disciplina) VALUES(@idDisciplina,@Codigo,@Disciplina)", conn);
             cmd.Parameters.AddWithValue("@idDisciplina", obj.idDisciplina);
             cmd.Parameters.AddWithValue("@Codigo",obj.codigo);
             cmd.Parameters.AddWithValue("@Disciplina", obj.disciplina);          
@@ -82,7 +81,7 @@ namespace CPSI.DAL
    
             conn.Open();
   
-            SqlCommand com = conn.CreateCommand();
+            
  
             SqlCommand cmd = new SqlCommand("UPDATE Disciplina SET Disciplina = @Disciplina, Codigo=@Codigo WHERE idDisciplina = @idDisciplina", conn);
             cmd.Parameters.AddWithValue("@idDisciplina", obj.idDisciplina);
@@ -100,7 +99,7 @@ namespace CPSI.DAL
 
             conn.Open();
 
-            SqlCommand com = conn.CreateCommand();
+       
 
             SqlCommand cmd = new SqlCommand("DELETE FROM Disciplina WHERE idDisciplina = @idDisciplina", conn);
             cmd.Parameters.AddWithValue("@idDisciplina", id);

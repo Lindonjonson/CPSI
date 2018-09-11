@@ -3,10 +3,14 @@
     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <label>ID disciplina</label>
+    <asp:TextBox runat="server" ID="TxtIdDisciplina" PlaceHolder="Código disciplina"></asp:TextBox>
     <label>Código disciplina</label>
     <asp:TextBox runat="server" ID="TxtCodigo" PlaceHolder="Código disciplina"></asp:TextBox>
     <label>Nome disciplina</label>
     <asp:TextBox runat="server" ID="TxtNomeDisciplina" PlaceHolder="nome disciplina"></asp:TextBox>
+    <asp:CheckBoxList ID="CheckBoxListDocumento" runat="server" DataSourceID="ObjectDataSource2" DataTextField="documento" DataValueField="idDocumento"></asp:CheckBoxList>
+    <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALDocumento"></asp:ObjectDataSource>
     <asp:Button runat="server" Text="Inserir" OnClick="Inserir_Click"> </asp:Button>
     <asp:GridView ID="GridViewDisciplina" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" OnRowCommand="GridView1_RowCommand" EnableViewState="False" ShowHeaderWhenEmpty="True">
         <Columns>
@@ -17,5 +21,6 @@
             <asp:ButtonField  ButtonType="Button" CommandName="Excluir"  HeaderText="Excluir" Text="Excluir" />
         </Columns>
     </asp:GridView>
+    
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALDisciplina"></asp:ObjectDataSource>
 </asp:Content>
