@@ -42,9 +42,22 @@ namespace CPSI.Admin.Disciplina
         protected void Inserir_Click(object sender, EventArgs e)
         {   
             Modelo.Disciplina disciplina = new Modelo.Disciplina(int.Parse(TxtIdDisciplina.Text),TxtNomeDisciplina.Text, TxtCodigo.Text);
-            DAL.DALDisciplina insert = new DAL.DALDisciplina();
-            insert.Insert(disciplina);
-            Response.Redirect("~\\Admin\\Disciplina\\WebFormGerenciarDisciplina.aspx");
+            DAL.DALDisciplina insertDisciplina = new DAL.DALDisciplina();
+            insertDisciplina.Insert(disciplina);
+            List<int> listIDdocumentos = new List<int>();
+            foreach( ListItem I in CheckBoxListDocumento.Items)
+            {
+
+                if (I.Selected) listIDdocumentos.Add(Convert.ToInt32(I.Value)); 
+
+            }
+
+
+            Modelo.DocumentoDisciplina documentoDisciplina = new Modelo.DocumentoDisciplina(listIDdocumentos, int.Parse(TxtIdDisciplina.Text));
+            DAL.DALDocumentoDisciplina InsertDocumentoDisciplina = new DAL.DALDocumentoDisciplina();
+            InsertDocumentoDisciplina.Insert(documentoDisciplina);
+            Response.Redirect("~\\Admin\\Disciplina\\WebFormGerenciarDisciplina.aspx?Teste="+listIDdocumentos[0].ToString());
+            
             
            
             

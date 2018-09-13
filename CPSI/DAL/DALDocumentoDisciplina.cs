@@ -11,7 +11,7 @@ namespace CPSI.DAL
     public class DALDocumentoDisciplina
     {
         private string connectionString;
-        DALDocumentoDisciplina()
+        public DALDocumentoDisciplina()
         {
             connectionString = ConfigurationManager.ConnectionStrings["CPSIConnectionString"].ConnectionString;
         }
@@ -20,12 +20,19 @@ namespace CPSI.DAL
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            SqlCommand cmd = new SqlCommand("insert into DocumentoDisciplina (IdDisciplina, IdDocumento) values(@IdDisciplina, @IdDocumento)", conn);
-            cmd.Parameters.AddWithValue("@IdDisciplina",obj.idDisciplina);
-            cmd.Parameters.AddWithValue("@IdDocumento", obj.idDocumento);
-            cmd.ExecuteNonQuery();
+            foreach (int I in obj.idDocumento)
+            {
+                  SqlCommand cmd = new SqlCommand("insert into DocumentoDisciplina (IdDisciplina, IdDocumento) values(@IdDisciplina, @IdDocumento)", conn);
+                  cmd.Parameters.AddWithValue("@IdDisciplina",obj.idDisciplina);
+                  cmd.Parameters.AddWithValue("@IdDocumento", I);
+                  cmd.ExecuteNonQuery(); 
+
+
+            }
+
             conn.Close();
         }
+        
 
     }
 }
