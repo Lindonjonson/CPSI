@@ -15,11 +15,11 @@ namespace CPSI.Modelo
         public DateTime DataFim { get; set; }
         public int QtdVagas { get; set; }
         public int IdDisciplina { get; set; }
-        Turma()
+        public Turma()
         {
 
         }
-        Turma(int IdTurma, string  NomeTurma, int ano, string horario, DateTime DataInicio, DateTime DataFim, int QtdVagas, int IdDisciplina)
+        public Turma(int IdTurma, string  NomeTurma, int ano, string horario, DateTime DataInicio, DateTime DataFim, int QtdVagas, int IdDisciplina)
         {
 
             this.IdTurma =IdTurma;

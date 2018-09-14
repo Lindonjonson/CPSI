@@ -22,7 +22,7 @@ namespace CPSI.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Disciplina> SelectAll()
         {
-            Modelo.Disciplina aTitle;
+            Modelo.Disciplina Adisciplina;
             List<Modelo.Disciplina> aListDisciplina = new List<Modelo.Disciplina>();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
@@ -35,13 +35,12 @@ namespace CPSI.DAL
                 while (dr.Read()) 
                 {
             
-                    aTitle = new Modelo.Disciplina(
+                    Adisciplina = new Modelo.Disciplina(
                         int.Parse(dr["idDisciplina"].ToString()),
-                        dr["Disciplina"].ToString(),
-                        dr["Codigo"].ToString()
+                        dr["Disciplina"].ToString()
                         );
              
-                    aListDisciplina.Add(aTitle);
+                    aListDisciplina.Add(Adisciplina);
                 }
             }
       
@@ -63,9 +62,8 @@ namespace CPSI.DAL
     
              
        
-            SqlCommand cmd = new SqlCommand("INSERT INTO Disciplina (IdDisciplina,Codigo, Disciplina) VALUES(@idDisciplina,@Codigo,@Disciplina)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Disciplina (IdDisciplina, Disciplina) VALUES(@idDisciplina,@Disciplina)", conn);
             cmd.Parameters.AddWithValue("@idDisciplina", obj.idDisciplina);
-            cmd.Parameters.AddWithValue("@Codigo",obj.codigo);
             cmd.Parameters.AddWithValue("@Disciplina", obj.disciplina);          
 
          
@@ -83,9 +81,8 @@ namespace CPSI.DAL
   
             
  
-            SqlCommand cmd = new SqlCommand("UPDATE Disciplina SET Disciplina = @Disciplina, Codigo=@Codigo WHERE idDisciplina = @idDisciplina", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Disciplina SET Disciplina = @Disciplina WHERE idDisciplina = @idDisciplina", conn);
             cmd.Parameters.AddWithValue("@idDisciplina", obj.idDisciplina);
-            cmd.Parameters.AddWithValue("@Codigo", obj.codigo);
             cmd.Parameters.AddWithValue("@Disciplina", obj.disciplina);
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -120,7 +117,6 @@ namespace CPSI.DAL
             {
 
                 disciplina.idDisciplina = int.Parse(dr["idDisciplina"].ToString());
-                disciplina.codigo = dr["Codigo"].ToString();
                 disciplina.disciplina = dr["Disciplina"].ToString();
                 
                         

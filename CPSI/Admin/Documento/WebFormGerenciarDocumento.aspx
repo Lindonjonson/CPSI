@@ -7,7 +7,7 @@
     <asp:label runat="server" Text="Nome documento"></asp:label>
     <asp:textbox runat="server" ID="txtDocumento"></asp:textbox>
     <asp:button runat="server" click="CadastrarDocumento" Text="Cadastrar" OnClick="Inserir_Click" />
-    <asp:GridView ID="GridViewDocumentos" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" OnRowCommand="GridViewDocumentos_RowCommand">
+    <asp:GridView ID="GridViewDocumentos" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" OnRowCommand="GridViewDocumentos_RowCommand" ShowHeaderWhenEmpty="True">
         <Columns>
             <asp:BoundField DataField="idDocumento" HeaderText="idDocumento" SortExpression="idDocumento" />
             <asp:BoundField DataField="documento" HeaderText="documento" SortExpression="documento" />

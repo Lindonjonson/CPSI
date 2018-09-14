@@ -9,19 +9,19 @@ namespace CPSI.Modelo
     {
         public int idDisciplina { get; set; }
         public string disciplina { get; set; }
-        public string codigo { get; set; }
+     
 
         public Disciplina()
         {
             this.idDisciplina = 0;
             this.disciplina = "";
-            this.codigo = "";
+           
         }
-        public Disciplina(int idDisciplina, string disciplina, string codigo)
+        public Disciplina(int idDisciplina, string disciplina)
         {
             this.idDisciplina = idDisciplina;
             this.disciplina = disciplina;
-            this.codigo = codigo;
+           
         }
        
     }

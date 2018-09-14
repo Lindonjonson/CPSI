@@ -41,7 +41,7 @@ namespace CPSI.Admin.Disciplina
 
         protected void Inserir_Click(object sender, EventArgs e)
         {   
-            Modelo.Disciplina disciplina = new Modelo.Disciplina(int.Parse(TxtIdDisciplina.Text),TxtNomeDisciplina.Text, TxtCodigo.Text);
+            Modelo.Disciplina disciplina = new Modelo.Disciplina(int.Parse(TxtIdDisciplina.Text),TxtNomeDisciplina.Text);
             DAL.DALDisciplina insertDisciplina = new DAL.DALDisciplina();
             insertDisciplina.Insert(disciplina);
             List<int> listIDdocumentos = new List<int>();

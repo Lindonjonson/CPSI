@@ -22,15 +22,6 @@ namespace CPSI.Admin.Disciplina {
         protected global::System.Web.UI.WebControls.TextBox TxtIdDisciplina;
         
         /// <summary>
-        /// Controle TxtCodigo.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtCodigo;
-        
-        /// <summary>
         /// Controle TxtNomeDisciplina.
         /// </summary>
         /// <remarks>

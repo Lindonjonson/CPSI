@@ -6,7 +6,6 @@
         <Fields>
             <asp:BoundField DataField="idDisciplina" HeaderText="idDisciplina" SortExpression="idDisciplina" />
             <asp:BoundField DataField="disciplina" HeaderText="disciplina" SortExpression="disciplina" />
-            <asp:BoundField DataField="codigo" HeaderText="codigo" SortExpression="codigo" />
             <asp:CommandField ShowEditButton="True" />
         </Fields>
     </asp:DetailsView>
