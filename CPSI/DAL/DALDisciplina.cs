@@ -53,15 +53,16 @@ namespace CPSI.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Insert)]
-        public void Insert(Modelo.Disciplina obj)
+        public int Insert(Modelo.Disciplina obj)
         {
             
             SqlConnection conn = new SqlConnection(connectionString);
 
             conn.Open();
-    
-             
-       
+
+            if (obj.idDisciplina == 0)
+                obj.idDisciplina = GetIdMax() + 1;
+
             SqlCommand cmd = new SqlCommand("INSERT INTO Disciplina (IdDisciplina, Disciplina) VALUES(@idDisciplina,@Disciplina)", conn);
             cmd.Parameters.AddWithValue("@idDisciplina", obj.idDisciplina);
             cmd.Parameters.AddWithValue("@Disciplina", obj.disciplina);          
@@ -69,6 +70,8 @@ namespace CPSI.DAL
          
             cmd.ExecuteNonQuery();
             conn.Close();
+
+            return (obj.idDisciplina);
         }
 
         [DataObjectMethod(DataObjectMethodType.Update)]
@@ -125,6 +128,24 @@ namespace CPSI.DAL
             conn.Close();
             return disciplina;
            
+
+        }
+
+        public int GetIdMax()
+        {
+            int max = 0;
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "select Max(IdDisciplina) as Max FROM Disciplina";
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                max = int.Parse(dr["Max"].ToString());
+            }
+            conn.Close();
+            return max;
 
         }
 

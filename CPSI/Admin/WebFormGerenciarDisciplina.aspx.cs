@@ -21,42 +21,38 @@ namespace CPSI.Admin.Disciplina
             if (e.CommandName == "Editar")
             {
                 int index = Convert.ToInt32(e.CommandArgument);
-                string id = GridViewDisciplina.Rows[index].Cells[0].Text;
-                Response.Redirect("~\\Admin\\Disciplina\\WebFormEditarDisciplina.aspx?ID=" + id);
+                DataKey keys = GridViewDisciplina.DataKeys[index];
+                string id = keys.Value.ToString();
 
-
+                Response.Redirect("~\\Admin\\WebFormEditarDisciplina.aspx?ID=" + id);
             }
             if (e.CommandName == "Excluir")
             {
-  
+
                 int index = Convert.ToInt32(e.CommandArgument);
-                string id = GridViewDisciplina.Rows[index].Cells[0].Text;
+                DataKey keys = GridViewDisciplina.DataKeys[index];
+                string id = keys.Value.ToString();
+
                 disciplina.Delete(id);
-                Response.Redirect("~\\Admin\\Disciplina\\WebFormGerenciarDisciplina.aspx");
-
-
-
+                Response.Redirect("~\\Admin\\WebFormGerenciarDisciplina.aspx");
             }
         }
 
         protected void Inserir_Click(object sender, EventArgs e)
         {   
-            Modelo.Disciplina disciplina = new Modelo.Disciplina(int.Parse(TxtIdDisciplina.Text),TxtNomeDisciplina.Text);
+            Modelo.Disciplina disciplina = new Modelo.Disciplina(0,TxtNomeDisciplina.Text);
             DAL.DALDisciplina insertDisciplina = new DAL.DALDisciplina();
-            insertDisciplina.Insert(disciplina);
+            disciplina.idDisciplina = insertDisciplina.Insert(disciplina);
             List<int> listIDdocumentos = new List<int>();
             foreach( ListItem I in CheckBoxListDocumento.Items)
             {
-
                 if (I.Selected) listIDdocumentos.Add(Convert.ToInt32(I.Value)); 
-
             }
 
-
-            Modelo.DocumentoDisciplina documentoDisciplina = new Modelo.DocumentoDisciplina(listIDdocumentos, int.Parse(TxtIdDisciplina.Text));
+            Modelo.DocumentoDisciplina documentoDisciplina = new Modelo.DocumentoDisciplina(listIDdocumentos, disciplina.idDisciplina);
             DAL.DALDocumentoDisciplina InsertDocumentoDisciplina = new DAL.DALDocumentoDisciplina();
             InsertDocumentoDisciplina.Insert(documentoDisciplina);
-            Response.Redirect("~\\Admin\\Disciplina\\WebFormGerenciarDisciplina.aspx?Teste="+listIDdocumentos[0].ToString());
+            Response.Redirect("~\\Admin\\WebFormGerenciarDisciplina.aspx?Teste="+listIDdocumentos[0].ToString());
             
             
            

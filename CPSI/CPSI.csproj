@@ -67,58 +67,59 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin\Disciplina\WebFormEditarDisciplina.aspx" />
-    <Content Include="Admin\Disciplina\WebFormGerenciarDisciplina.aspx" />
-    <Content Include="Admin\Documento\WebFormEditarDocumento.aspx" />
-    <Content Include="Admin\Documento\WebFormGerenciarDocumento.aspx" />
-    <Content Include="Admin\Turma\WebFormEditarTurma.aspx" />
-    <Content Include="Admin\Turma\WebFormGerenciarTurma.aspx" />
+    <Content Include="Admin\WebFormEditarDisciplina.aspx" />
+    <Content Include="Admin\WebFormGerenciarDisciplina.aspx" />
+    <Content Include="Admin\WebFormEditarDocumento.aspx" />
+    <Content Include="Admin\WebFormGerenciarDocumento.aspx" />
+    <Content Include="Admin\WebFormEditarTurma.aspx" />
+    <Content Include="Admin\WebFormGerenciarTurma.aspx" />
     <Content Include="Assets\JS\Exclusao.js" />
+    <Content Include="Master\WebFormPrincipal.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\Disciplina\WebFormEditarDisciplina.aspx.cs">
+    <Compile Include="Admin\WebFormEditarDisciplina.aspx.cs">
       <DependentUpon>WebFormEditarDisciplina.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Disciplina\WebFormEditarDisciplina.aspx.designer.cs">
+    <Compile Include="Admin\WebFormEditarDisciplina.aspx.designer.cs">
       <DependentUpon>WebFormEditarDisciplina.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Disciplina\WebFormGerenciarDisciplina.aspx.cs">
+    <Compile Include="Admin\WebFormGerenciarDisciplina.aspx.cs">
       <DependentUpon>WebFormGerenciarDisciplina.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Disciplina\WebFormGerenciarDisciplina.aspx.designer.cs">
+    <Compile Include="Admin\WebFormGerenciarDisciplina.aspx.designer.cs">
       <DependentUpon>WebFormGerenciarDisciplina.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Documento\WebFormEditarDocumento.aspx.cs">
+    <Compile Include="Admin\WebFormEditarDocumento.aspx.cs">
       <DependentUpon>WebFormEditarDocumento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Documento\WebFormEditarDocumento.aspx.designer.cs">
+    <Compile Include="Admin\WebFormEditarDocumento.aspx.designer.cs">
       <DependentUpon>WebFormEditarDocumento.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Documento\WebFormGerenciarDocumento.aspx.cs">
+    <Compile Include="Admin\WebFormGerenciarDocumento.aspx.cs">
       <DependentUpon>WebFormGerenciarDocumento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Documento\WebFormGerenciarDocumento.aspx.designer.cs">
+    <Compile Include="Admin\WebFormGerenciarDocumento.aspx.designer.cs">
       <DependentUpon>WebFormGerenciarDocumento.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Turma\WebFormEditarTurma.aspx.cs">
+    <Compile Include="Admin\WebFormEditarTurma.aspx.cs">
       <DependentUpon>WebFormEditarTurma.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Turma\WebFormEditarTurma.aspx.designer.cs">
+    <Compile Include="Admin\WebFormEditarTurma.aspx.designer.cs">
       <DependentUpon>WebFormEditarTurma.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Turma\WebFormGerenciarTurma.aspx.cs">
+    <Compile Include="Admin\WebFormGerenciarTurma.aspx.cs">
       <DependentUpon>WebFormGerenciarTurma.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Turma\WebFormGerenciarTurma.aspx.designer.cs">
+    <Compile Include="Admin\WebFormGerenciarTurma.aspx.designer.cs">
       <DependentUpon>WebFormGerenciarTurma.aspx</DependentUpon>
     </Compile>
     <Compile Include="DAL\DALDisciplina.cs" />
@@ -132,6 +133,20 @@
     <Compile Include="Master\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
+    <Compile Include="Master\Matricula.Master.cs">
+      <DependentUpon>Matricula.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\Matricula.Master.designer.cs">
+      <DependentUpon>Matricula.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Master\WebFormPrincipal.aspx.cs">
+      <DependentUpon>WebFormPrincipal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\WebFormPrincipal.aspx.designer.cs">
+      <DependentUpon>WebFormPrincipal.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Disciplina.cs" />
     <Compile Include="Modelo\Documento.cs" />
     <Compile Include="Modelo\DocumentoDisciplina.cs" />
@@ -140,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master\Admin.Master" />
+    <Content Include="Master\Matricula.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -150,6 +166,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\CSS\" />
+    <Folder Include="Matricula\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

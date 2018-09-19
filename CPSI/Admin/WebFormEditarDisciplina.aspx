@@ -14,4 +14,6 @@
             <asp:QueryStringParameter Name="ID" QueryStringField="ID" Type="String" />
         </SelectParameters>
     </asp:ObjectDataSource>
+    <br />
+    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Admin/WebFormGerenciarDisciplina.aspx">Voltar</asp:HyperLink>
 </asp:Content>

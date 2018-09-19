@@ -13,15 +13,6 @@ namespace CPSI.Admin.Disciplina {
     public partial class WebFormGerenciarCategoria {
         
         /// <summary>
-        /// Controle TxtIdDisciplina.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtIdDisciplina;
-        
-        /// <summary>
         /// Controle TxtNomeDisciplina.
         /// </summary>
         /// <remarks>

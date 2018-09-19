@@ -7,10 +7,10 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace CPSI.Admin.Turma {
+namespace CPSI.Admin.Disciplina {
     
     
-    public partial class WebFormEditarTurma {
+    public partial class WebFormEditarDisciplina {
         
         /// <summary>
         /// Controle DetailsView1.
@@ -29,5 +29,14 @@ namespace CPSI.Admin.Turma {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+        
+        /// <summary>
+        /// Controle HyperLink1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
     }
 }

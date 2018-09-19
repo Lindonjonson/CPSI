@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<asp:DetailsView ID="GridView1" runat="server" DataSourceID="ObjectDataSource1" AutoGenerateRows="False">
+    <asp:DetailsView ID="GridView1" runat="server" DataSourceID="ObjectDataSource1" AutoGenerateRows="False">
     <Fields>
         <asp:BoundField DataField="idDocumento" HeaderText="idDocumento" SortExpression="idDocumento" />
         <asp:BoundField DataField="documento" HeaderText="documento" SortExpression="documento" />
@@ -15,6 +15,9 @@
             <asp:QueryStringParameter Name="ID" QueryStringField="ID" Type="String" />
         </SelectParameters>
     </asp:ObjectDataSource>
+    
+    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Admin/WebFormGerenciarDocumento.aspx">Voltar</asp:HyperLink>
+    <br />
     
 </asp:Content>
 

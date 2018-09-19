@@ -13,8 +13,8 @@
             <asp:BoundField DataField="NomeTurma" HeaderText="NomeTurma" SortExpression="NomeTurma" />
             <asp:BoundField DataField="ano" HeaderText="ano" SortExpression="ano" />
             <asp:BoundField DataField="horario" HeaderText="horario" SortExpression="horario" />
-            <asp:BoundField DataField="DataInicio" HeaderText="DataInicio" SortExpression="DataInicio" />
-            <asp:BoundField DataField="DataFim" HeaderText="DataFim" SortExpression="DataFim" />
+            <asp:BoundField DataField="DataInicio" HeaderText="DataInicio" SortExpression="DataInicio" ApplyFormatInEditMode="True" DataFormatString="{0:d}" />
+            <asp:BoundField DataField="DataFim" HeaderText="DataFim" SortExpression="DataFim" ApplyFormatInEditMode="True" DataFormatString="{0:d}" />
             <asp:BoundField DataField="QtdVagas" HeaderText="QtdVagas" SortExpression="QtdVagas" />
             <asp:BoundField DataField="IdDisciplina" HeaderText="IdDisciplina" SortExpression="IdDisciplina" />
             <asp:CommandField ShowEditButton="True" />
@@ -25,6 +25,13 @@
         <SelectParameters>
             <asp:QueryStringParameter DefaultValue="" Name="ID" QueryStringField="ID" Type="String" />
         </SelectParameters>
+        <UpdateParameters>
+            <asp:Parameter DbType="DateTime" Name="DataInicio" />
+            <asp:Parameter DbType="DateTime" Name="DataFim" />
+        </UpdateParameters>
     </asp:ObjectDataSource>
+    
+    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Admin/WebFormGerenciarTurma.aspx">Voltar</asp:HyperLink>
+    <br />
     
 </asp:Content>

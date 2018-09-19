@@ -21,7 +21,7 @@ namespace CPSI.Admin.Turma
                 int.Parse(TxtAno.Text),TxtHorário.Text,CalendarDataInicio.SelectedDate.Date,CalendarDataFim.SelectedDate.Date,int.Parse(TxtNumVagas.Text),
                 int.Parse(DropDownListDisciplina.SelectedItem.Value));
             InsertTurma.Insert(Turma);
-            Response.Redirect("~//Admin//Turma//WebFormGerenciarTurma.aspx");
+            Response.Redirect("~//Admin//WebFormGerenciarTurma.aspx");
 
         }
 
@@ -31,17 +31,23 @@ namespace CPSI.Admin.Turma
             {
                 DAL.DALTurma Delete = new DAL.DALTurma();
                 int index = Convert.ToInt32(e.CommandArgument.ToString());
-                string IDTurma = GridViewTurmas.Rows[index].Cells[0].Text;
-                Delete.Delete(IDTurma);
-                Response.Redirect("~//Admin//Turma//WebFormGerenciarTurma.aspx");
+
+                DataKey keys = GridViewTurmas.DataKeys[index];
+                string id = keys.Value.ToString();
+
+                Delete.Delete(id);
+                Response.Redirect("~//Admin//WebFormGerenciarTurma.aspx");
             }
             if (e.CommandName == "Editar")
             {
 
                 DAL.DALTurma Insert = new DAL.DALTurma();
                 int index = Convert.ToInt32(e.CommandArgument.ToString());
-                string IDTurma = GridViewTurmas.Rows[index].Cells[0].Text;
-                Response.Redirect("~//Admin//Turma//WebFormEditarTurma.aspx?ID=" + IDTurma);
+
+                DataKey keys = GridViewTurmas.DataKeys[index];
+                string id = keys.Value.ToString();
+
+                Response.Redirect("~//Admin//WebFormEditarTurma.aspx?ID=" + id);
 
             }
         }
