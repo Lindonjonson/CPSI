@@ -68,7 +68,7 @@ namespace CPSI.DAL
 
 
             SqlCommand cmd = new SqlCommand("INSERT INTO Turma(IdTurma, Turma, Ano, Horario, DataInicio, DataFim, QtdVagas, IdDisciplina)VALUES(@IdTurma, @Turma, @Ano, @Horario, @DataInicio, @DataFim, @QtdVagas, @IdDisciplina)", conn);
-            cmd.Parameters.AddWithValue("@IdTurma", obj.IdTurma);
+            cmd.Parameters.AddWithValue("@IdTurma", GetIdMax());
             cmd.Parameters.AddWithValue("@Turma", obj.NomeTurma);
             cmd.Parameters.AddWithValue("@Ano", obj.ano);
             cmd.Parameters.AddWithValue("@Horario", obj.horario);
@@ -149,6 +149,23 @@ namespace CPSI.DAL
             }
             conn.Close();
             return ATurma;
+
+
+        }
+        public int GetIdMax()
+        {
+            int max=0;
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("select Max(IdTurma) as Max From Turma",conn);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                max = (int.Parse(dr["Max"].ToString()))+1;
+            }
+            conn.Close();
+            return max;
+
 
 
         }

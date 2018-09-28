@@ -142,7 +142,7 @@ namespace CPSI.DAL
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
-                max = int.Parse(dr["Max"].ToString());
+                max = (int.Parse(dr["Max"].ToString()))+1;
             }
             conn.Close();
             return max;

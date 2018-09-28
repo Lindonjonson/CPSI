@@ -82,7 +82,7 @@ namespace CPSI.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = new SqlCommand("insert into Documento (IdDocumento,Documento) values(@IdDocumento,@Documento)", conn);
-            cmd.Parameters.AddWithValue("@IdDocumento", obj.idDocumento);
+            cmd.Parameters.AddWithValue("@IdDocumento", GetIdMax());
             cmd.Parameters.AddWithValue("@Documento", obj.documento);
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -117,7 +117,25 @@ namespace CPSI.DAL
             conn.Close();
 
         }
-        
+
+        public int GetIdMax()
+        {
+            int max = 0;
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "select Max(IdDocumento) as Max FROM Documento";
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                max = (int.Parse(dr["Max"].ToString()))+1;
+            }
+            conn.Close();
+            return max;
+
+        }
+
 
 
 

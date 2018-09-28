@@ -32,6 +32,48 @@ namespace CPSI.DAL
 
             conn.Close();
         }
+        [DataObjectMethod(DataObjectMethodType.Delete)]
+        public void Delete(string IdDisciplina,string IdDocumento)
+        {
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("Delete from DocumentoDisciplina where IdDisciplina=@IdDisciplina and IdDocumento=@IdDocumento",conn);
+            cmd.Parameters.AddWithValue("IdDisciplina",IdDisciplina);
+            cmd.Parameters.AddWithValue("IdDocumento", IdDocumento);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+        }
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.DocumentoDisciplina> Select(string IdDisciplina)
+        {
+            List<Modelo.DocumentoDisciplina> documentoDisciplina = new List<Modelo.DocumentoDisciplina>();
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("Select * from  DocumentoDisciplina where  IdDisciplina=IdDisciplina", conn);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+
+                    Modelo.DocumentoDisciplina D = new Modelo.DocumentoDisciplina();
+                    
+
+
+                }
+
+            }
+            conn.Close();
+
+
+
+            return documentoDisciplina;
+
+            
+
+        }
         
 
     }

@@ -2,8 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Label  runat="server" Text="Label">IdTurma</asp:Label>
-    <asp:TextBox ID="TxtIdTurma" runat="server"></asp:TextBox>
     <asp:Label  runat="server" Text="Label">Nome turma</asp:Label>
     <asp:TextBox ID="TxtNomeTurma" runat="server"></asp:TextBox>
     <asp:Label  runat="server" Text="Label">Ano</asp:Label>

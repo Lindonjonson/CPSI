@@ -5,8 +5,6 @@
     Tipos de Documento
     <hr />
     <br />
-    <asp:label runat="server" Text="Codigo"></asp:label>
-    <asp:textbox runat="server" ID="txtIdDocumento"></asp:textbox>
     <br />
     <asp:label runat="server" Text="Nome documento"></asp:label>
     <asp:textbox runat="server" ID="txtDocumento"></asp:textbox>

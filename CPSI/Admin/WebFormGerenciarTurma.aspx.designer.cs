@@ -13,15 +13,6 @@ namespace CPSI.Admin.Turma {
     public partial class WebFormGerenciarTurma {
         
         /// <summary>
-        /// Controle TxtIdTurma.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtIdTurma;
-        
-        /// <summary>
         /// Controle TxtNomeTurma.
         /// </summary>
         /// <remarks>

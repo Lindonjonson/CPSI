@@ -52,7 +52,7 @@ namespace CPSI.Admin.Disciplina
             Modelo.DocumentoDisciplina documentoDisciplina = new Modelo.DocumentoDisciplina(listIDdocumentos, disciplina.idDisciplina);
             DAL.DALDocumentoDisciplina InsertDocumentoDisciplina = new DAL.DALDocumentoDisciplina();
             InsertDocumentoDisciplina.Insert(documentoDisciplina);
-            Response.Redirect("~\\Admin\\WebFormGerenciarDisciplina.aspx?Teste="+listIDdocumentos[0].ToString());
+            Response.Redirect("~\\Admin\\WebFormGerenciarDisciplina.aspx");
             
             
            

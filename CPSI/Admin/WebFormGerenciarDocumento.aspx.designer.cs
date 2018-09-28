@@ -13,15 +13,6 @@ namespace CPSI.Admin.Documento {
     public partial class WebFormGerenciarDocumento {
         
         /// <summary>
-        /// Controle txtIdDocumento.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIdDocumento;
-        
-        /// <summary>
         /// Controle txtDocumento.
         /// </summary>
         /// <remarks>

@@ -16,8 +16,8 @@ namespace CPSI.Admin.Documento
 
         protected void Inserir_Click(object sender, EventArgs e)
         {
-            Modelo.Documento documento = new Modelo.Documento(int.Parse(txtIdDocumento.Text),txtDocumento.Text.ToString());
-            DAL.DALDocumento insert= new DAL.DALDocumento();
+            DAL.DALDocumento insert = new DAL.DALDocumento();
+            Modelo.Documento documento = new Modelo.Documento(0,txtDocumento.Text.ToString());
             insert.Insert(documento);
             Response.Redirect("~\\Admin\\WebFormGerenciarDocumento.aspx");
         }
