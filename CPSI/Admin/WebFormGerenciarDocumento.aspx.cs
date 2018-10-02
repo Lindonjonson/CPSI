@@ -29,7 +29,8 @@ namespace CPSI.Admin.Documento
             {
 
                 int Index = Convert.ToInt32(e.CommandArgument);
-                string ID = GridViewDocumentos.Rows[Index].Cells[0].Text;
+                DataKey keys = GridViewDocumentos.DataKeys[Index];
+                string ID = keys.Value.ToString();
                 DALDocumento.Delete(ID);
                 Response.Redirect("~\\Admin\\WebFormGerenciarDocumento.aspx");
 
@@ -38,7 +39,8 @@ namespace CPSI.Admin.Documento
             {
 
                 int Index = Convert.ToInt32(e.CommandArgument);
-                string ID = GridViewDocumentos.Rows[Index].Cells[0].Text;
+                DataKey keys = GridViewDocumentos.DataKeys[Index];
+                string ID = keys.Value.ToString();
                 Response.Redirect("~\\Admin\\WebFormEditarDocumento.aspx?ID="+ID);
 
             }

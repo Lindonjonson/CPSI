@@ -13,9 +13,8 @@
     <br />
     <hr />
     <br />
-    <asp:GridView ID="GridViewDocumentos" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" OnRowCommand="GridViewDocumentos_RowCommand" ShowHeaderWhenEmpty="True">
+    <asp:GridView ID="GridViewDocumentos" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" OnRowCommand="GridViewDocumentos_RowCommand" ShowHeaderWhenEmpty="True" DataKeyNames="idDocumento">
         <Columns>
-            <asp:BoundField DataField="idDocumento" HeaderText="Código" SortExpression="idDocumento" />
             <asp:BoundField DataField="documento" HeaderText="Tipos de Documento" SortExpression="documento" />
             <asp:ButtonField ButtonType="Button" CommandName="Excluir" HeaderText="Excluir" Text="Excluir" />
             <asp:ButtonField ButtonType="Button" CommandName="Editar" HeaderText="Editar" Text="Editar" />

@@ -75,6 +75,8 @@
     <Content Include="Admin\WebFormGerenciarTurma.aspx" />
     <Content Include="Assets\JS\Exclusao.js" />
     <Content Include="Master\WebFormPrincipal.aspx" />
+    <Content Include="Matricula\WebFormEditarAluno.aspx" />
+    <Content Include="Matricula\WebFormGerenciarAluno.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -122,6 +124,7 @@
     <Compile Include="Admin\WebFormGerenciarTurma.aspx.designer.cs">
       <DependentUpon>WebFormGerenciarTurma.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DAL\DALAluno.cs" />
     <Compile Include="DAL\DALDisciplina.cs" />
     <Compile Include="DAL\DALDocumento.cs" />
     <Compile Include="DAL\DALDocumentoDisciplina.cs" />
@@ -147,6 +150,21 @@
     <Compile Include="Master\WebFormPrincipal.aspx.designer.cs">
       <DependentUpon>WebFormPrincipal.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Matricula\WebFormEditarAluno.aspx.cs">
+      <DependentUpon>WebFormEditarAluno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Matricula\WebFormEditarAluno.aspx.designer.cs">
+      <DependentUpon>WebFormEditarAluno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Matricula\WebFormGerenciarAluno.aspx.cs">
+      <DependentUpon>WebFormGerenciarAluno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Matricula\WebFormGerenciarAluno.aspx.designer.cs">
+      <DependentUpon>WebFormGerenciarAluno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Aluno.cs" />
     <Compile Include="Modelo\Disciplina.cs" />
     <Compile Include="Modelo\Documento.cs" />
     <Compile Include="Modelo\DocumentoDisciplina.cs" />
@@ -166,7 +184,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\CSS\" />
-    <Folder Include="Matricula\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

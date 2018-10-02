@@ -51,7 +51,8 @@ namespace CPSI.DAL
             List<Modelo.DocumentoDisciplina> documentoDisciplina = new List<Modelo.DocumentoDisciplina>();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            SqlCommand cmd = new SqlCommand("Select * from  DocumentoDisciplina where  IdDisciplina=IdDisciplina", conn);
+            SqlCommand cmd = new SqlCommand("Select * from  DocumentoDisciplina where  IdDisciplina=@IdDisciplina", conn);
+            cmd.Parameters.AddWithValue("@IdDisciplina",IdDisciplina);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
