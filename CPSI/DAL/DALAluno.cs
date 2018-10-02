@@ -90,14 +90,14 @@ namespace CPSI.DAL
 
         }
         [DataObjectMethod(DataObjectMethodType.Delete)]
-        public void Delete(string id)
+        public void Delete(string ID)
         {
 
             SqlConnection conn = new SqlConnection(connectioString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = "DELETE FROM Aluno WHERE IdAluno=@IdAluno";
-            cmd.Parameters.AddWithValue("@IdAluno", id);
+            cmd.Parameters.AddWithValue("@IdAluno", ID);
             cmd.ExecuteNonQuery();
             conn.Close();
 
@@ -109,7 +109,7 @@ namespace CPSI.DAL
             SqlConnection conn = new SqlConnection(connectioString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "UPDATE Aluno SET Aluno = @Aluno,DataNascimento = @DataNascimento,CPF = @CPF,RG = @RG,RGOrgao = @RGOrgao,EstadoCivil = @EstadoCivil,Naturalidade = @Naturalidade, NaturalidadeEstado = @NaturalidadeEstado, Endereco = @Endereco, Cidade = @Cidade, Estado = @Estado, Telefone1 = @Telefone1, Telefone2 = @Telefone2,Contato = @Contato, ContatoTelefone = @ContatoTelefone,WHERE IdAluno = @IdAluno";
+            cmd.CommandText = "UPDATE Aluno SET Aluno = @Aluno,DataNascimento = @DataNascimento,CPF = @CPF,RG = @RG,RGOrgao = @RGOrgao,EstadoCivil = @EstadoCivil,Naturalidade = @Naturalidade, NaturalidadeEstado = @NaturalidadeEstado, Endereco = @Endereco, Cidade = @Cidade, Estado = @Estado, Telefone1 = @Telefone1, Telefone2 = @Telefone2,Contato = @Contato, ContatoTelefone = @ContatoTelefone WHERE IdAluno = @IdAluno";
             cmd.Parameters.AddWithValue("@IdAluno", A.IdAluno);
             cmd.Parameters.AddWithValue("@Aluno", A.AlunoNome);
             cmd.Parameters.AddWithValue("@DataNascimento", A.DataNascimento);
