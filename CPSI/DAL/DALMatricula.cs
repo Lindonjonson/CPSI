@@ -10,11 +10,11 @@ namespace CPSI.DAL
 {
     public class DALMatricula
     {
-        private string connectionString;
+        private string connectioString;
         public DALMatricula()
         {
 
-            connectionString = ConfigurationManager.ConnectionStrings["CPSIConnectionString"].ConnectionString;
+            connectioString = ConfigurationManager.ConnectionStrings["CPSIConnectionString"].ConnectionString;
         }   
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Matricula> SelectAll(string IdTurma)
@@ -22,10 +22,11 @@ namespace CPSI.DAL
 
             List<Modelo.Matricula> Matriculas = new List<Modelo.Matricula>();
             Modelo.Matricula Matricula;
-            SqlConnection conn = new SqlConnection(connectionString);
+            SqlConnection conn = new SqlConnection(connectioString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "select Aluno.Aluno,Aluno.CPF, Matricula.Situacao, Matricula.DataMatricula from Aluno inner join Matricula on Matricula.IdAluno = Aluno.IdAluno where IdTurma = @IdTurma";
+            cmd.CommandText = "select Aluno.Aluno,Aluno.CPF, Matricula.Situacao, Matricula.DataMatricula,Matricula.IdAluno, Matricula.IdTurma from Aluno inner join Matricula on Matricula.IdAluno = Aluno.IdAluno where IdTurma = @IdTurma";
+            cmd.Parameters.AddWithValue("@IdTurma",IdTurma);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
@@ -36,8 +37,6 @@ namespace CPSI.DAL
                         int.Parse(dr["IdAluno"].ToString()), int.Parse(dr["IdTurma"].ToString()),
                         int.Parse(dr["Situacao"].ToString()), DateTime.Parse(dr["DataMatricula"].ToString()),
                         dr["Aluno"].ToString(), dr["CPF"].ToString()
-
-
                         );
                     Matriculas.Add(Matricula);
 
@@ -50,6 +49,36 @@ namespace CPSI.DAL
 
 
             return Matriculas;
+
+        }
+        [DataObjectMethod(DataObjectMethodType.Insert)]
+        public void Insert(Modelo.Matricula M)
+        {
+
+
+            SqlConnection conn = new SqlConnection(connectioString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "INSERT INTO Matricula (IdTurma,IdAluno,Situacao,DataMatricula)  VALUES (@IdTurma,@IdAluno,@Situacao,@DataMatricula)";
+            cmd.Parameters.AddWithValue("@IdTurma",M.IdTurma);
+            cmd.Parameters.AddWithValue("@IdAluno",M.IdAluno);
+            cmd.Parameters.AddWithValue("@Situacao",M.Situacao);
+            cmd.Parameters.AddWithValue("@DataMatricula",M.DataMatricula);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+
+        }
+        [DataObjectMethod(DataObjectMethodType.Delete)]
+        public void Delete(string IdAluno)
+        {
+            SqlConnection conn = new SqlConnection(connectioString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "DELETE FROM Matricula WHERE IdAluno=@IdAluno";
+            cmd.Parameters.AddWithValue("@IdAluno",IdAluno);
+            cmd.ExecuteNonQuery();
+            conn.Close();
 
         }
             
