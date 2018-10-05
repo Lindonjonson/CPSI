@@ -1,13 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Matricula.Master" AutoEventWireup="true" CodeBehind="WebFormVizualizarMatriculados.aspx.cs" Inherits="CPSI.Matricula.WebFormVizualizarMatriculados" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Matricula.Master" AutoEventWireup="true" CodeBehind="WebFormVisualizarMatriculados.aspx.cs" Inherits="CPSI.Matricula.WebFormVizualizarMatriculados" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1">
+    <asp:GridView ID="GridViewMatriculados" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" OnRowCommand="RowCommand" DataKeyNames="IdAluno">
         <Columns>
             <asp:BoundField DataField="Situacao" HeaderText="Situacao" SortExpression="Situacao" />
             <asp:BoundField DataField="DataMatricula" HeaderText="DataMatricula" SortExpression="DataMatricula" />
             <asp:BoundField DataField="AlunoNome" HeaderText="AlunoNome" SortExpression="AlunoNome" />
             <asp:BoundField DataField="Cpf" HeaderText="Cpf" SortExpression="Cpf" />
+            <asp:ButtonField CommandName="Remover" Text="Remover" ButtonType="Button" HeaderText="Remover"></asp:ButtonField>
         </Columns>
     </asp:GridView>
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALMatricula">

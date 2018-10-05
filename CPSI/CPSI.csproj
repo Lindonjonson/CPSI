@@ -73,11 +73,14 @@
     <Content Include="Admin\WebFormGerenciarDocumento.aspx" />
     <Content Include="Admin\WebFormEditarTurma.aspx" />
     <Content Include="Admin\WebFormGerenciarTurma.aspx" />
+    <Content Include="Admin\WebFormAdicionarTurma.aspx" />
     <Content Include="Assets\JS\Exclusao.js" />
     <Content Include="Master\WebFormPrincipal.aspx" />
     <Content Include="Matricula\WebFormEditarAluno.aspx" />
     <Content Include="Matricula\WebFormGerenciarAluno.aspx" />
-    <Content Include="Matricula\WebFormVizualizarMatriculados.aspx" />
+    <Content Include="Matricula\WebFormInserirAluno.aspx" />
+    <Content Include="Matricula\WebFormVisualizarTurmas.aspx" />
+    <Content Include="Matricula\WebFormVisualizarMatriculados.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -125,6 +128,13 @@
     <Compile Include="Admin\WebFormGerenciarTurma.aspx.designer.cs">
       <DependentUpon>WebFormGerenciarTurma.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\WebFormAdicionarTurma.aspx.cs">
+      <DependentUpon>WebFormAdicionarTurma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\WebFormAdicionarTurma.aspx.designer.cs">
+      <DependentUpon>WebFormAdicionarTurma.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DAL\DALAluno.cs" />
     <Compile Include="DAL\DALDisciplina.cs" />
     <Compile Include="DAL\DALDocumento.cs" />
@@ -166,12 +176,26 @@
     <Compile Include="Matricula\WebFormGerenciarAluno.aspx.designer.cs">
       <DependentUpon>WebFormGerenciarAluno.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Matricula\WebFormVizualizarMatriculados.aspx.cs">
-      <DependentUpon>WebFormVizualizarMatriculados.aspx</DependentUpon>
+    <Compile Include="Matricula\WebFormInserirAluno.aspx.cs">
+      <DependentUpon>WebFormInserirAluno.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Matricula\WebFormVizualizarMatriculados.aspx.designer.cs">
-      <DependentUpon>WebFormVizualizarMatriculados.aspx</DependentUpon>
+    <Compile Include="Matricula\WebFormInserirAluno.aspx.designer.cs">
+      <DependentUpon>WebFormInserirAluno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Matricula\WebFormVisualizarTurmas.aspx.cs">
+      <DependentUpon>WebFormVisualizarTurmas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Matricula\WebFormVisualizarTurmas.aspx.designer.cs">
+      <DependentUpon>WebFormVisualizarTurmas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Matricula\WebFormVisualizarMatriculados.aspx.cs">
+      <DependentUpon>WebFormVisualizarMatriculados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Matricula\WebFormVisualizarMatriculados.aspx.designer.cs">
+      <DependentUpon>WebFormVisualizarMatriculados.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Aluno.cs" />
     <Compile Include="Modelo\Disciplina.cs" />

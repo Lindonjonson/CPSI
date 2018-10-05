@@ -14,16 +14,7 @@ namespace CPSI.Admin.Turma
            
         }
 
-        protected void InserirTurma_Click(object sender, EventArgs e)
-        {
-            DAL.DALTurma InsertTurma = new DAL.DALTurma();
-            Modelo.Turma Turma = new Modelo.Turma(0,TxtNomeTurma.Text,
-                int.Parse(TxtAno.Text),TxtHorário.Text,CalendarDataInicio.SelectedDate.Date,CalendarDataFim.SelectedDate.Date,int.Parse(TxtNumVagas.Text),
-                int.Parse(DropDownListDisciplina.SelectedItem.Value));
-            InsertTurma.Insert(Turma);
-            Response.Redirect("~//Admin//WebFormGerenciarTurma.aspx");
-
-        }
+      
 
         protected void Turmas_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -58,7 +49,7 @@ namespace CPSI.Admin.Turma
                 DataKey keys = GridViewTurmas.DataKeys[index];
                 string id = keys.Value.ToString();
                 Session["IdTurma"] = id;
-                Response.Redirect("~/Matricula/WebFormVizualizarMatriculados.aspx");
+                Response.Redirect("~/Matricula/WebFormVisualizarMatriculados.aspx");
 
 
             }
