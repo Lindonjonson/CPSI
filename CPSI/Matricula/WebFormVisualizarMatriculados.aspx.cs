@@ -11,7 +11,8 @@ namespace CPSI.Matricula
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            LabelNomeTurma.Text = Session["NomeTurma"].ToString();
+            
         }
 
         protected void RowCommand(object sender, GridViewCommandEventArgs e)

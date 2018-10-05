@@ -62,8 +62,8 @@ namespace CPSI.DAL
             cmd.CommandText = "INSERT INTO Matricula (IdTurma,IdAluno,Situacao,DataMatricula)  VALUES (@IdTurma,@IdAluno,@Situacao,@DataMatricula)";
             cmd.Parameters.AddWithValue("@IdTurma",M.IdTurma);
             cmd.Parameters.AddWithValue("@IdAluno",M.IdAluno);
-            cmd.Parameters.AddWithValue("@Situacao",M.Situacao);
-            cmd.Parameters.AddWithValue("@DataMatricula",M.DataMatricula);
+            cmd.Parameters.AddWithValue("@Situacao",1);
+            cmd.Parameters.AddWithValue("@DataMatricula",DateTime.Now);
             cmd.ExecuteNonQuery();
             conn.Close();
 
