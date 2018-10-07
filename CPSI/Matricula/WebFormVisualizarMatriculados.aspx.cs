@@ -27,5 +27,10 @@ namespace CPSI.Matricula
 
             }
         }
+
+        protected void Matricular(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Matricula/WebFormMatricular.aspx");
+        }
     }
 }

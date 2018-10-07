@@ -4,8 +4,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Label ID="LabelNomeTurma" runat="server" Text="Label"></asp:Label>
      <br />
-    <asp:Button ID="Button1" runat="server" Text="Matricular" OnclientClick="Matricular"/>
-    <asp:GridView ID="GridViewMatriculados" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" OnRowCommand="RowCommand" DataKeyNames="IdAluno">
+    <asp:Button ID="Button1" runat="server" Text="Matricular" OnClick="Matricular" />
+    <asp:GridView ID="GridViewMatriculados" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" OnRowCommand="RowCommand" DataKeyNames="IdAluno" ShowHeaderWhenEmpty="True">
         <Columns>
             <asp:BoundField DataField="Situacao" HeaderText="Situacao" SortExpression="Situacao" />
             <asp:BoundField DataField="DataMatricula" HeaderText="DataMatricula" SortExpression="DataMatricula" />

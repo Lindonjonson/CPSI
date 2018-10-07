@@ -6,6 +6,7 @@
         <Items>
             <asp:MenuItem NavigateUrl="~/Matricula/WebFormVisualizarTurma.aspx" Text="Visualizar turmas" Value="Visualizar turmas"></asp:MenuItem>
 
+            <asp:MenuItem Text="Principal" Value="Principal" NavigateUrl="~/Master/WebFormPrincipal.aspx"></asp:MenuItem>
         </Items>
         
     </asp:Menu>

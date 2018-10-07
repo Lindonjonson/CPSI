@@ -29,5 +29,14 @@ namespace CPSI.Modelo
             this.AlunoNome = AlunoNome;
 
         }
+        public Matricula(int IdAluno, int IdTurma, int Situacao, DateTime DataMatricula)
+        {
+
+            this.IdAluno = IdAluno;
+            this.IdTurma = IdTurma;
+            this.Situacao = Situacao;
+            this.DataMatricula = DataMatricula;
+
+        }
     }
 }
