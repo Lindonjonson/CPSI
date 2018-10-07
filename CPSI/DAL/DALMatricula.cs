@@ -38,7 +38,11 @@ namespace CPSI.DAL
                         int.Parse(dr["Situacao"].ToString()), DateTime.Parse(dr["DataMatricula"].ToString()),
                         dr["Aluno"].ToString(), dr["CPF"].ToString()
                         );
-                    Matriculas.Add(Matricula);
+                    if (Matricula.Situacao == 1)
+                    {
+                        Matriculas.Add(Matricula);
+                    }
+                    
 
 
                 }
@@ -51,6 +55,7 @@ namespace CPSI.DAL
             return Matriculas;
 
         }
+
         [DataObjectMethod(DataObjectMethodType.Insert)]
         public void Insert(Modelo.Matricula M)
         {
@@ -81,6 +86,47 @@ namespace CPSI.DAL
             conn.Close();
 
         }
-            
+
+        [DataObjectMethod(DataObjectMethodType.Update)]
+        public void Update(Modelo.Matricula M)
+        {
+            SqlConnection conn = new SqlConnection(connectioString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "UPDATE Matricula SET Situacao = @Situacao WHERE IdTurma = @IdTurma  AND IdAluno = @IdAluno";
+            cmd.Parameters.AddWithValue("@Situacao", M.Situacao);
+            cmd.Parameters.AddWithValue("@IdTurma", M.IdTurma);
+            cmd.Parameters.AddWithValue("@IdAluno", M.IdAluno);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+        }
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public Modelo.Matricula Select(string IdAluno, string IdTurma)
+        {
+            Modelo.Matricula matricula = new Modelo.Matricula();
+            SqlConnection conn = new SqlConnection(connectioString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "select * FROM Matricula  WHERE IdTurma = @IdTurma  AND IdAluno = @IdAluno";
+            cmd.Parameters.AddWithValue("@IdTurma", IdTurma);
+            cmd.Parameters.AddWithValue("@IdAluno", IdAluno);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                matricula.IdAluno = int.Parse(dr["IdAluno"].ToString());
+                matricula.IdAluno = int.Parse(dr["IdTurma"].ToString());
+                matricula.Situacao = int.Parse(dr["Situacao"].ToString());
+                matricula.DataMatricula = DateTime.Parse(dr["DataMatricula"].ToString());
+                
+
+            }
+            conn.Close();
+            return matricula;
+
+
+        }
+
+
     }
 }

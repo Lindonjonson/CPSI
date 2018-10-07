@@ -109,7 +109,7 @@ namespace CPSI.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public Modelo.Disciplina Select(string ID)
         {
-            Modelo.Disciplina disciplina = new Disciplina();
+            Modelo.Disciplina disciplina = new Modelo.Disciplina();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();

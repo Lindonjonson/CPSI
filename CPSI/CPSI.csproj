@@ -214,6 +214,7 @@
       <DependentUpon>WebFormVisualizarTurma.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Aluno.cs" />
+    <Compile Include="Modelo\AlunoDocumento.cs" />
     <Compile Include="Modelo\Disciplina.cs" />
     <Compile Include="Modelo\Documento.cs" />
     <Compile Include="Modelo\DocumentoDisciplina.cs" />

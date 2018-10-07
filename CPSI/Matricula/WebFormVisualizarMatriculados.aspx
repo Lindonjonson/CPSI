@@ -11,7 +11,7 @@
             <asp:BoundField DataField="DataMatricula" HeaderText="DataMatricula" SortExpression="DataMatricula" />
             <asp:BoundField DataField="AlunoNome" HeaderText="AlunoNome" SortExpression="AlunoNome" />
             <asp:BoundField DataField="Cpf" HeaderText="Cpf" SortExpression="Cpf" />
-            <asp:ButtonField CommandName="Remover" Text="Remover" ButtonType="Button" HeaderText="Remover"></asp:ButtonField>
+            <asp:ButtonField CommandName="RemoverAluno" Text="Remover Aluno" ButtonType="Button" HeaderText="Remover aluno"></asp:ButtonField>
         </Columns>
     </asp:GridView>
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALMatricula">

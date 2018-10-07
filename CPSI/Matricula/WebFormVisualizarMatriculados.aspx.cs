@@ -17,13 +17,20 @@ namespace CPSI.Matricula
 
         protected void RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName=="Remover")
+            if (e.CommandName=="RemoverAluno")
             {
                 int index = Convert.ToInt32(e.CommandArgument);
                 DataKey key = GridViewMatriculados.DataKeys[index];
                 string IdAluno = key.Values["IdAluno"].ToString() ;
-                DAL.DALMatricula Remover = new DAL.DALMatricula();
-                Remover.Delete(IdAluno);
+                string IdTurma = Session["IdTurma"].ToString();
+                DAL.DALMatricula DALMatricula = new DAL.DALMatricula();
+                Modelo.Matricula matricula = DALMatricula.Select(IdAluno, IdTurma);
+                matricula.CancelarMatricula();
+                DALMatricula.Update(matricula);
+                Response.Redirect("~/Matricula/WebFormVisualizarMatriculados.aspx");
+
+
+
 
             }
         }
