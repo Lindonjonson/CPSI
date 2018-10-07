@@ -5,6 +5,9 @@
     <asp:Menu ID="Menu1" runat="server">
         <Items>
             <asp:MenuItem NavigateUrl="~/Matricula/WebFormVisualizarTurma.aspx" Text="Visualizar turmas" Value="Visualizar turmas"></asp:MenuItem>
+
         </Items>
+        
     </asp:Menu>
+    
 </asp:Content>
