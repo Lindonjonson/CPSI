@@ -28,8 +28,15 @@ namespace CPSI.Matricula
                 matricula.CancelarMatricula();
                 DALMatricula.Update(matricula);
                 Response.Redirect("~/Matricula/WebFormVisualizarMatriculados.aspx");
-               
 
+            }
+            if (e.CommandName == "Editar")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                DataKey dataKeyID = GridViewMatriculados.DataKeys[index];
+                string ID = dataKeyID.Values["IdAluno"].ToString();
+                Session["IdAluno"] = ID;
+                Response.Redirect("~//Matricula//WebFormEditarAluno.aspx");
 
 
             }

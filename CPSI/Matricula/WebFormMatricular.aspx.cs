@@ -28,6 +28,27 @@ namespace CPSI.Matricula
 
 
             }
+            if (e.CommandName == "Editar")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                DataKey dataKeyID = GridViewAlunos.DataKeys[index];
+                string ID = dataKeyID.Values["IdAluno"].ToString();
+                Session["IdAluno"] = ID;
+                Response.Redirect("~//Matricula//WebFormEditarAluno.aspx");
+
+
+            }
+            if (e.CommandName == "Excluir")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                DataKey dataKeyID = GridViewAlunos.DataKeys[index];
+                string ID = dataKeyID.Values["IdAluno"].ToString();
+                DAL.DALAluno Delete = new DAL.DALAluno();
+                Delete.Delete(ID);
+                Response.Redirect("~//Matricula//WebFormGerenciarAluno.aspx");
+
+
+            }
         }
     }
 }

@@ -11,6 +11,7 @@
             <asp:BoundField DataField="DataMatricula" HeaderText="DataMatricula" SortExpression="DataMatricula" />
             <asp:BoundField DataField="AlunoNome" HeaderText="AlunoNome" SortExpression="AlunoNome" />
             <asp:BoundField DataField="Cpf" HeaderText="Cpf" SortExpression="Cpf" />
+            <asp:ButtonField CommandName="Editar" HeaderText="Editar" Text="Editar" ButtonType="Button" />
             <asp:ButtonField CommandName="RemoverAluno" Text="Remover Aluno" ButtonType="Button" HeaderText="Remover aluno"></asp:ButtonField>
         </Columns>
     </asp:GridView>
