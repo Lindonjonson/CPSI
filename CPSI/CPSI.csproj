@@ -81,6 +81,7 @@
     <Content Include="Matricula\WebFormGerenciarAluno.aspx" />
     <Content Include="Matricula\WebFormMatricular.aspx" />
     <Content Include="Matricula\WebFormInserirAluno.aspx" />
+    <Content Include="Matricula\WebFormRegistrarDocumento.aspx" />
     <Content Include="Matricula\WebFormVisualizarMatriculados.aspx" />
     <Content Include="Matricula\WebFormVisualizarTurma.aspx" />
     <Content Include="Web.config">
@@ -138,6 +139,7 @@
       <DependentUpon>WebFormAdicionarTurma.aspx</DependentUpon>
     </Compile>
     <Compile Include="DAL\DALAluno.cs" />
+    <Compile Include="DAL\DALAlunoDocumento.cs" />
     <Compile Include="DAL\DALDisciplina.cs" />
     <Compile Include="DAL\DALDocumento.cs" />
     <Compile Include="DAL\DALDocumentoDisciplina.cs" />
@@ -198,6 +200,13 @@
     </Compile>
     <Compile Include="Matricula\WebFormInserirAluno.aspx.designer.cs">
       <DependentUpon>WebFormInserirAluno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Matricula\WebFormRegistrarDocumento.aspx.cs">
+      <DependentUpon>WebFormRegistrarDocumento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Matricula\WebFormRegistrarDocumento.aspx.designer.cs">
+      <DependentUpon>WebFormRegistrarDocumento.aspx</DependentUpon>
     </Compile>
     <Compile Include="Matricula\WebFormVisualizarMatriculados.aspx.cs">
       <DependentUpon>WebFormVisualizarMatriculados.aspx</DependentUpon>

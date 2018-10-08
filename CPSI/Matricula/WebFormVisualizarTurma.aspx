@@ -12,7 +12,7 @@
             <asp:BoundField DataField="QtdVagas" HeaderText="QtdVagas" SortExpression="QtdVagas" />
             <asp:ButtonField ButtonType="Button" CommandName="Editar" HeaderText="Editar" Text="Editar" />
             <asp:ButtonField ButtonType="Button" CommandName="Excluir" HeaderText="Excluir" Text="Excluir" />
-            <asp:ButtonField ButtonType="Button" CommandName="VizualizarMatriculados " HeaderText="Vizualizar Matriculados " Text="Vizualizar Matriculados " />
+            <asp:ButtonField ButtonType="Button" CommandName="VisualizarMatriculados" HeaderText="Vizualizar Matriculados " Text="Vizualizar Matriculados " />
         </Columns>
     </asp:gridview>
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALTurma"></asp:ObjectDataSource>

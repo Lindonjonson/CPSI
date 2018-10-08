@@ -16,15 +16,17 @@ namespace CPSI.Matricula
           
     protected void Turmas_RowCommand(object sender, GridViewCommandEventArgs e)
     {
-            if (e.CommandName == "VizualizarMatriculados ")
+            if (e.CommandName == "VisualizarMatriculados")
             {
-
-                DAL.DALTurma select = new DAL.DALTurma();
+            
+                DAL.DALTurma selectTurma = new DAL.DALTurma();
                 int index = Convert.ToInt32(e.CommandArgument.ToString());
                 DataKey keys = GridViewTurmas.DataKeys[index];
                 string id = keys.Value.ToString();
-                Session["NomeTurma"] = select.Select(id).NomeTurma;
+                
+                Session["NomeTurma"] = selectTurma.Select(id).NomeTurma;
                 Session["IdTurma"] = id;
+                Session["IdDisciplina"] =selectTurma.Select(id).IdDisciplina;
                 Response.Redirect("~/Matricula/WebFormVisualizarMatriculados.aspx");
             }
     }
