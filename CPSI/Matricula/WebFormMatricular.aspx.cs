@@ -22,7 +22,7 @@ namespace CPSI.Matricula
                 int index = Convert.ToInt32(e.CommandArgument);
                 DataKey dataKeyID = GridViewAlunos.DataKeys[index];
                 string ID = dataKeyID.Values["IdAluno"].ToString();
-                Modelo.Matricula matricula = new Modelo.Matricula(int.Parse(ID), int.Parse(Session["IdTurma"].ToString()),1 ,DateTime.Now);
+                Modelo.Matricula matricula = new Modelo.Matricula(int.Parse(ID), int.Parse(Session["IdTurma"].ToString()),1,DateTime.Now);
                 insert.Insert(matricula);
                 Response.Redirect("~/Matricula/WebFormVisualizarMatriculados.aspx");
 

@@ -115,7 +115,7 @@ namespace CPSI.DAL
             while (dr.Read())
             {
                 matricula.IdAluno = int.Parse(dr["IdAluno"].ToString());
-                matricula.IdAluno = int.Parse(dr["IdTurma"].ToString());
+                matricula.IdTurma = int.Parse(dr["IdTurma"].ToString());
                 matricula.Situacao = int.Parse(dr["Situacao"].ToString());
                 matricula.DataMatricula = DateTime.Parse(dr["DataMatricula"].ToString());
                 

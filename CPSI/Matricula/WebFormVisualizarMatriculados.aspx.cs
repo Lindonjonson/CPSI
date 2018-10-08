@@ -28,7 +28,7 @@ namespace CPSI.Matricula
                 matricula.CancelarMatricula();
                 DALMatricula.Update(matricula);
                 Response.Redirect("~/Matricula/WebFormVisualizarMatriculados.aspx");
-
+               
 
 
 
