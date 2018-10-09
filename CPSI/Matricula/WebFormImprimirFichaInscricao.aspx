@@ -13,55 +13,48 @@
             <h1>INSTITUTO  FEDERAL  DE  EDUCAÇÃO,  CIÊNCIA  E  TECNOLOGIA  DO  RN  DIRETORIA  DE  EXTENSÃO  PROGRAMA  SAÚDE  E  CIDADANIA  NA  MELHOR  IDADE </h1>
         </div>
         <div>   
-                <h3>Dados Alunos</h3>
-                IdAluno:
-                <asp:TextBox ID="IdAlunoTextBox" runat="server" Text='<%# Bind("IdAluno") %>' />
-                <br />
-                AlunoNome:
-                <asp:TextBox ID="AlunoNomeTextBox" runat="server" Text='<%# Bind("AlunoNome") %>' />
-                <br />
-                DataNascimento:
-                <asp:TextBox ID="DataNascimentoTextBox" runat="server" Text='<%# Bind("DataNascimento") %>' />
-                <br />
-                Cpf:
-                <asp:TextBox ID="CpfTextBox" runat="server" Text='<%# Bind("Cpf") %>' />
-                <br />
-                Rg:
-                <asp:TextBox ID="RgTextBox" runat="server" Text='<%# Bind("Rg") %>' />
-                <br />
-                RGOrgao:
-                <asp:TextBox ID="RGOrgaoTextBox" runat="server" Text='<%# Bind("RGOrgao") %>' />
-                <br />
-                EstadoCivil:
-                <asp:TextBox ID="EstadoCivilTextBox" runat="server" Text='<%# Bind("EstadoCivil") %>' />
-                <br />
-                Naturalidade:
-                <asp:TextBox ID="NaturalidadeTextBox" runat="server" Text='<%# Bind("Naturalidade") %>' />
-                <br />
-                NaturalidadeEstado:
-                <asp:TextBox ID="NaturalidadeEstadoTextBox" runat="server" Text='<%# Bind("NaturalidadeEstado") %>' />
-                <br />
-                Endereco:
-                <asp:TextBox ID="EnderecoTextBox" runat="server" Text='<%# Bind("Endereco") %>' />
-                <br />
-                Cidade:
-                <asp:TextBox ID="CidadeTextBox" runat="server" Text='<%# Bind("Cidade") %>' />
-                <br />
-                Estado:
-                <asp:TextBox ID="EstadoTextBox" runat="server" Text='<%# Bind("Estado") %>' />
-                <br />
-                Telefone1:
-                <asp:TextBox ID="Telefone1TextBox" runat="server" Text='<%# Bind("Telefone1") %>' />
-                <br />
-                Telefone2:
-                <asp:TextBox ID="Telefone2TextBox" runat="server" Text='<%# Bind("Telefone2") %>' />
-                <br />
-                Contato:
-                <asp:TextBox ID="ContatoTextBox" runat="server" Text='<%# Bind("Contato") %>' />
-                <br />
-                ContatoTelefone:
-                <asp:TextBox ID="ContatoTelefoneTextBox" runat="server" Text='<%# Bind("ContatoTelefone") %>' />
-                <br />
+            <asp:FormView ID="FormView1" runat="server" DataSourceID="ObjectDataSource2">
+                <ItemTemplate>
+                    IdAluno:
+                    <asp:Label Text='<%# Bind("IdAluno") %>' runat="server" ID="IdAlunoLabel" /><br />
+                    AlunoNome:
+                    <asp:Label Text='<%# Bind("AlunoNome") %>' runat="server" ID="AlunoNomeLabel" /><br />
+                    DataNascimento:
+                    <asp:Label Text='<%# Bind("DataNascimento") %>' runat="server" ID="DataNascimentoLabel" /><br />
+                    Cpf:
+                    <asp:Label Text='<%# Bind("Cpf") %>' runat="server" ID="CpfLabel" /><br />
+                    Rg:
+                    <asp:Label Text='<%# Bind("Rg") %>' runat="server" ID="RgLabel" /><br />
+                    RGOrgao:
+                    <asp:Label Text='<%# Bind("RGOrgao") %>' runat="server" ID="RGOrgaoLabel" /><br />
+                    EstadoCivil:
+                    <asp:Label Text='<%# Bind("EstadoCivil") %>' runat="server" ID="EstadoCivilLabel" /><br />
+                    Naturalidade:
+                    <asp:Label Text='<%# Bind("Naturalidade") %>' runat="server" ID="NaturalidadeLabel" /><br />
+                    NaturalidadeEstado:
+                    <asp:Label Text='<%# Bind("NaturalidadeEstado") %>' runat="server" ID="NaturalidadeEstadoLabel" /><br />
+                    Endereco:
+                    <asp:Label Text='<%# Bind("Endereco") %>' runat="server" ID="EnderecoLabel" /><br />
+                    Cidade:
+                    <asp:Label Text='<%# Bind("Cidade") %>' runat="server" ID="CidadeLabel" /><br />
+                    Estado:
+                    <asp:Label Text='<%# Bind("Estado") %>' runat="server" ID="EstadoLabel" /><br />
+                    Telefone1:
+                    <asp:Label Text='<%# Bind("Telefone1") %>' runat="server" ID="Telefone1Label" /><br />
+                    Telefone2:
+                    <asp:Label Text='<%# Bind("Telefone2") %>' runat="server" ID="Telefone2Label" /><br />
+                    Contato:
+                    <asp:Label Text='<%# Bind("Contato") %>' runat="server" ID="ContatoLabel" /><br />
+                    ContatoTelefone:
+                    <asp:Label Text='<%# Bind("ContatoTelefone") %>' runat="server" ID="ContatoTelefoneLabel" /><br />
+
+                </ItemTemplate>
+            </asp:FormView>
+            <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" SelectMethod="Select" TypeName="CPSI.DAL.DALAluno">
+                <SelectParameters>
+                    <asp:SessionParameter SessionField="IdAluno" Name="id" Type="String"></asp:SessionParameter>
+                </SelectParameters>
+            </asp:ObjectDataSource>
         </div>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" Height="16px">
             <Columns>
