@@ -37,6 +37,16 @@ namespace CPSI.Matricula
 
 
             }
+            if (e.CommandName == "Matricular")
+            {
+
+                int index = Convert.ToInt32(e.CommandArgument);
+                DataKey keys = GridViewAlunos.DataKeys[index];
+                string idAluno = keys.Value.ToString();
+                Session["IdAluno"] = idAluno;
+                Response.Redirect("~/Matricula/WebFormVisualizarTurma.aspx");
+
+            }
 
         }
     }

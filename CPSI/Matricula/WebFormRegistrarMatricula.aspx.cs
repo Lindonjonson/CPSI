@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace CPSI.Matricula
 {
-    public partial class WebFormRegistrarDocumento : System.Web.UI.Page
+    public partial class WebFormRegistrarMatricula : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

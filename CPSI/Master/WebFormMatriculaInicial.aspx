@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Menu ID="Menu1" runat="server">
         <Items>
-            <asp:MenuItem NavigateUrl="~/Matricula/WebFormVisualizarTurma.aspx" Text="Visualizar turmas" Value="Visualizar turmas"></asp:MenuItem>
+            <asp:MenuItem NavigateUrl="~/Matricula/WebFormGerenciarAluno.aspx" Text="Alunos" Value="Visualizar turmas"></asp:MenuItem>
 
             <asp:MenuItem Text="Principal" Value="Principal" NavigateUrl="~/Master/WebFormPrincipal.aspx"></asp:MenuItem>
         </Items>

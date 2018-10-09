@@ -10,7 +10,7 @@
 namespace CPSI.Matricula {
     
     
-    public partial class WebFormRegistrarDocumento {
+    public partial class WebFormRegistrarMatricula {
         
         /// <summary>
         /// Controle IDTituloDisciplina.

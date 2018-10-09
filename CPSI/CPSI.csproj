@@ -79,9 +79,8 @@
     <Content Include="Master\WebFormPrincipal.aspx" />
     <Content Include="Matricula\WebFormEditarAluno.aspx" />
     <Content Include="Matricula\WebFormGerenciarAluno.aspx" />
-    <Content Include="Matricula\WebFormMatricular.aspx" />
     <Content Include="Matricula\WebFormInserirAluno.aspx" />
-    <Content Include="Matricula\WebFormRegistrarDocumento.aspx" />
+    <Content Include="Matricula\WebFormRegistrarMatricula.aspx" />
     <Content Include="Matricula\WebFormVisualizarMatriculados.aspx" />
     <Content Include="Matricula\WebFormVisualizarTurma.aspx" />
     <Content Include="Web.config">
@@ -187,13 +186,6 @@
     <Compile Include="Matricula\WebFormGerenciarAluno.aspx.designer.cs">
       <DependentUpon>WebFormGerenciarAluno.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Matricula\WebFormMatricular.aspx.cs">
-      <DependentUpon>WebFormMatricular.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Matricula\WebFormMatricular.aspx.designer.cs">
-      <DependentUpon>WebFormMatricular.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Matricula\WebFormInserirAluno.aspx.cs">
       <DependentUpon>WebFormInserirAluno.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -201,12 +193,12 @@
     <Compile Include="Matricula\WebFormInserirAluno.aspx.designer.cs">
       <DependentUpon>WebFormInserirAluno.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Matricula\WebFormRegistrarDocumento.aspx.cs">
-      <DependentUpon>WebFormRegistrarDocumento.aspx</DependentUpon>
+    <Compile Include="Matricula\WebFormRegistrarMatricula.aspx.cs">
+      <DependentUpon>WebFormRegistrarMatricula.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Matricula\WebFormRegistrarDocumento.aspx.designer.cs">
-      <DependentUpon>WebFormRegistrarDocumento.aspx</DependentUpon>
+    <Compile Include="Matricula\WebFormRegistrarMatricula.aspx.designer.cs">
+      <DependentUpon>WebFormRegistrarMatricula.aspx</DependentUpon>
     </Compile>
     <Compile Include="Matricula\WebFormVisualizarMatriculados.aspx.cs">
       <DependentUpon>WebFormVisualizarMatriculados.aspx</DependentUpon>
