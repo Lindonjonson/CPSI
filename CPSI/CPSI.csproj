@@ -79,6 +79,7 @@
     <Content Include="Master\WebFormPrincipal.aspx" />
     <Content Include="Matricula\WebFormEditarAluno.aspx" />
     <Content Include="Matricula\WebFormGerenciarAluno.aspx" />
+    <Content Include="Matricula\WebFormImprimirFichaInscricao.aspx" />
     <Content Include="Matricula\WebFormInserirAluno.aspx" />
     <Content Include="Matricula\WebFormRegistrarMatricula.aspx" />
     <Content Include="Matricula\WebFormVisualizarMatriculados.aspx" />
@@ -185,6 +186,13 @@
     </Compile>
     <Compile Include="Matricula\WebFormGerenciarAluno.aspx.designer.cs">
       <DependentUpon>WebFormGerenciarAluno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Matricula\WebFormImprimirFichaInscricao.aspx.cs">
+      <DependentUpon>WebFormImprimirFichaInscricao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Matricula\WebFormImprimirFichaInscricao.aspx.designer.cs">
+      <DependentUpon>WebFormImprimirFichaInscricao.aspx</DependentUpon>
     </Compile>
     <Compile Include="Matricula\WebFormInserirAluno.aspx.cs">
       <DependentUpon>WebFormInserirAluno.aspx</DependentUpon>

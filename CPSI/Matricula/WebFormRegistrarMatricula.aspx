@@ -26,6 +26,7 @@
    <strong> Documentos necessários </strong>
     <asp:CheckBoxList ID="CheckBoxListDocumento" runat="server" DataSourceID="ObjectDataSource2" DataTextField="documento" DataValueField="idDocumento"></asp:CheckBoxList>
     <asp:Button ID="Button" runat="server" Text="Matricular" OnClick="Click_Matricular" />
+    <asp:Button ID="Button1" runat="server" Text="Imprimir lista de inscrição" OnClick="Imprimir_Matricular" />
     <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" SelectMethod="SelectALL" TypeName="CPSI.DAL.DALDocumentoDisciplina">
         <SelectParameters>
             <asp:SessionParameter DefaultValue="" Name="IdDisciplina" SessionField="IdDisciplina" Type="String" />

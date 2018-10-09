@@ -32,7 +32,9 @@ namespace CPSI.Matricula
                 Response.Redirect("~/Matricula/WebFormVisualizarMatriculados.aspx");
         }
 
-
-
+        protected void Imprimir_Matricular(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Matricula/WebFormImprimirFichaInscricao.aspx");
+        }
     }
 }
