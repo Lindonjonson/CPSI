@@ -22,22 +22,31 @@ namespace CPSI.Matricula {
         protected global::System.Web.UI.WebControls.Label IDTituloDisciplina;
         
         /// <summary>
-        /// Controle DetailsView1.
+        /// Controle DetailsViewAluno.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DetailsView DetailsView1;
+        protected global::System.Web.UI.WebControls.DetailsView DetailsViewAluno;
         
         /// <summary>
-        /// Controle CheckBoxListDocumentos.
+        /// Controle CheckBoxListDocumento.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxListDocumentos;
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxListDocumento;
+        
+        /// <summary>
+        /// Controle Button.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button;
         
         /// <summary>
         /// Controle ObjectDataSource2.

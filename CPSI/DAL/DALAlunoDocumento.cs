@@ -22,11 +22,11 @@ namespace CPSI.DAL
             conn.Open();
             foreach (int I in obj.IdDocumento)
             {
-                SqlCommand cmd = new SqlCommand("INSERT INTO AlunoDocumento (IdAluno,IdDocumento) VALUES (@IdAluno,@IdDocumento)", conn);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "INSERT INTO AlunoDocumento (IdAluno,IdDocumento) VALUES (@IdAluno,@IdDocumento)";
                 cmd.Parameters.AddWithValue("@IdAluno", obj.IdAluno);
                 cmd.Parameters.AddWithValue("@IdDocumento", I);
                 cmd.ExecuteNonQuery();
-
 
             }
 

@@ -18,13 +18,7 @@ namespace CPSI.Matricula
         {
             if (e.CommandName == "Matricular")
             {
-                /* DAL.DALMatricula insert = new DAL.DALMatricula();
-                 int index = Convert.ToInt32(e.CommandArgument);
-                 DataKey dataKeyID = GridViewAlunos.DataKeys[index];
-                 string ID = dataKeyID.Values["IdAluno"].ToString();
-                 Modelo.Matricula matricula = new Modelo.Matricula(int.Parse(ID), int.Parse(Session["IdTurma"].ToString()),1,DateTime.Now);
-                 insert.Insert(matricula); */
-                // Response.Redirect("~/Matricula/WebFormVisualizarMatriculados.aspx");
+                
                 int index = Convert.ToInt32(e.CommandArgument);
                 DataKey keys = GridViewAlunos.DataKeys[index];
                 string idAluno = keys.Value.ToString();
