@@ -5,6 +5,7 @@ using System.Web;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace CPSI.DAL
 {
@@ -17,42 +18,22 @@ namespace CPSI.DAL
             connectioString = ConfigurationManager.ConnectionStrings["CPSIConnectionString"].ConnectionString;
         }   
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Matricula> SelectAll(string IdTurma)
+        public DataSet SelectAll(string IdTurma)
         {
-
-            List<Modelo.Matricula> Matriculas = new List<Modelo.Matricula>();
-            Modelo.Matricula Matricula;
+           
+            
             SqlConnection conn = new SqlConnection(connectioString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "select Aluno.Aluno,Aluno.CPF, Matricula.Situacao, Matricula.DataMatricula,Matricula.IdAluno, Matricula.IdTurma from Aluno inner join Matricula on Matricula.IdAluno = Aluno.IdAluno where IdTurma = @IdTurma";
+            cmd.CommandText= "select Aluno.Aluno,Aluno.CPF, Matricula.Situacao, Matricula.DataMatricula,Matricula.IdAluno, Matricula.IdTurma from Aluno inner join Matricula on Matricula.IdAluno = Aluno.IdAluno where IdTurma = @IdTurma AND Matricula.Situacao=1";
             cmd.Parameters.AddWithValue("@IdTurma",IdTurma);
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.HasRows)
-            {
-                while (dr.Read())
-                {
-                    // Matricula(int IdAluno,int IdTurma,int Situacao ,DateTime DataMatricula,string AlunoNome, string Cpf)
-                    Matricula = new Modelo.Matricula(
-                        int.Parse(dr["IdAluno"].ToString()), int.Parse(dr["IdTurma"].ToString()),
-                        int.Parse(dr["Situacao"].ToString()), DateTime.Parse(dr["DataMatricula"].ToString()),
-                        dr["Aluno"].ToString(), dr["CPF"].ToString()
-                        );
-                    if (Matricula.Situacao == 1)
-                    {
-                        Matriculas.Add(Matricula);
-                    }
-                    
-
-
-                }
-
-            }
+            SqlDataAdapter dataAdapterMatriculados = new SqlDataAdapter(cmd);
+            DataSet dataSetMatriculados = new DataSet();
+            dataAdapterMatriculados.Fill(dataSetMatriculados);
             conn.Close();
+        
 
-
-
-            return Matriculas;
+            return dataSetMatriculados; 
 
         }
 

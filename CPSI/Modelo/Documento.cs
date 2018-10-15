@@ -5,7 +5,7 @@ using System.Web;
 
 namespace CPSI.Modelo
 {
-    public class Documento:DocumentoDisciplina
+    public class Documento
     {
         public int idDocumento { get; set; }
         public string documento { get; set; }
@@ -14,13 +14,6 @@ namespace CPSI.Modelo
         {
             this.idDocumento = 0;
             this.documento = "";
-        }
-
-        public Documento(int idDocumento, string documento,int idDisciplina)
-        {
-            this.idDocumento = idDocumento;
-            this.documento = documento;
-            this.idDisciplina = idDisciplina;
         }
         public Documento(int idDocumento, string documento)
         {
