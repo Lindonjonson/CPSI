@@ -25,8 +25,7 @@ namespace CPSI.DAL
             SqlConnection conn = new SqlConnection(connectioString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText= "select Aluno.Aluno,Aluno.CPF, Matricula.Situacao, Matricula.DataMatricula,Matricula.IdAluno, Matricula.IdTurma from Aluno inner join Matricula on Matricula.IdAluno = Aluno.IdAluno where IdTurma = @IdTurma AND Matricula.Situacao=1";
-            cmd.Parameters.AddWithValue("@IdTurma",IdTurma);
+            cmd.CommandText= "Select * From Matricula where Situacao=1";
             SqlDataAdapter dataAdapterMatriculados = new SqlDataAdapter(cmd);
             DataSet dataSetMatriculados = new DataSet();
             dataAdapterMatriculados.Fill(dataSetMatriculados);

@@ -14,11 +14,12 @@ namespace CPSI.Matricula
             LabelNomeTurma.Text = Session["NomeTurma"].ToString();
             
             
+            
         }
 
         protected void RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            /*if (e.CommandName=="RemoverAluno")
+            if (e.CommandName=="RemoverAluno")
             {
                 int index = Convert.ToInt32(e.CommandArgument);
                 DataKey key = GridViewMatriculados.DataKeys[index];
@@ -40,7 +41,7 @@ namespace CPSI.Matricula
                 Response.Redirect("~//Matricula//WebFormEditarAluno.aspx");
 
 
-            } */
+            } 
         }
 
         protected void Matricular(object sender, EventArgs e)

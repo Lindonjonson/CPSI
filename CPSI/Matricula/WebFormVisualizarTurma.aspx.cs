@@ -29,6 +29,11 @@ namespace CPSI.Matricula
                 Session["IdDisciplina"] =selectTurma.Select(id).IdDisciplina;
                 Response.Redirect("~/Matricula/WebFormVisualizarMatriculados.aspx");
             }
+            
+
+
+
+           
     }
    }
 }
