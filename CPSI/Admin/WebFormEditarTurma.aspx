@@ -13,22 +13,19 @@
             <asp:BoundField DataField="NomeTurma" HeaderText="NomeTurma" SortExpression="NomeTurma" />
             <asp:BoundField DataField="ano" HeaderText="ano" SortExpression="ano" />
             <asp:BoundField DataField="horario" HeaderText="horario" SortExpression="horario" />
-            <asp:BoundField DataField="DataInicio" HeaderText="DataInicio" SortExpression="DataInicio" ApplyFormatInEditMode="True" DataFormatString="{0:d}" />
-            <asp:BoundField DataField="DataFim" HeaderText="DataFim" SortExpression="DataFim" ApplyFormatInEditMode="True" DataFormatString="{0:d}" />
+            <asp:BoundField DataField="DataInicio" HeaderText="DataInicio" SortExpression="DataInicio" />
+            <asp:BoundField DataField="DataFim" HeaderText="DataFim" SortExpression="DataFim" />
             <asp:BoundField DataField="QtdVagas" HeaderText="QtdVagas" SortExpression="QtdVagas" />
             <asp:BoundField DataField="IdDisciplina" HeaderText="IdDisciplina" SortExpression="IdDisciplina" />
             <asp:CommandField ShowEditButton="True" />
         </Fields>
     </asp:DetailsView>
-    
+
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="CPSI.Modelo.Turma" SelectMethod="Select" TypeName="CPSI.DAL.DALTurma" UpdateMethod="Update">
         <SelectParameters>
-            <asp:QueryStringParameter DefaultValue="" Name="ID" QueryStringField="ID" Type="String" />
+            <asp:SessionParameter SessionField="IdTurma" DefaultValue="" Name="ID" Type="String"></asp:SessionParameter>
+
         </SelectParameters>
-        <UpdateParameters>
-            <asp:Parameter DbType="DateTime" Name="DataInicio" />
-            <asp:Parameter DbType="DateTime" Name="DataFim" />
-        </UpdateParameters>
     </asp:ObjectDataSource>
     
     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Admin/WebFormGerenciarTurma.aspx">Voltar</asp:HyperLink>

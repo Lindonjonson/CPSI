@@ -40,8 +40,9 @@ namespace CPSI.Admin.Documento
 
                 int Index = Convert.ToInt32(e.CommandArgument);
                 DataKey keys = GridViewDocumentos.DataKeys[Index];
-                string ID = keys.Value.ToString();
-                Response.Redirect("~\\Admin\\WebFormEditarDocumento.aspx?ID="+ID);
+                string IdDocumento = keys.Value.ToString();
+                Session["IdDocumento"] = IdDocumento;
+                Response.Redirect("~\\Admin\\WebFormEditarDocumento.aspx");
 
             }
         }

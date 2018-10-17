@@ -22,9 +22,9 @@ namespace CPSI.Admin.Disciplina
             {
                 int index = Convert.ToInt32(e.CommandArgument);
                 DataKey keys = GridViewDisciplina.DataKeys[index];
-                string id = keys.Value.ToString();
-
-                Response.Redirect("~\\Admin\\WebFormEditarDisciplina.aspx?ID=" + id);
+                string IdDisciplina = keys.Value.ToString();
+                Session["IdDisciplina"] = IdDisciplina;
+                Response.Redirect("~\\Admin\\WebFormEditarDisciplina.aspx");
             }
             if (e.CommandName == "Excluir")
             {

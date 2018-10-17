@@ -6,13 +6,14 @@
     <Fields>
         <asp:BoundField DataField="idDocumento" HeaderText="idDocumento" SortExpression="idDocumento" />
         <asp:BoundField DataField="documento" HeaderText="documento" SortExpression="documento" />
-        <asp:CommandField ShowEditButton="True" />
+        <asp:CommandField ShowEditButton="True"></asp:CommandField>
     </Fields>
     </asp:DetailsView>
     
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="CPSI.Modelo.Documento" SelectMethod="Select" TypeName="CPSI.DAL.DALDocumento" UpdateMethod="Update">
         <SelectParameters>
-            <asp:QueryStringParameter Name="ID" QueryStringField="ID" Type="String" />
+            <asp:SessionParameter SessionField="IdDocumento" Name="ID" Type="String"></asp:SessionParameter>
+
         </SelectParameters>
     </asp:ObjectDataSource>
     
