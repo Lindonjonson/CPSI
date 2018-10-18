@@ -22,11 +22,12 @@ namespace CPSI.Matricula
                 DAL.DALTurma selectTurma = new DAL.DALTurma();
                 int index = Convert.ToInt32(e.CommandArgument.ToString());
                 DataKey keys = GridViewTurmas.DataKeys[index];
-                string id = keys.Value.ToString();
-                
-                Session["NomeTurma"] = selectTurma.Select(id).NomeTurma;
-                Session["IdTurma"] = id;
-                Session["IdDisciplina"] =selectTurma.Select(id).IdDisciplina;
+                string idTurma = keys.Value.ToString();
+                Modelo.Turma Turma = selectTurma.Select(idTurma);
+                Session["NomeTurma"] = Turma.NomeTurma;
+                Session["IdTurma"] = Turma.IdTurma;
+                Session["IdDisciplina"] = Turma.IdDisciplina;
+                Session["Turma"] = Turma;
                 Response.Redirect("~/Matricula/WebFormVisualizarMatriculados.aspx");
             }
             
