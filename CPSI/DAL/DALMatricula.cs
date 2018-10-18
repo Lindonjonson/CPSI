@@ -20,18 +20,20 @@ namespace CPSI.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public DataSet SelectAll(string IdTurma)
         {
-           
-            
+            DataTable data = new DataTable();
+
             SqlConnection conn = new SqlConnection(connectioString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText= "Select * From Matricula where Situacao=1";
+            cmd.CommandText= "SELECT * FROM Matriculados where Situacao=1 AND IdTurma=@IdTurma";
+            cmd.Parameters.AddWithValue("@IdTurma", IdTurma);
             SqlDataAdapter dataAdapterMatriculados = new SqlDataAdapter(cmd);
             DataSet dataSetMatriculados = new DataSet();
             dataAdapterMatriculados.Fill(dataSetMatriculados);
             conn.Close();
-        
 
+            
+            
             return dataSetMatriculados; 
 
         }

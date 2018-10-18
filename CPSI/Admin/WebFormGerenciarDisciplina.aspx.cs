@@ -48,7 +48,7 @@ namespace CPSI.Admin.Disciplina
             {
                 if (I.Selected) listIDdocumentos.Add(Convert.ToInt32(I.Value)); 
             }
-
+           
             Modelo.DocumentoDisciplina documentoDisciplina = new Modelo.DocumentoDisciplina(listIDdocumentos, disciplina.idDisciplina);
             DAL.DALDocumentoDisciplina InsertDocumentoDisciplina = new DAL.DALDocumentoDisciplina();
             InsertDocumentoDisciplina.Insert(documentoDisciplina);
