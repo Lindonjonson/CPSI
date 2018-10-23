@@ -227,6 +227,7 @@
     <Compile Include="Modelo\Disciplina.cs" />
     <Compile Include="Modelo\Documento.cs" />
     <Compile Include="Modelo\DocumentoDisciplina.cs" />
+    <Compile Include="Modelo\ListaDeEspera.cs" />
     <Compile Include="Modelo\Matricula.cs" />
     <Compile Include="Modelo\Turma.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
