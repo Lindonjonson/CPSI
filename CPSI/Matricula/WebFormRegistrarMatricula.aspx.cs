@@ -16,20 +16,22 @@ namespace CPSI.Matricula
 
         protected void Click_Matricular(object sender, EventArgs e)
         {
-                DAL.DALMatricula insertMatricula = new DAL.DALMatricula();
-                DataKey dataKeyID = DetailsViewAluno.DataKey;
-                string ID = dataKeyID.Values["IdAluno"].ToString();
-                Modelo.Matricula matricula = new Modelo.Matricula(int.Parse(ID), int.Parse(Session["IdTurma"].ToString()),1,DateTime.Now);
-                insertMatricula.Insert(matricula);
-                List<int> listIDdocumentos = new List<int>();
-                foreach (ListItem I in CheckBoxListDocumento.Items)
-                {
-                    if (I.Selected) listIDdocumentos.Add(Convert.ToInt32(I.Value));
-                }
-                Modelo.AlunoDocumento alunoDocumento = new Modelo.AlunoDocumento(int.Parse(ID),listIDdocumentos);
-                DAL.DALAlunoDocumento InsertALunoDocumento =new DAL.DALAlunoDocumento();
-                InsertALunoDocumento.Insert(alunoDocumento);  
-                Response.Redirect("~/Matricula/WebFormVisualizarMatriculados.aspx");
+             DAL.DALMatricula insertMatricula = new DAL.DALMatricula();
+             DataKey dataKeyID = DetailsViewAluno.DataKey;
+             
+             string IDAluno = dataKeyID.Values["IdAluno"].ToString();
+             Modelo.Matricula matricula = new Modelo.Matricula(int.Parse(IDAluno), int.Parse(Session["IdTurma"].ToString()),1,DateTime.Now);
+             insertMatricula.Insert(matricula);
+             List<int> listIDdocumentos = new List<int>();
+             foreach (ListItem I in CheckBoxListDocumento.Items)
+             {
+                 if (I.Selected) listIDdocumentos.Add(Convert.ToInt32(I.Value));
+             }
+             Modelo.AlunoDocumento alunoDocumento = new Modelo.AlunoDocumento(int.Parse(IDAluno),listIDdocumentos);
+             DAL.DALAlunoDocumento InsertALunoDocumento =new DAL.DALAlunoDocumento();
+             InsertALunoDocumento.Insert(alunoDocumento);  
+             Response.Redirect("~/Matricula/WebFormVisualizarMatriculados.aspx"); 
+     
         }
 
         protected void Imprimir_Matricular(object sender, EventArgs e)

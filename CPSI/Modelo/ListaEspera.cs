@@ -5,35 +5,25 @@ using System.Web;
 
 namespace CPSI.Modelo
 {
-    public class ListaEspera : Aluno
+    public class ListaEspera
     {
-        public int IdTurma { get; set; }
-        public DateTime DataMatricula { get; set; }
+          public int IdTurma { get; set; }
+          public int IdAluno { get; set; }
+          public DateTime DataInscricao { get; set; }
 
-        public ListaEspera()
-        {
+          public ListaEspera()
+          {
 
 
 
-        }
-        public ListaEspera(int IdAluno, int IdTurma, int Situacao, DateTime DataMatricula, string AlunoNome, string Cpf)
-        {
+          }
+          public ListaEspera(int IdTurma, int IdAluno,DateTime DataInscricao)
+          {
 
+            this.DataInscricao = DataInscricao;
             this.IdAluno = IdAluno;
             this.IdTurma = IdTurma;
-            this.DataMatricula = DataMatricula;
-            this.Cpf = Cpf;
-            this.AlunoNome = AlunoNome;
 
-        }
-        public ListaEspera(int IdAluno, int IdTurma, DateTime DataMatricula)
-        {
-
-            this.IdAluno = IdAluno;
-            this.IdTurma = IdTurma;
-            this.DataMatricula = DataMatricula;
-
-        }
-
+          }
     }
 }

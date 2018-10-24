@@ -25,7 +25,7 @@ namespace CPSI.DAL
             SqlConnection conn = new SqlConnection(connectioString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText= "SELECT * FROM Matriculados where Situacao=1 AND IdTurma=@IdTurma";
+            cmd.CommandText= "SELECT * FROM ViewMatriculadosTurma where Situacao=1 AND IdTurma=@IdTurma";
             cmd.Parameters.AddWithValue("@IdTurma", IdTurma);
             SqlDataAdapter dataAdapterMatriculados = new SqlDataAdapter(cmd);
             DataSet dataSetMatriculados = new DataSet();
