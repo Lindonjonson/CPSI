@@ -29,7 +29,11 @@ namespace CPSI.Matricula
                 Session["IdDisciplina"] = Turma.IdDisciplina;
                 Response.Redirect("~/Matricula/WebFormVisualizarMatriculados.aspx");
             }
-            
+            if(e.CommandName== "ListaEspera")
+            {
+
+
+            }
 
 
 

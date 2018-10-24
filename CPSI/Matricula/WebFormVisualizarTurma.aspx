@@ -11,6 +11,7 @@
             <asp:BoundField DataField="DataFim" DataFormatString="{0:d}" HeaderText="DataFim" SortExpression="DataFim" />
             <asp:BoundField DataField="QtdVagas" HeaderText="QtdVagas" SortExpression="QtdVagas" />
             <asp:ButtonField ButtonType="Button" CommandName="VisualizarMatriculados" HeaderText="Vizualizar Matriculados " Text="Vizualizar Matriculados " />
+            <asp:ButtonField ButtonType="Button" CommandName="ListaEspera" HeaderText="Lista de espera" Text="Lista de espera" />
         </Columns>
     </asp:gridview>
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALTurma"></asp:ObjectDataSource>

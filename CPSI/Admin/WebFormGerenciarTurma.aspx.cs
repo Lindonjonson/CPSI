@@ -39,7 +39,6 @@ namespace CPSI.Admin.Turma
                 string IdTurma = keys.Value.ToString();
                 Session["IdTurma"] = IdTurma;
                 Response.Redirect("~//Admin//WebFormEditarTurma.aspx");
-
             }
             if(e.CommandName== "VizualizarMatriculados ")
             {

@@ -46,7 +46,21 @@ namespace CPSI.Matricula
 
         protected void Matricular(object sender, EventArgs e)
         {
-            Response.Redirect("~/Matricula/WebFormRegistrarMatricula.aspx");
-        }
+            DAL.DALMatricula DalMatricula = new DAL.DALMatricula();
+            DAL.DALTurma DalTurma = new DAL.DALTurma();
+            Modelo.Turma Turma = DalTurma.Select(Session["IdTurma"].ToString());
+            if ((DalMatricula.GetCountMatriculados(Turma.IdTurma)) <= Turma.QtdVagas)
+            {
+
+                Response.Redirect("~/Matricula/WebFormRegistrarMatricula.aspx");
+            }
+
+            else
+            {
+
+                Response.Redirect("~/Matricula/WebFormRegistrarListaEspera.aspx");
+
+            }
+        } 
     }
 }

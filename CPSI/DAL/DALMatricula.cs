@@ -108,7 +108,7 @@ namespace CPSI.DAL
 
 
         }
-        public int GetCountMatriculados(string IdTurma)
+        public int GetCountMatriculados(int IdTurma)
         {
             int Matriculados=0;
             SqlConnection conn = new SqlConnection(connectioString);
