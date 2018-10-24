@@ -16,12 +16,14 @@ namespace CPSI.Matricula
 
         protected void Click_Matricular(object sender, EventArgs e)
         {
-             DAL.DALMatricula insertMatricula = new DAL.DALMatricula();
-             DataKey dataKeyID = DetailsViewAluno.DataKey;
+             DAL.DALTurma DalTurma = new DAL.DALTurma();
+             DAL.DALMatricula DalMatricula = new DAL.DALMatricula();
+             Modelo.Turma Turma = DalTurma.Select(Session["IdTurma"].ToString());
              
-             string IDAluno = dataKeyID.Values["IdAluno"].ToString();
-             Modelo.Matricula matricula = new Modelo.Matricula(int.Parse(IDAluno), int.Parse(Session["IdTurma"].ToString()),1,DateTime.Now);
-             insertMatricula.Insert(matricula);
+             DataKey dataKeyIDAluno = DetailsViewAluno.DataKey;
+             string IDAluno = dataKeyIDAluno.Values["IdAluno"].ToString();
+             Modelo.Matricula matricula = new Modelo.Matricula(int.Parse(IDAluno),Turma.IdTurma,1,DateTime.Now);
+             DalMatricula.Insert(matricula);
              List<int> listIDdocumentos = new List<int>();
              foreach (ListItem I in CheckBoxListDocumento.Items)
              {

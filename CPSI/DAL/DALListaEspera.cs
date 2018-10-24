@@ -9,10 +9,10 @@ using System.Data;
 
 namespace CPSI.DAL
 {
-    public class DALListaDeEspera
+    public class DALListaEspera
     {
         private string connectioString;
-        public DALListaDeEspera()
+        public DALListaEspera()
         {
             connectioString = ConfigurationManager.ConnectionStrings["CPSIConnectionString"].ConnectionString;
         }
@@ -36,6 +36,30 @@ namespace CPSI.DAL
             return dataSetMatriculados;
 
         }
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public Modelo.ListaEspera Select(string IdAluno, string IdTurma)
+        {
+            Modelo.ListaEspera listaEspera = new Modelo.ListaEspera();
+            SqlConnection conn = new SqlConnection(connectioString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "select * FROM ListaEspera WHERE IdTurma = @IdTurma  AND IdAluno = @IdAluno";
+            cmd.Parameters.AddWithValue("@IdTurma", IdTurma);
+            cmd.Parameters.AddWithValue("@IdAluno", IdAluno);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                listaEspera.IdAluno = int.Parse(dr["IdAluno"].ToString());
+                listaEspera.IdTurma = int.Parse(dr["IdTurma"].ToString());
+                listaEspera.DataInscricao = DateTime.Parse(dr["DataInscricao"].ToString());
+
+
+            }
+            conn.Close();
+            return listaEspera;
+
+
+        }
 
         [DataObjectMethod(DataObjectMethodType.Insert)]
         public void Insert(Modelo.ListaEspera L)
@@ -55,5 +79,20 @@ namespace CPSI.DAL
 
 
         }
+        
+        [DataObjectMethod(DataObjectMethodType.Delete)]
+        public void Delete(string IdAluno, string IdTurma)
+        {
+            SqlConnection conn = new SqlConnection(connectioString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "DELETE FROM ListaEspera WHERE IdAluno=@IdAluno AND IdTurma=@IdTurma";
+            cmd.Parameters.AddWithValue("@IdAluno", IdAluno);
+            cmd.Parameters.AddWithValue("@IdTurma", IdTurma);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+        }
+
     }
 }
