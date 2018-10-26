@@ -75,6 +75,7 @@
     <Content Include="Admin\WebFormGerenciarTurma.aspx" />
     <Content Include="Admin\WebFormAdicionarTurma.aspx" />
     <Content Include="Assets\JS\Exclusao.js" />
+    <Content Include="Atividades.txt" />
     <Content Include="Master\WebFormMatriculaInicial.aspx" />
     <Content Include="Master\WebFormPrincipal.aspx" />
     <Content Include="Matricula\WebFormEditarAluno.aspx" />
