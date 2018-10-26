@@ -16,14 +16,15 @@ namespace CPSI.Matricula
           
     protected void Turmas_RowCommand(object sender, GridViewCommandEventArgs e)
     {
+            DAL.DALTurma selectTurma = new DAL.DALTurma();
+            int index = Convert.ToInt32(e.CommandArgument.ToString());
+            DataKey keys = GridViewTurmas.DataKeys[index];
+            string idTurma = keys.Value.ToString();
+            Modelo.Turma Turma = selectTurma.Select(idTurma);
             if (e.CommandName == "VisualizarMatriculados")
             {
             
-                DAL.DALTurma selectTurma = new DAL.DALTurma();
-                int index = Convert.ToInt32(e.CommandArgument.ToString());
-                DataKey keys = GridViewTurmas.DataKeys[index];
-                string idTurma = keys.Value.ToString();
-                Modelo.Turma Turma = selectTurma.Select(idTurma);
+               
                 Session["NomeTurma"] = Turma.NomeTurma;
                 Session["IdTurma"] = Turma.IdTurma;
                 Session["IdDisciplina"] = Turma.IdDisciplina;
@@ -31,7 +32,8 @@ namespace CPSI.Matricula
             }
             if(e.CommandName== "ListaEspera")
             {
-
+                Session["IdTurma"] = Turma.IdTurma;
+                Response.Redirect("~/Matricula/WebFormVisualizarListaEspera.aspx");
 
             }
 
