@@ -77,7 +77,6 @@
     <Content Include="Admin\WebFormGerenciarTurma.aspx" />
     <Content Include="Admin\WebFormAdicionarTurma.aspx" />
     <Content Include="Assets\CSS\bootstrap.min.css" />
-    <Content Include="Assets\JS\Exclusao.js" />
     <Content Include="Atividades.txt" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -96,12 +95,10 @@
     <Content Include="Matricula\WebFormVisualizarListaEspera.aspx" />
     <Content Include="Matricula\WebFormVisualizarMatriculados.aspx" />
     <Content Include="Matricula\WebFormVisualizarTurma.aspx" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-reboot.min.css.map" />
-    <Content Include="Content\bootstrap-reboot.css.map" />
-    <Content Include="Content\bootstrap-grid.min.css.map" />
-    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Assets\JS\Scripts\bootstrap.bundle.js" />
+    <Content Include="Assets\JS\Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Assets\JS\Scripts\bootstrap.js" />
+    <Content Include="Assets\JS\Scripts\bootstrap.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -268,7 +265,17 @@
   <ItemGroup>
     <Content Include="Master\Admin.Master" />
     <Content Include="Master\Matricula.Master" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
     <None Include="packages.config" />
+    <Content Include="Assets\JS\Scripts\bootstrap.min.js.map" />
+    <Content Include="Assets\JS\Scripts\bootstrap.js.map" />
+    <Content Include="Assets\JS\Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Assets\JS\Scripts\bootstrap.bundle.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
