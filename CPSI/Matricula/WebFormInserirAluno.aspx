@@ -7,7 +7,7 @@
         <asp:TextBox ID="TextBoxAlunoNome" runat="server"  />
         <br />
         DataNascimento:
-        <asp:Calendar ID="CalendarDataNascimento" runat="server"></asp:Calendar>
+        <asp:TextBox ID="CalendarDataNascimento" TextMode="Date" runat="server"></asp:TextBox>
         <br />
         Cpf:
         <asp:TextBox ID="TextBoxCpf" runat="server"  />
