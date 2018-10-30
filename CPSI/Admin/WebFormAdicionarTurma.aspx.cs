@@ -18,7 +18,7 @@ namespace CPSI.Admin
         {
             DAL.DALTurma InsertTurma = new DAL.DALTurma();
             Modelo.Turma Turma = new Modelo.Turma(0, TxtNomeTurma.Text,
-            int.Parse(TxtAno.Text), TxtHorário.Text, CalendarDataInicio.SelectedDate.Date, CalendarDataFim.SelectedDate.Date, int.Parse(TxtNumVagas.Text),
+            int.Parse(TxtAno.Text), TxtHorário.Text, DateTime.Parse(CalendarDataInicio.Text), DateTime.Parse(CalendarDataFim.Text), int.Parse(TxtNumVagas.Text),
             int.Parse(DropDownListDisciplina.SelectedItem.Value));
             InsertTurma.Insert(Turma);
             Response.Redirect("~//Admin//WebFormGerenciarTurma.aspx");

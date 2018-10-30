@@ -2,9 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Admin/WebFormAdicionarTurma.aspx">Cadastrar Nova Turma</asp:HyperLink>
-<br/>
-       <asp:gridview ID="GridViewTurmas" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" ShowHeaderWhenEmpty="True" OnRowCommand="Turmas_RowCommand" DataKeyNames="IdTurma">
+
+       <h1>Turmas cadastradas</h1>
+       <asp:gridview Cssclass="table table-striped" ID="GridViewTurmas" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" ShowHeaderWhenEmpty="True" OnRowCommand="Turmas_RowCommand" DataKeyNames="IdTurma">
         <Columns>
             <asp:BoundField DataField="NomeTurma" HeaderText="NomeTurma" SortExpression="NomeTurma" />
             <asp:BoundField DataField="ano" HeaderText="ano" SortExpression="ano" />
@@ -14,10 +14,11 @@
             <asp:BoundField DataField="QtdVagas" HeaderText="QtdVagas" SortExpression="QtdVagas" />
             <asp:ButtonField ButtonType="Button" CommandName="Editar" HeaderText="Editar" Text="Editar" />
             <asp:ButtonField ButtonType="Button" CommandName="Excluir" HeaderText="Excluir" Text="Excluir" />
-            <asp:ButtonField ButtonType="Button" CommandName="VizualizarMatriculados " HeaderText="Vizualizar Matriculados " Text="Vizualizar Matriculados " />
+            <asp:ButtonField ButtonType="Button" CommandName="VizualizarMatriculados " HeaderText="Vizualizar Matriculados " Text="Vizualizar Matriculados "  />
         </Columns>
     </asp:gridview>
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALTurma"></asp:ObjectDataSource>
     <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALDisciplina"></asp:ObjectDataSource>
+    <asp:HyperLink CssClass="btn btn-primary" ID="HyperLink1" runat="server" NavigateUrl="~/Admin/WebFormAdicionarTurma.aspx">Cadastrar Nova Turma</asp:HyperLink>
 </asp:Content>
 

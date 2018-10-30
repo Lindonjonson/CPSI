@@ -9,9 +9,9 @@
     <asp:Label  runat="server" Text="Label">Horário</asp:Label>
     <asp:TextBox ID="TxtHorário" runat="server"></asp:TextBox>
     <asp:Label  runat="server" Text="Label">Data início</asp:Label>
-    <asp:Calendar ID="CalendarDataInicio" runat="server"></asp:Calendar>
+    <asp:TextBox ID="CalendarDataInicio" runat="server" TextMode="Date"></asp:TextBox>
     <asp:Label  runat="server" Text="Label">Data fim</asp:Label>
-    <asp:Calendar ID="CalendarDataFim" runat="server"></asp:Calendar>
+    <asp:Textbox ID="CalendarDataFim" TextMode="Date" runat="server"></asp:Textbox>
     <asp:Label  runat="server" Text="Label">Quantidade de vagas</asp:Label>
     <asp:TextBox ID="TxtNumVagas" runat="server"></asp:TextBox>
     <asp:Label  runat="server" Text="Label">Disciplina</asp:Label>

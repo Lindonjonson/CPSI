@@ -16,7 +16,7 @@ namespace CPSI.Matricula
 
         protected void InserirAluno_Click(object sender, EventArgs e)
         {
-            Modelo.Aluno Aluno = new Modelo.Aluno(0, TextBoxAlunoNome.Text, CalendarDataNascimento.SelectedDate.Date, TextBoxCpf.Text
+            Modelo.Aluno Aluno = new Modelo.Aluno(0, TextBoxAlunoNome.Text, DateTime.Parse(CalendarDataNascimento.Text), TextBoxCpf.Text
                                                  , TextBoxRg.Text, TextBoxRGOrgaox.Text, int.Parse(TextBoxEstadoCivil.Text),
                                                  TextBoxNaturalidade.Text, TextBoxNaturalidadeEstado.Text, TextBoxEndereco.Text,
                                                  TextBoxCidade.Text, TextBoxEstado.Text, TextBoxTelefone1.Text, TextBoxTelefone2.Text, TextBoxContato.Text, TextBoxContatoTelefone.Text);
