@@ -29,7 +29,7 @@
   [ ]Registrar Presença do Aluno
 
 [ ]GLOBAL 
-  [ ]lOGIN 
+   [ ]lOGIN 
 
 
      
