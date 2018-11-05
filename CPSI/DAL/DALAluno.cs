@@ -169,18 +169,29 @@ namespace CPSI.DAL
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = "SELECT MAX(IdAluno) AS MAX FROM ALUNO";
             SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
+            try
             {
-               
-                    max = (int.Parse(dr["MAX"].ToString())+1);
+                if (dr.Read())
+                {
+
+                    max = (int.Parse(dr["MAX"].ToString()) + 1);
 
 
-                
+                }
+
+                conn.Close();
+                return max;
 
             }
+            catch(FormatException)
+            {
+               
+                max = 1;
+                conn.Close();
+                return max;
 
-            conn.Close();
-            return max;
+            }
+           
 
 
 
