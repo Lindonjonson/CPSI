@@ -6,13 +6,22 @@
         <Fields>
             <asp:BoundField DataField="idDisciplina" HeaderText="idDisciplina" SortExpression="idDisciplina" />
             <asp:BoundField DataField="disciplina" HeaderText="disciplina" SortExpression="disciplina" />
+            <asp:TemplateField>
+                <ItemTemplate>
+                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="ObjectDataSource2" DataTextField="documento" DataValueField="idDocumento"></asp:DropDownList>
+                    <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" SelectMethod="SelectALL" TypeName="CPSI.DAL.DALDocumentoDisciplina">
+                        <SelectParameters>
+                            <asp:SessionParameter SessionField="IdDisciplina" Name="IdDisciplina" Type="String"></asp:SessionParameter>
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                </ItemTemplate>
+            </asp:TemplateField>
             <asp:CommandField ShowEditButton="True"></asp:CommandField>
         </Fields>
     </asp:DetailsView>
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="CPSI.Modelo.Disciplina" SelectMethod="Select" TypeName="CPSI.DAL.DALDisciplina" UpdateMethod="Update">
         <SelectParameters>
             <asp:SessionParameter SessionField="IdDisciplina" Name="ID" Type="String"></asp:SessionParameter>
-
         </SelectParameters>
     </asp:ObjectDataSource>
     <br />
