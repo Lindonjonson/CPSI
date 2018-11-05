@@ -179,19 +179,18 @@ namespace CPSI.DAL
 
                 }
 
-                conn.Close();
-                return max;
 
             }
             catch(FormatException)
             {
                
                 max = 1;
-                conn.Close();
-                return max;
+              
 
             }
-           
+            conn.Close();
+            return max;
+
 
 
 

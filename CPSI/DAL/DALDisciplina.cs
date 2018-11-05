@@ -22,8 +22,8 @@ namespace CPSI.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Disciplina> SelectAll()
         {
-            Modelo.Disciplina Adisciplina;
-            List<Modelo.Disciplina> aListDisciplina = new List<Modelo.Disciplina>();
+            Modelo.Disciplina disciplina;
+            List<Modelo.Disciplina> ListDisciplina = new List<Modelo.Disciplina>();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
@@ -35,19 +35,19 @@ namespace CPSI.DAL
                 while (dr.Read()) 
                 {
             
-                    Adisciplina = new Modelo.Disciplina(
+                    disciplina = new Modelo.Disciplina(
                         int.Parse(dr["idDisciplina"].ToString()),
                         dr["Disciplina"].ToString()
                         );
              
-                    aListDisciplina.Add(Adisciplina);
+                    ListDisciplina.Add(disciplina);
                 }
             }
       
             dr.Close();
             conn.Close();
 
-            return aListDisciplina;
+            return ListDisciplina;
         }
 
 
@@ -140,10 +140,20 @@ namespace CPSI.DAL
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = "select Max(IdDisciplina) as Max FROM Disciplina";
             SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
+            try
             {
-                max = (int.Parse(dr["Max"].ToString()))+1;
+                if (dr.Read())
+                {
+                    max = (int.Parse(dr["Max"].ToString())) + 1;
+                }
+
             }
+            catch (FormatException)
+            {
+                max = 1;
+
+            }
+           
             conn.Close();
             return max;
 
