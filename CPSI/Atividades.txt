@@ -29,9 +29,11 @@
   [ ]Registrar Presença do Aluno
 
 [ ]GLOBAL 
-   [ ]lOGIN 
+   [ ]lOGIN
+   [ ]desenvolvimento da interface. 
+   [ ]Validação dos formulários
 
-Inicio do desenvolvimento da interface. 
+ 
 
 
      
