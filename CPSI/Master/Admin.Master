@@ -4,7 +4,7 @@
 
 <html>
 <head runat="server">
-<link rel="stylesheet" href="../Assets/CSS/bootstrap.min.css" />
+<link rel="stylesheet" href="../Assets/CSS/PageEditarExclusao.css"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -33,6 +33,6 @@
                 
         </form>
     </article>
-    <script type="text/javascript" src="../Assets/JS/Scripts/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../Assets/JS/PageEditarExclusao.js"></script>
 </body>
 </html>

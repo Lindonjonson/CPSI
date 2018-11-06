@@ -18,17 +18,7 @@ namespace CPSI.Admin.Turma
 
         protected void Turmas_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName == "Excluir")
-            {
-                DAL.DALTurma Delete = new DAL.DALTurma();
-                int index = Convert.ToInt32(e.CommandArgument.ToString());
-
-                DataKey keys = GridViewTurmas.DataKeys[index];
-                string id = keys.Value.ToString();
-
-                Delete.Delete(id);
-                Response.Redirect("~//Admin//WebFormGerenciarTurma.aspx");
-            }
+            
             if (e.CommandName == "Editar")
             {
 
