@@ -17,11 +17,14 @@
             <asp:BoundField DataField="DataFim" HeaderText="DataFim" SortExpression="DataFim" />
             <asp:BoundField DataField="QtdVagas" HeaderText="QtdVagas" SortExpression="QtdVagas" />
             <asp:BoundField DataField="IdDisciplina" HeaderText="IdDisciplina" SortExpression="IdDisciplina" />
-            <asp:CommandField ShowEditButton="True" />
+            <asp:CommandField ShowEditButton="True"></asp:CommandField>
         </Fields>
     </asp:DetailsView>
 
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="CPSI.Modelo.Turma" SelectMethod="Select" TypeName="CPSI.DAL.DALTurma" UpdateMethod="Update">
+        <DeleteParameters>
+            <asp:Parameter Name="id" Type="String"></asp:Parameter>
+        </DeleteParameters>
         <SelectParameters>
             <asp:SessionParameter SessionField="IdTurma" DefaultValue="" Name="ID" Type="String"></asp:SessionParameter>
 
