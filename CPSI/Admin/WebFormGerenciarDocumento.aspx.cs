@@ -24,17 +24,7 @@ namespace CPSI.Admin.Documento
 
         protected void GridViewDocumentos_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            DAL.DALDocumento DALDocumento = new DAL.DALDocumento();
-            if (e.CommandName == "Excluir")
-            {
-
-                int Index = Convert.ToInt32(e.CommandArgument);
-                DataKey keys = GridViewDocumentos.DataKeys[Index];
-                string ID = keys.Value.ToString();
-                DALDocumento.Delete(ID);
-                Response.Redirect("~\\Admin\\WebFormGerenciarDocumento.aspx");
-
-            }
+            
             if (e.CommandName=="Editar")
             {
 
