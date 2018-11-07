@@ -26,16 +26,6 @@ namespace CPSI.Admin.Disciplina
                 Session["IdDisciplina"] = IdDisciplina;
                 Response.Redirect("~\\Admin\\WebFormEditarDisciplina.aspx");
             }
-            if (e.CommandName == "Excluir")
-            {
-
-                int index = Convert.ToInt32(e.CommandArgument);
-                DataKey keys = GridViewDisciplina.DataKeys[index];
-                string id = keys.Value.ToString();
-
-                disciplina.Delete(id);
-                Response.Redirect("~\\Admin\\WebFormGerenciarDisciplina.aspx");
-            }
         }
 
         protected void Inserir_Click(object sender, EventArgs e)

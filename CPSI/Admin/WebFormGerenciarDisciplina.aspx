@@ -12,7 +12,6 @@
     <asp:GridView ID="GridViewDisciplina" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" OnRowCommand="GridView1_RowCommand" EnableViewState="False" ShowHeaderWhenEmpty="True" DataKeyNames="idDisciplina">
         <Columns>
             <asp:BoundField DataField="disciplina" HeaderText="disciplina" SortExpression="disciplina" />
-            <asp:ButtonField ButtonType="Button" CommandName="Excluir" HeaderText="Excluir" Text="Excluir" />
             <asp:ButtonField ButtonType="Button" CommandName="Editar" HeaderText="Editar" Text="Editar" />
         </Columns>
     </asp:GridView>
