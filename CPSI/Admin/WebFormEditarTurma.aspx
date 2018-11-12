@@ -9,7 +9,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:DetailsView ID="DetailsViewTurma" runat="server" Height="50px" Width="125px" AutoGenerateRows="False" DataSourceID="ObjectDataSource1" CssClass="auto-style1"  DataKeyNames="IdTurma">
         <Fields>
-            <asp:BoundField DataField="IdTurma" HeaderText="IdTurma" SortExpression="IdTurma" />
+           
             <asp:BoundField DataField="NomeTurma" HeaderText="NomeTurma" SortExpression="NomeTurma" />
             <asp:BoundField DataField="ano" HeaderText="ano" SortExpression="ano" />
             <asp:BoundField DataField="horario" HeaderText="horario" SortExpression="horario" />

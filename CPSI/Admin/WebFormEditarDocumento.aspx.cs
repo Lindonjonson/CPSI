@@ -11,7 +11,7 @@ namespace CPSI.Admin.Documento
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            LabelDocumento.Text = DetailsViewDocumento.Rows[1].Cells[0].Text; 
+            LabelDocumento.Text = DetailsViewDocumento.Rows[0].Cells[1].Text; 
         }
         protected void Excluir_Click(object sender,EventArgs e)
         {

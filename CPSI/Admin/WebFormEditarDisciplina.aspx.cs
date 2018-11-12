@@ -11,7 +11,7 @@ namespace CPSI.Admin.Disciplina
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Labeldisciplina.Text = DetailsViewDisciplina.Rows[1].Cells[1].Text;
+            Labeldisciplina.Text = DetailsViewDisciplina.Rows[0].Cells[1].Text;
         }
 
         protected void Excluir_Click(object sender, EventArgs e)

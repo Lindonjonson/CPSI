@@ -11,7 +11,7 @@ namespace CPSI.Admin.Turma
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            LabelTurma.Text = DetailsViewTurma.Rows[1].Cells[1].Text;
+            LabelTurma.Text = DetailsViewTurma.Rows[0].Cells[1].Text;
         }
 
         

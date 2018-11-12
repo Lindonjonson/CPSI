@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:DetailsView ID="DetailsViewDocumento" runat="server" DataSourceID="ObjectDataSource1" AutoGenerateRows="False"  DataKeyNames="idDocumento">
     <Fields>
-        <asp:BoundField DataField="idDocumento" HeaderText="idDocumento" SortExpression="idDocumento" />
+        
         <asp:BoundField DataField="documento" HeaderText="documento" SortExpression="documento" />
         <asp:TemplateField ShowHeader="False">
             <EditItemTemplate>

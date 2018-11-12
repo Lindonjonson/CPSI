@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:DetailsView ID="DetailsViewDisciplina" runat="server" Height="50px" Width="125px" AutoGenerateRows="False" DataSourceID="ObjectDataSource1" DataKeyNames="idDisciplina">
         <Fields>
-            <asp:BoundField DataField="idDisciplina" HeaderText="idDisciplina" SortExpression="idDisciplina" />
+           
             <asp:BoundField DataField="disciplina" HeaderText="disciplina" SortExpression="disciplina" />
             <asp:TemplateField HeaderText="Documentos obrigatorios">
                 <ItemTemplate>
