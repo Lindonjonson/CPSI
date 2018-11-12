@@ -17,4 +17,7 @@
     </asp:GridView>
     
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALDisciplina" DataObjectTypeName="CPSI.Modelo.Disciplina" InsertMethod="Insert"></asp:ObjectDataSource>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Insira o nome da disciplina" ControlToValidate="TxtNomeDisciplina"></asp:RequiredFieldValidator>
+ 
 </asp:Content>
+ 

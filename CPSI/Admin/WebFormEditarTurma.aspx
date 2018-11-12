@@ -13,8 +13,8 @@
             <asp:BoundField DataField="NomeTurma" HeaderText="NomeTurma" SortExpression="NomeTurma" />
             <asp:BoundField DataField="ano" HeaderText="ano" SortExpression="ano" />
             <asp:BoundField DataField="horario" HeaderText="horario" SortExpression="horario" />
-            <asp:BoundField DataField="DataInicio" HeaderText="DataInicio" SortExpression="DataInicio" />
-            <asp:BoundField DataField="DataFim" HeaderText="DataFim" SortExpression="DataFim" />
+            <asp:BoundField DataField="DataInicio" DataFormatString="{0:d}" HeaderText="DataInicio" SortExpression="DataInicio" />
+            <asp:BoundField DataField="DataFim" DataFormatString="{0:d}" HeaderText="DataFim" SortExpression="DataFim" />
             <asp:BoundField DataField="QtdVagas" HeaderText="QtdVagas" SortExpression="QtdVagas" />
             <asp:BoundField DataField="IdDisciplina" HeaderText="IdDisciplina" SortExpression="IdDisciplina" />
             <asp:TemplateField ShowHeader="False">
@@ -38,8 +38,11 @@
         </DeleteParameters>
         <SelectParameters>
             <asp:SessionParameter  SessionField="IdTurma" DefaultValue="" Name="ID" Type="String"></asp:SessionParameter>
-
         </SelectParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="DataInicio" Type="DateTime" />
+            <asp:Parameter Name="DataFim" Type="DateTime" />
+        </UpdateParameters>
     </asp:ObjectDataSource>
     <asp:Panel CssClass="PanelExcluir" ID="PanelExcluir" runat="server">
         <span>Confirmar exclusão da turma</span>

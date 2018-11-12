@@ -8,6 +8,7 @@
     <br />
     <asp:label runat="server" Text="Nome documento"></asp:label>
     <asp:textbox runat="server" ID="txtDocumento"></asp:textbox>
+    
     <br />
     <asp:button runat="server" click="CadastrarDocumento" Text="Cadastrar" OnClick="Inserir_Click" />
     <br />
@@ -20,4 +21,5 @@
         </Columns>
     </asp:GridView>
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectALL" TypeName="CPSI.DAL.DALDocumento"></asp:ObjectDataSource>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Insira o documento" ControlToValidate="txtDocumento" ValidateRequestMode="Disabled"></asp:RequiredFieldValidator>
 </asp:Content>

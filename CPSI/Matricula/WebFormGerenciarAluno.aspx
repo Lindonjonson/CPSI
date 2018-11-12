@@ -10,7 +10,7 @@
     <Columns>
         <asp:BoundField DataField="IdAluno" HeaderText="IdAluno" SortExpression="IdAluno" />
         <asp:BoundField DataField="AlunoNome" HeaderText="AlunoNome" SortExpression="AlunoNome" />
-        <asp:BoundField DataField="DataNascimento" HeaderText="DataNascimento" SortExpression="DataNascimento" />
+        <asp:BoundField DataField="DataNascimento" DataFormatString="{0:d}" HeaderText="DataNascimento" SortExpression="DataNascimento" />
         <asp:BoundField DataField="Cpf" HeaderText="Cpf" SortExpression="Cpf" />
         <asp:BoundField DataField="Rg" HeaderText="Rg" SortExpression="Rg" />
         <asp:BoundField DataField="RGOrgao" HeaderText="RGOrgao" SortExpression="RGOrgao" />
