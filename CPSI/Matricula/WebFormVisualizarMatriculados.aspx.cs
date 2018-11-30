@@ -49,7 +49,7 @@ namespace CPSI.Matricula
             DAL.DALMatricula DalMatricula = new DAL.DALMatricula();
             DAL.DALTurma DalTurma = new DAL.DALTurma();
             Modelo.Turma Turma = DalTurma.Select(Session["IdTurma"].ToString());
-            if ((DalMatricula.GetCountMatriculados(Turma.IdTurma)) <= Turma.QtdVagas)
+            if ((DalMatricula.GetCountMatriculados(Turma.QtdVagas)) <= Turma.QtdVagas)
             {
 
                 Response.Redirect("~/Matricula/WebFormRegistrarMatricula.aspx");
