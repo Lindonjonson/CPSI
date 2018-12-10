@@ -38,6 +38,7 @@ namespace CPSI.Admin.Turma
                 DataKey keys = GridViewTurmas.DataKeys[index];
                 string id = keys.Value.ToString();
                 Session["IdTurma"] = id;
+                Session["NomeTurma"] = GridViewTurmas.Rows[index].Cells[0].Text;
                 Response.Redirect("~/Matricula/WebFormVisualizarMatriculados.aspx");
 
 
