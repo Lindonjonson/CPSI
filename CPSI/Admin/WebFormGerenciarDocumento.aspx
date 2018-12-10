@@ -14,12 +14,18 @@
     <br />
     <hr />
     <br />
-    <asp:GridView ID="GridViewDocumentos" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" OnRowCommand="GridViewDocumentos_RowCommand" ShowHeaderWhenEmpty="True" DataKeyNames="idDocumento">
+    <asp:GridView ID="GridViewDocumentos" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" ShowHeaderWhenEmpty="True" DataKeyNames="idDocumento" OnSelectedIndexChanged="GridViewDocumentos_SelectedIndexChanged">
         <Columns>
-            <asp:BoundField DataField="documento" HeaderText="Tipos de Documento" SortExpression="documento" />
-            <asp:ButtonField ButtonType="Button" CommandName="Editar" HeaderText="Editar" Text="Editar" />
+            <asp:CommandField ShowEditButton="True" ShowSelectButton="True" />
+            <asp:BoundField DataField="documento" HeaderText="documento" SortExpression="documento" />
         </Columns>
     </asp:GridView>
-    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectALL" TypeName="CPSI.DAL.DALDocumento"></asp:ObjectDataSource>
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Insira o documento" ControlToValidate="txtDocumento" ValidateRequestMode="Disabled"></asp:RequiredFieldValidator>
+    <input type="Button" value="Excluir" OnClick="ExibirExcluir()"> 
+    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALDocumento" DataObjectTypeName="CPSI.Modelo.Documento" UpdateMethod="Update" DeleteMethod="Delete"></asp:ObjectDataSource>
+     <asp:Panel CssClass="PanelExcluir" ID="PanelExcluir" runat="server">
+        <span>Confirmar exclusão da disciplina</span>
+        <asp:Label ID="LabelDocumento" runat="server" Text="Label"></asp:Label>
+        <asp:Button ID="Button4" runat="server" Text="Cancelar" OnClick="Page_Load" />
+        <asp:Button ID="Button3" runat="server" Text="Excluir" OnClick="Excluir_Documento" />
+    </asp:Panel>
 </asp:Content>
