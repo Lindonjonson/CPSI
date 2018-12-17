@@ -55,6 +55,46 @@ namespace CPSI.DAL
             return ListTurma;
         }
 
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Turma> Select(string filtro, string ano)
+        {
+            int iano;
+            Modelo.Turma Turma;
+
+            if (ano == "") iano = 0; else iano = Convert.ToInt32(ano);
+            List<Modelo.Turma> ListTurma = new List<Modelo.Turma>();
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * from Turma where ( (turma like '%" + filtro + "%') or (horario like '%" + filtro + "%') ) and ((ano = @ano) or (@ano = 0)) order by DataInicio";
+            cmd.Parameters.AddWithValue("@ano", iano);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+
+                while (dr.Read())
+                {
+
+                    Turma = new Modelo.Turma(
+                        int.Parse(dr["IdTurma"].ToString()),
+                        dr["Turma"].ToString(),
+                        int.Parse(dr["Ano"].ToString()),
+                        dr["Horario"].ToString(),
+                        DateTime.Parse(dr["DataInicio"].ToString()),
+                        DateTime.Parse(dr["DataFim"].ToString()),
+                        int.Parse(dr["QtdVagas"].ToString()),
+                        int.Parse(dr["IdDisciplina"].ToString()));
+
+
+                    ListTurma.Add(Turma);
+                }
+            }
+
+            dr.Close();
+            conn.Close();
+
+            return ListTurma;
+        }
 
 
         [DataObjectMethod(DataObjectMethodType.Insert)]

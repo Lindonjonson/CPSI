@@ -20,6 +20,8 @@
                                         <asp:MenuItem NavigateUrl="~/Admin/WebFormGerenciarDisciplina.aspx" Text="Cadastro de Disciplina" Value="Cadastro de Disciplina"></asp:MenuItem>
                                         <asp:MenuItem NavigateUrl="~/Admin/WebFormGerenciarTurma.aspx" Text="Cadastro de Turma" Value="Cadastro de Turma"></asp:MenuItem>
                                         <asp:MenuItem NavigateUrl="~/Matricula/WebFormGerenciarAluno.aspx" Text="Cadastro Aluno" Value="Cadastro Aluno"></asp:MenuItem>
+                                         <asp:MenuItem NavigateUrl="~/Matricula/WebFormMatricular.aspx" Text="Matricula novo" Value="Matricula novo"></asp:MenuItem>
+                                        
                                     </Items>
                         </asp:Menu>
                      </nav>
