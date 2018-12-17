@@ -84,11 +84,6 @@
     <Content Include="Matricula\WebFormGerenciarAluno.aspx" />
     <Content Include="Matricula\WebFormImprimirFichaInscricao.aspx" />
     <Content Include="Matricula\WebFormInserirAluno.aspx" />
-    <Content Include="Matricula\WebFormRegistrarListaEspera.aspx" />
-    <Content Include="Matricula\WebFormRegistrarMatricula.aspx" />
-    <Content Include="Matricula\WebFormVisualizarListaEspera.aspx" />
-    <Content Include="Matricula\WebFormVisualizarMatriculados.aspx" />
-    <Content Include="Matricula\WebFormVisualizarTurma.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -199,41 +194,6 @@
     </Compile>
     <Compile Include="Matricula\WebFormInserirAluno.aspx.designer.cs">
       <DependentUpon>WebFormInserirAluno.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Matricula\WebFormRegistrarListaEspera.aspx.cs">
-      <DependentUpon>WebFormRegistrarListaEspera.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Matricula\WebFormRegistrarListaEspera.aspx.designer.cs">
-      <DependentUpon>WebFormRegistrarListaEspera.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Matricula\WebFormRegistrarMatricula.aspx.cs">
-      <DependentUpon>WebFormRegistrarMatricula.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Matricula\WebFormRegistrarMatricula.aspx.designer.cs">
-      <DependentUpon>WebFormRegistrarMatricula.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Matricula\WebFormVisualizarListaEspera.aspx.cs">
-      <DependentUpon>WebFormVisualizarListaEspera.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Matricula\WebFormVisualizarListaEspera.aspx.designer.cs">
-      <DependentUpon>WebFormVisualizarListaEspera.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Matricula\WebFormVisualizarMatriculados.aspx.cs">
-      <DependentUpon>WebFormVisualizarMatriculados.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Matricula\WebFormVisualizarMatriculados.aspx.designer.cs">
-      <DependentUpon>WebFormVisualizarMatriculados.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Matricula\WebFormVisualizarTurma.aspx.cs">
-      <DependentUpon>WebFormVisualizarTurma.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Matricula\WebFormVisualizarTurma.aspx.designer.cs">
-      <DependentUpon>WebFormVisualizarTurma.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Aluno.cs" />
     <Compile Include="Modelo\AlunoDocumento.cs" />
