@@ -26,7 +26,7 @@ namespace CPSI.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select * from Turma";
+            cmd.CommandText = "Select * from Turma order by DataInicio";
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
