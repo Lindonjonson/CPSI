@@ -23,7 +23,7 @@
     <input type="Button" value="Excluir" OnClick="ExibirExcluir()"> 
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALDocumento" DataObjectTypeName="CPSI.Modelo.Documento" UpdateMethod="Update" DeleteMethod="Delete"></asp:ObjectDataSource>
      <asp:Panel CssClass="PanelExcluir" ID="PanelExcluir" runat="server">
-        <span>Confirmar exclusão da disciplina</span>
+        <span>Confirmar exclusão do documento</span>
         <asp:Label ID="LabelDocumento" runat="server" Text="Label"></asp:Label>
         <asp:Button ID="Button4" runat="server" Text="Cancelar" OnClick="Page_Load" />
         <asp:Button ID="Button3" runat="server" Text="Excluir" OnClick="Excluir_Documento" />

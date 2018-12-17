@@ -69,7 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin\WebFormEditarDisciplina.aspx" />
+    <Content Include="Admin\WebFormEditarDocumentosDisciplina.aspx" />
     <Content Include="Admin\WebFormGerenciarDisciplina.aspx" />
     <Content Include="Admin\WebFormGerenciarDocumento.aspx" />
     <Content Include="Admin\WebFormEditarTurma.aspx" />
@@ -94,12 +94,12 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\WebFormEditarDisciplina.aspx.cs">
-      <DependentUpon>WebFormEditarDisciplina.aspx</DependentUpon>
+    <Compile Include="Admin\WebFormEditarDocumentosDisciplina.aspx.cs">
+      <DependentUpon>WebFormEditarDocumentosDisciplina.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\WebFormEditarDisciplina.aspx.designer.cs">
-      <DependentUpon>WebFormEditarDisciplina.aspx</DependentUpon>
+    <Compile Include="Admin\WebFormEditarDocumentosDisciplina.aspx.designer.cs">
+      <DependentUpon>WebFormEditarDocumentosDisciplina.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\WebFormGerenciarDisciplina.aspx.cs">
       <DependentUpon>WebFormGerenciarDisciplina.aspx</DependentUpon>

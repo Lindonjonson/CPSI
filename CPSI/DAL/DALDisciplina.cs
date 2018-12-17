@@ -27,7 +27,7 @@ namespace CPSI.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select * from Disciplina";
+            cmd.CommandText = "Select * from Disciplina Order by Disciplina";
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {

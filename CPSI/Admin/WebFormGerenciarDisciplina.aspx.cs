@@ -26,6 +26,14 @@ namespace CPSI.Admin.Disciplina
                 Session["IdDisciplina"] = IdDisciplina;
                 Response.Redirect("~\\Admin\\WebFormEditarDisciplina.aspx");
             }
+            if (e.CommandName == "EditarDocumento")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                DataKey keys = GridViewDisciplina.DataKeys[index];
+                string IdDisciplina = keys.Value.ToString();
+                Session["IdDisciplina"] = IdDisciplina;
+                Response.Redirect("~/Admin/WebFormEditarDocumentosDisciplina.aspx");
+            }
         }
 
         protected void Inserir_Click(object sender, EventArgs e)
@@ -49,6 +57,20 @@ namespace CPSI.Admin.Disciplina
             
         }
 
-        
+        protected void Excluir_Disciplina(object sender, EventArgs e)
+        {
+            DAL.DALDisciplina Delete = new DAL.DALDisciplina();
+            int Index = Convert.ToInt32(GridViewDisciplina.SelectedRow.RowIndex);
+            DataKey keys = GridViewDisciplina.DataKeys[Index];
+            string IdDisciplina = keys.Value.ToString();
+            Delete.Delete(IdDisciplina);
+            Response.Redirect(Request.RawUrl);
+        }
+
+        protected void GridViewDisciplina_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GridViewDisciplina.SelectedRow.BackColor = System.Drawing.Color.OrangeRed;
+            LabelDisciplina.Text = GridViewDisciplina.SelectedRow.Cells[1].Text;
+        }
     }
 }

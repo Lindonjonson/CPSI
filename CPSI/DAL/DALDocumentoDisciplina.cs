@@ -60,14 +60,13 @@ namespace CPSI.DAL
             conn.Close();
         }
         [DataObjectMethod(DataObjectMethodType.Delete)]
-        public void Delete(string IdDisciplina,string IdDocumento)
+        public void Delete(string IdDisciplina)
         {
 
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            SqlCommand cmd = new SqlCommand("Delete from DocumentoDisciplina where IdDisciplina=@IdDisciplina and IdDocumento=@IdDocumento",conn);
+            SqlCommand cmd = new SqlCommand("Delete from DocumentoDisciplina where IdDisciplina=@IdDisciplina",conn);
             cmd.Parameters.AddWithValue("IdDisciplina",IdDisciplina);
-            cmd.Parameters.AddWithValue("IdDocumento", IdDocumento);
             cmd.ExecuteNonQuery();
             conn.Close();
 
