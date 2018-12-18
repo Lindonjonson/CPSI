@@ -19,15 +19,7 @@ namespace CPSI.Admin.Turma
 
        
 
-        protected void Excluir_Click(object sender, EventArgs e)
-        {
-            DAL.DALTurma Delete = new DAL.DALTurma();
-            DataKey keys = DetailsViewTurma.DataKey;
-            string id = keys.Value.ToString();
-            Delete.Delete(id);
-            Response.Redirect("~/Admin/WebFormGerenciarTurma.aspx");
-        }
-
+       
        
     }
 }

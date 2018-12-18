@@ -14,9 +14,9 @@
     <asp:Label  runat="server" Text="Label">Horário</asp:Label>
     <asp:TextBox ID="TxtHorário" runat="server"></asp:TextBox>
     <asp:Label  runat="server" Text="Label">Data início</asp:Label>
-    <asp:Calendar ID="CalendarDataInicio" runat="server" ViewStateMode="Disabled"></asp:Calendar>
+    <asp:TextBox ID="CalendarDataInicio" runat="server"></asp:TextBox>
     <asp:Label  runat="server" Text="Label">Data fim</asp:Label>
-    <asp:Calendar ID="CalendarDataFim" runat="server"></asp:Calendar>
+    <asp:TextBox ID="CalendarDataFim" runat="server"></asp:TextBox>
     <asp:Label  runat="server" Text="Label">Quantidade de vagas</asp:Label>
     <asp:TextBox ID="TxtNumVagas" runat="server" TextMode="Number"></asp:TextBox>
     <asp:Label  runat="server" Text="Label">Disciplina</asp:Label>
@@ -24,6 +24,16 @@
     <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALDisciplina"></asp:ObjectDataSource>
     <asp:button ID="button_Salvar" runat="server"  text="Salvar" Visible="False" CssClass="auto-style1" OnClick="InserirTurma_Click" />
     <asp:button ID="button_Atualizar" runat="server" Visible="False" text="Salvar" OnClick="AtualizarTurma_Click" />
-    <asp:HyperLink ID="HyperLink1" NavigateUrl="~/Admin/WebFormVisualizacaoTurma.aspx" runat="server">Cancelar</asp:HyperLink>
-
+    <asp:Button ID="Button2" runat="server" Text="Cancelar" OnClick="Cancelar_Click" />
+    <asp:Panel  ID="Panel_ButtonExcluir" runat="server" Visible="false">
+        <input id="ButtonExcluir" type="button" value="Excluir"  OnClick="ExibirExcluir()"/>
+    </asp:Panel>
+    
+     <asp:Panel CssClass="PanelExcluir" ID="PanelExcluir" runat="server">
+        <span>Confirmar alteração dos documentos da disciplina</span>
+        <asp:Label ID="LabelTurma" runat="server" Text="Label"></asp:Label>
+        <asp:HyperLink ID="HyperLink2" NavigateUrl="~/Admin/WebFormGerenciarDisciplina.aspx" runat="server">Cancelar</asp:HyperLink>
+        <asp:button ID="button_Excluir" runat="server" Visible="False" text="Excluir" OnClick="Excluir_Click" />
+    </asp:Panel>
+    
 </asp:Content>

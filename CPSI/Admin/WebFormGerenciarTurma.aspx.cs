@@ -13,23 +13,25 @@ namespace CPSI.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-             
-
+            
+          
             if (!(Session["IdTurma"] == null))
             {
+                button_Atualizar.Visible = true;
+                button_Excluir.Visible = true;
+                Panel_ButtonExcluir.Visible = true;
                 DAL.DALTurma dALTurma = new DAL.DALTurma();
                 turma = dALTurma.Select(Session["IdTurma"].ToString());
-
-                button_Atualizar.Visible = true;
+                LabelTurma.Text = turma.NomeTurma;
                 if (!IsPostBack)
                 {   
                     TxtNomeTurma.Text = turma.NomeTurma;
                     TxtAno.Text = turma.ano.ToString();
                     TxtHorário.Text = turma.horario;
-                    CalendarDataInicio.SelectedDate = turma.DataInicio;
-                    CalendarDataFim.SelectedDate = turma.DataFim;
+                    CalendarDataInicio.Text = turma.DataInicio.ToShortDateString();
+                    CalendarDataFim.Text = turma.DataFim.ToShortDateString();
                     TxtNumVagas.Text = turma.QtdVagas.ToString();
-                    DropDownListDisciplina.SelectedIndex = turma.IdDisciplina;
+                    DropDownListDisciplina.SelectedValue = turma.IdDisciplina.ToString();
 
                 }
             }
@@ -44,7 +46,7 @@ namespace CPSI.Admin
         {
             DAL.DALTurma dALTurma = new DAL.DALTurma();
             Modelo.Turma turma = new Modelo.Turma(0, TxtNomeTurma.Text,
-            int.Parse(TxtAno.Text), TxtHorário.Text, CalendarDataInicio.SelectedDate, CalendarDataFim.SelectedDate, int.Parse(TxtNumVagas.Text),
+            int.Parse(TxtAno.Text), TxtHorário.Text, DateTime.Parse(CalendarDataInicio.Text),DateTime.Parse(CalendarDataFim.Text), int.Parse(TxtNumVagas.Text),
             int.Parse(DropDownListDisciplina.SelectedItem.Value));
             dALTurma.Insert(turma);
             Response.Redirect("~/Admin/WebFormVisualizacaoTurma.aspx");
@@ -55,15 +57,28 @@ namespace CPSI.Admin
             turma.NomeTurma = TxtNomeTurma.Text;
             turma.ano = int.Parse(TxtAno.Text);
             turma.horario = TxtHorário.Text;
-            turma.DataInicio=CalendarDataInicio.SelectedDate;
-            turma.DataFim = CalendarDataFim.SelectedDate;
+            turma.DataInicio = DateTime.Parse(CalendarDataInicio.Text);
+            turma.DataFim = DateTime.Parse(CalendarDataFim.Text);
             turma.QtdVagas = int.Parse(TxtNumVagas.Text);
             turma.IdDisciplina =int.Parse(DropDownListDisciplina.SelectedItem.Value);
             dALTurma.Update(turma);
             Response.Redirect("~/Admin/WebFormVisualizacaoTurma.aspx");
+            Session.Remove("IdTurma");
 
         }
 
-        
+        protected void Excluir_Click(object sender, EventArgs e)
+        {
+            DAL.DALTurma Delete = new DAL.DALTurma();
+            Delete.Delete(turma.IdTurma.ToString());
+            Response.Redirect("~/Admin/WebFormVisualizacaoTurma.aspx");
+            Session.Remove("IdTurma");
+        }
+
+        protected void Cancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Admin/WebFormVisualizacaoTurma.aspx");
+            Session.Remove("IdTurma");
+        }
     }
 }

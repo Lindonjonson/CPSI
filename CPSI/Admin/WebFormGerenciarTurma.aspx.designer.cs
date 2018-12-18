@@ -46,7 +46,7 @@ namespace CPSI.Admin {
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar CalendarDataInicio;
+        protected global::System.Web.UI.WebControls.TextBox CalendarDataInicio;
         
         /// <summary>
         /// Controle CalendarDataFim.
@@ -55,7 +55,7 @@ namespace CPSI.Admin {
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar CalendarDataFim;
+        protected global::System.Web.UI.WebControls.TextBox CalendarDataFim;
         
         /// <summary>
         /// Controle TxtNumVagas.
@@ -103,12 +103,57 @@ namespace CPSI.Admin {
         protected global::System.Web.UI.WebControls.Button button_Atualizar;
         
         /// <summary>
-        /// Controle HyperLink1.
+        /// Controle Button2.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
+        protected global::System.Web.UI.WebControls.Button Button2;
+        
+        /// <summary>
+        /// Controle Panel_ButtonExcluir.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel_ButtonExcluir;
+        
+        /// <summary>
+        /// Controle PanelExcluir.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelExcluir;
+        
+        /// <summary>
+        /// Controle LabelTurma.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelTurma;
+        
+        /// <summary>
+        /// Controle HyperLink2.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink2;
+        
+        /// <summary>
+        /// Controle button_Excluir.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button button_Excluir;
     }
 }

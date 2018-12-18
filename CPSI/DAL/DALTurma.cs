@@ -153,14 +153,10 @@ namespace CPSI.DAL
         {
 
             SqlConnection conn = new SqlConnection(connectionString);
-
             conn.Open();
-
-
-
             SqlCommand cmd = new SqlCommand("DELETE FROM Turma WHERE idTurma = @IdTurma", conn);
             cmd.Parameters.AddWithValue("@IdTurma", id);
-            cmd.ExecuteNonQuery();
+            cmd.ExecuteNonQuery(); 
             conn.Close();
         }
         [DataObjectMethod(DataObjectMethodType.Select)]
