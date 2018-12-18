@@ -13,7 +13,7 @@ namespace CPSI.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+             
 
             if (!(Session["IdTurma"] == null))
             {
@@ -64,6 +64,6 @@ namespace CPSI.Admin
 
         }
 
-
+        
     }
 }

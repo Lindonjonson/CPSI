@@ -14,7 +14,7 @@
     <asp:Label  runat="server" Text="Label">Horário</asp:Label>
     <asp:TextBox ID="TxtHorário" runat="server"></asp:TextBox>
     <asp:Label  runat="server" Text="Label">Data início</asp:Label>
-    <asp:Calendar ID="CalendarDataInicio" runat="server"></asp:Calendar>
+    <asp:Calendar ID="CalendarDataInicio" runat="server" ViewStateMode="Disabled"></asp:Calendar>
     <asp:Label  runat="server" Text="Label">Data fim</asp:Label>
     <asp:Calendar ID="CalendarDataFim" runat="server"></asp:Calendar>
     <asp:Label  runat="server" Text="Label">Quantidade de vagas</asp:Label>
@@ -25,6 +25,5 @@
     <asp:button ID="button_Salvar" runat="server"  text="Salvar" Visible="False" CssClass="auto-style1" OnClick="InserirTurma_Click" />
     <asp:button ID="button_Atualizar" runat="server" Visible="False" text="Salvar" OnClick="AtualizarTurma_Click" />
     <asp:HyperLink ID="HyperLink1" NavigateUrl="~/Admin/WebFormVisualizacaoTurma.aspx" runat="server">Cancelar</asp:HyperLink>
-    
 
 </asp:Content>
