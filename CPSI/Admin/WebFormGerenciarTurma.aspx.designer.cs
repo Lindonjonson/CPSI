@@ -7,37 +7,100 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace CPSI.Admin.Turma {
+namespace CPSI.Admin {
     
     
-    public partial class WebFormGerenciarTurma {
+    public partial class WebFormVisualizarTurmas {
         
         /// <summary>
-        /// Controle GridViewTurmas.
+        /// Controle TxtNomeTurma.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewTurmas;
+        protected global::System.Web.UI.WebControls.TextBox TxtNomeTurma;
         
         /// <summary>
-        /// Controle ObjectDataSource1.
+        /// Controle TxtAno.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+        protected global::System.Web.UI.WebControls.TextBox TxtAno;
         
         /// <summary>
-        /// Controle ObjectDataSource3.
+        /// Controle TxtHorário.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource3;
+        protected global::System.Web.UI.WebControls.TextBox TxtHorário;
+        
+        /// <summary>
+        /// Controle CalendarDataInicio.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar CalendarDataInicio;
+        
+        /// <summary>
+        /// Controle CalendarDataFim.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar CalendarDataFim;
+        
+        /// <summary>
+        /// Controle TxtNumVagas.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtNumVagas;
+        
+        /// <summary>
+        /// Controle DropDownListDisciplina.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListDisciplina;
+        
+        /// <summary>
+        /// Controle ObjectDataSource2.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource2;
+        
+        /// <summary>
+        /// Controle button_Salvar.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button button_Salvar;
+        
+        /// <summary>
+        /// Controle button_Atualizar.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button button_Atualizar;
         
         /// <summary>
         /// Controle HyperLink1.

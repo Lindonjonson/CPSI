@@ -74,7 +74,7 @@
     <Content Include="Admin\WebFormGerenciarDocumento.aspx" />
     <Content Include="Admin\WebFormEditarTurma.aspx" />
     <Content Include="Admin\WebFormGerenciarTurma.aspx" />
-    <Content Include="Admin\WebFormAdicionarTurma.aspx" />
+    <Content Include="Admin\WebFormVisualizacaoTurma.aspx" />
     <Content Include="Assets\CSS\PageEditarExclusao.css" />
     <Content Include="Assets\JS\PageEditarExclusao.js" />
     <Content Include="Atividades.txt" />
@@ -125,12 +125,12 @@
     <Compile Include="Admin\WebFormGerenciarTurma.aspx.designer.cs">
       <DependentUpon>WebFormGerenciarTurma.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\WebFormAdicionarTurma.aspx.cs">
-      <DependentUpon>WebFormAdicionarTurma.aspx</DependentUpon>
+    <Compile Include="Admin\WebFormVisualizacaoTurma.aspx.cs">
+      <DependentUpon>WebFormVisualizacaoTurma.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\WebFormAdicionarTurma.aspx.designer.cs">
-      <DependentUpon>WebFormAdicionarTurma.aspx</DependentUpon>
+    <Compile Include="Admin\WebFormVisualizacaoTurma.aspx.designer.cs">
+      <DependentUpon>WebFormVisualizacaoTurma.aspx</DependentUpon>
     </Compile>
     <Compile Include="DAL\DALAluno.cs" />
     <Compile Include="DAL\DALAlunoDocumento.cs" />

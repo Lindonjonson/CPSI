@@ -5,44 +5,65 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace CPSI.Admin.Turma
+namespace CPSI.Admin
 {
-    public partial class WebFormGerenciarTurma : System.Web.UI.Page
+    public partial class WebFormVisualizarTurmas : System.Web.UI.Page
     {
+        Modelo.Turma turma = new Modelo.Turma();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-        }
-
-      
-
-        protected void Turmas_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
             
-            if (e.CommandName == "Editar")
+
+            if (!(Session["IdTurma"] == null))
             {
+                DAL.DALTurma dALTurma = new DAL.DALTurma();
+                turma = dALTurma.Select(Session["IdTurma"].ToString());
 
-                DAL.DALTurma Insert = new DAL.DALTurma();
-                int index = Convert.ToInt32(e.CommandArgument.ToString());
+                button_Atualizar.Visible = true;
+                if (!IsPostBack)
+                {   
+                    TxtNomeTurma.Text = turma.NomeTurma;
+                    TxtAno.Text = turma.ano.ToString();
+                    TxtHorário.Text = turma.horario;
+                    CalendarDataInicio.SelectedDate = turma.DataInicio;
+                    CalendarDataFim.SelectedDate = turma.DataFim;
+                    TxtNumVagas.Text = turma.QtdVagas.ToString();
+                    DropDownListDisciplina.SelectedIndex = turma.IdDisciplina;
 
-                DataKey keys = GridViewTurmas.DataKeys[index];
-                string IdTurma = keys.Value.ToString();
-                Session["IdTurma"] = IdTurma;
-                Response.Redirect("~//Admin//WebFormEditarTurma.aspx");
+                }
             }
-            if(e.CommandName== "VizualizarMatriculados ")
+            else
             {
-
-              
-                int index = Convert.ToInt32(e.CommandArgument.ToString());
-                DataKey keys = GridViewTurmas.DataKeys[index];
-                string id = keys.Value.ToString();
-                Session["IdTurma"] = id;
-                Session["NomeTurma"] = GridViewTurmas.Rows[index].Cells[0].Text;
-                Response.Redirect("~/Matricula/WebFormVisualizarMatriculados.aspx");
-
+                button_Salvar.Visible = true;
 
             }
         }
+
+        protected void InserirTurma_Click(object sender, EventArgs e)
+        {
+            DAL.DALTurma dALTurma = new DAL.DALTurma();
+            Modelo.Turma turma = new Modelo.Turma(0, TxtNomeTurma.Text,
+            int.Parse(TxtAno.Text), TxtHorário.Text, CalendarDataInicio.SelectedDate, CalendarDataFim.SelectedDate, int.Parse(TxtNumVagas.Text),
+            int.Parse(DropDownListDisciplina.SelectedItem.Value));
+            dALTurma.Insert(turma);
+            Response.Redirect("~/Admin/WebFormVisualizacaoTurma.aspx");
+        }
+        protected void AtualizarTurma_Click(object sender, EventArgs e)
+        {
+            DAL.DALTurma dALTurma = new DAL.DALTurma();
+            turma.NomeTurma = TxtNomeTurma.Text;
+            turma.ano = int.Parse(TxtAno.Text);
+            turma.horario = TxtHorário.Text;
+            turma.DataInicio=CalendarDataInicio.SelectedDate;
+            turma.DataFim = CalendarDataFim.SelectedDate;
+            turma.QtdVagas = int.Parse(TxtNumVagas.Text);
+            turma.IdDisciplina =int.Parse(DropDownListDisciplina.SelectedItem.Value);
+            dALTurma.Update(turma);
+            Response.Redirect("~/Admin/WebFormVisualizacaoTurma.aspx");
+
+        }
+
+
     }
 }
