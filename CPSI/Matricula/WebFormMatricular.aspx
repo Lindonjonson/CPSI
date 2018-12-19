@@ -5,7 +5,7 @@
    Filtro:<asp:TextBox ID="TextBoxFiltroTurma" runat="server"></asp:TextBox>
    Ano:<asp:TextBox ID="TextBoxAno" runat="server"></asp:TextBox>
     <asp:Button ID="Button_Consulta" runat="server" Text="Pesquisar turma" OnClick="Pesquisar_Click" />
-    <asp:GridView ID="GridViewTurma" runat="server" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True" DataSourceID="ObjectDataSource1" DataKeyNames="IdTurma" OnSelectedIndexChanged="GridViewTurma_SelectedIndexChanged">
+    <asp:GridView ID="GridViewTurma" runat="server" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True"  DataKeyNames="IdTurma" OnSelectedIndexChanged="GridViewTurma_SelectedIndexChanged">
         <Columns>
             <asp:CommandField ShowSelectButton="True" ButtonType="Button" />
             <asp:BoundField DataField="NomeTurma" HeaderText="NomeTurma" SortExpression="NomeTurma" />

@@ -28,11 +28,6 @@ namespace CPSI.Modelo
             this.DataMatricula = DataMatricula;
 
         }
-        public void CancelarMatricula()
-        {
-
-            Situacao = 0;
-
-        }
+       
     }
 }

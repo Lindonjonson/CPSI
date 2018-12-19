@@ -32,7 +32,7 @@ namespace CPSI.Matricula
         {
             GridViewTurma.SelectedRow.BackColor = System.Drawing.Color.OrangeRed;
             idTurma = GridViewTurma.SelectedRow.RowIndex;
-           
+        
         }
 
         protected void GridViewAlunos_SelectedIndexChanged(object sender, EventArgs e)
@@ -55,6 +55,11 @@ namespace CPSI.Matricula
             {
                 
                 dALMatricula.Insert(new Modelo.Matricula(int.Parse(IdAluno), int.Parse(IdTurma), 1, DateTime.Now));
+                
+            }
+            else
+            {
+               
 
             }
 
