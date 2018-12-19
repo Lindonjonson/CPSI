@@ -11,5 +11,32 @@ namespace CPSI.Matricula {
     
     
     public partial class WebFormMatricularListaEspera {
+        
+        /// <summary>
+        /// Controle PanelConfirmação.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelConfirmação;
+        
+        /// <summary>
+        /// Controle Button_Matricular.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_Matricular;
+        
+        /// <summary>
+        /// Controle Button_Cancelar.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_Cancelar;
     }
 }

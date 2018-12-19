@@ -10,7 +10,7 @@ namespace CPSI.Matricula
     public partial class WebFormMatricular : System.Web.UI.Page
     {
 
-        Modelo.Matricula matricula;
+       
         protected void Page_Load(object sender, EventArgs e)
         {
            
@@ -57,6 +57,7 @@ namespace CPSI.Matricula
             DataKey keysAlunoID = GridViewAlunos.DataKeys[IndexGridViewAluno];
             string IdTurma = keysTurmaID.Value.ToString();
             string IdAluno = keysAlunoID.Value.ToString();
+            Modelo.Matricula matricula;
             DAL.DALTurma dALTurma = new DAL.DALTurma();
             DAL.DALMatricula dALMatricula = new DAL.DALMatricula();
             if (dALMatricula.VagaDisponivel(IdTurma))
@@ -67,7 +68,10 @@ namespace CPSI.Matricula
             }
             else
             {
-
+                
+                matricula = new Modelo.Matricula(int.Parse(IdAluno), int.Parse(IdTurma), 1, DateTime.Now);
+                Session["matricula"] = matricula;
+                Response.Redirect("~/Matricula/WebFormMatricularListaEspera.aspx");
 
             }
         }
