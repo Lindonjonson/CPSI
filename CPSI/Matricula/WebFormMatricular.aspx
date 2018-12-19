@@ -31,18 +31,7 @@
                     <asp:BoundField DataField="ContatoTelefone" HeaderText="ContatoTelefone" SortExpression="ContatoTelefone"></asp:BoundField>
                 </Columns>
             </asp:GridView>
-            <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" SelectMethod="SelectALLFiltro" TypeName="CPSI.DAL.DALAluno">
-                <SelectParameters>
-                    <asp:ControlParameter ControlID="TextBoxFiltroAluno" PropertyName="Text" Name="filtro" Type="String"></asp:ControlParameter>
-                </SelectParameters>
-            </asp:ObjectDataSource>
-            <asp:Button ID="ButtonMatricular" runat="server" Text="Matricular" OnClick="Exibir_matricular" />
-            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="Select" TypeName="CPSI.DAL.DALTurma">
-                <SelectParameters>
-                    <asp:ControlParameter ControlID="TextBoxFiltroTurma" DefaultValue="" Name="filtro" PropertyName="Text" Size="20" Type="String" />
-                    <asp:ControlParameter ControlID="TextBoxAno" DefaultValue="0" Name="ano" PropertyName="Text" Type="String" />
-                </SelectParameters>
-            </asp:ObjectDataSource>
+           <asp:Button ID="ButtonMatricular" runat="server" Text="Matricular" OnClick="Exibir_matricular" />
    </asp:Panel>
     <asp:Panel ID="PanelConfirmação" runat="server" Visible="false">
          <span>Matricular aluno  </span>
@@ -53,5 +42,16 @@
          <asp:Button ID="Button_Matricular" runat="server" Text="Salvar matrícula" OnClick="Button_Matricular_Click" />
          <asp:Button ID="Button_Cancelar" runat="server" Text="Cancelar" OnClick="Page_Load" />
     </asp:Panel>
-    
+     <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" SelectMethod="SelectALLFiltro" TypeName="CPSI.DAL.DALAluno">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="TextBoxFiltroAluno" PropertyName="Text" Name="filtro" Type="String"></asp:ControlParameter>
+                </SelectParameters>
+     </asp:ObjectDataSource>
+            
+     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="Select" TypeName="CPSI.DAL.DALTurma">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="TextBoxFiltroTurma" Name="filtro" PropertyName="Text" Size="20" Type="String" />
+                    <asp:ControlParameter ControlID="TextBoxAno" DefaultValue="0" Name="ano" PropertyName="Text" Type="String" />
+                </SelectParameters>
+     </asp:ObjectDataSource>
 </asp:Content>
