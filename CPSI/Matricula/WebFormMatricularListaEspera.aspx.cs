@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace CPSI.Matricula
 {
-    public partial class WebFormImprimirFichaInscricao : System.Web.UI.Page
+    public partial class WebFormMatricularListaEspera : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

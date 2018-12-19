@@ -10,10 +10,10 @@ namespace CPSI.Matricula
     public partial class WebFormMatricular : System.Web.UI.Page
     {
 
-        int idTurma, IdAluno;
+        Modelo.Matricula matricula;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         protected void Pesquisar_Click(object sender, EventArgs e)
@@ -23,27 +23,35 @@ namespace CPSI.Matricula
 
         protected void PesquisarAluno_Click(object sender, EventArgs e)
         {
-            DAL.DALAluno dALAluno = new DAL.DALAluno();
-            GridViewAlunos.DataSource = dALAluno.SelectALLFiltro(TextBoxFiltroAluno.Text);
-            GridViewAlunos.DataBind();
+           
         }
 
         protected void GridViewTurma_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewTurma.SelectedRow.BackColor = System.Drawing.Color.OrangeRed;
-            idTurma = GridViewTurma.SelectedRow.RowIndex;
+            
         
         }
 
         protected void GridViewAlunos_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             GridViewAlunos.SelectedRow.BackColor = System.Drawing.Color.OrangeRed;
-            IdAluno = GridViewAlunos.SelectedRow.RowIndex;
+            
         }
 
-        protected void Click_Matricular(object sender, EventArgs e)
+        protected void Exibir_matricular(object sender, EventArgs e)
         {
-            int IndexGridViewTurma = idTurma;
+
+            PanelConfirmação.Visible = true;
+            LabelNomeAluno.Text = GridViewAlunos.SelectedRow.Cells[1].Text;
+            LabelNomeTurma.Text = GridViewTurma.SelectedRow.Cells[1].Text;
+
+        }
+
+        protected void Button_Matricular_Click(object sender, EventArgs e)
+        {
+            int IndexGridViewTurma = Convert.ToInt32(GridViewTurma.SelectedRow.RowIndex);
             int IndexGridViewAluno = Convert.ToInt32(GridViewAlunos.SelectedRow.RowIndex);
             DataKey keysTurmaID = GridViewTurma.DataKeys[IndexGridViewTurma];
             DataKey keysAlunoID = GridViewAlunos.DataKeys[IndexGridViewAluno];
@@ -53,16 +61,15 @@ namespace CPSI.Matricula
             DAL.DALMatricula dALMatricula = new DAL.DALMatricula();
             if (dALMatricula.VagaDisponivel(IdTurma))
             {
-                
-                dALMatricula.Insert(new Modelo.Matricula(int.Parse(IdAluno), int.Parse(IdTurma), 1, DateTime.Now));
-                
+                matricula = new Modelo.Matricula(int.Parse(IdAluno), int.Parse(IdTurma), 1, DateTime.Now);
+                dALMatricula.Insert(matricula);
+                Session["matricula"] = matricula;
             }
             else
             {
-               
+
 
             }
-
         }
     }
 }
