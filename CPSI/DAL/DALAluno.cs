@@ -79,7 +79,7 @@ namespace CPSI.DAL
             if (String.IsNullOrEmpty(filtro))
                 cmd.CommandText = "SELECT TOP 10 * FROM Aluno";
             else
-                cmd.CommandText = "SELECT * FROM Aluno where ((Aluno like '%" + filtro + "%') or (DataNascimento like '%" + filtro + "%') or (CPF like '%" + filtro + "%') or (RG like '%" + filtro + "%')) order by Aluno";
+                cmd.CommandText = "SELECT * FROM Aluno where ((Aluno like '%" + filtro + "%') or (DataNascimento like '%" + filtro + "%') or (CPF like '%" + filtro + "%') or (RG like '%" + filtro + "%') or (Estado like '%" + filtro + "%') or (Cidade like '%" + filtro + "%') or (Bairro like '%" + filtro + "%')) order by Aluno";
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
