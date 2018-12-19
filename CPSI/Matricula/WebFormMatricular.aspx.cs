@@ -65,6 +65,7 @@ namespace CPSI.Matricula
                 matricula = new Modelo.Matricula(int.Parse(IdAluno), int.Parse(IdTurma), 1, DateTime.Now);
                 dALMatricula.Insert(matricula);
                 Session["matricula"] = matricula;
+                Response.Redirect("~/Matricula/WebFormImprimirFichaInscricao.aspx");
             }
             else
             {
