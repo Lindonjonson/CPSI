@@ -62,8 +62,9 @@ namespace CPSI.Admin
             turma.QtdVagas = int.Parse(TxtNumVagas.Text);
             turma.IdDisciplina =int.Parse(DropDownListDisciplina.SelectedItem.Value);
             dALTurma.Update(turma);
-            Response.Redirect("~/Admin/WebFormVisualizacaoTurma.aspx");
             Session.Remove("IdTurma");
+            Response.Redirect("~/Admin/WebFormVisualizacaoTurma.aspx");
+            
 
         }
 
@@ -71,14 +72,16 @@ namespace CPSI.Admin
         {
             DAL.DALTurma Delete = new DAL.DALTurma();
             Delete.Delete(turma.IdTurma.ToString());
-            Response.Redirect("~/Admin/WebFormVisualizacaoTurma.aspx");
             Session.Remove("IdTurma");
+            Response.Redirect("~/Admin/WebFormVisualizacaoTurma.aspx");
+            
         }
 
         protected void Cancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Admin/WebFormVisualizacaoTurma.aspx");
             Session.Remove("IdTurma");
+            Response.Redirect("~/Admin/WebFormVisualizacaoTurma.aspx");
+           
         }
     }
 }

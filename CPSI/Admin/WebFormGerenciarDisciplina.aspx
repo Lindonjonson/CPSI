@@ -9,7 +9,7 @@
     <asp:CheckBoxList ID="CheckBoxListDocumento" runat="server" DataSourceID="ObjectDataSource2" DataTextField="documento" DataValueField="idDocumento"></asp:CheckBoxList>
     <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALDocumento"></asp:ObjectDataSource>
     <asp:Button runat="server" Text="Inserir" OnClick="Inserir_Click"> </asp:Button>
-    <asp:GridView ID="GridViewDisciplina" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" OnRowCommand="GridView1_RowCommand" EnableViewState="False" ShowHeaderWhenEmpty="True" DataKeyNames="idDisciplina" OnSelectedIndexChanged="GridViewDisciplina_SelectedIndexChanged" >
+    <asp:GridView ID="GridViewDisciplina" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" OnRowCommand="GridView1_RowCommand"  ShowHeaderWhenEmpty="True" DataKeyNames="idDisciplina" OnSelectedIndexChanged="GridViewDisciplina_SelectedIndexChanged" EnableViewState="False" >
         <Columns>
             <asp:CommandField ShowEditButton="True" ShowSelectButton="True" />
             <asp:BoundField DataField="disciplina" HeaderText="disciplina" SortExpression="disciplina" />

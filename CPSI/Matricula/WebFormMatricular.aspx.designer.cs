@@ -13,13 +13,13 @@ namespace CPSI.Matricula {
     public partial class WebFormMatricular {
         
         /// <summary>
-        /// Controle TextBoxFiltro.
+        /// Controle TextBoxFiltroTurma.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxFiltro;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxFiltroTurma;
         
         /// <summary>
         /// Controle TextBoxAno.
@@ -40,13 +40,49 @@ namespace CPSI.Matricula {
         protected global::System.Web.UI.WebControls.Button Button_Consulta;
         
         /// <summary>
-        /// Controle GridView1.
+        /// Controle GridViewTurma.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView GridViewTurma;
+        
+        /// <summary>
+        /// Controle TextBoxFiltroAluno.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxFiltroAluno;
+        
+        /// <summary>
+        /// Controle Button_Consultar.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_Consultar;
+        
+        /// <summary>
+        /// Controle GridViewAlunos.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewAlunos;
+        
+        /// <summary>
+        /// Controle ButtonMatricular.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonMatricular;
         
         /// <summary>
         /// Controle ObjectDataSource1.

@@ -55,6 +55,8 @@ namespace CPSI.DAL
 
             }
 
+
+
             
             conn.Close();
             return alunos;
@@ -62,6 +64,50 @@ namespace CPSI.DAL
 
 
         }
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Aluno> SelectALLFiltro(string filtro)
+        {
+            string strData;
+            DateTime Data;
+            int EstadoCivil;
+            string StrEstadoCivil;
+            Modelo.Aluno aluno;
+            List<Modelo.Aluno> alunos = new List<Modelo.Aluno>();
+            SqlConnection conn = new SqlConnection(connectioString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "SELECT * FROM Aluno where ((Aluno like '%" + filtro + "%') or (DataNascimento like '%" + filtro + "%') or (CPF like '%" + filtro + "%') or (RG like '%" + filtro + "%')) order by Aluno";
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+
+                while (dr.Read())
+                {
+                    strData = dr["DataNascimento"].ToString();
+                    Data = DateTime.Parse("01/01/1900");
+                    if (strData != "") Data = DateTime.Parse(dr["DataNascimento"].ToString());
+                    StrEstadoCivil = dr["EstadoCivil"].ToString();
+                    EstadoCivil = 0;
+                    if (StrEstadoCivil != "") EstadoCivil = int.Parse(dr["EstadoCivil"].ToString());
+
+                    aluno = new Modelo.Aluno(int.Parse(dr["IdAluno"].ToString()), dr["Aluno"].ToString(),
+                         Data,
+                         dr["CPF"].ToString(), dr["RG"].ToString(), dr["RGOrgao"].ToString(),
+                         EstadoCivil,
+                         dr["Naturalidade"].ToString(),
+                         dr["NaturalidadeEstado"].ToString(), dr["Endereco"].ToString(), dr["Cidade"].ToString(), dr["Estado"].ToString(), dr["Telefone1"].ToString(), dr["Telefone2"].ToString(), dr["Contato"].ToString(), dr["ContatoTelefone"].ToString());
+
+                    alunos.Add(aluno);
+                }
+
+            }
+            conn.Close();
+            return alunos;
+
+
+
+        }
+
         [DataObjectMethod(DataObjectMethodType.Select)]
         public Modelo.Aluno Select(string id)
         {

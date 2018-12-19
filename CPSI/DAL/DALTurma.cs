@@ -214,6 +214,23 @@ namespace CPSI.DAL
 
 
         }
+        public int GetCountMatriculados(string IdTurma)
+        {
+            int Matriculados = 0;
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "SELECT COUNT(*) AS Matriculados FROM Matricula  where IdTurma=@IdTurma";
+            cmd.Parameters.AddWithValue("@IdTurma", IdTurma);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                Matriculados = int.Parse(dr["Matriculados"].ToString());
+            }
+            conn.Close();
+            return Matriculados;
+
+        }
 
     }
 }

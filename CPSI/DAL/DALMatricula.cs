@@ -108,23 +108,18 @@ namespace CPSI.DAL
 
 
         }
-        public int GetCountMatriculados(int IdTurma)
+        public bool VagaDisponivel(string IdTurma)
         {
-            int Matriculados=0;
-            SqlConnection conn = new SqlConnection(connectioString);
-            conn.Open();
-            SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "SELECT COUNT(*) AS Matriculados FROM Matricula  where IdTurma=@IdTurma";
-            cmd.Parameters.AddWithValue("@IdTurma",IdTurma);
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
-            {
-                Matriculados = int.Parse(dr["Matriculados"].ToString());
-            }
-            conn.Close();
-            return Matriculados;
-           
+
+            DALTurma dALTurma = new DALTurma();
+            Modelo.Turma turma = dALTurma.Select(IdTurma);
+            if (turma.QtdVagas <= dALTurma.GetCountMatriculados(IdTurma))
+                return true;
+            else
+                return false;
+
         }
+        
         
 
 

@@ -69,10 +69,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin\WebFormEditarDocumentosDisciplina.aspx" />
     <Content Include="Admin\WebFormGerenciarDisciplina.aspx" />
     <Content Include="Admin\WebFormGerenciarDocumento.aspx" />
-    <Content Include="Admin\WebFormEditarTurma.aspx" />
     <Content Include="Admin\WebFormGerenciarTurma.aspx" />
     <Content Include="Admin\WebFormVisualizacaoTurma.aspx" />
     <Content Include="Assets\CSS\PageEditarExclusao.css" />
@@ -90,13 +88,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\WebFormEditarDocumentosDisciplina.aspx.cs">
-      <DependentUpon>WebFormEditarDocumentosDisciplina.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\WebFormEditarDocumentosDisciplina.aspx.designer.cs">
-      <DependentUpon>WebFormEditarDocumentosDisciplina.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Admin\WebFormGerenciarDisciplina.aspx.cs">
       <DependentUpon>WebFormGerenciarDisciplina.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -110,13 +101,6 @@
     </Compile>
     <Compile Include="Admin\WebFormGerenciarDocumento.aspx.designer.cs">
       <DependentUpon>WebFormGerenciarDocumento.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\WebFormEditarTurma.aspx.cs">
-      <DependentUpon>WebFormEditarTurma.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\WebFormEditarTurma.aspx.designer.cs">
-      <DependentUpon>WebFormEditarTurma.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\WebFormGerenciarTurma.aspx.cs">
       <DependentUpon>WebFormGerenciarTurma.aspx</DependentUpon>

@@ -32,7 +32,7 @@
      <asp:Panel CssClass="PanelExcluir" ID="PanelExcluir" runat="server">
         <span>Confirmar alteração dos documentos da disciplina</span>
         <asp:Label ID="LabelTurma" runat="server" Text="Label"></asp:Label>
-        <asp:HyperLink ID="HyperLink2" NavigateUrl="~/Admin/WebFormGerenciarDisciplina.aspx" runat="server">Cancelar</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink2" NavigateUrl="~/Admin/WebFormVisualizacaoTurma.aspx" runat="server">Cancelar</asp:HyperLink>
         <asp:button ID="button_Excluir" runat="server" Visible="False" text="Excluir" OnClick="Excluir_Click" />
     </asp:Panel>
     
