@@ -1,32 +1,71 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Matricula.Master" AutoEventWireup="true" CodeBehind="WebFormGerenciarAluno.aspx.cs" Inherits="CPSI.Matricula.WebFormGerenciarAluno" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Matricula.Master" AutoEventWireup="true" CodeBehind="WebFormGerenciarAluno.aspx.cs" Inherits="CPSI.Matricula.WebFormGerenciarAluno1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     
-<asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Matricula/WebFormInserirAluno.aspx">Cadastrar aluno</asp:HyperLink>          
- <br />
-<label>Alunos</label>
-<asp:GridView ID="GridViewAlunos" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" OnRowCommand="GridView1_RowCommand" DataKeyNames="IdAluno" ShowHeaderWhenEmpty="True">
-    <Columns>
-        <asp:BoundField DataField="IdAluno" HeaderText="IdAluno" SortExpression="IdAluno" />
-        <asp:BoundField DataField="AlunoNome" HeaderText="AlunoNome" SortExpression="AlunoNome" />
-        <asp:BoundField DataField="DataNascimento" DataFormatString="{0:d}" HeaderText="DataNascimento" SortExpression="DataNascimento" />
-        <asp:BoundField DataField="Cpf" HeaderText="Cpf" SortExpression="Cpf" />
-        <asp:BoundField DataField="Rg" HeaderText="Rg" SortExpression="Rg" />
-        <asp:BoundField DataField="RGOrgao" HeaderText="RGOrgao" SortExpression="RGOrgao" />
-        <asp:BoundField DataField="EstadoCivil" HeaderText="EstadoCivil" SortExpression="EstadoCivil" />
-        <asp:BoundField DataField="Naturalidade" HeaderText="Naturalidade" SortExpression="Naturalidade" />
-        <asp:BoundField DataField="NaturalidadeEstado" HeaderText="NaturalidadeEstado" SortExpression="NaturalidadeEstado" />
-        <asp:BoundField DataField="Endereco" HeaderText="Endereco" SortExpression="Endereco" />
-        <asp:BoundField DataField="Cidade" HeaderText="Cidade" SortExpression="Cidade" />
-        <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
-        <asp:BoundField DataField="Telefone1" HeaderText="Telefone1" SortExpression="Telefone1" />
-        <asp:BoundField DataField="Telefone2" HeaderText="Telefone2" SortExpression="Telefone2" />
-        <asp:BoundField DataField="Contato" HeaderText="Contato" SortExpression="Contato" />
-        <asp:BoundField DataField="ContatoTelefone" HeaderText="ContatoTelefone" SortExpression="ContatoTelefone" />
-        <asp:ButtonField CommandName="Editar" HeaderText="Editar Aluno" Text="Editar Aluno" ButtonType="Button" />
-        <asp:ButtonField ButtonType="Button" CommandName="Matricular" HeaderText="Matricular Em turma" Text="Matricular em turma" />
-    </Columns>
-    </asp:GridView>
-    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectALL" TypeName="CPSI.DAL.DALAluno" DataObjectTypeName="CPSI.Modelo.Aluno" InsertMethod="Insert"></asp:ObjectDataSource>
+     AlunoNome:
+        <asp:TextBox ID="TextBoxAlunoNome" runat="server"  />
+        <br />
+        DataNascimento:
+        <asp:TextBox ID="TextBoxCalendarDataNascimento"  runat="server"></asp:TextBox>
+        <br />
+        Cpf:
+        <asp:TextBox ID="TextBoxCpf" runat="server"  />
+        <br />
+        Rg:
+        <asp:TextBox ID="TextBoxRg" runat="server"  />
+        <br />
+        RGOrgao:
+        <asp:TextBox ID="TextBoxRGOrgao" runat="server"  />
+        <br />
+        EstadoCivil:
+        <asp:DropDownList ID="DropDownListEstadoCivil" runat="server">
+            <asp:ListItem Value="1">Solteiro</asp:ListItem>
+            <asp:ListItem Value="2">União estável </asp:ListItem>
+            <asp:ListItem Value="3">Casado</asp:ListItem>
+            <asp:ListItem Value="4">Divorciado </asp:ListItem>
+            <asp:ListItem Value="5">Viúvo</asp:ListItem>
+       </asp:DropDownList>
+        <br />
+        Naturalidade:
+        <asp:TextBox ID="TextBoxNaturalidade" runat="server"  />
+        <br />
+        NaturalidadeEstado:
+        <asp:TextBox MaxLength="2" ID="TextBoxNaturalidadeEstado" runat="server"  />
+        <br />
+        Endereco:
+        <asp:TextBox ID="TextBoxEndereco" runat="server" />
+        <br />
+        Estado:
+        <asp:TextBox MaxLength="2" ID="TextBoxEstado" runat="server"  />
+        <br />
+        Cidade:
+        <asp:TextBox ID="TextBoxCidade" runat="server"  />
+        <br />
+        Bairro:
+        <asp:TextBox  ID="TextBoxBairro" runat="server"  />
+        <br />
+        Telefone1:
+        <asp:TextBox ID="TextBoxTelefone1" runat="server"  />
+        <br />
+        Telefone2:
+        <asp:TextBox ID="TextBoxTelefone2" runat="server"  />
+        <br />
+        Contato:
+        <asp:TextBox ID="TextBoxContato" runat="server"  />
+        <br />
+        ContatoTelefone:
+        <asp:TextBox ID="TextBoxContatoTelefone" runat="server"  />
+        <br />
+        <asp:Button ID="ButtonEditarAluno"  runat="server" Text="Salvar" OnClick="EditarAluno_Click" Visible="false" />
+        <asp:Button ID="ButtonInserirAluno"  runat="server" Text="Salvar" OnClick="InserirAluno_Click" visible="false"/>
+        <asp:Button ID="ButtonCancelar" OnClick="Cancelar_Click" runat="server" Text="Cancelar" />
+        <asp:Panel  ID="Panel_ButtonExcluir" runat="server" Visible="false">
+           <input id="ButtonExcluir" type="button" value="Excluir"  OnClick="ExibirExcluir()"/>
+        </asp:Panel>
+        <asp:Panel CssClass="PanelExcluir" ID="PanelExcluir" runat="server">
+            <span>Confirmar alteração dos documentos da disciplina</span>
+            <asp:Label ID="LabelAluno" runat="server" Text="Label"></asp:Label>
+            <asp:HyperLink ID="HyperLink2" NavigateUrl="~/Admin/WebFormVisualizacaoTurma.aspx" runat="server">Cancelar</asp:HyperLink>
+            <asp:button ID="button_Excluir" runat="server"  text="Excluir" OnClick="Excluir_Click" />
+    </asp:Panel>
 </asp:Content>

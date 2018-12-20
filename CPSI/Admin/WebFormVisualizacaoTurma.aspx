@@ -14,6 +14,6 @@
             <asp:ButtonField ButtonType="Button" CommandName="Editar" HeaderText="Editar" Text="Editar" /> 
         </Columns>
     </asp:GridView>
-    <asp:HyperLink  ID="HyperLink1" runat="server" NavigateUrl="~/Admin/WebFormGerenciarTurma.aspx">Cadastrar Nova Turma</asp:HyperLink>
+        <asp:Button ID="ButtonInserir" runat="server" Text="Cadastrar nova turma" OnClick="ChamarTelaInserir_Click" />
     <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALTurma"></asp:ObjectDataSource>
 </asp:Content>

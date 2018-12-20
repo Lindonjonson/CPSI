@@ -48,7 +48,7 @@ namespace CPSI.DAL
                          dr["CPF"].ToString(), dr["RG"].ToString(), dr["RGOrgao"].ToString(),
                          EstadoCivil,
                          dr["Naturalidade"].ToString(),
-                         dr["NaturalidadeEstado"].ToString(), dr["Endereco"].ToString(), dr["Cidade"].ToString(), dr["Estado"].ToString(), dr["Telefone1"].ToString(), dr["Telefone2"].ToString(), dr["Contato"].ToString(), dr["ContatoTelefone"].ToString());
+                         dr["NaturalidadeEstado"].ToString(), dr["Endereco"].ToString(),dr["Bairro"].ToString(), dr["Cidade"].ToString(), dr["Estado"].ToString(), dr["Telefone1"].ToString(), dr["Telefone2"].ToString(), dr["Contato"].ToString(), dr["ContatoTelefone"].ToString());
 
                     alunos.Add(aluno);
                 }
@@ -98,7 +98,7 @@ namespace CPSI.DAL
                          dr["CPF"].ToString(), dr["RG"].ToString(), dr["RGOrgao"].ToString(),
                          EstadoCivil,
                          dr["Naturalidade"].ToString(),
-                         dr["NaturalidadeEstado"].ToString(), dr["Endereco"].ToString(), dr["Cidade"].ToString(), dr["Estado"].ToString(), dr["Telefone1"].ToString(), dr["Telefone2"].ToString(), dr["Contato"].ToString(), dr["ContatoTelefone"].ToString());
+                         dr["NaturalidadeEstado"].ToString(), dr["Endereco"].ToString(), dr["Bairro"].ToString(), dr["Cidade"].ToString(), dr["Estado"].ToString(), dr["Telefone1"].ToString(), dr["Telefone2"].ToString(), dr["Contato"].ToString(), dr["ContatoTelefone"].ToString());
 
                     alunos.Add(aluno);
                 }
@@ -135,6 +135,8 @@ namespace CPSI.DAL
                     if (strData != "") Data = DateTime.Parse(dr["DataNascimento"].ToString());
                     StrEstadoCivil = dr["EstadoCivil"].ToString();
                     EstadoCivil = 0;
+                    if (!(String.IsNullOrEmpty(StrEstadoCivil)))
+                        EstadoCivil = int.Parse(StrEstadoCivil);
                     aluno.IdAluno = int.Parse(dr["IdAluno"].ToString());
                     aluno.AlunoNome = dr["Aluno"].ToString();
                     aluno.DataNascimento = Data;
@@ -145,6 +147,7 @@ namespace CPSI.DAL
                     aluno.Naturalidade = dr["Naturalidade"].ToString();
                     aluno.NaturalidadeEstado = dr["NaturalidadeEstado"].ToString();
                     aluno.Endereco = dr["Endereco"].ToString();
+                    aluno.Bairro = dr["Bairro"].ToString();
                     aluno.Cidade = dr["Cidade"].ToString();
                     aluno.Estado = dr["Estado"].ToString();
                     aluno.Telefone1 = dr["Telefone1"].ToString();
@@ -182,7 +185,7 @@ namespace CPSI.DAL
             SqlConnection conn = new SqlConnection(connectioString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "UPDATE Aluno SET Aluno = @Aluno,DataNascimento = @DataNascimento,CPF = @CPF,RG = @RG,RGOrgao = @RGOrgao,EstadoCivil = @EstadoCivil,Naturalidade = @Naturalidade, NaturalidadeEstado = @NaturalidadeEstado, Endereco = @Endereco, Cidade = @Cidade, Estado = @Estado, Telefone1 = @Telefone1, Telefone2 = @Telefone2,Contato = @Contato, ContatoTelefone = @ContatoTelefone WHERE IdAluno = @IdAluno";
+            cmd.CommandText = "UPDATE Aluno SET Aluno = @Aluno,DataNascimento = @DataNascimento,CPF = @CPF,RG = @RG,RGOrgao = @RGOrgao,EstadoCivil = @EstadoCivil,Naturalidade = @Naturalidade, NaturalidadeEstado = @NaturalidadeEstado, Endereco = @Endereco,Bairro=@Bairro ,Cidade = @Cidade, Estado = @Estado, Telefone1 = @Telefone1, Telefone2 = @Telefone2,Contato = @Contato, ContatoTelefone = @ContatoTelefone WHERE IdAluno = @IdAluno";
             cmd.Parameters.AddWithValue("@IdAluno", A.IdAluno);
             cmd.Parameters.AddWithValue("@Aluno", A.AlunoNome);
             cmd.Parameters.AddWithValue("@DataNascimento", A.DataNascimento);
@@ -193,6 +196,7 @@ namespace CPSI.DAL
             cmd.Parameters.AddWithValue("@Naturalidade", A.Naturalidade);
             cmd.Parameters.AddWithValue("@NaturalidadeEstado", A.NaturalidadeEstado);
             cmd.Parameters.AddWithValue("@Endereco", A.Endereco);
+            cmd.Parameters.AddWithValue("@Bairro",A.Bairro);
             cmd.Parameters.AddWithValue("@Cidade", A.Cidade);
             cmd.Parameters.AddWithValue("@Estado", A.Estado);
             cmd.Parameters.AddWithValue("@Telefone1 ", A.Telefone1);
@@ -212,7 +216,7 @@ namespace CPSI.DAL
             SqlConnection conn = new SqlConnection(connectioString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "INSERT INTO Aluno (IdAluno,Aluno,DataNascimento,CPF,RG,RGOrgao,EstadoCivil,Naturalidade ,NaturalidadeEstado,Endereco,Cidade,Estado,Telefone1,Telefone2,Contato,ContatoTelefone) VALUES(@IdAluno, @Aluno, @DataNascimento, @CPF, @RG, @RGOrgao, @EstadoCivil, @Naturalidade, @NaturalidadeEstado, @Endereco, @Cidade, @Estado, @Telefone1, @Telefone2, @Contato, @ContatoTelefone)";
+            cmd.CommandText = "INSERT INTO Aluno (IdAluno,Aluno,DataNascimento,CPF,RG,RGOrgao,EstadoCivil,Naturalidade ,NaturalidadeEstado,Endereco,Bairro,Cidade,Estado,Telefone1,Telefone2,Contato,ContatoTelefone) VALUES(@IdAluno, @Aluno, @DataNascimento, @CPF, @RG, @RGOrgao, @EstadoCivil, @Naturalidade, @NaturalidadeEstado, @Endereco,@Bairro ,@Cidade, @Estado, @Telefone1, @Telefone2, @Contato, @ContatoTelefone)";
             cmd.Parameters.AddWithValue("@IdAluno", GetMax());
             cmd.Parameters.AddWithValue("@Aluno", A.AlunoNome);
             cmd.Parameters.AddWithValue("@DataNascimento", A.DataNascimento);
@@ -223,6 +227,7 @@ namespace CPSI.DAL
             cmd.Parameters.AddWithValue("@Naturalidade", A.Naturalidade);
             cmd.Parameters.AddWithValue("@NaturalidadeEstado", A.NaturalidadeEstado);
             cmd.Parameters.AddWithValue("@Endereco", A.Endereco);
+            cmd.Parameters.AddWithValue("@Bairro", A.Bairro);
             cmd.Parameters.AddWithValue("@Cidade", A.Cidade);
             cmd.Parameters.AddWithValue("@Estado", A.Estado);
             cmd.Parameters.AddWithValue("@Telefone1 ", A.Telefone1);

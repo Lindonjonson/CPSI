@@ -37,7 +37,7 @@ namespace CPSI.Admin
             }
             else
             {
-                button_Salvar.Visible = true;
+                button_Inserir.Visible = true;
 
             }
         }

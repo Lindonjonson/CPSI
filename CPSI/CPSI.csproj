@@ -75,15 +75,14 @@
     <Content Include="Admin\WebFormVisualizacaoTurma.aspx" />
     <Content Include="Assets\CSS\PageEditarExclusao.css" />
     <Content Include="Assets\JS\PageEditarExclusao.js" />
-    <Content Include="Atividades.txt" />
     <Content Include="Master\WebFormMatriculaInicial.aspx" />
     <Content Include="Master\WebFormPrincipal.aspx" />
-    <Content Include="Matricula\WebFormEditarAluno.aspx" />
+    <Content Include="Matricula\BADWebFormEditarAluno.aspx" />
     <Content Include="Matricula\WebFormGerenciarAluno.aspx" />
     <Content Include="Matricula\WebFormImprimirFichaInscricao.aspx" />
-    <Content Include="Matricula\WebFormInserirAluno.aspx" />
     <Content Include="Matricula\WebFormMatricular.aspx" />
     <Content Include="Matricula\WebFormMatricularListaEspera.aspx" />
+    <Content Include="Matricula\WebFormVisualizarAlunos.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -153,12 +152,12 @@
     <Compile Include="Master\WebFormPrincipal.aspx.designer.cs">
       <DependentUpon>WebFormPrincipal.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Matricula\WebFormEditarAluno.aspx.cs">
-      <DependentUpon>WebFormEditarAluno.aspx</DependentUpon>
+    <Compile Include="Matricula\BADWebFormEditarAluno.aspx.cs">
+      <DependentUpon>BADWebFormEditarAluno.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Matricula\WebFormEditarAluno.aspx.designer.cs">
-      <DependentUpon>WebFormEditarAluno.aspx</DependentUpon>
+    <Compile Include="Matricula\BADWebFormEditarAluno.aspx.designer.cs">
+      <DependentUpon>BADWebFormEditarAluno.aspx</DependentUpon>
     </Compile>
     <Compile Include="Matricula\WebFormGerenciarAluno.aspx.cs">
       <DependentUpon>WebFormGerenciarAluno.aspx</DependentUpon>
@@ -174,13 +173,6 @@
     <Compile Include="Matricula\WebFormImprimirFichaInscricao.aspx.designer.cs">
       <DependentUpon>WebFormImprimirFichaInscricao.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Matricula\WebFormInserirAluno.aspx.cs">
-      <DependentUpon>WebFormInserirAluno.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Matricula\WebFormInserirAluno.aspx.designer.cs">
-      <DependentUpon>WebFormInserirAluno.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Matricula\WebFormMatricular.aspx.cs">
       <DependentUpon>WebFormMatricular.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -194,6 +186,13 @@
     </Compile>
     <Compile Include="Matricula\WebFormMatricularListaEspera.aspx.designer.cs">
       <DependentUpon>WebFormMatricularListaEspera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Matricula\WebFormVisualizarAlunos.aspx.cs">
+      <DependentUpon>WebFormVisualizarAlunos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Matricula\WebFormVisualizarAlunos.aspx.designer.cs">
+      <DependentUpon>WebFormVisualizarAlunos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Aluno.cs" />
     <Compile Include="Modelo\AlunoDocumento.cs" />

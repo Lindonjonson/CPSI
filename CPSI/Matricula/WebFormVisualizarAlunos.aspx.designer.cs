@@ -7,19 +7,37 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace CPSI.Admin {
+namespace CPSI.Matricula {
     
     
-    public partial class WebFormVisualizacaoTurma1 {
+    public partial class WebFormVisualizarAlunos {
         
         /// <summary>
-        /// Controle GridViewTurmas.
+        /// Controle TextBoxFiltroAluno.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewTurmas;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxFiltroAluno;
+        
+        /// <summary>
+        /// Controle Button_Consultar.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_Consultar;
+        
+        /// <summary>
+        /// Controle GridViewAlunos.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewAlunos;
         
         /// <summary>
         /// Controle ButtonInserir.

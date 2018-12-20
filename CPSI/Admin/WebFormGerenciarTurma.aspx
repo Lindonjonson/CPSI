@@ -22,7 +22,7 @@
     <asp:Label  runat="server" Text="Label">Disciplina</asp:Label>
     <asp:DropDownList ID="DropDownListDisciplina" runat="server"  DataTextField="disciplina" DataValueField="idDisciplina" DataSourceID="ObjectDataSource2"></asp:DropDownList>
     <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALDisciplina"></asp:ObjectDataSource>
-    <asp:button ID="button_Salvar" runat="server"  text="Salvar" Visible="False" CssClass="auto-style1" OnClick="InserirTurma_Click" />
+    <asp:button ID="button_Inserir" runat="server"  text="Salvar" Visible="False" CssClass="auto-style1" OnClick="InserirTurma_Click" />
     <asp:button ID="button_Atualizar" runat="server" Visible="False" text="Salvar" OnClick="AtualizarTurma_Click" />
     <asp:Button ID="Button2" runat="server" Text="Cancelar" OnClick="Cancelar_Click" />
     <asp:Panel  ID="Panel_ButtonExcluir" runat="server" Visible="false">
@@ -33,7 +33,7 @@
         <span>Confirmar alteração dos documentos da disciplina</span>
         <asp:Label ID="LabelTurma" runat="server" Text="Label"></asp:Label>
         <asp:HyperLink ID="HyperLink2" NavigateUrl="~/Admin/WebFormVisualizacaoTurma.aspx" runat="server">Cancelar</asp:HyperLink>
-        <asp:button ID="button_Excluir" runat="server" Visible="False" text="Excluir" OnClick="Excluir_Click" />
+        <asp:button ID="button_Excluir" runat="server" text="Excluir" OnClick="Excluir_Click" />
     </asp:Panel>
     
 </asp:Content>

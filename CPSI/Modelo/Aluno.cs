@@ -19,6 +19,7 @@ namespace CPSI.Modelo
         public string Endereco { get; set; }
         public string Cidade { get; set; }
         public string Estado { get; set; }
+        public string Bairro { get; set; }
         public string Telefone1 { get; set; }
         public string Telefone2 { get; set; }
         public string Contato { get; set; }
@@ -32,7 +33,7 @@ namespace CPSI.Modelo
         }
 
         public Aluno(int IdAluno,string AlunoNome,DateTime DataNascimento, string Cpf, string Rg, string RGOrgao, int EstadoCivil,string Naturalidade,string NaturalidadeEstado,string Endereco,
-                     string Cidade,string Estado,string Telefone1,string Telefone2,string Contato,string ContatoTelefone)
+                     string Bairro,string Cidade,string Estado,string Telefone1,string Telefone2,string Contato,string ContatoTelefone)
         {
 
             this.IdAluno = IdAluno;
@@ -45,6 +46,7 @@ namespace CPSI.Modelo
             this.Naturalidade = Naturalidade;
             this.NaturalidadeEstado = NaturalidadeEstado;
             this.Endereco = Endereco;
+            this.Bairro = Bairro;
             this.Cidade = Cidade;
             this.Estado = Estado;
             this.Telefone1 = Telefone1;

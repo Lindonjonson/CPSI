@@ -27,5 +27,11 @@ namespace CPSI.Admin
                 Response.Redirect("~/Admin/WebFormGerenciarTurma.aspx");
             }
         }
+
+        protected void ChamarTelaInserir_Click(object sender, EventArgs e)
+        {
+            Session.RemoveAll();
+            Response.Redirect("~/Admin/WebFormGerenciarTurma.aspx");
+        }
     }
 }
