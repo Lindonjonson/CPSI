@@ -21,8 +21,7 @@ namespace CPSI.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public DataSet SelectALL(string IdDisciplina)
         {
-
-          
+            
               
                 SqlConnection conn = new SqlConnection(connectionString);
                 conn.Open();
@@ -35,10 +34,8 @@ namespace CPSI.DAL
                 conn.Close();
                 return dataSetDocumentoDisciplina;
 
-
-
-
         }
+       
 
 
 
@@ -47,7 +44,8 @@ namespace CPSI.DAL
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            foreach (int I in obj.idDocumento)
+            List<int> ListIdDocumentos = obj.GetListDocumentos();
+            foreach (int I in ListIdDocumentos)
             {
                   SqlCommand cmd = new SqlCommand("insert into DocumentoDisciplina (IdDisciplina, IdDocumento) values(@IdDisciplina, @IdDocumento)", conn);
                   cmd.Parameters.AddWithValue("@IdDisciplina",obj.idDisciplina);

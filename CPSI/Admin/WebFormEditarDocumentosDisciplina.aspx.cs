@@ -9,25 +9,36 @@ namespace CPSI.Admin
 {
     public partial class WebFormEditarDocumentosDisciplina : System.Web.UI.Page
     {
+ 
+      
         protected void Page_Load(object sender, EventArgs e)
         {
-            DAL.DALDisciplina dALDisciplina= new DAL.DALDisciplina();
+
+            DAL.DALDisciplina dALDisciplina = new DAL.DALDisciplina();
             LabelDisciplina.Text = dALDisciplina.Select(Session["IdDisciplina"].ToString()).disciplina;
         }
 
         protected void Editar_Documentos(object sender, EventArgs e)
         {
-            DAL.DALDocumentoDisciplina dALDocumentoDisciplina = new DAL.DALDocumentoDisciplina();
-            dALDocumentoDisciplina.Delete(Session["IdDisciplina"].ToString());
-            List<int> listIDdocumentos = new List<int>();
-            foreach (ListItem I in CheckBoxListDocumento.Items)
-            {
-                if (I.Selected) listIDdocumentos.Add(Convert.ToInt32(I.Value));
-            }
+           DAL.DALDocumentoDisciplina dALDocumentoDisciplina = new DAL.DALDocumentoDisciplina();
+           dALDocumentoDisciplina.Delete(Session["IdDisciplina"].ToString());
+           Modelo.DocumentoDisciplina documentoDisciplina = new Modelo.DocumentoDisciplina(Convert.ToInt32(Session["IdDisciplina"]));
+           foreach (ListItem I in CheckBoxListDocumento.Items)
+           {
+                if (I.Selected) documentoDisciplina.AddIdDocumento(int.Parse(I.Value));
+           }
 
-            Modelo.DocumentoDisciplina documentoDisciplina = new Modelo.DocumentoDisciplina(listIDdocumentos,Convert.ToInt32(Session["IdDisciplina"]));
+           
             dALDocumentoDisciplina.Insert(documentoDisciplina);
+            Session.Remove("IdDisciplina");
+            Response.Redirect("~/Admin/WebFormGerenciarDisciplina.aspx"); 
+        }
+
+        protected void Cancelar_click(object sender, EventArgs e)
+        {
+            Session.Remove("IdDisciplina");
             Response.Redirect("~/Admin/WebFormGerenciarDisciplina.aspx");
+
         }
     }
 }

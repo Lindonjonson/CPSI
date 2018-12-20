@@ -53,7 +53,7 @@ namespace CPSI.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Insert)]
-        public int Insert(Modelo.Disciplina obj)
+        public int  Insert(Modelo.Disciplina obj)
         {
             
             SqlConnection conn = new SqlConnection(connectionString);

@@ -41,13 +41,13 @@ namespace CPSI.Admin.Disciplina
             Modelo.Disciplina disciplina = new Modelo.Disciplina(0,TxtNomeDisciplina.Text);
             DAL.DALDisciplina insertDisciplina = new DAL.DALDisciplina();
             disciplina.idDisciplina = insertDisciplina.Insert(disciplina);
-            List<int> listIDdocumentos = new List<int>();
-            foreach( ListItem I in CheckBoxListDocumento.Items)
+            Modelo.DocumentoDisciplina documentoDisciplina = new Modelo.DocumentoDisciplina(disciplina.idDisciplina);
+            foreach ( ListItem I in CheckBoxListDocumento.Items)
             {
-                if (I.Selected) listIDdocumentos.Add(Convert.ToInt32(I.Value)); 
+                if (I.Selected) documentoDisciplina.AddIdDocumento(Convert.ToInt32(I.Value)); 
             }
            
-            Modelo.DocumentoDisciplina documentoDisciplina = new Modelo.DocumentoDisciplina(listIDdocumentos, disciplina.idDisciplina);
+            
             DAL.DALDocumentoDisciplina InsertDocumentoDisciplina = new DAL.DALDocumentoDisciplina();
             InsertDocumentoDisciplina.Insert(documentoDisciplina);
             Response.Redirect("~\\Admin\\WebFormGerenciarDisciplina.aspx");

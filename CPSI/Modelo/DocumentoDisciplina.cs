@@ -8,15 +8,24 @@ namespace CPSI.Modelo
     public class DocumentoDisciplina
     {
         public int idDisciplina { get; set; }
-        public List<int> idDocumento = new List<int>(); 
+        private List<int> ListIdDocumento = new List<int>();
         public DocumentoDisciplina()
         {
             
         }
-        public DocumentoDisciplina(List<int> idDocumento,int idDisciplina)
+        public DocumentoDisciplina(int idDisciplina)
         {
-            this.idDocumento = idDocumento;
             this.idDisciplina = idDisciplina;
         }
+        public List<int> GetListDocumentos()
+        {
+            return ListIdDocumento;
+        }
+        public void AddIdDocumento(int IdDocumento)
+        {
+            ListIdDocumento.Add(IdDocumento);
+
+        }
+       
     }
 }
