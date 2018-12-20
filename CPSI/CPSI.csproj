@@ -77,7 +77,6 @@
     <Content Include="Assets\JS\PageEditarExclusao.js" />
     <Content Include="Master\WebFormMatriculaInicial.aspx" />
     <Content Include="Master\WebFormPrincipal.aspx" />
-    <Content Include="Matricula\BADWebFormEditarAluno.aspx" />
     <Content Include="Matricula\WebFormGerenciarAluno.aspx" />
     <Content Include="Matricula\WebFormImprimirFichaInscricao.aspx" />
     <Content Include="Matricula\WebFormMatricular.aspx" />
@@ -151,13 +150,6 @@
     </Compile>
     <Compile Include="Master\WebFormPrincipal.aspx.designer.cs">
       <DependentUpon>WebFormPrincipal.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Matricula\BADWebFormEditarAluno.aspx.cs">
-      <DependentUpon>BADWebFormEditarAluno.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Matricula\BADWebFormEditarAluno.aspx.designer.cs">
-      <DependentUpon>BADWebFormEditarAluno.aspx</DependentUpon>
     </Compile>
     <Compile Include="Matricula\WebFormGerenciarAluno.aspx.cs">
       <DependentUpon>WebFormGerenciarAluno.aspx</DependentUpon>

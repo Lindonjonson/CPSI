@@ -12,7 +12,6 @@
             <asp:BoundField DataField="Cpf" HeaderText="Cpf" SortExpression="Cpf"></asp:BoundField>
             <asp:BoundField DataField="Rg" HeaderText="Rg" SortExpression="Rg"></asp:BoundField>
             <asp:BoundField DataField="RGOrgao" HeaderText="RGOrgao" SortExpression="RGOrgao"></asp:BoundField>
-            <asp:BoundField DataField="EstadoCivil" HeaderText="EstadoCivil" SortExpression="EstadoCivil"></asp:BoundField>
             <asp:BoundField DataField="Telefone1" HeaderText="Telefone1" SortExpression="Telefone1"></asp:BoundField>
             <asp:BoundField DataField="Telefone2" HeaderText="Telefone2" SortExpression="Telefone2"></asp:BoundField>
             <asp:BoundField DataField="Contato" HeaderText="Contato" SortExpression="Contato"></asp:BoundField>
