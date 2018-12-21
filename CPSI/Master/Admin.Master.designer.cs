@@ -31,13 +31,13 @@ namespace CPSI.Master {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Controle Menu1.
+        /// Controle MenuADM.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu Menu1;
+        protected global::System.Web.UI.WebControls.Menu MenuADM;
         
         /// <summary>
         /// Controle ContentPlaceHolder1.

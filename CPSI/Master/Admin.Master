@@ -1,40 +1,41 @@
 ﻿ <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="CPSI.Master.Admin" %>
-
 <!DOCTYPE html>
-
 <html>
-<head runat="server">
-<link rel="stylesheet" href="../Assets/CSS/PageEditarExclusao.css"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
-</head>
-<body>
-    <article>
-        <form id="form1" runat="server">
-                    <nav>
-                        <asp:Menu ID="Menu1" runat="server">
-                                    <Items>
-                                        <asp:MenuItem NavigateUrl="~/Admin/WebFormGerenciarDocumento.aspx" Text="Cadastro de Tipos de Documento" Value="Cadastro de Documento"></asp:MenuItem>
-                                        <asp:MenuItem NavigateUrl="~/Admin/WebFormGerenciarDisciplina.aspx" Text="Cadastro de Disciplina" Value="Cadastro de Disciplina"></asp:MenuItem>
-                                        <asp:MenuItem NavigateUrl="~/Admin/WebFormVisualizacaoTurma.aspx" Text="Cadastro de Turma" Value="Cadastro de Turma"></asp:MenuItem>
-                                        <asp:MenuItem NavigateUrl="~/Matricula/WebFormVisualizarAlunos.aspx" Text="Cadastro Aluno" Value="Cadastro Aluno"></asp:MenuItem>
-                                        <asp:MenuItem NavigateUrl="~/Matricula/WebFormMatricular.aspx" Text="Matricula novo" Value="Matricula novo"></asp:MenuItem>
-                                        
-                                    </Items>
-                        </asp:Menu>
-                     </nav>
-          
-               
-                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                    </asp:ContentPlaceHolder>
-               
+  <head runat="server">
+ 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link rel="stylesheet" href="../Assets/CSS/materialize.min.css" />
+        <link rel="stylesheet" href="../Assets/CSS/StyleAdm.css" />
+        <title></title>
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+   </head>
+    <body>
+        
+            <form id="form1"  runat="server">
+               <nav  Class="light-blue lighten-2">
+                                <asp:Menu ID="MenuADM"   runat="server" CssClass="nav-wrapper container">
+                                            <Items>
+                                                <asp:MenuItem NavigateUrl="~/Admin/WebFormGerenciarDocumento.aspx" Text="Gerenciar Documento" Value="Cadastro de Documento"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Admin/WebFormGerenciarDisciplina.aspx" Text="Gerenciar Disciplina" Value="Cadastro de Disciplina"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Admin/WebFormVisualizacaoTurma.aspx" Text="Gerenciar Turma" Value="Cadastro de Turma"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Matricula/WebFormVisualizarAlunos.aspx" Text="Gerenciar Aluno" Value="Cadastro Aluno"></asp:MenuItem>
+                                            </Items>
+                                </asp:Menu>
+               </nav>
+                <div class="container">
+                  <div class="col s10">
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                  </div>
+                </div>
+              
       
               
                 
-        </form>
-    </article>
-  <script type="text/javascript" src="../Assets/JS/PageEditarExclusao.js"></script>
-</body>
+            </form>
+        
+      <script type="text/javascript" src="../Assets/JS/materialize.min.js"></script>
+      <script type="text/javascript" src="../Assets/JS/ADM.js"></script>
+    </body>
 </html>
