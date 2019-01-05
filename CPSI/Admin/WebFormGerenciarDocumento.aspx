@@ -10,10 +10,10 @@
             <asp:BoundField DataField="documento" HeaderText="Documento" SortExpression="documento" />
         </Columns>
     </asp:GridView>
-    <button data-target="ModalExcluirDocumento" class="btn modal-trigger red darken-1 styleADM_ButtonExcluir">Excluir Documento</button>
+    <button data-target="ModalExcluirDocumento" class="btn modal-trigger red darken-1">Excluir Documento</button>
     <div id="ModalCadastrarDocumento" class="modal">
         <div class="modal-content">
-            <asp:label  runat="server" Text="Nome documento:" CssClass="styleADM_labelTitle"></asp:label>
+            <asp:label  runat="server" Text="Nome documento:"></asp:label>
             <asp:textbox runat="server" ID="txtDocumento"></asp:textbox>
             <asp:button runat="server" click="CadastrarDocumento" CssClass="btn green darken-1" Text="Cadastrar" OnClick="Inserir_Click" />
             <asp:Button ID="Button1" runat="server" Text="Cancelar" CssClass="btn red darken-1" OnClick="Page_Load" />

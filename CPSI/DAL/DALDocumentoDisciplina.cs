@@ -40,16 +40,16 @@ namespace CPSI.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Insert)]
-        public void Insert(Modelo.DocumentoDisciplina obj)
+        public void Insert(Modelo.Disciplina disciplina)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            List<int> ListIdDocumentos = obj.GetListDocumentos();
-            foreach (int I in ListIdDocumentos)
+            List<Modelo.DocumentoDisciplina> ListDocumento = disciplina.GetDocumentoDisciplina();
+            foreach (Modelo.DocumentoDisciplina documentoDisciplina in ListDocumento)
             {
                   SqlCommand cmd = new SqlCommand("insert into DocumentoDisciplina (IdDisciplina, IdDocumento) values(@IdDisciplina, @IdDocumento)", conn);
-                  cmd.Parameters.AddWithValue("@IdDisciplina",obj.idDisciplina);
-                  cmd.Parameters.AddWithValue("@IdDocumento", I);
+                  cmd.Parameters.AddWithValue("@IdDisciplina",documentoDisciplina.idDisciplina);
+                  cmd.Parameters.AddWithValue("@IdDocumento", documentoDisciplina.idDocumento);
                   cmd.ExecuteNonQuery(); 
 
 

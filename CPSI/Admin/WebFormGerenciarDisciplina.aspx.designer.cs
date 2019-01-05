@@ -13,33 +13,6 @@ namespace CPSI.Admin.Disciplina {
     public partial class WebFormGerenciarCategoria {
         
         /// <summary>
-        /// Controle TxtNomeDisciplina.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtNomeDisciplina;
-        
-        /// <summary>
-        /// Controle CheckBoxListDocumento.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxListDocumento;
-        
-        /// <summary>
-        /// Controle ObjectDataSource2.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource2;
-        
-        /// <summary>
         /// Controle GridViewDisciplina.
         /// </summary>
         /// <remarks>
@@ -47,15 +20,6 @@ namespace CPSI.Admin.Disciplina {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridViewDisciplina;
-        
-        /// <summary>
-        /// Controle PanelExcluir.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelExcluir;
         
         /// <summary>
         /// Controle LabelDisciplina.
@@ -85,6 +49,33 @@ namespace CPSI.Admin.Disciplina {
         protected global::System.Web.UI.WebControls.Button Button3;
         
         /// <summary>
+        /// Controle TxtNomeDisciplina.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtNomeDisciplina;
+        
+        /// <summary>
+        /// Controle GridViewDocumentoDisciplina.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewDocumentoDisciplina;
+        
+        /// <summary>
+        /// Controle Button1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
+        
+        /// <summary>
         /// Controle ObjectDataSource1.
         /// </summary>
         /// <remarks>
@@ -92,5 +83,14 @@ namespace CPSI.Admin.Disciplina {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+        
+        /// <summary>
+        /// Controle ObjectDataSource2.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource2;
     }
 }

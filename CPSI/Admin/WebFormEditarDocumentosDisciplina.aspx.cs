@@ -20,7 +20,7 @@ namespace CPSI.Admin
 
         protected void Editar_Documentos(object sender, EventArgs e)
         {
-           DAL.DALDocumentoDisciplina dALDocumentoDisciplina = new DAL.DALDocumentoDisciplina();
+          /* DAL.DALDocumentoDisciplina dALDocumentoDisciplina = new DAL.DALDocumentoDisciplina();
            dALDocumentoDisciplina.Delete(Session["IdDisciplina"].ToString());
            Modelo.DocumentoDisciplina documentoDisciplina = new Modelo.DocumentoDisciplina(Convert.ToInt32(Session["IdDisciplina"]));
            foreach (ListItem I in CheckBoxListDocumento.Items)
@@ -32,6 +32,7 @@ namespace CPSI.Admin
             dALDocumentoDisciplina.Insert(documentoDisciplina);
             Session.Remove("IdDisciplina");
             Response.Redirect("~/Admin/WebFormGerenciarDisciplina.aspx"); 
+            */
         }
 
         protected void Cancelar_click(object sender, EventArgs e)
