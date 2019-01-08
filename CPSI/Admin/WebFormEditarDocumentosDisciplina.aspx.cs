@@ -15,7 +15,18 @@ namespace CPSI.Admin
         {
 
             DAL.DALDisciplina dALDisciplina = new DAL.DALDisciplina();
-            LabelDisciplina.Text = dALDisciplina.Select(Session["IdDisciplina"].ToString()).disciplina;
+            Modelo.Disciplina disciplina = new Modelo.Disciplina();
+            LabelDisciplina.Text = disciplina.disciplina;
+            for (int index = 0; index < GridViewDocumentos.Rows.Count; index++)
+            {
+                
+                DataKey key = GridViewDocumentos.DataKeys[index];
+                int idDocumento = Convert.ToInt32(key.Value);
+                if (disciplina.GetDocumentoDisciplina().Exists(X => X.idDocumento == idDocumento))
+                    GridViewDocumentos.Rows[index].BackColor = System.Drawing.Color.AliceBlue;
+
+
+            }
         }
 
         protected void Editar_Documentos(object sender, EventArgs e)

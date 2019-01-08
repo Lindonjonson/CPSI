@@ -19,21 +19,27 @@ namespace CPSI.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public DataSet SelectALL(string IdDisciplina)
+        public List<Modelo.DocumentoDisciplina> SelectALL(string IdDisciplina)
         {
-            
-              
+
+
+                List<Modelo.DocumentoDisciplina> ListDocumentoDisciplina = new List<Modelo.DocumentoDisciplina>();
                 SqlConnection conn = new SqlConnection(connectionString);
                 conn.Open();
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT Documento,DocumentoDisciplina.IdDisciplina, Documento.IdDocumento FROM Documento inner join DocumentoDisciplina on Documento.IdDocumento=DocumentoDisciplina.IdDocumento inner join Disciplina On Disciplina.IdDisciplina=DocumentoDisciplina.IdDisciplina where Disciplina.IdDisciplina=@IdDisciplina";
+                cmd.CommandText = "SELECT * FROM DocumentoDisciplina where IdDisciplina=@IdDisciplina";
                 cmd.Parameters.AddWithValue("@IdDisciplina",IdDisciplina);
-                SqlDataAdapter DataAdapterDocumentoDisciplina = new SqlDataAdapter(cmd);
-                DataSet dataSetDocumentoDisciplina= new DataSet();
-                DataAdapterDocumentoDisciplina.Fill(dataSetDocumentoDisciplina);
-                conn.Close();
-                return dataSetDocumentoDisciplina;
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                       ListDocumentoDisciplina.Add(new Modelo.DocumentoDisciplina(int.Parse(dr["IdDisciplina"].ToString()), int.Parse(dr["idDocumento"].ToString())));
 
+                    }
+
+                }
+               return ListDocumentoDisciplina;
         }
        
 

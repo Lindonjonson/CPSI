@@ -26,7 +26,7 @@
             <label>Nome disciplina</label>
             <asp:TextBox runat="server" ID="TxtNomeDisciplina" PlaceHolder="nome disciplina"></asp:TextBox>
             <label>Documentos obrigatorios para a disciplina</label>
-            <asp:GridView ID="GridViewDocumentoDisciplina" runat="server" DataSourceID="ObjectDataSource2" AutoGenerateColumns="False" DataKeyNames="idDocumento" OnRowCommand="GridViewDocumentoDisciplina_RowCommand" >
+            <asp:GridView ID="GridViewDocumentoDisciplina" runat="server" DataSourceID="ObjectDataSource2" AutoGenerateColumns="False" DataKeyNames="idDocumento" OnRowCommand="GridViewDocumentoDisciplina_RowCommand" ShowHeaderWhenEmpty="false" >
                 <Columns>
                     <asp:BoundField DataField="documento" HeaderText="documento" SortExpression="documento"></asp:BoundField>
                     <asp:ButtonField CommandName="Adicionar" Text="Adicionar" ButtonType="Button" HeaderText="Adicionar"></asp:ButtonField>

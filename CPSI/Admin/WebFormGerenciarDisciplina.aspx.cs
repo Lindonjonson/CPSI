@@ -29,15 +29,6 @@ namespace CPSI.Admin.Disciplina
         protected void GridViewDisciplina_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             DAL.DALDisciplina disciplina = new DAL.DALDisciplina();
-
-            if (e.CommandName == "Editar")
-            {
-                int index = Convert.ToInt32(e.CommandArgument);
-                DataKey keys = GridViewDisciplina.DataKeys[index];
-                string IdDisciplina = keys.Value.ToString();
-                Session["IdDisciplina"] = IdDisciplina;
-                Response.Redirect("~\\Admin\\WebFormEditarDisciplina.aspx");
-            }
             if (e.CommandName == "EditarDocumento")
             {
                 int index = Convert.ToInt32(e.CommandArgument);
@@ -51,10 +42,7 @@ namespace CPSI.Admin.Disciplina
         protected void Inserir_Click(object sender, EventArgs e)
         {
             Modelo.Disciplina disciplina = new Modelo.Disciplina(0, TxtNomeDisciplina.Text);
-            foreach(int i in ListIdDocumentoDisciplina)
-            {
-                disciplina.AddDocumentoDisciplina(i);
-            }
+            disciplina.AddDocumentoDisciplina(ListIdDocumentoDisciplina);
             DAL.DALDisciplina DALDisciplina = new DAL.DALDisciplina();
             DALDisciplina.Insert(disciplina);
             Response.Redirect("~\\Admin\\WebFormGerenciarDisciplina.aspx");

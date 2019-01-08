@@ -127,6 +127,8 @@ namespace CPSI.DAL
                         
 
             }
+            DAL.DALDocumentoDisciplina dALDocumentoDisciplina = new DALDocumentoDisciplina();
+            disciplina.SetDocumentoDisciplina(dALDocumentoDisciplina.SelectALL(disciplina.idDisciplina.ToString()));
             conn.Close();
             return disciplina;
            
