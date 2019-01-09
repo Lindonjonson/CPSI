@@ -62,7 +62,7 @@ namespace CPSI.Admin.Disciplina
 
         protected void GridViewDisciplina_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GridViewDisciplina.SelectedRow.BackColor = System.Drawing.Color.OrangeRed;
+            GridViewDisciplina.SelectedRow.BackColor = System.Drawing.Color.AliceBlue;
             LabelDisciplina.Text = GridViewDisciplina.SelectedRow.Cells[1].Text;
         }
 
@@ -71,7 +71,7 @@ namespace CPSI.Admin.Disciplina
             if(e.CommandName== "Adicionar")
             {
                 int index = Convert.ToInt32(e.CommandArgument);
-                GridViewDocumentoDisciplina.Rows[index].BackColor = System.Drawing.Color.OrangeRed;
+                GridViewDocumentoDisciplina.Rows[index].BackColor = System.Drawing.Color.AliceBlue;
                 DataKey dataKey = GridViewDocumentoDisciplina.DataKeys[index];
                 int idDocumento = Convert.ToInt32(dataKey.Value);
                 ListIdDocumentoDisciplina.Add(idDocumento);
