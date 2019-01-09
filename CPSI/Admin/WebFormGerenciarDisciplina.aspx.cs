@@ -12,7 +12,8 @@ namespace CPSI.Admin.Disciplina
         List<int> ListIdDocumentoDisciplina;  
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(IsPostBack)
+
+            if (IsPostBack)
             {
                 if(Session["ListIdDocumento"]==null)
                    ListIdDocumentoDisciplina = new List<int>();
@@ -89,6 +90,18 @@ namespace CPSI.Admin.Disciplina
                 ListIdDocumentoDisciplina.Remove(idDocumento);
                 Session["ListIdDocumento"] = ListIdDocumentoDisciplina;
             }
+        }
+
+        protected void ExibirCadatrarClick(object sender, EventArgs e)
+        {
+            PanelListagemDisciplina.Visible = false;
+            ButtonMostrarCadastrarDisciplina.Visible = false;
+            PanelCadastrarDisciplina.Visible = true;
+        }
+
+        protected void Click_CancelarInsertDisciplina(object sender, EventArgs e)
+        {
+            Response.Redirect(Request.RawUrl);
         }
     }
 }

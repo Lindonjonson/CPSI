@@ -13,6 +13,24 @@ namespace CPSI.Admin.Disciplina {
     public partial class WebFormGerenciarCategoria {
         
         /// <summary>
+        /// Controle ButtonMostrarCadastrarDisciplina.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonMostrarCadastrarDisciplina;
+        
+        /// <summary>
+        /// Controle PanelListagemDisciplina.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelListagemDisciplina;
+        
+        /// <summary>
         /// Controle GridViewDisciplina.
         /// </summary>
         /// <remarks>
@@ -49,6 +67,15 @@ namespace CPSI.Admin.Disciplina {
         protected global::System.Web.UI.WebControls.Button Button3;
         
         /// <summary>
+        /// Controle PanelCadastrarDisciplina.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelCadastrarDisciplina;
+        
+        /// <summary>
         /// Controle TxtNomeDisciplina.
         /// </summary>
         /// <remarks>
@@ -67,13 +94,13 @@ namespace CPSI.Admin.Disciplina {
         protected global::System.Web.UI.WebControls.GridView GridViewDocumentoDisciplina;
         
         /// <summary>
-        /// Controle Button1.
+        /// Controle ButtonCancelarInserir.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button ButtonCancelarInserir;
         
         /// <summary>
         /// Controle ObjectDataSource1.
