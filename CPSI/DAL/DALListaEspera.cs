@@ -50,8 +50,8 @@ namespace CPSI.DAL
             while (dr.Read())
             {
                 listaEspera.IdAluno = int.Parse(dr["IdAluno"].ToString());
-                listaEspera.IdTurma = int.Parse(dr["IdTurma"].ToString());
-                listaEspera.DataInscricao = DateTime.Parse(dr["DataInscricao"].ToString());
+                listaEspera.idTurma = int.Parse(dr["IdTurma"].ToString());
+                listaEspera.dataInscricao = DateTime.Parse(dr["DataInscricao"].ToString());
 
 
             }
@@ -70,9 +70,9 @@ namespace CPSI.DAL
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = "INSERT INTO ListaEspera (IdTurma,IdAluno,DataInscricao)  VALUES (@IdTurma,@IdAluno,@DataInscricao)";
-            cmd.Parameters.AddWithValue("@IdTurma", L.IdTurma);
+            cmd.Parameters.AddWithValue("@IdTurma", L.idTurma);
             cmd.Parameters.AddWithValue("@IdAluno", L.IdAluno);
-            cmd.Parameters.AddWithValue("@DataInscricao", L.DataInscricao);
+            cmd.Parameters.AddWithValue("@DataInscricao", L.dataInscricao);
             cmd.ExecuteNonQuery();
             conn.Close();
 

@@ -21,8 +21,8 @@ namespace CPSI.Matricula
         {
             Modelo.ListaEspera listaEspera = new Modelo.ListaEspera();
             listaEspera.IdAluno = matricula.IdAluno;
-            listaEspera.IdTurma = matricula.IdTurma;
-            listaEspera.DataInscricao = matricula.DataMatricula;
+            listaEspera.idTurma = matricula.IdTurma;
+            listaEspera.dataInscricao = matricula.DataMatricula;
             new DAL.DALListaEspera().Insert(listaEspera);
             Session.Remove("matricula");
             Response.Redirect("~/Matricula/WebFormMatricular.aspx");
