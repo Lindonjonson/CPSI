@@ -67,7 +67,7 @@ namespace CPSI.DAL
             cmd.Parameters.AddWithValue("@idDisciplina", obj.idDisciplina);
             cmd.Parameters.AddWithValue("@Disciplina", obj.disciplina);
             cmd.ExecuteNonQuery();
-            if (obj.ExistDocumento())
+            if (obj.existDocumento())
             {
                 new DAL.DALDocumentoDisciplina().Insert(obj);
             }
@@ -128,7 +128,7 @@ namespace CPSI.DAL
 
             }
             DAL.DALDocumentoDisciplina dALDocumentoDisciplina = new DALDocumentoDisciplina();
-            disciplina.SetDocumentoDisciplina(dALDocumentoDisciplina.SelectALL(disciplina.idDisciplina.ToString()));
+            disciplina.setDocumentoDisciplina(dALDocumentoDisciplina.SelectALL(disciplina.idDisciplina.ToString()));
             conn.Close();
             return disciplina;
            

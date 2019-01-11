@@ -43,7 +43,7 @@ namespace CPSI.Admin.Disciplina
         protected void Inserir_Click(object sender, EventArgs e)
         {
             Modelo.Disciplina disciplina = new Modelo.Disciplina(0, TxtNomeDisciplina.Text);
-            disciplina.AddDocumentoDisciplina(ListIdDocumentoDisciplina);
+            disciplina.addDocumentoDisciplina(ListIdDocumentoDisciplina);
             DAL.DALDisciplina DALDisciplina = new DAL.DALDisciplina();
             DALDisciplina.Insert(disciplina);
             Response.Redirect("~\\Admin\\WebFormGerenciarDisciplina.aspx");

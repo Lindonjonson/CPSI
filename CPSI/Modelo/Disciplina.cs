@@ -9,8 +9,8 @@ namespace CPSI.Modelo
     {
         public int idDisciplina { get; set; }
         public string disciplina { get; set; }
-        private List<int> ListIddocumento;
-        private List<Modelo.DocumentoDisciplina> ListdocumentoDaDisciplinas;
+        private List<int> listIddocumento;
+        private List<Modelo.DocumentoDisciplina> listDocumentoDaDisciplinas;
         public Disciplina()
         {
             this.idDisciplina = 0;
@@ -23,14 +23,14 @@ namespace CPSI.Modelo
             this.disciplina = disciplina;
            
         }
-        public void  AddDocumentoDisciplina(List<int> ListIddocumento)
+        public void  addDocumentoDisciplina(List<int> listIddocumento)
         {
 
-            this.ListIddocumento = ListIddocumento;
+            this.listIddocumento = listIddocumento;
         }
-        public bool ExistDocumento()
+        public bool existDocumento()
         {
-            if (ListIddocumento.Count > 0)
+            if (listIddocumento.Count > 0)
             {
                 return true;
             }
@@ -40,25 +40,25 @@ namespace CPSI.Modelo
             }
 
         }
-        public List<Modelo.DocumentoDisciplina> GetDocumentoDisciplina()
+        public List<Modelo.DocumentoDisciplina> getDocumentoDisciplina()
         {
-            if (ListdocumentoDaDisciplinas == null)
+            if (listDocumentoDaDisciplinas == null)
             {
-                ListdocumentoDaDisciplinas = new List<DocumentoDisciplina>();
-                foreach (int i in ListIddocumento)
+                listDocumentoDaDisciplinas = new List<DocumentoDisciplina>();
+                foreach (int i in listIddocumento)
                 {
-                    ListdocumentoDaDisciplinas.Add(new Modelo.DocumentoDisciplina(idDisciplina, i));
+                    listDocumentoDaDisciplinas.Add(new Modelo.DocumentoDisciplina(idDisciplina, i));
                 }
-                return ListdocumentoDaDisciplinas;
+                return listDocumentoDaDisciplinas;
             }
             else
-                return ListdocumentoDaDisciplinas;
+                return listDocumentoDaDisciplinas;
 
 
         }
-        public void SetDocumentoDisciplina(List<Modelo.DocumentoDisciplina> ListdocumentoDaDisciplinas)
+        public void setDocumentoDisciplina(List<Modelo.DocumentoDisciplina> listdocumentoDaDisciplinas)
         {
-            this.ListdocumentoDaDisciplinas = ListdocumentoDaDisciplinas;
+            this.listDocumentoDaDisciplinas = listdocumentoDaDisciplinas;
 
         }
        

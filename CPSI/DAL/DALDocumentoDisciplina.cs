@@ -50,7 +50,7 @@ namespace CPSI.DAL
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            List<Modelo.DocumentoDisciplina> ListDocumento = disciplina.GetDocumentoDisciplina();
+            List<Modelo.DocumentoDisciplina> ListDocumento = disciplina.getDocumentoDisciplina();
             foreach (Modelo.DocumentoDisciplina documentoDisciplina in ListDocumento)
             {
                   SqlCommand cmd = new SqlCommand("insert into DocumentoDisciplina (IdDisciplina, IdDocumento) values(@IdDisciplina, @IdDocumento)", conn);
