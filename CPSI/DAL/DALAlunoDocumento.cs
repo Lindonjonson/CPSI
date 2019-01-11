@@ -16,7 +16,7 @@ namespace CPSI.DAL
             connectionString = ConfigurationManager.ConnectionStrings["CPSIConnectionString"].ConnectionString;
         }
         [DataObjectMethod(DataObjectMethodType.Insert)]
-        public void Insert(Modelo.AlunoDocumento obj)
+        public void insert(Modelo.AlunoDocumento obj)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
