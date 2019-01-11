@@ -20,23 +20,23 @@ namespace CPSI.Matricula
                 ButtonEditarAluno.Visible = true;
                 if (!IsPostBack)
                 {
-                    LabelAluno.Text = Aluno.AlunoNome;
-                    TextBoxAlunoNome.Text = Aluno.AlunoNome;
-                    TextBoxCalendarDataNascimento.Text = Aluno.DataNascimento.ToShortDateString();
-                    TextBoxCpf.Text = Aluno.Cpf;
-                    TextBoxRg.Text = Aluno.Rg;
-                    TextBoxRGOrgao.Text = Aluno.RGOrgao;
-                    DropDownListEstadoCivil.SelectedValue = Aluno.EstadoCivil.ToString();
-                    TextBoxNaturalidade.Text = Aluno.Naturalidade;
-                    TextBoxNaturalidadeEstado.Text = Aluno.NaturalidadeEstado;
-                    TextBoxEndereco.Text = Aluno.Endereco;
-                    TextBoxBairro.Text = Aluno.Bairro;
-                    TextBoxCidade.Text = Aluno.Cidade;
-                    TextBoxEstado.Text = Aluno.Estado;
-                    TextBoxTelefone1.Text = Aluno.Telefone1;
-                    TextBoxTelefone2.Text = Aluno.Telefone2;
-                    TextBoxContato.Text = Aluno.Contato;
-                    TextBoxContatoTelefone.Text = Aluno.ContatoTelefone; 
+                    LabelAluno.Text = Aluno.alunoNome;
+                    TextBoxAlunoNome.Text = Aluno.alunoNome;
+                    TextBoxCalendarDataNascimento.Text = Aluno.dataNascimento.ToShortDateString();
+                    TextBoxCpf.Text = Aluno.cpf;
+                    TextBoxRg.Text = Aluno.rg;
+                    TextBoxRGOrgao.Text = Aluno.rgOrgao;
+                    DropDownListEstadoCivil.SelectedValue = Aluno.estadoCivil.ToString();
+                    TextBoxNaturalidade.Text = Aluno.naturalidade;
+                    TextBoxNaturalidadeEstado.Text = Aluno.naturalidadeEstado;
+                    TextBoxEndereco.Text = Aluno.endereco;
+                    TextBoxBairro.Text = Aluno.bairro;
+                    TextBoxCidade.Text = Aluno.cidade;
+                    TextBoxEstado.Text = Aluno.estado;
+                    TextBoxTelefone1.Text = Aluno.telefone1;
+                    TextBoxTelefone2.Text = Aluno.telefone2;
+                    TextBoxContato.Text = Aluno.contato;
+                    TextBoxContatoTelefone.Text = Aluno.contatoTelefone; 
                    
                 }
                 
@@ -54,22 +54,22 @@ namespace CPSI.Matricula
         {
             DAL.DALAluno dALAluno = new DAL.DALAluno();
             Aluno = new Modelo.Aluno();
-            Aluno.AlunoNome = TextBoxAlunoNome.Text;
-            Aluno.DataNascimento = DateTime.Parse(TextBoxCalendarDataNascimento.Text);
-            Aluno.Cpf = TextBoxCpf.Text;
-            Aluno.Rg = TextBoxRg.Text;
-            Aluno.RGOrgao = TextBoxRGOrgao.Text;
-            Aluno.EstadoCivil = Convert.ToInt32(DropDownListEstadoCivil.SelectedItem.Value);
-            Aluno.Naturalidade = TextBoxNaturalidade.Text;
-            Aluno.NaturalidadeEstado = TextBoxNaturalidadeEstado.Text;
-            Aluno.Endereco = TextBoxEndereco.Text;
-            Aluno.Bairro = TextBoxBairro.Text;
-            Aluno.Cidade = TextBoxCidade.Text;
-            Aluno.Estado = TextBoxEstado.Text;
-            Aluno.Telefone1 = TextBoxTelefone1.Text;
-            Aluno.Telefone2 = TextBoxTelefone2.Text;
-            Aluno.Contato = TextBoxContato.Text;
-            Aluno.ContatoTelefone = TextBoxContatoTelefone.Text;
+            Aluno.alunoNome = TextBoxAlunoNome.Text;
+            Aluno.dataNascimento = DateTime.Parse(TextBoxCalendarDataNascimento.Text);
+            Aluno.cpf = TextBoxCpf.Text;
+            Aluno.rg = TextBoxRg.Text;
+            Aluno.rgOrgao = TextBoxRGOrgao.Text;
+            Aluno.estadoCivil = Convert.ToInt32(DropDownListEstadoCivil.SelectedItem.Value);
+            Aluno.naturalidade = TextBoxNaturalidade.Text;
+            Aluno.naturalidadeEstado = TextBoxNaturalidadeEstado.Text;
+            Aluno.endereco = TextBoxEndereco.Text;
+            Aluno.bairro = TextBoxBairro.Text;
+            Aluno.cidade = TextBoxCidade.Text;
+            Aluno.estado = TextBoxEstado.Text;
+            Aluno.telefone1 = TextBoxTelefone1.Text;
+            Aluno.telefone2 = TextBoxTelefone2.Text;
+            Aluno.contato = TextBoxContato.Text;
+            Aluno.contatoTelefone = TextBoxContatoTelefone.Text;
             dALAluno.Insert(Aluno);
             Response.Redirect("~/Matricula/WebFormVisualizarAlunos.aspx");
         }
@@ -77,22 +77,22 @@ namespace CPSI.Matricula
         protected void EditarAluno_Click(object sender, EventArgs e)
         {
             DAL.DALAluno dALAluno = new DAL.DALAluno();
-            Aluno.AlunoNome = TextBoxAlunoNome.Text;
-            Aluno.DataNascimento = DateTime.Parse(TextBoxCalendarDataNascimento.Text);
-            Aluno.Cpf = TextBoxCpf.Text;
-            Aluno.Rg= TextBoxRg.Text;
-            Aluno.RGOrgao =TextBoxRGOrgao.Text;
-            Aluno.EstadoCivil = Convert.ToInt32(DropDownListEstadoCivil.SelectedItem.Value);
-            Aluno.Naturalidade=TextBoxNaturalidade.Text;
-            Aluno.NaturalidadeEstado=TextBoxNaturalidadeEstado.Text;
-            Aluno.Endereco=TextBoxEndereco.Text;
-            Aluno.Bairro = TextBoxBairro.Text;
-            Aluno.Cidade=TextBoxCidade.Text;
-            Aluno.Estado=TextBoxEstado.Text;
-            Aluno.Telefone1=TextBoxTelefone1.Text;
-            Aluno.Telefone2=TextBoxTelefone2.Text;
-            Aluno.Contato=TextBoxContato.Text;
-            Aluno.ContatoTelefone=TextBoxContatoTelefone.Text;
+            Aluno.alunoNome = TextBoxAlunoNome.Text;
+            Aluno.dataNascimento = DateTime.Parse(TextBoxCalendarDataNascimento.Text);
+            Aluno.cpf = TextBoxCpf.Text;
+            Aluno.rg= TextBoxRg.Text;
+            Aluno.rgOrgao =TextBoxRGOrgao.Text;
+            Aluno.estadoCivil = Convert.ToInt32(DropDownListEstadoCivil.SelectedItem.Value);
+            Aluno.naturalidade=TextBoxNaturalidade.Text;
+            Aluno.naturalidadeEstado=TextBoxNaturalidadeEstado.Text;
+            Aluno.endereco=TextBoxEndereco.Text;
+            Aluno.bairro = TextBoxBairro.Text;
+            Aluno.cidade=TextBoxCidade.Text;
+            Aluno.estado=TextBoxEstado.Text;
+            Aluno.telefone1=TextBoxTelefone1.Text;
+            Aluno.telefone2=TextBoxTelefone2.Text;
+            Aluno.contato=TextBoxContato.Text;
+            Aluno.contatoTelefone=TextBoxContatoTelefone.Text;
             dALAluno.Update(Aluno);
             Session.Remove("IdAluno");
             Response.Redirect("~/Matricula/WebFormVisualizarAlunos.aspx");

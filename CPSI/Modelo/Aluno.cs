@@ -7,23 +7,23 @@ namespace CPSI.Modelo
 {
     public class Aluno
     {
-        public int IdAluno { get; set; }
-        public string AlunoNome { get; set; }
-        public DateTime DataNascimento { get; set; }
-        public string Cpf { get; set; }
-        public string Rg { get; set; }
-        public string RGOrgao { get; set; }
-        public int EstadoCivil { get; set; }
-        public string Naturalidade { get; set; }
-        public string NaturalidadeEstado { get; set; }
-        public string Endereco { get; set; }
-        public string Cidade { get; set; }
-        public string Estado { get; set; }
-        public string Bairro { get; set; }
-        public string Telefone1 { get; set; }
-        public string Telefone2 { get; set; }
-        public string Contato { get; set; }
-        public string ContatoTelefone { get; set; }
+        public int idAluno { get; set; }
+        public string alunoNome { get; set; }
+        public DateTime dataNascimento { get; set; }
+        public string cpf { get; set; }
+        public string rg { get; set; }
+        public string rgOrgao { get; set; }
+        public int estadoCivil { get; set; }
+        public string naturalidade { get; set; }
+        public string naturalidadeEstado { get; set; }
+        public string endereco { get; set; }
+        public string cidade { get; set; }
+        public string estado { get; set; }
+        public string bairro { get; set; }
+        public string telefone1 { get; set; }
+        public string telefone2 { get; set; }
+        public string contato { get; set; }
+        public string contatoTelefone { get; set; }
 
         public Aluno()
         {
@@ -36,23 +36,23 @@ namespace CPSI.Modelo
                      string Bairro,string Cidade,string Estado,string Telefone1,string Telefone2,string Contato,string ContatoTelefone)
         {
 
-            this.IdAluno = IdAluno;
-            this.AlunoNome = AlunoNome;
-            this.DataNascimento = DataNascimento;
-            this.Cpf = Cpf;
-            this.Rg = Rg;
-            this.RGOrgao = RGOrgao;
-            this.EstadoCivil = EstadoCivil;
-            this.Naturalidade = Naturalidade;
-            this.NaturalidadeEstado = NaturalidadeEstado;
-            this.Endereco = Endereco;
-            this.Bairro = Bairro;
-            this.Cidade = Cidade;
-            this.Estado = Estado;
-            this.Telefone1 = Telefone1;
-            this.Telefone2 = Telefone2;
-            this.Contato = Contato;
-            this.ContatoTelefone=ContatoTelefone;
+            this.idAluno = IdAluno;
+            this.alunoNome = AlunoNome;
+            this.dataNascimento = DataNascimento;
+            this.cpf = Cpf;
+            this.rg = Rg;
+            this.rgOrgao = RGOrgao;
+            this.estadoCivil = EstadoCivil;
+            this.naturalidade = Naturalidade;
+            this.naturalidadeEstado = NaturalidadeEstado;
+            this.endereco = Endereco;
+            this.bairro = Bairro;
+            this.cidade = Cidade;
+            this.estado = Estado;
+            this.telefone1 = Telefone1;
+            this.telefone2 = Telefone2;
+            this.contato = Contato;
+            this.contatoTelefone=ContatoTelefone;
 
 
 
