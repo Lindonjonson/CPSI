@@ -7,16 +7,16 @@ namespace CPSI.Modelo
 {
     public class AlunoDocumento
     {
-        public int IdAluno {get; set;}
-        public List<int> IdDocumento = new List<int>();
+        public int idAluno {get; set;}
+        public List<int> idDocumento = new List<int>();
         public AlunoDocumento()
         {
 
         }
-        public AlunoDocumento(int IdAluno, List<int> IdDocumento)
+        public AlunoDocumento(int idAluno, List<int> idDocumento)
         {
-            this.IdAluno = IdAluno;
-            this.IdDocumento = IdDocumento;
+            this.idAluno = idAluno;
+            this.idDocumento = idDocumento;
 
         }
 
