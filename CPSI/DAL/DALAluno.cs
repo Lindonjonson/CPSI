@@ -18,7 +18,7 @@ namespace CPSI.DAL
 
         }
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Aluno> SelectALL()
+        public List<Modelo.Aluno> selectALL()
         {
             string strData;
             DateTime Data;
@@ -65,7 +65,7 @@ namespace CPSI.DAL
 
         }
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Aluno> SelectALLFiltro(string filtro)
+        public List<Modelo.Aluno> selectALLFiltro(string filtro)
         {
             string strData;
             DateTime Data;
@@ -112,7 +112,7 @@ namespace CPSI.DAL
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public Modelo.Aluno Select(string id)
+        public Modelo.Aluno select(string id)
         {
 
             string strData;
@@ -166,7 +166,7 @@ namespace CPSI.DAL
 
         }
         [DataObjectMethod(DataObjectMethodType.Delete)]
-        public void Delete(string ID)
+        public void delete(string ID)
         {
 
             SqlConnection conn = new SqlConnection(connectioString);
@@ -179,7 +179,7 @@ namespace CPSI.DAL
 
         }
         [DataObjectMethod(DataObjectMethodType.Update)]
-        public void Update(Modelo.Aluno A)
+        public void update(Modelo.Aluno A)
         {
 
             SqlConnection conn = new SqlConnection(connectioString);
@@ -210,14 +210,14 @@ namespace CPSI.DAL
 
         }
         [DataObjectMethod(DataObjectMethodType.Insert)]
-        public void Insert(Modelo.Aluno A)
+        public void insert(Modelo.Aluno A)
         {
 
             SqlConnection conn = new SqlConnection(connectioString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = "INSERT INTO Aluno (IdAluno,Aluno,DataNascimento,CPF,RG,RGOrgao,EstadoCivil,Naturalidade ,NaturalidadeEstado,Endereco,Bairro,Cidade,Estado,Telefone1,Telefone2,Contato,ContatoTelefone) VALUES(@IdAluno, @Aluno, @DataNascimento, @CPF, @RG, @RGOrgao, @EstadoCivil, @Naturalidade, @NaturalidadeEstado, @Endereco,@Bairro ,@Cidade, @Estado, @Telefone1, @Telefone2, @Contato, @ContatoTelefone)";
-            cmd.Parameters.AddWithValue("@IdAluno", GetMax());
+            cmd.Parameters.AddWithValue("@IdAluno", getMax());
             cmd.Parameters.AddWithValue("@Aluno", A.alunoNome);
             cmd.Parameters.AddWithValue("@DataNascimento", A.dataNascimento);
             cmd.Parameters.AddWithValue("@CPF", A.cpf);
@@ -239,7 +239,7 @@ namespace CPSI.DAL
 
         }
 
-        public int GetMax()
+        public int getMax()
         {
             int max=0;
             SqlConnection conn = new SqlConnection(connectioString);

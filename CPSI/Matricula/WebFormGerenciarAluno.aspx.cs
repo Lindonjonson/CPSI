@@ -15,7 +15,7 @@ namespace CPSI.Matricula
             if (!(Session["IdAluno"] == null))
             {
                 DAL.DALAluno dALAluno = new DAL.DALAluno();
-                Aluno = dALAluno.Select(Session["IdAluno"].ToString());
+                Aluno = dALAluno.select(Session["IdAluno"].ToString());
                 Panel_ButtonExcluir.Visible = true;
                 ButtonEditarAluno.Visible = true;
                 if (!IsPostBack)
@@ -70,7 +70,7 @@ namespace CPSI.Matricula
             Aluno.telefone2 = TextBoxTelefone2.Text;
             Aluno.contato = TextBoxContato.Text;
             Aluno.contatoTelefone = TextBoxContatoTelefone.Text;
-            dALAluno.Insert(Aluno);
+            dALAluno.insert(Aluno);
             Response.Redirect("~/Matricula/WebFormVisualizarAlunos.aspx");
         }
 
@@ -93,7 +93,7 @@ namespace CPSI.Matricula
             Aluno.telefone2=TextBoxTelefone2.Text;
             Aluno.contato=TextBoxContato.Text;
             Aluno.contatoTelefone=TextBoxContatoTelefone.Text;
-            dALAluno.Update(Aluno);
+            dALAluno.update(Aluno);
             Session.Remove("IdAluno");
             Response.Redirect("~/Matricula/WebFormVisualizarAlunos.aspx");
 
@@ -108,7 +108,7 @@ namespace CPSI.Matricula
         protected void Excluir_Click(object sender, EventArgs e)
         {
             DAL.DALAluno dALAluno = new DAL.DALAluno();
-            dALAluno.Delete(Session["IdAluno"].ToString());
+            dALAluno.delete(Session["IdAluno"].ToString());
             Session.Remove("IdAluno");
             Response.Redirect("~/Matricula/WebFormVisualizarAlunos.aspx");
         }

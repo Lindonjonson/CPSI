@@ -14,7 +14,7 @@ namespace CPSI.Matricula
         {
              
               matricula =  (Modelo.Matricula)Session["matricula"];
-              Modelo.Aluno aluno = new DAL.DALAluno().Select(matricula.idAluno.ToString());
+              Modelo.Aluno aluno = new DAL.DALAluno().select(matricula.idAluno.ToString());
               Modelo.Turma turma = new DAL.DALTurma().Select(matricula.idTurma.ToString());
               LabelData.Text = matricula.dataMatricula.ToShortDateString();
               
