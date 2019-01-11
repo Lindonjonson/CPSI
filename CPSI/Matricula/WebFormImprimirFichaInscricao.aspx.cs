@@ -14,9 +14,9 @@ namespace CPSI.Matricula
         {
              
               matricula =  (Modelo.Matricula)Session["matricula"];
-              Modelo.Aluno aluno = new DAL.DALAluno().Select(matricula.IdAluno.ToString());
-              Modelo.Turma turma = new DAL.DALTurma().Select(matricula.IdTurma.ToString());
-              LabelData.Text = matricula.DataMatricula.ToShortDateString();
+              Modelo.Aluno aluno = new DAL.DALAluno().Select(matricula.idAluno.ToString());
+              Modelo.Turma turma = new DAL.DALTurma().Select(matricula.idTurma.ToString());
+              LabelData.Text = matricula.dataMatricula.ToShortDateString();
               
          
 
@@ -25,8 +25,8 @@ namespace CPSI.Matricula
 
         protected void Imprimir(object sender, EventArgs e)
         {
-            Session["IdAluno"] = matricula.IdAluno;
-            Session["IdTurma"] = matricula.IdTurma;
+            Session["IdAluno"] = matricula.idAluno;
+            Session["IdTurma"] = matricula.idTurma;
             PanelImpressao.Visible = true;
             Button_Imprimir.Visible = false;
         }

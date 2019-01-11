@@ -47,10 +47,10 @@ namespace CPSI.DAL
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = "INSERT INTO Matricula (IdTurma,IdAluno,Situacao,DataMatricula)  VALUES (@IdTurma,@IdAluno,@Situacao,@DataMatricula)";
-            cmd.Parameters.AddWithValue("@IdTurma",M.IdTurma);
-            cmd.Parameters.AddWithValue("@IdAluno",M.IdAluno);
-            cmd.Parameters.AddWithValue("@Situacao",M.Situacao);
-            cmd.Parameters.AddWithValue("@DataMatricula",M.DataMatricula);
+            cmd.Parameters.AddWithValue("@IdTurma",M.idTurma);
+            cmd.Parameters.AddWithValue("@IdAluno",M.idAluno);
+            cmd.Parameters.AddWithValue("@Situacao",M.situacao);
+            cmd.Parameters.AddWithValue("@DataMatricula",M.dataMatricula);
             cmd.ExecuteNonQuery();
             conn.Close();
 
@@ -76,9 +76,9 @@ namespace CPSI.DAL
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = "UPDATE Matricula SET Situacao = @Situacao WHERE IdTurma = @IdTurma  AND IdAluno = @IdAluno";
-            cmd.Parameters.AddWithValue("@Situacao", M.Situacao);
-            cmd.Parameters.AddWithValue("@IdTurma", M.IdTurma);
-            cmd.Parameters.AddWithValue("@IdAluno", M.IdAluno);
+            cmd.Parameters.AddWithValue("@Situacao", M.situacao);
+            cmd.Parameters.AddWithValue("@IdTurma", M.idTurma);
+            cmd.Parameters.AddWithValue("@IdAluno", M.idAluno);
             cmd.ExecuteNonQuery();
             conn.Close();
 
@@ -96,10 +96,10 @@ namespace CPSI.DAL
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                matricula.IdAluno = int.Parse(dr["IdAluno"].ToString());
-                matricula.IdTurma = int.Parse(dr["IdTurma"].ToString());
-                matricula.Situacao = int.Parse(dr["Situacao"].ToString());
-                matricula.DataMatricula = DateTime.Parse(dr["DataMatricula"].ToString());
+                matricula.idAluno = int.Parse(dr["IdAluno"].ToString());
+                matricula.idTurma = int.Parse(dr["IdTurma"].ToString());
+                matricula.situacao = int.Parse(dr["Situacao"].ToString());
+                matricula.dataMatricula = DateTime.Parse(dr["DataMatricula"].ToString());
                 
 
             }

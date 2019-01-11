@@ -20,9 +20,9 @@ namespace CPSI.Matricula
         protected void Button_Matricular_Click(object sender, EventArgs e)
         {
             Modelo.ListaEspera listaEspera = new Modelo.ListaEspera();
-            listaEspera.IdAluno = matricula.IdAluno;
-            listaEspera.idTurma = matricula.IdTurma;
-            listaEspera.dataInscricao = matricula.DataMatricula;
+            listaEspera.IdAluno = matricula.idAluno;
+            listaEspera.idTurma = matricula.idTurma;
+            listaEspera.dataInscricao = matricula.dataMatricula;
             new DAL.DALListaEspera().Insert(listaEspera);
             Session.Remove("matricula");
             Response.Redirect("~/Matricula/WebFormMatricular.aspx");
