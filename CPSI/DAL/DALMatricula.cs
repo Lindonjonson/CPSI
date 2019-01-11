@@ -113,7 +113,7 @@ namespace CPSI.DAL
 
             DALTurma dALTurma = new DALTurma();
             Modelo.Turma turma = dALTurma.Select(IdTurma);
-            if (turma.QtdVagas >= (dALTurma.GetCountMatriculados(IdTurma)+1))
+            if (turma.qtdVagas >= (dALTurma.GetCountMatriculados(IdTurma)+1))
                 return true;
             else
                 return false;

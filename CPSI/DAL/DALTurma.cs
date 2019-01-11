@@ -109,13 +109,13 @@ namespace CPSI.DAL
 
             SqlCommand cmd = new SqlCommand("INSERT INTO Turma(IdTurma, Turma, Ano, Horario, DataInicio, DataFim, QtdVagas, IdDisciplina)VALUES(@IdTurma, @Turma, @Ano, @Horario, @DataInicio, @DataFim, @QtdVagas, @IdDisciplina)", conn);
             cmd.Parameters.AddWithValue("@IdTurma", GetIdMax());
-            cmd.Parameters.AddWithValue("@Turma", obj.NomeTurma);
+            cmd.Parameters.AddWithValue("@Turma", obj.nomeTurma);
             cmd.Parameters.AddWithValue("@Ano", obj.ano);
             cmd.Parameters.AddWithValue("@Horario", obj.horario);
-            cmd.Parameters.AddWithValue("@DataInicio", obj.DataInicio);
-            cmd.Parameters.AddWithValue("@DataFim", obj.DataFim);
-            cmd.Parameters.AddWithValue("@QtdVagas", obj.QtdVagas);
-            cmd.Parameters.AddWithValue("@IdDisciplina", obj.IdDisciplina);
+            cmd.Parameters.AddWithValue("@DataInicio", obj.dataInicio);
+            cmd.Parameters.AddWithValue("@DataFim", obj.dataFim);
+            cmd.Parameters.AddWithValue("@QtdVagas", obj.qtdVagas);
+            cmd.Parameters.AddWithValue("@IdDisciplina", obj.idDisciplina);
 
 
 
@@ -135,14 +135,14 @@ namespace CPSI.DAL
 
 
             SqlCommand cmd = new SqlCommand("UPDATE Turma SET IdTurma = IdTurma, Turma = @Turma, Ano = @Ano,Horario = @Horario,DataInicio = @DataInicio,DataFim = @DataFim,QtdVagas = @QtdVagas,IdDisciplina = @IdDisciplina WHERE IdTurma=@IdTurma", conn);
-            cmd.Parameters.AddWithValue("@IdTurma", obj.IdTurma);
-            cmd.Parameters.AddWithValue("@Turma", obj.NomeTurma);
+            cmd.Parameters.AddWithValue("@IdTurma", obj.idTurma);
+            cmd.Parameters.AddWithValue("@Turma", obj.nomeTurma);
             cmd.Parameters.AddWithValue("@Ano", obj.ano);
             cmd.Parameters.AddWithValue("@Horario", obj.horario);
-            cmd.Parameters.AddWithValue("@DataInicio", obj.DataInicio);
-            cmd.Parameters.AddWithValue("@DataFim", obj.DataFim);
-            cmd.Parameters.AddWithValue("@QtdVagas", obj.QtdVagas);
-            cmd.Parameters.AddWithValue("@IdDisciplina", obj.IdDisciplina);
+            cmd.Parameters.AddWithValue("@DataInicio", obj.dataInicio);
+            cmd.Parameters.AddWithValue("@DataFim", obj.dataFim);
+            cmd.Parameters.AddWithValue("@QtdVagas", obj.qtdVagas);
+            cmd.Parameters.AddWithValue("@IdDisciplina", obj.idDisciplina);
 
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -172,14 +172,14 @@ namespace CPSI.DAL
             while (dr.Read())
             {
 
-                      Turma.IdTurma=int.Parse(dr["IdTurma"].ToString());
-                      Turma.NomeTurma= dr["Turma"].ToString();
+                      Turma.idTurma=int.Parse(dr["IdTurma"].ToString());
+                      Turma.nomeTurma= dr["Turma"].ToString();
                       Turma.ano= int.Parse(dr["Ano"].ToString());
                       Turma.horario = dr["Horario"].ToString();
-                      Turma.DataInicio=  DateTime.Parse(dr["DataInicio"].ToString());
-                      Turma.DataFim=  DateTime.Parse(dr["DataFim"].ToString());
-                      Turma.QtdVagas=  int.Parse(dr["QtdVagas"].ToString());
-                      Turma.IdDisciplina=  int.Parse(dr["IdDisciplina"].ToString());
+                      Turma.dataInicio=  DateTime.Parse(dr["DataInicio"].ToString());
+                      Turma.dataFim=  DateTime.Parse(dr["DataFim"].ToString());
+                      Turma.qtdVagas=  int.Parse(dr["QtdVagas"].ToString());
+                      Turma.idDisciplina=  int.Parse(dr["IdDisciplina"].ToString());
 
 
             }

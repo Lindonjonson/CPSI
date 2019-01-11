@@ -22,16 +22,16 @@ namespace CPSI.Admin
                 Panel_ButtonExcluir.Visible = true;
                 DAL.DALTurma dALTurma = new DAL.DALTurma();
                 turma = dALTurma.Select(Session["IdTurma"].ToString());
-                LabelTurma.Text = turma.NomeTurma;
+                LabelTurma.Text = turma.nomeTurma;
                 if (!IsPostBack)
                 {   
-                    TxtNomeTurma.Text = turma.NomeTurma;
+                    TxtNomeTurma.Text = turma.nomeTurma;
                     TxtAno.Text = turma.ano.ToString();
                     TxtHorário.Text = turma.horario;
-                    CalendarDataInicio.Text = turma.DataInicio.ToShortDateString();
-                    CalendarDataFim.Text = turma.DataFim.ToShortDateString();
-                    TxtNumVagas.Text = turma.QtdVagas.ToString();
-                    DropDownListDisciplina.SelectedValue = turma.IdDisciplina.ToString();
+                    CalendarDataInicio.Text = turma.dataInicio.ToShortDateString();
+                    CalendarDataFim.Text = turma.dataFim.ToShortDateString();
+                    TxtNumVagas.Text = turma.qtdVagas.ToString();
+                    DropDownListDisciplina.SelectedValue = turma.idDisciplina.ToString();
 
                 }
             }
@@ -54,13 +54,13 @@ namespace CPSI.Admin
         protected void AtualizarTurma_Click(object sender, EventArgs e)
         {
             DAL.DALTurma dALTurma = new DAL.DALTurma();
-            turma.NomeTurma = TxtNomeTurma.Text;
+            turma.nomeTurma = TxtNomeTurma.Text;
             turma.ano = int.Parse(TxtAno.Text);
             turma.horario = TxtHorário.Text;
-            turma.DataInicio = DateTime.Parse(CalendarDataInicio.Text);
-            turma.DataFim = DateTime.Parse(CalendarDataFim.Text);
-            turma.QtdVagas = int.Parse(TxtNumVagas.Text);
-            turma.IdDisciplina =int.Parse(DropDownListDisciplina.SelectedItem.Value);
+            turma.dataInicio = DateTime.Parse(CalendarDataInicio.Text);
+            turma.dataFim = DateTime.Parse(CalendarDataFim.Text);
+            turma.qtdVagas = int.Parse(TxtNumVagas.Text);
+            turma.idDisciplina =int.Parse(DropDownListDisciplina.SelectedItem.Value);
             dALTurma.Update(turma);
             Session.Remove("IdTurma");
             Response.Redirect("~/Admin/WebFormVisualizacaoTurma.aspx");
@@ -71,7 +71,7 @@ namespace CPSI.Admin
         protected void Excluir_Click(object sender, EventArgs e)
         {
             DAL.DALTurma Delete = new DAL.DALTurma();
-            Delete.Delete(turma.IdTurma.ToString());
+            Delete.Delete(turma.idTurma.ToString());
             Session.Remove("IdTurma");
             Response.Redirect("~/Admin/WebFormVisualizacaoTurma.aspx");
             
