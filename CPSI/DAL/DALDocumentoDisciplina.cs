@@ -41,17 +41,12 @@ namespace CPSI.DAL
                 }
                return ListDocumentoDisciplina;
         }
-       
-
-
-
         [DataObjectMethod(DataObjectMethodType.Insert)]
         public void Insert(Modelo.Disciplina disciplina)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            List<Modelo.DocumentoDisciplina> ListDocumento = disciplina.getDocumentoDisciplina();
-            foreach (Modelo.DocumentoDisciplina documentoDisciplina in ListDocumento)
+            foreach (Modelo.DocumentoDisciplina documentoDisciplina in disciplina.listDocumentoDaDisciplinas)
             {
                   SqlCommand cmd = new SqlCommand("insert into DocumentoDisciplina (IdDisciplina, IdDocumento) values(@IdDisciplina, @IdDocumento)", conn);
                   cmd.Parameters.AddWithValue("@IdDisciplina",documentoDisciplina.idDisciplina);
@@ -75,8 +70,13 @@ namespace CPSI.DAL
             conn.Close();
 
         }
+        [DataObjectMethod(DataObjectMethodType.Update)]
+        public void update(Modelo.Disciplina disciplina)
+        {
+            Delete(disciplina.idDisciplina.ToString());
+            Insert(disciplina);
+        }
 
-        
 
     }
 }
