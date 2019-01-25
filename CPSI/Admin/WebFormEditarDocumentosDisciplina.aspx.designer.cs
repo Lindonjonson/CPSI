@@ -31,15 +31,6 @@ namespace CPSI.Admin {
         protected global::System.Web.UI.WebControls.Label LabelDisciplina;
         
         /// <summary>
-        /// Controle GridViewDocumentos.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewDocumentos;
-        
-        /// <summary>
         /// Controle PanelExcluir.
         /// </summary>
         /// <remarks>

@@ -12,21 +12,25 @@ namespace CPSI.Admin.Disciplina
         List<int> ListIdDocumentoDisciplina;  
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            controleListaDocumentoDisciplina();
+           
+        }
+        public void controleListaDocumentoDisciplina()
+        {
+            
             if (IsPostBack)
             {
-                if(Session["ListIdDocumento"]==null)
-                   ListIdDocumentoDisciplina = new List<int>();
-                else 
-                 ListIdDocumentoDisciplina = (List<int>)Session["ListIdDocumento"];
-            }      
+                if (Session["ListIdDocumento"] == null)
+                    ListIdDocumentoDisciplina = new List<int>();
+                else
+                    ListIdDocumentoDisciplina = (List<int>)Session["ListIdDocumento"];
+            }
             else
             {
                 ListIdDocumentoDisciplina = new List<int>();
-               
+
             }
         }
-
         protected void GridViewDisciplina_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             DAL.DALDisciplina disciplina = new DAL.DALDisciplina();

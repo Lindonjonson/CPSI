@@ -59,13 +59,13 @@ namespace CPSI.DAL
             conn.Close();
         }
         [DataObjectMethod(DataObjectMethodType.Delete)]
-        public void Delete(string IdDisciplina)
+        public void Delete(Modelo.Disciplina disciplina)
         {
 
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = new SqlCommand("Delete from DocumentoDisciplina where IdDisciplina=@IdDisciplina",conn);
-            cmd.Parameters.AddWithValue("IdDisciplina",IdDisciplina);
+            cmd.Parameters.AddWithValue("IdDisciplina",disciplina.idDisciplina);
             cmd.ExecuteNonQuery();
             conn.Close();
 
@@ -73,8 +73,9 @@ namespace CPSI.DAL
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void update(Modelo.Disciplina disciplina)
         {
-            Delete(disciplina.idDisciplina.ToString());
-            Insert(disciplina);
+                Delete(disciplina);
+                Insert(disciplina);
+    
         }
 
 
