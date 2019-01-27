@@ -70,6 +70,7 @@ namespace CPSI.DAL
             if (obj.existDocumento())
             {
                 new DAL.DALDocumentoDisciplina().Insert(obj);
+               
             }
             conn.Close();
 
@@ -98,11 +99,7 @@ namespace CPSI.DAL
         {
 
             SqlConnection conn = new SqlConnection(connectionString);
-
             conn.Open();
-
-       
-
             SqlCommand cmd = new SqlCommand("DELETE FROM Disciplina WHERE idDisciplina = @idDisciplina", conn);
             cmd.Parameters.AddWithValue("@idDisciplina", id);
             cmd.ExecuteNonQuery();
@@ -128,7 +125,7 @@ namespace CPSI.DAL
 
             }
             DAL.DALDocumentoDisciplina dALDocumentoDisciplina = new DALDocumentoDisciplina();
-            disciplina.listDocumentoDaDisciplinas=dALDocumentoDisciplina.SelectALL(disciplina.idDisciplina.ToString());
+            disciplina.addDocumentoDisciplina(dALDocumentoDisciplina.SelectALL(disciplina.idDisciplina.ToString()));
             conn.Close();
             return disciplina;
            

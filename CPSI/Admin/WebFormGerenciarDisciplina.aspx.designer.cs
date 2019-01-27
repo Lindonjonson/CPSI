@@ -13,24 +13,6 @@ namespace CPSI.Admin.Disciplina {
     public partial class WebFormGerenciarCategoria {
         
         /// <summary>
-        /// Controle ButtonMostrarCadastrarDisciplina.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonMostrarCadastrarDisciplina;
-        
-        /// <summary>
-        /// Controle PanelListagemDisciplina.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelListagemDisciplina;
-        
-        /// <summary>
         /// Controle GridViewDisciplina.
         /// </summary>
         /// <remarks>
@@ -38,42 +20,6 @@ namespace CPSI.Admin.Disciplina {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridViewDisciplina;
-        
-        /// <summary>
-        /// Controle LabelDisciplina.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelDisciplina;
-        
-        /// <summary>
-        /// Controle Button4.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button4;
-        
-        /// <summary>
-        /// Controle Button3.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
-        
-        /// <summary>
-        /// Controle PanelCadastrarDisciplina.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelCadastrarDisciplina;
         
         /// <summary>
         /// Controle TxtNomeDisciplina.
@@ -85,22 +31,31 @@ namespace CPSI.Admin.Disciplina {
         protected global::System.Web.UI.WebControls.TextBox TxtNomeDisciplina;
         
         /// <summary>
-        /// Controle GridViewDocumentoDisciplina.
+        /// Controle CheckBoxListDocumentos.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewDocumentoDisciplina;
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxListDocumentos;
         
         /// <summary>
-        /// Controle ButtonCancelarInserir.
+        /// Controle LabelDisciplina.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonCancelarInserir;
+        protected global::System.Web.UI.WebControls.Label LabelDisciplina;
+        
+        /// <summary>
+        /// Controle Button3.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button3;
         
         /// <summary>
         /// Controle ObjectDataSource1.

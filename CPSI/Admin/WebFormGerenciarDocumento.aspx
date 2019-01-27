@@ -12,7 +12,7 @@
     </asp:GridView>
     <button type="button" data-toggle="modal" data-target="#ModalExcluirDocumento" class="btn btn-danger">Excluir Documento</button>
     
-    <div class="modal fade" id="ModalCadastrarDocumento" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="ModalCadastrarDocumento" tabindex="-1" role="dialog" aria-labelledby="ModalCadastrarDocumento" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -34,7 +34,7 @@
       </div>
    </div>
     
-    <div class="modal fade" id="ModalExcluirDocumento" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="ModalExcluirDocumento" tabindex="-1" role="dialog" aria-labelledby="ModalExcluirDocumento" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -48,8 +48,8 @@
                    <b> <asp:label runat="server" ID="LabelDocumento"></asp:label> </b>
                  </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
-                     <asp:Button ID="Button3" runat="server" Text="Excluir" class="btn btn-danger" OnClick="Excluir_Documento" />
+                     <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
+                     <asp:Button runat="server" ID="Button3"  Text="Excluir" cssclass="btn btn-danger" OnClick="Excluir_Documento" />
                 </div>
             </div>
       </div>

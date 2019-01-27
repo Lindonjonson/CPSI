@@ -41,8 +41,12 @@ namespace CPSI.Admin
 
                 DataKey key = GridViewDocumentos.DataKeys[index];
                 int idDocumento = Convert.ToInt32(key.Value);
-                if (disciplina.listDocumentoDaDisciplinas.Exists(X => X.idDocumento == idDocumento))
+                if (disciplina.getDocumentoDisciplina().Exists(X => X.idDocumento == idDocumento))
+                {
                     GridViewDocumentos.Rows[index].BackColor = System.Drawing.Color.AliceBlue;
+                    
+
+                }
 
             }
         }

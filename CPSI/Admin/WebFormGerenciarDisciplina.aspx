@@ -3,9 +3,8 @@
     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
-    <asp:Button ID="ButtonMostrarCadastrarDisciplina" runat="server" Text="Cadastrar disciplina" CssClass="btn" OnClick="ExibirCadatrarClick" />
-    <asp:Panel ID="PanelListagemDisciplina" runat="server">
+    <h4>Disciplinas</h4>
+    <Button  type="button" Class="btn btn btn-primary" data-toggle="modal" data-target="#ModalCadastrarDisciplina">Cadastrar disciplina</Button>
         <h4>Disciplinas</h4>
         <asp:GridView ID="GridViewDisciplina" runat="server" AutoGenerateColumns="False" CssClass="highlight" DataSourceID="ObjectDataSource1" OnRowCommand="GridViewDisciplina_RowCommand"  ShowHeaderWhenEmpty="True" DataKeyNames="idDisciplina" OnSelectedIndexChanged="GridViewDisciplina_SelectedIndexChanged" EnableViewState="False" >
             <Columns>
@@ -14,31 +13,53 @@
                 <asp:ButtonField ButtonType="link" CommandName="EditarDocumento"  HeaderText="Documentos" ShowHeader="True" Text="Editar Documentos" ItemStyle-CssClass="btn cyan lighten-5" />
             </Columns>
         </asp:GridView>
-   <button data-target="ModalExcluirDisciplina" class="btn modal-trigger red darken-1 styleADM_ButtonExcluir">Excluir Disciplina</button>
-    </asp:Panel>   
-    <div id="ModalExcluirDisciplina" class="modal">
-        <div class="modal-content">
-            <span>Confirmar exclusão da disciplina</span>
-            <asp:Label ID="LabelDisciplina" runat="server" Text="Label"></asp:Label>
-            <asp:Button ID="Button4" runat="server" CssClass="btn green darken-1" Text="Cancelar" OnClick="Page_Load" />
-            <asp:Button ID="Button3" runat="server" CssClass="btn red darken-1"  Text="Excluir" OnClick="Excluir_Disciplina" />
-        </div>
-    </div>
-    
-    <asp:Panel ID="PanelCadastrarDisciplina" Visible="false"  runat="server">
-            <asp:TextBox runat="server" ID="TxtNomeDisciplina" PlaceHolder="nome disciplina"></asp:TextBox>
-            <label>Documentos obrigatorios para a disciplina</label>
-        <asp:GridView ID="GridViewDocumentoDisciplina" CssClass="highlight" runat="server" DataSourceID="ObjectDataSource2" AutoGenerateColumns="False" DataKeyNames="idDocumento" OnRowCommand="GridViewDocumentoDisciplina_RowCommand">
-            <Columns>
-                <asp:BoundField DataField="documento" HeaderText="Documento" SortExpression="documento"></asp:BoundField>
-                <asp:ButtonField CommandName="Adicionar"  ButtonType="Image"  ImageUrl="~/Assets/Icons/baseline_add_circle_outline_black_18dp.png" HeaderText="Adicionar" ></asp:ButtonField>
-                <asp:ButtonField CommandName="Remover" Text="Remover" ImageUrl="~/Assets/Icons/baseline_remove_circle_outline_black_18dp.png" ButtonType="Image"  HeaderText="Remover"></asp:ButtonField>
-            </Columns>
-        </asp:GridView>
-        <asp:Button runat="server" Text="Inserir" CssClass="btn green darken-1" OnClick="Inserir_Click"> </asp:Button>
-        <asp:Button ID="ButtonCancelarInserir" runat="server" Text="Cancelar" CssClass="btn red darken-1" OnClick="Click_CancelarInsertDisciplina" />
-    </asp:Panel>
+    <button type="button" data-target="#ModalExcluirDisciplina" data-toggle="modal" class="btn btn-danger">Excluir Disciplina</button> 
+    <div class="modal fade" id="ModalCadastrarDisciplina" tabindex="-1" role="dialog" aria-labelledby="ModalCadastrarDisciplina" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                     <h5 class="modal-title">Inserir disciplina</h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <span>Nome da disciplina</span>
+                    <asp:TextBox runat="server" ID="TxtNomeDisciplina" PlaceHolder="nome disciplina"></asp:TextBox>
+                    <label>Documentos obrigatorios para a disciplina</label>
+                    <asp:CheckBoxList ID="CheckBoxListDocumentos" runat="server" DataSourceID="ObjectDataSource2" DataTextField="documento" DataValueField="idDocumento"></asp:CheckBoxList>
+                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <asp:Button runat="server" Text="Inserir"  CssClass="btn btn-success" OnClick="Inserir_Click"> </asp:Button>
+                </div>
+            </div>
+      </div>
+   </div>
+    <div class="modal fade" id="ModalExcluirDisciplina" tabindex="-1" role="dialog" aria-labelledby="ModalExcluirDisciplina" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                     <h5 class="modal-title">Excluir disciplina</h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                     <span>Confirmar exclusão da disciplina</span>
+                    <b> <asp:Label ID="LabelDisciplina" runat="server" Text="Label"></asp:Label> </b>
+                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
+                    <asp:Button ID="Button3" runat="server" class="btn btn-danger"  Text="Excluir" OnClick="Excluir_Disciplina" />
+                </div>
+            </div>
+      </div>
+   </div>
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALDisciplina" DataObjectTypeName="CPSI.Modelo.Disciplina" InsertMethod="Insert" UpdateMethod="Update"></asp:ObjectDataSource>
     <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALDocumento"></asp:ObjectDataSource>
 </asp:Content>
  
+
+    
+    
