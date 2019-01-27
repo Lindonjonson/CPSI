@@ -30,7 +30,7 @@ namespace CPSI.Admin
 
         protected void ChamarTelaInserir_Click(object sender, EventArgs e)
         {
-            Session.RemoveAll();
+            Session.Remove("IdTurma");
             Response.Redirect("~/Admin/WebFormGerenciarTurma.aspx");
         }
     }

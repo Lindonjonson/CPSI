@@ -74,11 +74,11 @@
     <Content Include="Admin\WebFormGerenciarDocumento.aspx" />
     <Content Include="Admin\WebFormGerenciarTurma.aspx" />
     <Content Include="Admin\WebFormVisualizacaoTurma.aspx" />
-    <Content Include="Assets\CSS\materialize.min.css" />
+    <Content Include="Assets\css\bootstrap.min.css" />
     <Content Include="Assets\Icons\baseline_add_circle_outline_black_18dp.png" />
     <Content Include="Assets\Icons\baseline_remove_circle_outline_black_18dp.png" />
-    <Content Include="Assets\JS\ADM.js" />
-    <Content Include="Assets\JS\materialize.min.js" />
+    <Content Include="Assets\js\bootstrap.min.js" />
+    <Content Include="Assets\js\jquery-3.3.1.min.js" />
     <Content Include="Master\WebFormMatriculaInicial.aspx" />
     <Content Include="Master\WebFormPrincipal.aspx" />
     <Content Include="Matricula\WebFormGerenciarAluno.aspx" />

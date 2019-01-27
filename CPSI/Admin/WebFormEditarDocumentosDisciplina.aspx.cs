@@ -9,14 +9,14 @@ namespace CPSI.Admin
 {
     public partial class WebFormEditarDocumentosDisciplina : System.Web.UI.Page
     {
-        List<int> documentoDisciplina;
+        List<int> ListIdDocumentoDisciplina;
         Modelo.Disciplina disciplina;
         DAL.DALDisciplina dALDisciplina = new DAL.DALDisciplina();
         protected void Page_Load(object sender, EventArgs e)
         {
             disciplina = dALDisciplina.Select(Session["IdDisciplina"].ToString());
             LabelDisciplina.Text = disciplina.disciplina;
-            
+            controleListaDocumentoDisciplina();
         }
         public void controleListaDocumentoDisciplina()
         {
@@ -32,7 +32,7 @@ namespace CPSI.Admin
             {
                 ListIdDocumentoDisciplina = new List<int>();
 
-            }
+            } 
         }
         protected void GridViewDocumentos_Load(object sender, EventArgs e)
         {
@@ -46,7 +46,7 @@ namespace CPSI.Admin
 
             }
         }
-        private void 
+       
         protected void Editar_Documentos(object sender, EventArgs e)
         {
           
@@ -58,6 +58,7 @@ namespace CPSI.Admin
 
         protected void Cancelar_click(object sender, EventArgs e)
         {
+            Session.Remove("ListIdDocumento"); 
             Session.Remove("IdDisciplina");
             Response.Redirect("~/Admin/WebFormGerenciarDisciplina.aspx");
 

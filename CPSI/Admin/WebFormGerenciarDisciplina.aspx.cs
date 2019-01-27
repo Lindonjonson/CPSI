@@ -50,6 +50,7 @@ namespace CPSI.Admin.Disciplina
             disciplina.addDocumentoDisciplina(ListIdDocumentoDisciplina);
             DAL.DALDisciplina DALDisciplina = new DAL.DALDisciplina();
             DALDisciplina.Insert(disciplina);
+            Session.Remove("ListIdDocumento");
             Response.Redirect("~\\Admin\\WebFormGerenciarDisciplina.aspx");
             
        

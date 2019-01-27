@@ -3,29 +3,56 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    <h4> Tipos de Documento </h4>
-   <button data-target="ModalCadastrarDocumento" class="btn modal-trigger">Cadastrar Documento</button>
+   <button type="button" class="btn btn btn-primary" data-toggle="modal" data-target="#ModalCadastrarDocumento">Cadastrar Documento</button>
     <asp:GridView ID="GridViewDocumentos" runat="server" CssClass="highlight" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" ShowHeaderWhenEmpty="True" DataKeyNames="idDocumento" OnSelectedIndexChanged="GridViewDocumentos_SelectedIndexChanged" EnableViewState="False">
         <Columns>
             <asp:CommandField ShowEditButton="True" ShowSelectButton="True" HeaderText="Opera&#231;&#245;es" />
             <asp:BoundField DataField="documento" HeaderText="Documento" SortExpression="documento" />
         </Columns>
     </asp:GridView>
-    <button data-target="ModalExcluirDocumento" class="btn modal-trigger red darken-1">Excluir Documento</button>
-    <div id="ModalCadastrarDocumento" class="modal">
-        <div class="modal-content">
-            <asp:label  runat="server" Text="Nome documento:"></asp:label>
-            <asp:textbox runat="server" ID="txtDocumento"></asp:textbox>
-            <asp:button runat="server" click="CadastrarDocumento" CssClass="btn green darken-1" Text="Cadastrar" OnClick="Inserir_Click" />
-            <asp:Button ID="Button1" runat="server" Text="Cancelar" CssClass="btn red darken-1" OnClick="Page_Load" />
-        </div>
-    </div>
-    <div class="modal" id="ModalExcluirDocumento">
-        <asp:Panel CssClass="modal-content" ID="PanelExcluir" runat="server">
-        <span>Confirmar exclusão do documento</span>
-        <asp:Label ID="LabelDocumento" runat="server" Text="Label"></asp:Label>
-        <asp:Button ID="Button4" runat="server" Text="Cancelar" CssClass="btn green darken-1" OnClick="Page_Load" />
-        <asp:Button ID="Button3" runat="server" Text="Excluir" class="btn red darken-1" OnClick="Excluir_Documento" />
-    </asp:Panel>
-    </div>
+    <button type="button" data-toggle="modal" data-target="#ModalExcluirDocumento" class="btn btn-danger">Excluir Documento</button>
+    
+    <div class="modal fade" id="ModalCadastrarDocumento" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                     <h5 class="modal-title">Inserir documento</h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <asp:label  runat="server" Text="Nome documento:"></asp:label>
+                    <asp:textbox runat="server" ID="txtDocumento"></asp:textbox>
+                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <asp:button runat="server" click="CadastrarDocumento" CssClass="btn btn-success" Text="Cadastrar" OnClick="Inserir_Click" />
+
+                </div>
+            </div>
+      </div>
+   </div>
+    
+    <div class="modal fade" id="ModalExcluirDocumento" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                     <h5 class="modal-title">Excluir documento</h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <asp:label  runat="server" Text="Nome documento:"></asp:label>
+                   <b> <asp:label runat="server" ID="LabelDocumento"></asp:label> </b>
+                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
+                     <asp:Button ID="Button3" runat="server" Text="Excluir" class="btn btn-danger" OnClick="Excluir_Documento" />
+                </div>
+            </div>
+      </div>
+   </div>
 <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALDocumento" DataObjectTypeName="CPSI.Modelo.Documento" UpdateMethod="Update" DeleteMethod="Delete"></asp:ObjectDataSource>  
 </asp:Content>
