@@ -13,15 +13,6 @@ namespace CPSI.Admin {
     public partial class WebFormEditarDocumentosDisciplina {
         
         /// <summary>
-        /// Controle Label1.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
         /// Controle LabelDisciplina.
         /// </summary>
         /// <remarks>
@@ -40,31 +31,22 @@ namespace CPSI.Admin {
         protected global::System.Web.UI.WebControls.GridView GridViewDocumentos;
         
         /// <summary>
-        /// Controle PanelExcluir.
+        /// Controle Button1.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelExcluir;
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// Controle Button_Cancelar.
+        /// Controle Button2.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_Cancelar;
-        
-        /// <summary>
-        /// Controle Button3.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
         /// Controle ObjectDataSource1.

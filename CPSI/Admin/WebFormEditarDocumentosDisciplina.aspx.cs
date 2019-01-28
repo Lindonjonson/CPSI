@@ -29,7 +29,7 @@ namespace CPSI.Admin
                     ListIdDocumentoDisciplina = (List<int>)Session["ListIdDocumento"];
             }
             else
-            {
+            {   
                 ListIdDocumentoDisciplina = new List<int>();
 
             } 
@@ -44,8 +44,11 @@ namespace CPSI.Admin
                 if (disciplina.getDocumentoDisciplina().Exists(X => X.idDocumento == idDocumento))
                 {
                     GridViewDocumentos.Rows[index].BackColor = System.Drawing.Color.AliceBlue;
-                    
-
+                    if (ListIdDocumentoDisciplina.Exists(i => i==idDocumento))
+                    {
+                        ListIdDocumentoDisciplina.Add(idDocumento);
+                    }
+                
                 }
 
             }
@@ -53,9 +56,11 @@ namespace CPSI.Admin
        
         protected void Editar_Documentos(object sender, EventArgs e)
         {
-          
-          
+
+            disciplina.addDocumentoDisciplina(ListIdDocumentoDisciplina);
+            new DAL.DALDocumentoDisciplina().update(disciplina);
             Session.Remove("IdDisciplina");
+            Session.Remove("ListIdDocumento");
             Response.Redirect("~/Admin/WebFormGerenciarDisciplina.aspx"); 
             
         }
@@ -70,7 +75,27 @@ namespace CPSI.Admin
 
         protected void GridViewDocumentos_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            if (e.CommandName == "Adicionar")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                GridViewDocumentos.Rows[index].BackColor = System.Drawing.Color.AliceBlue;
+                DataKey dataKey = GridViewDocumentos.DataKeys[index];
+                int idDocumento = Convert.ToInt32(dataKey.Value);
+                ListIdDocumentoDisciplina.Add(idDocumento);
+                Session["ListIdDocumento"] = ListIdDocumentoDisciplina;
 
+
+
+            }
+            if (e.CommandName == "Remover")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                GridViewDocumentos.Rows[index].BackColor = System.Drawing.Color.White;
+                DataKey dataKey = GridViewDocumentos.DataKeys[index];
+                int idDocumento = Convert.ToInt32(dataKey.Value);
+                ListIdDocumentoDisciplina.Remove(idDocumento);
+                Session["ListIdDocumento"] = ListIdDocumentoDisciplina;
+            }
         }
     }
 }

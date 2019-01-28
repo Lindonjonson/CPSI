@@ -74,8 +74,9 @@ namespace CPSI.DAL
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void update(Modelo.Disciplina disciplina)
         {
-                Delete(disciplina);
-                Insert(disciplina);
+            Delete(disciplina);
+            if(disciplina.existDocumento())
+               Insert(disciplina);
     
         }
 

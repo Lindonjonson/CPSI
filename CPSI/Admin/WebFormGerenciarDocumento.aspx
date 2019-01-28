@@ -2,16 +2,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   <h4> Tipos de Documento </h4>
-   <button type="button" class="btn btn btn-primary" data-toggle="modal" data-target="#ModalCadastrarDocumento">Cadastrar Documento</button>
-    <asp:GridView ID="GridViewDocumentos" runat="server" CssClass="highlight" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" ShowHeaderWhenEmpty="True" DataKeyNames="idDocumento" OnSelectedIndexChanged="GridViewDocumentos_SelectedIndexChanged" EnableViewState="False">
+   <h4 class="mt-3 mb-3"> Tipos de Documento </h4>
+    <asp:GridView ID="GridViewDocumentos" runat="server" CssClass="table table-hover" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" ShowHeaderWhenEmpty="True" DataKeyNames="idDocumento" OnSelectedIndexChanged="GridViewDocumentos_SelectedIndexChanged" EnableViewState="False">
         <Columns>
             <asp:CommandField ShowEditButton="True" ShowSelectButton="True" HeaderText="Opera&#231;&#245;es" />
             <asp:BoundField DataField="documento" HeaderText="Documento" SortExpression="documento" />
         </Columns>
     </asp:GridView>
     <button type="button" data-toggle="modal" data-target="#ModalExcluirDocumento" class="btn btn-danger">Excluir Documento</button>
-    
+    <button type="button" class="btn btn btn-primary" data-toggle="modal" data-target="#ModalCadastrarDocumento">Cadastrar Documento</button>
     <div class="modal fade" id="ModalCadastrarDocumento" tabindex="-1" role="dialog" aria-labelledby="ModalCadastrarDocumento" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

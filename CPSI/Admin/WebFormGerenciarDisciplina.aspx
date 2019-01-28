@@ -3,22 +3,22 @@
     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h4>Disciplinas</h4>
-    <Button  type="button" Class="btn btn btn-primary" data-toggle="modal" data-target="#ModalCadastrarDisciplina">Cadastrar disciplina</Button>
-        <h4>Disciplinas</h4>
-        <asp:GridView ID="GridViewDisciplina" runat="server" AutoGenerateColumns="False" CssClass="highlight" DataSourceID="ObjectDataSource1" OnRowCommand="GridViewDisciplina_RowCommand"  ShowHeaderWhenEmpty="True" DataKeyNames="idDisciplina" OnSelectedIndexChanged="GridViewDisciplina_SelectedIndexChanged" EnableViewState="False" >
+        <h4 class="mt-3 mb-3">Disciplinas</h4>
+        <asp:GridView ID="GridViewDisciplina" runat="server" AutoGenerateColumns="False" CssClass="table table-hover" DataSourceID="ObjectDataSource1" OnRowCommand="GridViewDisciplina_RowCommand"  ShowHeaderWhenEmpty="True" DataKeyNames="idDisciplina" OnSelectedIndexChanged="GridViewDisciplina_SelectedIndexChanged" EnableViewState="False" >
             <Columns>
                 <asp:CommandField HeaderText="Operações" ShowEditButton="True" ShowSelectButton="True" />
                 <asp:BoundField DataField="disciplina" HeaderText="Disciplina" SortExpression="disciplina" />
-                <asp:ButtonField ButtonType="link" CommandName="EditarDocumento"  HeaderText="Documentos" ShowHeader="True" Text="Editar Documentos" ItemStyle-CssClass="btn cyan lighten-5" />
+                <asp:ButtonField ButtonType="link" CommandName="EditarDocumento"  HeaderText="Documentos" ShowHeader="True" Text="Editar Documentos"  />
             </Columns>
         </asp:GridView>
     <button type="button" data-target="#ModalExcluirDisciplina" data-toggle="modal" class="btn btn-danger">Excluir Disciplina</button> 
+    <Button  type="button" Class="btn btn btn-primary" data-toggle="modal" data-target="#ModalCadastrarDisciplina">Cadastrar disciplina</Button>
+
     <div class="modal fade" id="ModalCadastrarDisciplina" tabindex="-1" role="dialog" aria-labelledby="ModalCadastrarDisciplina" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                     <h5 class="modal-title">Inserir disciplina</h5>
+                     <h5 class="modal-title">Cadastrar disciplina</h5>
                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                          <span aria-hidden="true">&times;</span>
                     </button>
@@ -47,7 +47,7 @@
                 </div>
                 <div class="modal-body">
                      <span>Confirmar exclusão da disciplina</span>
-                    <b> <asp:Label ID="LabelDisciplina" runat="server" Text="Label"></asp:Label> </b>
+                    <b> <asp:Label ID="LabelDisciplina" runat="server"></asp:Label> </b>
                  </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
