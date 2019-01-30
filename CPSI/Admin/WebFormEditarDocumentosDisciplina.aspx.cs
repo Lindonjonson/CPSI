@@ -36,22 +36,27 @@ namespace CPSI.Admin
         }
         protected void GridViewDocumentos_Load(object sender, EventArgs e)
         {
-            for (int index = 0; index < GridViewDocumentos.Rows.Count; index++)
+            if (!IsPostBack)
             {
 
-                DataKey key = GridViewDocumentos.DataKeys[index];
-                int idDocumento = Convert.ToInt32(key.Value);
-                if (disciplina.getDocumentoDisciplina().Exists(X => X.idDocumento == idDocumento))
+                for (int index = 0; index < GridViewDocumentos.Rows.Count; index++)
                 {
-                    GridViewDocumentos.Rows[index].BackColor = System.Drawing.Color.AliceBlue;
-                    if (ListIdDocumentoDisciplina.Exists(i => i==idDocumento))
-                    {
-                        ListIdDocumentoDisciplina.Add(idDocumento);
-                    }
-                
-                }
 
+                    DataKey key = GridViewDocumentos.DataKeys[index];
+                    int idDocumento = Convert.ToInt32(key.Value);
+                    if (disciplina.getDocumentoDisciplina().Exists(X => X.idDocumento == idDocumento))
+                    {
+                        GridViewDocumentos.Rows[index].BackColor = System.Drawing.Color.AliceBlue;
+                        if (ListIdDocumentoDisciplina.Exists(i => i == idDocumento))
+                        {
+                            ListIdDocumentoDisciplina.Add(idDocumento);
+                        }
+
+                    }
+
+                }
             }
+           
         }
        
         protected void Editar_Documentos(object sender, EventArgs e)
