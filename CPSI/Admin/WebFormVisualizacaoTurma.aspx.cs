@@ -28,7 +28,7 @@ namespace CPSI.Admin
             }
         }
 
-        protected void ChamarTelaInserir_Click(object sender, EventArgs e)
+        protected void Inserir_Click(object sender, EventArgs e)
         {
             Session.Remove("IdTurma");
             Response.Redirect("~/Admin/WebFormGerenciarTurma.aspx");
