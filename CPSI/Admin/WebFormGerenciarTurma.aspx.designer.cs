@@ -76,13 +76,13 @@ namespace CPSI.Admin {
         protected global::System.Web.UI.WebControls.DropDownList DropDownListDisciplina;
         
         /// <summary>
-        /// Controle ObjectDataSource2.
+        /// Controle PanelAdicionarTurma.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource2;
+        protected global::System.Web.UI.WebControls.Panel PanelAdicionarTurma;
         
         /// <summary>
         /// Controle button_Inserir.
@@ -94,6 +94,15 @@ namespace CPSI.Admin {
         protected global::System.Web.UI.WebControls.Button button_Inserir;
         
         /// <summary>
+        /// Controle PanelAlterarTurma.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelAlterarTurma;
+        
+        /// <summary>
         /// Controle button_Atualizar.
         /// </summary>
         /// <remarks>
@@ -103,51 +112,6 @@ namespace CPSI.Admin {
         protected global::System.Web.UI.WebControls.Button button_Atualizar;
         
         /// <summary>
-        /// Controle Button2.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
-        
-        /// <summary>
-        /// Controle Panel_ButtonExcluir.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel_ButtonExcluir;
-        
-        /// <summary>
-        /// Controle PanelExcluir.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelExcluir;
-        
-        /// <summary>
-        /// Controle LabelTurma.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelTurma;
-        
-        /// <summary>
-        /// Controle HyperLink2.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink2;
-        
-        /// <summary>
         /// Controle button_Excluir.
         /// </summary>
         /// <remarks>
@@ -155,5 +119,14 @@ namespace CPSI.Admin {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button button_Excluir;
+        
+        /// <summary>
+        /// Controle ObjectDataSource2.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource2;
     }
 }

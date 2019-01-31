@@ -10,34 +10,18 @@ namespace CPSI.Admin
     public partial class WebFormVisualizarTurmas : System.Web.UI.Page
     {
         Modelo.Turma turma = new Modelo.Turma();
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-          
-            if (!(Session["IdTurma"] == null))
-            {
-                button_Atualizar.Visible = true;
-                button_Excluir.Visible = true;
-                Panel_ButtonExcluir.Visible = true;
-                DAL.DALTurma dALTurma = new DAL.DALTurma();
-                turma = dALTurma.Select(Session["IdTurma"].ToString());
-                LabelTurma.Text = turma.nomeTurma;
-                if (!IsPostBack)
-                {   
-                    TxtNomeTurma.Text = turma.nomeTurma;
-                    TxtAno.Text = turma.ano.ToString();
-                    TxtHorário.Text = turma.horario;
-                    CalendarDataInicio.Text = turma.dataInicio.ToShortDateString();
-                    CalendarDataFim.Text = turma.dataFim.ToShortDateString();
-                    TxtNumVagas.Text = turma.qtdVagas.ToString();
-                    DropDownListDisciplina.SelectedValue = turma.idDisciplina.ToString();
 
-                }
+
+            if (!(Session["IdTurma"]==null)) 
+            {
+                CarregarItemEdicao();
+                PanelAlterarTurma.Visible = true;
             }
             else
             {
-                button_Inserir.Visible = true;
+                PanelAdicionarTurma.Visible = true;
 
             }
         }
@@ -81,7 +65,24 @@ namespace CPSI.Admin
         {
             Session.Remove("IdTurma");
             Response.Redirect("~/Admin/WebFormVisualizacaoTurma.aspx");
-           
+
+        }
+        public void CarregarItemEdicao()
+        {
+            DAL.DALTurma dALTurma = new DAL.DALTurma();
+            turma = dALTurma.Select(Session["IdTurma"].ToString());
+            if (!IsPostBack)
+            {
+                TxtNomeTurma.Text = turma.nomeTurma;
+                TxtAno.Text = turma.ano.ToString();
+                TxtHorário.Text = turma.horario;
+                CalendarDataInicio.Text = turma.dataInicio.ToShortDateString();
+                CalendarDataFim.Text = turma.dataFim.ToShortDateString();
+                TxtNumVagas.Text = turma.qtdVagas.ToString();
+                DropDownListDisciplina.SelectedValue = turma.idDisciplina.ToString();
+
+            }
+
         }
     }
 }
