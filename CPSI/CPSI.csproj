@@ -69,6 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\WebFormAdministradorInicial.aspx" />
     <Content Include="Admin\WebFormEditarDocumentosDisciplina.aspx" />
     <Content Include="Admin\WebFormGerenciarDisciplina.aspx" />
     <Content Include="Admin\WebFormGerenciarDocumento.aspx" />
@@ -80,7 +81,6 @@
     <Content Include="Assets\js\bootstrap.min.js" />
     <Content Include="Assets\js\jquery-3.3.1.min.js" />
     <Content Include="Master\WebFormMatriculaInicial.aspx" />
-    <Content Include="Master\WebFormPrincipal.aspx" />
     <Content Include="Matricula\WebFormGerenciarAluno.aspx" />
     <Content Include="Matricula\WebFormImprimirFichaInscricao.aspx" />
     <Content Include="Matricula\WebFormMatricular.aspx" />
@@ -89,8 +89,16 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="WebFormInicial.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\WebFormAdministradorInicial.aspx.cs">
+      <DependentUpon>WebFormAdministradorInicial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\WebFormAdministradorInicial.aspx.designer.cs">
+      <DependentUpon>WebFormAdministradorInicial.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\WebFormEditarDocumentosDisciplina.aspx.cs">
       <DependentUpon>WebFormEditarDocumentosDisciplina.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -155,13 +163,6 @@
     <Compile Include="Master\WebFormMatriculaInicial.aspx.designer.cs">
       <DependentUpon>WebFormMatriculaInicial.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Master\WebFormPrincipal.aspx.cs">
-      <DependentUpon>WebFormPrincipal.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Master\WebFormPrincipal.aspx.designer.cs">
-      <DependentUpon>WebFormPrincipal.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Matricula\WebFormGerenciarAluno.aspx.cs">
       <DependentUpon>WebFormGerenciarAluno.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -206,6 +207,13 @@
     <Compile Include="Modelo\Matricula.cs" />
     <Compile Include="Modelo\Turma.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebFormInicial.aspx.cs">
+      <DependentUpon>WebFormInicial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormInicial.aspx.designer.cs">
+      <DependentUpon>WebFormInicial.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master\Admin.Master" />

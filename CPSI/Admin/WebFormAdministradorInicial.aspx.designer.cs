@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CPSI.Master
+namespace CPSI.Admin
 {
 
 
-    public partial class WebFormPrincipal
+    public partial class WebFormAdministradorInicial
     {
     }
 }
