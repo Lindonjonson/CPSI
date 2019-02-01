@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace CPSI.Master
+namespace CPSI.Matricula
 {
     public partial class WebFormMatriculaInicial : System.Web.UI.Page
     {

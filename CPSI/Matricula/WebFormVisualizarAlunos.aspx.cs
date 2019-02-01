@@ -35,7 +35,7 @@ namespace CPSI.Matricula
 
         protected void ChamarTelaInserir_Click(object sender, EventArgs e)
         {
-            Session.RemoveAll();
+            Session.Remove("IdAluno");
             Response.Redirect("~/Matricula/WebFormGerenciarAluno.aspx");
 
         }

@@ -13,7 +13,7 @@
         <div class="container">
             <h1 class="mt-3 mb-3">CENTRO DE PROMOÇÃO À SAUDE DO IDOSO</h1>
             <div class="row mt-3 mb-3">
-                <div class="col col-md-12">
+                <div class="col-md-12">
                      <div class="card w-100" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">Módulo administrador</h5>
@@ -25,19 +25,19 @@
                 </div>
              </div>
                <div class="row mt-3 mb-3">
-                <div class="col col-md-12">
+                <div class="col-md-12">
                      <div class="card w-100" style="width: 18rem;">
                         <div class="card-body">
-                            <h5 class="card-title">Módulo administrador</h5>
+                            <h5 class="card-title">Módulo Matrícula</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Esfera administrativa</h6>
-                            <p class="card-text">Gerenciar Documentos,Gerenciar Disciplinas, Gerenciar Turmas</p>
-                            <asp:HyperLink ID="HyperLink2" CssClass="card-link" NavigateUrl="~/Admin/WebFormAdministradorInicial.aspx" runat="server">Entrar</asp:HyperLink>
+                            <p class="card-text">Visualizar turmas, Realizar Matrícula, Gerenciar Aluno</p>
+                            <asp:HyperLink ID="HyperLink2" CssClass="card-link" NavigateUrl="~/Matricula/WebFormMatriculaInicial.aspx" runat="server">Entrar</asp:HyperLink>
                         </div>
                     </div>
                 </div>
              </div>
               <div class="row mt-3 mb-3">
-                <div class="col col-md-12">
+                <div class="col-md-12">
                      <div class="card w-100" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">Módulo administrador</h5>
