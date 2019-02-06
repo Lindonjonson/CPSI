@@ -2,54 +2,111 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        AlunoNome:
-        <asp:TextBox ID="TextBoxAlunoNome" runat="server"  />
-        DataNascimento:
-        <asp:TextBox ID="TextBoxCalendarDataNascimento"  runat="server"></asp:TextBox>
-        Cpf:
-        <asp:TextBox ID="TextBoxCpf" runat="server"  />
-        Rg:
-        <asp:TextBox ID="TextBoxRg" runat="server"  />
-        RGOrgao:
-        <asp:TextBox ID="TextBoxRGOrgao" runat="server"  />
-        EstadoCivil:
-        <asp:DropDownList ID="DropDownListEstadoCivil" runat="server">
+    <div class="form-group">
+       <label> Nome: </label>
+       <asp:TextBox ID="TextBoxAlunoNome" CssClass="form-control w-50" runat="server"  />
+       <label> Nascimento: </label>
+       <asp:TextBox ID="TextBoxCalendarDataNascimento" CssClass="form-control w-50" runat="server"></asp:TextBox>
+       <label>  CPF: </label>
+       <asp:TextBox ID="TextBoxCpf" CssClass="form-control w-50" runat="server"  />
+       <label> RG: </label>
+       <asp:TextBox CssClass="form-control w-50" ID="TextBoxRg" runat="server"  />
+       <label> RG Orgão: </label>
+       <asp:TextBox CssClass="form-control w-50" ID="TextBoxRGOrgao" runat="server"  />
+       <label> Estado Civil: </label>
+        <asp:DropDownList CssClass="form-control w-50" ID="DropDownListEstadoCivil" runat="server">
             <asp:ListItem Value="1">Solteiro</asp:ListItem>
             <asp:ListItem Value="2">União estável </asp:ListItem>
             <asp:ListItem Value="3">Casado</asp:ListItem>
             <asp:ListItem Value="4">Divorciado </asp:ListItem>
             <asp:ListItem Value="5">Viúvo</asp:ListItem>
        </asp:DropDownList>
-        Naturalidade:
-        <asp:TextBox ID="TextBoxNaturalidade" runat="server"  />
-        NaturalidadeEstado:
-        <asp:TextBox MaxLength="2" ID="TextBoxNaturalidadeEstado" runat="server"  />
-        Endereco:
-        <asp:TextBox ID="TextBoxEndereco" runat="server" />
-        Estado:
-        <asp:TextBox MaxLength="2" ID="TextBoxEstado" runat="server"  />
-        Cidade:
-        <asp:TextBox ID="TextBoxCidade" runat="server"  />
-        Bairro:
-        <asp:TextBox  ID="TextBoxBairro" runat="server"  />
-        Telefone1:
-        <asp:TextBox ID="TextBoxTelefone1" runat="server"  />
-        Telefone2:
-        <asp:TextBox ID="TextBoxTelefone2" runat="server"  />
-        Contato:
-        <asp:TextBox ID="TextBoxContato" runat="server"  />
-        ContatoTelefone:
-        <asp:TextBox ID="TextBoxContatoTelefone" runat="server"  />
-        <asp:Button ID="ButtonEditarAluno"  runat="server" Text="Salvar" OnClick="EditarAluno_Click" Visible="false" />
-        <asp:Button ID="ButtonInserirAluno"  runat="server" Text="Salvar" OnClick="InserirAluno_Click" visible="false"/>
-        <asp:Button ID="ButtonCancelar" OnClick="Cancelar_Click" runat="server" Text="Cancelar" />
-        <asp:Panel  ID="Panel_ButtonExcluir" runat="server" Visible="false">
-           <input id="ButtonExcluir" type="button" value="Excluir"  OnClick="ExibirExcluir()"/>
-        </asp:Panel>
-        <asp:Panel CssClass="PanelExcluir" ID="PanelExcluir" runat="server">
-            <span>Confirmar alteração dos documentos da disciplina</span>
-            <asp:Label ID="LabelAluno" runat="server" Text="Label"></asp:Label>
-            <asp:HyperLink ID="HyperLink2" NavigateUrl="~/Admin/WebFormVisualizacaoTurma.aspx" runat="server">Cancelar</asp:HyperLink>
-            <asp:button ID="button_Excluir" runat="server"  text="Excluir" OnClick="Excluir_Click" />
+       <label> Naturalidade: </label>
+       <asp:TextBox ID="TextBoxNaturalidade" CssClass="form-control w-50" runat="server"  />
+       <label> Naturalidade Estado: </label>
+        <asp:TextBox MaxLength="2" CssClass="form-control w-50" ID="TextBoxNaturalidadeEstado" runat="server"  />
+        <label> Endereço: </label>
+        <asp:TextBox ID="TextBoxEndereco" CssClass="form-control w-50" runat="server" />
+        <label>Estado: </label>
+        <asp:TextBox MaxLength="2" CssClass="form-control w-50" ID="TextBoxEstado" runat="server"  />
+        <label> Cidade: </label>
+        <asp:TextBox CssClass="form-control w-50" ID="TextBoxCidade" runat="server"  />
+        <label>Bairro: </label>
+        <asp:TextBox  ID="TextBoxBairro" CssClass="form-control w-50" runat="server"  />
+        <label>Primeiro Telefone: </label>
+        <asp:TextBox ID="TextBoxTelefone1" CssClass="form-control w-50" runat="server"  />
+        <label>Segundo Telefone2: </label>
+        <asp:TextBox ID="TextBoxTelefone2" CssClass="form-control w-50" runat="server"  />
+        <label> Contato: </label>
+        <asp:TextBox ID="TextBoxContato" CssClass="form-control w-50" runat="server"  />
+        <label> Telefone Contato:  </label>
+        <asp:TextBox ID="TextBoxContatoTelefone" CssClass="form-control w-50" runat="server"  />
+    </div>
+    <asp:Panel ID="PanelAdicionarAluno" Visible="false" runat="server">
+       <asp:button ID="button1" runat="server"  text="Cancelar"  CssClass="btn btn-danger" OnClick="Cancelar_Click" />
+       <button type="button" data-toggle="modal" data-target="#ModalCadastrarAluno" class="btn btn-success">Salvar</button>
     </asp:Panel>
+     <asp:Panel ID="PanelAlterarAluno" runat="server" Visible="false">
+         <button type="button" data-toggle="modal" data-target="#ModalEditarAluno" class="btn btn-warning text-white">Salvar</button>
+         <button type="button" data-toggle="modal" data-target="#ModalExcluirAluno" class="btn btn-danger">Excluir</button>
+         <asp:button ID="button2" runat="server"  text="Cancelar"  CssClass="btn btn-success" OnClick="Cancelar_Click" />
+    </asp:Panel>
+    <div class="modal fade" id="ModalCadastrarAluno" tabindex="-1" role="dialog" aria-labelledby="ModalCadastrarAluno" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                     <h5 class="modal-title">Confirmar cadastro de Aluno</h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                   
+                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <asp:button ID="button_Inserir" runat="server"  text="Salvar"  CssClass="btn btn-success" OnClick="InserirAluno_Click" />
+                </div>
+            </div>
+      </div>
+   </div>
+     <div class="modal fade" id="ModalEditarAluno" tabindex="-1" role="dialog" aria-labelledby="ModalEditarAluno" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                     <h5 class="modal-title">Confirmar edição de aluno</h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                   <span>Cuidado, operação de risco</span>
+                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <asp:button ID="button_Atualizar" runat="server"  text="Salvar" CssClass="btn btn-warning" OnClick="EditarAluno_Click" />
+                </div>
+            </div>
+      </div>
+   </div>
+    <div class="modal fade" id="ModalExcluirAluno" tabindex="-1" role="dialog" aria-labelledby="ModalExcluirAluno" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                     <h5 class="modal-title">Confirmar Exclusão do aluno</h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                   <span>Excluir turma?</span>
+                 </div>
+                <div class="modal-footer">
+                    <asp:button ID="button3" runat="server" text="Excluir" CssClass="btn btn-danger" OnClick="Excluir_Click" />
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+
+                </div>
+            </div>
+      </div>
+   </div>  
 </asp:Content>

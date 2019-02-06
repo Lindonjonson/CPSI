@@ -157,75 +157,66 @@ namespace CPSI.Matricula {
         protected global::System.Web.UI.WebControls.TextBox TextBoxContatoTelefone;
         
         /// <summary>
-        /// Controle ButtonEditarAluno.
+        /// Controle PanelAdicionarAluno.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonEditarAluno;
+        protected global::System.Web.UI.WebControls.Panel PanelAdicionarAluno;
         
         /// <summary>
-        /// Controle ButtonInserirAluno.
+        /// Controle button1.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonInserirAluno;
+        protected global::System.Web.UI.WebControls.Button button1;
         
         /// <summary>
-        /// Controle ButtonCancelar.
+        /// Controle PanelAlterarAluno.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonCancelar;
+        protected global::System.Web.UI.WebControls.Panel PanelAlterarAluno;
         
         /// <summary>
-        /// Controle Panel_ButtonExcluir.
+        /// Controle button2.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel_ButtonExcluir;
+        protected global::System.Web.UI.WebControls.Button button2;
         
         /// <summary>
-        /// Controle PanelExcluir.
+        /// Controle button_Inserir.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelExcluir;
+        protected global::System.Web.UI.WebControls.Button button_Inserir;
         
         /// <summary>
-        /// Controle LabelAluno.
+        /// Controle button_Atualizar.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelAluno;
+        protected global::System.Web.UI.WebControls.Button button_Atualizar;
         
         /// <summary>
-        /// Controle HyperLink2.
+        /// Controle button3.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink2;
-        
-        /// <summary>
-        /// Controle button_Excluir.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button button_Excluir;
+        protected global::System.Web.UI.WebControls.Button button3;
     }
 }
