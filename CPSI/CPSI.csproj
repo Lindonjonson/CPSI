@@ -69,7 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin\WebFormAdministradorInicial.aspx" />
+    <Content Include="Admin\AdministradorInicial.aspx" />
     <Content Include="Admin\WebFormEditarDocumentosDisciplina.aspx" />
     <Content Include="Admin\WebFormGerenciarDisciplina.aspx" />
     <Content Include="Admin\WebFormGerenciarDocumento.aspx" />
@@ -82,7 +82,7 @@
     <Content Include="Assets\js\jquery-3.3.1.min.js" />
     <Content Include="Matricula\WebFormGerenciarAluno.aspx" />
     <Content Include="Matricula\WebFormImprimirFichaInscricao.aspx" />
-    <Content Include="Matricula\WebFormMatriculaInicial.aspx" />
+    <Content Include="Matricula\MatriculaInicial.aspx" />
     <Content Include="Matricula\WebFormMatricular.aspx" />
     <Content Include="Matricula\WebFormMatricularListaEspera.aspx" />
     <Content Include="Matricula\WebFormVisualizarAlunos.aspx" />
@@ -92,12 +92,12 @@
     <Content Include="WebFormInicial.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\WebFormAdministradorInicial.aspx.cs">
-      <DependentUpon>WebFormAdministradorInicial.aspx</DependentUpon>
+    <Compile Include="Admin\AdministradorInicial.aspx.cs">
+      <DependentUpon>AdministradorInicial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\WebFormAdministradorInicial.aspx.designer.cs">
-      <DependentUpon>WebFormAdministradorInicial.aspx</DependentUpon>
+    <Compile Include="Admin\AdministradorInicial.aspx.designer.cs">
+      <DependentUpon>AdministradorInicial.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\WebFormEditarDocumentosDisciplina.aspx.cs">
       <DependentUpon>WebFormEditarDocumentosDisciplina.aspx</DependentUpon>
@@ -170,12 +170,12 @@
     <Compile Include="Matricula\WebFormImprimirFichaInscricao.aspx.designer.cs">
       <DependentUpon>WebFormImprimirFichaInscricao.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Matricula\WebFormMatriculaInicial.aspx.cs">
-      <DependentUpon>WebFormMatriculaInicial.aspx</DependentUpon>
+    <Compile Include="Matricula\MatriculaInicial.aspx.cs">
+      <DependentUpon>MatriculaInicial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Matricula\WebFormMatriculaInicial.aspx.designer.cs">
-      <DependentUpon>WebFormMatriculaInicial.aspx</DependentUpon>
+    <Compile Include="Matricula\MatriculaInicial.aspx.designer.cs">
+      <DependentUpon>MatriculaInicial.aspx</DependentUpon>
     </Compile>
     <Compile Include="Matricula\WebFormMatricular.aspx.cs">
       <DependentUpon>WebFormMatricular.aspx</DependentUpon>
