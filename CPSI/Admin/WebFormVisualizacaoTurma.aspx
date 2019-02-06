@@ -14,6 +14,6 @@
             <asp:ButtonField ButtonType="link" CommandName="Editar" HeaderText="Editar" Text="Editar" /> 
         </Columns>
     </asp:GridView>
-    <asp:Button ID="ButtonInserir" CssClass="btn btn-success" runat="server" Text="Cadastrar nova turma" OnClick="Inserir_Click"/>
+    <asp:Button ID="ButtonInserir" CssClass="btn btn-primary" runat="server" Text="Cadastrar nova turma" OnClick="Inserir_Click"/>
     <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALTurma"></asp:ObjectDataSource>
 </asp:Content>

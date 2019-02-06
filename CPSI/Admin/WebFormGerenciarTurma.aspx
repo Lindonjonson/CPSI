@@ -23,7 +23,7 @@
        <button type="button" data-toggle="modal" data-target="#ModalCadastrarTurma" class="btn btn-success">Salvar</button>
     </asp:Panel>
     <asp:Panel ID="PanelAlterarTurma" runat="server" Visible="false">
-         <button type="button" data-toggle="modal" data-target="#ModalEditarTurma" class="btn btn-warning">Salvar</button>
+         <button type="button" data-toggle="modal" data-target="#ModalEditarTurma" class="btn btn-warning text-white">Salvar</button>
          <button type="button" data-toggle="modal" data-target="#ModalExcluirTurma" class="btn btn-danger">Excluir</button>
          <asp:button ID="button2" runat="server"  text="Cancelar"  CssClass="btn btn-success" OnClick="Cancelar_Click" />
     </asp:Panel>
