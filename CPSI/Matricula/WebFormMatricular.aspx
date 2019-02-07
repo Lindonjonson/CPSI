@@ -2,38 +2,49 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-           <asp:Panel ID="PanelMatricula" runat="server">
-                Filtro:<asp:TextBox ID="TextBoxFiltroTurma" runat="server"></asp:TextBox>
-           Ano:<asp:TextBox ID="TextBoxAno" runat="server"></asp:TextBox>
-            <asp:Button ID="Button_Consulta" runat="server" Text="Pesquisar turma" OnClick="Pesquisar_Click" />
-            <asp:GridView ID="GridViewTurma" DatasourceId="ObjectDataSource1" runat="server" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True"  DataKeyNames="IdTurma" OnSelectedIndexChanged="GridViewTurma_SelectedIndexChanged" >
+          <div class="form-inline w-50 mt-3 mb-3">
+              <div class="form-group">
+                  <label class="mr-2">Filtro:</label>
+                  <asp:TextBox ID="TextBoxFiltroTurma" CssClass="form-control mr-2" runat="server"></asp:TextBox>
+                  <label class="mr-2"> Ano:</label>
+                  <asp:TextBox ID="TextBoxAno" CssClass="form-control mr-2" runat="server"></asp:TextBox>
+                  <asp:Button ID="Button_Consulta" runat="server" CssClass="btn btn-secondary" Text="Pesquisar turma" OnClick="Pesquisar_Click" />
+              </div>
+          </div>
+    <asp:GridView ID="GridViewTurma" CssClass="table table-hover" DataSourceID="ObjectDataSource1" runat="server" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True" DataKeyNames="IdTurma" OnSelectedIndexChanged="GridViewTurma_SelectedIndexChanged" AllowPaging="True" PageSize="5">
                 <Columns>
-                    <asp:CommandField ShowSelectButton="True" ButtonType="Button" />
-                    <asp:BoundField DataField="NomeTurma" HeaderText="NomeTurma" SortExpression="NomeTurma" />
-                    <asp:BoundField DataField="ano" HeaderText="ano" SortExpression="ano" />
-                    <asp:BoundField DataField="horario" HeaderText="horario" SortExpression="horario" />
-                    <asp:BoundField DataField="DataInicio" HeaderText="DataInicio" SortExpression="DataInicio" />
-                    <asp:BoundField DataField="DataFim" HeaderText="DataFim" SortExpression="DataFim" />
-                    <asp:BoundField DataField="QtdVagas" HeaderText="QtdVagas" SortExpression="QtdVagas" />
+                    <asp:CommandField ShowSelectButton="True" ButtonType="Link" HeaderText="Selecionar" />
+                    <asp:BoundField DataField="NomeTurma" HeaderText="Turma" SortExpression="NomeTurma" />
+                    <asp:BoundField DataField="ano" HeaderText="Ano" SortExpression="ano" />
+                    <asp:BoundField DataField="horario" HeaderText="Horario" SortExpression="horario" />
+                    <asp:BoundField DataField="DataInicio" HeaderText="Data Início" SortExpression="DataInicio" />
+                    <asp:BoundField DataField="DataFim" HeaderText="Data Fim" SortExpression="DataFim" />
+                    <asp:BoundField DataField="QtdVagas" HeaderText="Nº Vagas" SortExpression="QtdVagas" />
                     <asp:BoundField DataField="IdDisciplina" HeaderText="IdDisciplina" SortExpression="IdDisciplina" />
                 </Columns>
             </asp:GridView>
-             Filtro:<asp:TextBox ID="TextBoxFiltroAluno" runat="server"></asp:TextBox>
-             <asp:Button ID="Button_Consultar" runat="server" Text="Pesquisar aluno" OnClick="PesquisarAluno_Click" />
-            <asp:GridView ID="GridViewAlunos" runat="server" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True" DataKeyNames="IdAluno" OnSelectedIndexChanged="GridViewAlunos_SelectedIndexChanged"  DataSourceID="ObjectDataSource2">
+           <div class="form-inline w-50 mt-3 mb-3">
+              <div class="form-group">
+                  <label class="mr-2">Filtro:</label>
+                  <asp:TextBox ID="TextBoxFiltroAluno" CssClass="form-control mr-2" runat="server"></asp:TextBox>
+                  <asp:Button ID="Button_Consultar"  CssClass="btn btn-secondary" runat="server" Text="Pesquisar aluno" OnClick="Pesquisar_Click" />
+              </div>
+          </div>
+            
+    <asp:GridView ID="GridViewAlunos" runat="server" AutoGenerateColumns="False" CssClass="table table-hover" ShowHeaderWhenEmpty="True" DataKeyNames="IdAluno" OnSelectedIndexChanged="GridViewAlunos_SelectedIndexChanged" DataSourceID="ObjectDataSource2" AllowPaging="True" PageSize="5">
                 <Columns>
-                    <asp:CommandField ShowSelectButton="True" ButtonType="Button" />
-                    <asp:BoundField DataField="AlunoNome" HeaderText="AlunoNome" SortExpression="AlunoNome"></asp:BoundField>
-                    <asp:BoundField DataField="DataNascimento" HeaderText="DataNascimento" SortExpression="DataNascimento"></asp:BoundField>
-                    <asp:BoundField DataField="Cpf" HeaderText="Cpf" SortExpression="Cpf"></asp:BoundField>
-                    <asp:BoundField DataField="Telefone1" HeaderText="Telefone1" SortExpression="Telefone1"></asp:BoundField>
+                    <asp:CommandField ShowSelectButton="True" ButtonType="link" HeaderText="Selecionar" />
+                    <asp:BoundField DataField="AlunoNome" HeaderText="Nome" SortExpression="AlunoNome"></asp:BoundField>
+                    <asp:BoundField DataField="DataNascimento" HeaderText="Data Nascimento" SortExpression="DataNascimento"></asp:BoundField>
+                    <asp:BoundField DataField="Cpf" HeaderText="CPF" SortExpression="Cpf"></asp:BoundField>
+                    <asp:BoundField DataField="Telefone1" HeaderText="Telefone" SortExpression="Telefone1"></asp:BoundField>
                     <asp:BoundField DataField="Contato" HeaderText="Contato" SortExpression="Contato"></asp:BoundField>
-                    <asp:BoundField DataField="ContatoTelefone" HeaderText="ContatoTelefone" SortExpression="ContatoTelefone"></asp:BoundField>
+                    <asp:BoundField DataField="ContatoTelefone" HeaderText="Contato Telefone" SortExpression="ContatoTelefone"></asp:BoundField>
                 </Columns>
             </asp:GridView>
            <asp:Button ID="ButtonMatricular" runat="server" Text="Matricular" OnClick="Exibir_matricular" />
-   </asp:Panel>
-    <asp:Panel ID="PanelConfirmação" runat="server" Visible="false">
+
+    <asp:Panel ID="PanelConfirmação" runat="server">
          <span>Matricular aluno  </span>
          <asp:Label ID="LabelNomeAluno" runat="server" Text="Label"></asp:Label>
          <br />

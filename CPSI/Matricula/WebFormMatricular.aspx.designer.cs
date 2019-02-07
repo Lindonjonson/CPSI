@@ -13,15 +13,6 @@ namespace CPSI.Matricula {
     public partial class WebFormMatricular {
         
         /// <summary>
-        /// Controle PanelMatricula.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelMatricula;
-        
-        /// <summary>
         /// Controle TextBoxFiltroTurma.
         /// </summary>
         /// <remarks>

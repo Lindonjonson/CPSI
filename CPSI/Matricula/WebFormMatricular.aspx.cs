@@ -21,22 +21,18 @@ namespace CPSI.Matricula
             
         }
 
-        protected void PesquisarAluno_Click(object sender, EventArgs e)
-        {
-           
-        }
-
+      
         protected void GridViewTurma_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GridViewTurma.SelectedRow.BackColor = System.Drawing.Color.OrangeRed;
+            GridViewTurma.SelectedRow.BackColor = System.Drawing.Color.AliceBlue;
             
         
         }
 
         protected void GridViewAlunos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            GridViewAlunos.SelectedRow.BackColor = System.Drawing.Color.OrangeRed;
+
+            GridViewAlunos.SelectedRow.BackColor = System.Drawing.Color.AliceBlue;
             
         }
 
