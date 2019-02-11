@@ -22,7 +22,7 @@
                     <asp:BoundField DataField="QtdVagas" HeaderText="Nº Vagas" SortExpression="QtdVagas" />
                     <asp:BoundField DataField="IdDisciplina" HeaderText="IdDisciplina" SortExpression="IdDisciplina" />
                 </Columns>
-            </asp:GridView>
+     </asp:GridView>
            <div class="form-inline w-50 mt-3 mb-3">
               <div class="form-group">
                   <label class="mr-2">Filtro:</label>
@@ -41,8 +41,8 @@
                     <asp:BoundField DataField="Contato" HeaderText="Contato" SortExpression="Contato"></asp:BoundField>
                     <asp:BoundField DataField="ContatoTelefone" HeaderText="Contato Telefone" SortExpression="ContatoTelefone"></asp:BoundField>
                 </Columns>
-            </asp:GridView>
-           <asp:Button ID="ButtonMatricular" runat="server" Text="Matricular" OnClick="Exibir_matricular" />
+   </asp:GridView>
+   <asp:Button ID="ButtonMatricular" runat="server" Text="Matricular" OnClick="Exibir_matricular" />
 
     <asp:Panel ID="PanelConfirmação" runat="server">
          <span>Matricular aluno  </span>
