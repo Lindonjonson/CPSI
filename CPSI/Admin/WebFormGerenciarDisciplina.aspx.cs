@@ -18,7 +18,7 @@ namespace CPSI.Admin.Disciplina
         
         protected void GridViewDisciplina_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            DAL.DALDisciplina disciplina = new DAL.DALDisciplina();
+
             if (e.CommandName == "EditarDocumento")
             {
                 int index = Convert.ToInt32(e.CommandArgument);
