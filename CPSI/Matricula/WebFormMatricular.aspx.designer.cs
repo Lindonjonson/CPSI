@@ -76,6 +76,78 @@ namespace CPSI.Matricula {
         protected global::System.Web.UI.WebControls.GridView GridViewAlunos;
         
         /// <summary>
+        /// Controle PanelMatricular.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelMatricular;
+        
+        /// <summary>
+        /// Controle TextBoxMatricularAluno.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TextBoxMatricularAluno;
+        
+        /// <summary>
+        /// Controle TextBoxMatricularTurma.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TextBoxMatricularTurma;
+        
+        /// <summary>
+        /// Controle ButtonMatricular.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonMatricular;
+        
+        /// <summary>
+        /// Controle PanelListaEspera.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelListaEspera;
+        
+        /// <summary>
+        /// Controle TextBoxEsperaAluno.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TextBoxEsperaAluno;
+        
+        /// <summary>
+        /// Controle TextBoxEsperaTurma.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TextBoxEsperaTurma;
+        
+        /// <summary>
+        /// Controle ButtonListaEspera.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonListaEspera;
+        
+        /// <summary>
         /// Controle ObjectDataSource2.
         /// </summary>
         /// <remarks>

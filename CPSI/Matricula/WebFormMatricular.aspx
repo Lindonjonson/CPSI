@@ -10,8 +10,8 @@
                   <asp:TextBox ID="TextBoxAno" CssClass="form-control mr-2" runat="server"></asp:TextBox>
                   <asp:Button ID="Button_Consulta" runat="server" CssClass="btn btn-secondary" Text="Pesquisar turma" OnClick="Pesquisar_Click" />
               </div>
-          </div>
-    <asp:GridView ID="GridViewTurma" CssClass="table table-hover" DataSourceID="ObjectDataSource1" runat="server" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True" DataKeyNames="IdTurma" OnSelectedIndexChanged="GridViewTurma_SelectedIndexChanged" AllowPaging="True" PageSize="5">
+          </div> 
+    <asp:GridView ID="GridViewTurma" CssClass="table table-hover" DataSourceID="ObjectDataSource1"  ViewStateMode="Disabled" runat="server" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True" DataKeyNames="IdTurma" OnSelectedIndexChanged="GridViewTurma_SelectedIndexChanged" AllowPaging="True" PageSize="5">
                 <Columns>
                     <asp:CommandField ShowSelectButton="True" ButtonType="Link" HeaderText="Selecionar" />
                     <asp:BoundField DataField="NomeTurma" HeaderText="Turma" SortExpression="NomeTurma" />
@@ -31,7 +31,7 @@
               </div>
           </div>
             
-    <asp:GridView ID="GridViewAlunos" runat="server" AutoGenerateColumns="False" CssClass="table table-hover" ShowHeaderWhenEmpty="True" DataKeyNames="IdAluno" OnSelectedIndexChanged="GridViewAlunos_SelectedIndexChanged" DataSourceID="ObjectDataSource2" AllowPaging="True" PageSize="5">
+    <asp:GridView ID="GridViewAlunos" runat="server" AutoGenerateColumns="False" CssClass="table table-hover" ViewStateMode="Disabled" ShowHeaderWhenEmpty="True" DataKeyNames="IdAluno" OnSelectedIndexChanged="GridViewAlunos_SelectedIndexChanged" DataSourceID="ObjectDataSource2" AllowPaging="True" PageSize="5">
                 <Columns>
                     <asp:CommandField ShowSelectButton="True" ButtonType="link" HeaderText="Selecionar" />
                     <asp:BoundField DataField="AlunoNome" HeaderText="Nome" SortExpression="AlunoNome"></asp:BoundField>
@@ -42,9 +42,22 @@
                     <asp:BoundField DataField="ContatoTelefone" HeaderText="Contato Telefone" SortExpression="ContatoTelefone"></asp:BoundField>
                 </Columns>
    </asp:GridView>
-   <button type="button" data-toggle="modal" data-target="#ModalMatricularAluno" class="btn btn-success">Salvar</button>
-
-   
+   <asp:Button  runat="server" Text="Matricular" OnClick="VerificarDisponibilidade_Click"  />
+   <asp:Panel ID="PanelMatricular" runat="server" Visible="false">
+       <span>Confirmar Matricula de aluno </span>
+       <asp:label ID="TextBoxMatricularAluno" CssClass="font-weight-bold" runat="server"></asp:label>
+       <span>Na Turma</span>
+       <asp:label ID="TextBoxMatricularTurma" CssClass="font-weight-bold" runat="server"></asp:label>
+       <asp:Button ID="ButtonMatricular" CssClass="btn btn-success" runat="server" Text="Confirmar" OnClick="ButtonMatricular_Click" />
+   </asp:Panel>
+   <asp:Panel ID="PanelListaEspera" runat="server" Visible="false">
+       <span>Confirmar Matricula de aluno </span>
+       <asp:label ID="TextBoxEsperaAluno" CssClass="m-2 font-weight-bold" runat="server"></asp:label>
+       <span class="font-weight-bold text-danger">Na lista de espera Turma</span>
+       <asp:label ID="TextBoxEsperaTurma" runat="server"></asp:label>
+       <asp:Button ID="ButtonListaEspera" CssClass="btn btn-success" runat="server" Text="Confirmar" />
+   </asp:Panel>
+  
      <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" SelectMethod="SelectALLFiltro" TypeName="CPSI.DAL.DALAluno">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="TextBoxFiltroAluno" PropertyName="Text" Name="filtro" Type="String"></asp:ControlParameter>
