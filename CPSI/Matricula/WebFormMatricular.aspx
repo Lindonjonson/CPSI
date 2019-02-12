@@ -42,17 +42,9 @@
                     <asp:BoundField DataField="ContatoTelefone" HeaderText="Contato Telefone" SortExpression="ContatoTelefone"></asp:BoundField>
                 </Columns>
    </asp:GridView>
-   <asp:Button ID="ButtonMatricular" runat="server" Text="Matricular" OnClick="Exibir_matricular" />
+   <button type="button" data-toggle="modal" data-target="#ModalMatricularAluno" class="btn btn-success">Salvar</button>
 
-    <asp:Panel ID="PanelConfirmação" runat="server">
-         <span>Matricular aluno  </span>
-         <asp:Label ID="LabelNomeAluno" runat="server" Text="Label"></asp:Label>
-         <br />
-         <span>na turma</span>
-         <asp:Label ID="LabelNomeTurma" runat="server" Text="Label"></asp:Label>
-         <asp:Button ID="Button_Matricular" runat="server" Text="Salvar matrícula" OnClick="Button_Matricular_Click" />
-         <asp:Button ID="Button_Cancelar" runat="server" Text="Cancelar" OnClick="Page_Load" />
-    </asp:Panel>
+   
      <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" SelectMethod="SelectALLFiltro" TypeName="CPSI.DAL.DALAluno">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="TextBoxFiltroAluno" PropertyName="Text" Name="filtro" Type="String"></asp:ControlParameter>

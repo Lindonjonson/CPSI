@@ -76,60 +76,6 @@ namespace CPSI.Matricula {
         protected global::System.Web.UI.WebControls.GridView GridViewAlunos;
         
         /// <summary>
-        /// Controle ButtonMatricular.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonMatricular;
-        
-        /// <summary>
-        /// Controle PanelConfirmação.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelConfirmação;
-        
-        /// <summary>
-        /// Controle LabelNomeAluno.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNomeAluno;
-        
-        /// <summary>
-        /// Controle LabelNomeTurma.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNomeTurma;
-        
-        /// <summary>
-        /// Controle Button_Matricular.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_Matricular;
-        
-        /// <summary>
-        /// Controle Button_Cancelar.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_Cancelar;
-        
-        /// <summary>
         /// Controle ObjectDataSource2.
         /// </summary>
         /// <remarks>

@@ -36,14 +36,7 @@ namespace CPSI.Matricula
             
         }
 
-        protected void Exibir_matricular(object sender, EventArgs e)
-        {
-
-            PanelConfirmação.Visible = true;
-            LabelNomeAluno.Text = GridViewAlunos.SelectedRow.Cells[1].Text;
-            LabelNomeTurma.Text = GridViewTurma.SelectedRow.Cells[1].Text;
-
-        }
+        
 
         protected void Button_Matricular_Click(object sender, EventArgs e)
         {
