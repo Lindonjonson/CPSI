@@ -25,7 +25,7 @@
                     <span>Confirmar alteração dos documentos da disciplina</span>
                 </div>
                 <div class="modal-footer">
-                    <asp:Button ID="Button2" runat="server" Text="Editar" class="btn btn-secondary" OnClick="Editar_Documentos" />
+                    <asp:Button ID="Button2" runat="server" Text="Salvar" class="btn btn-secondary" OnClick="Editar_Documentos" />
                 </div>
             </div>
       </div>
