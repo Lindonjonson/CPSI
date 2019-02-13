@@ -13,7 +13,8 @@ namespace CPSI.Matricula
        
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            PanelListaEspera.Visible = false;
+            PanelMatricular.Visible = false;
         }
 
         protected void Pesquisar_Click(object sender, EventArgs e)
@@ -26,7 +27,6 @@ namespace CPSI.Matricula
         {
             GridViewTurma.SelectedRow.BackColor = System.Drawing.Color.AliceBlue;
             
-        
         }
 
         protected void GridViewAlunos_SelectedIndexChanged(object sender, EventArgs e)
@@ -75,13 +75,32 @@ namespace CPSI.Matricula
             int IndexGridViewAluno = Convert.ToInt32(GridViewAlunos.SelectedRow.RowIndex);
             DataKey keysTurmaID = GridViewTurma.DataKeys[IndexGridViewTurma];
             DataKey keysAlunoID = GridViewAlunos.DataKeys[IndexGridViewAluno];
-            string IdTurma = keysTurmaID.Value.ToString();
-            string IdAluno = keysAlunoID.Value.ToString();
-            Modelo.Matricula matricula = new Modelo.Matricula(int.Parse(IdAluno), int.Parse(IdTurma), 1, DateTime.Now);
+            int IdTurma = Convert.ToInt32(keysTurmaID.Value);
+            int IdAluno = Convert.ToInt32(keysAlunoID.Value);
+            Modelo.Matricula matricula = new Modelo.Matricula(IdAluno, IdTurma, 1, DateTime.Now);
             DAL.DALMatricula dalMatricula = new DAL.DALMatricula();
             dalMatricula.Insert(matricula);
             Session["matricula"] = matricula;
             Response.Redirect("~/Matricula/WebFormImprimirFichaInscricao.aspx");
+        }
+
+        protected void ButtonListaEspera_Click(object sender, EventArgs e)
+        {
+            int IndexGridViewTurma = Convert.ToInt32(GridViewTurma.SelectedRow.RowIndex);
+            int IndexGridViewAluno = Convert.ToInt32(GridViewAlunos.SelectedRow.RowIndex);
+            DataKey keysTurmaID = GridViewTurma.DataKeys[IndexGridViewTurma];
+            DataKey keysAlunoID = GridViewAlunos.DataKeys[IndexGridViewAluno];
+            int IdTurma = Convert.ToInt32(keysTurmaID.Value);
+            int IdAluno = Convert.ToInt32(keysAlunoID.Value);
+            Modelo.ListaEspera listaEspera = new Modelo.ListaEspera(IdTurma,IdAluno,DateTime.Now);
+            new DAL.DALListaEspera().Insert(listaEspera);
+            Response.Redirect("~/Matricula/WebFormMatricular.aspx");
+        }
+        protected void ButtonCancelarMatricula_Click()
+        {
+            PanelListaEspera.Visible = false;
+            PanelMatricular.Visible = false;
+
         }
     }
 }

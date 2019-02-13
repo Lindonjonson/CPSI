@@ -41,6 +41,22 @@ namespace CPSI.DAL
                 }
                return ListDocumentoDisciplina;
         }
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public DataSet selectALLData(string idDisciplina)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "SELECT Documento,DocumentoDisciplina.IdDisciplina, Documento.IdDocumento FROM Documento inner join DocumentoDisciplina on Documento.IdDocumento=DocumentoDisciplina.IdDocumento inner join Disciplina On Disciplina.IdDisciplina=DocumentoDisciplina.IdDisciplina where Disciplina.IdDisciplina=@IdDisciplina";
+            cmd.Parameters.AddWithValue("@IdDisciplina", idDisciplina);
+            SqlDataAdapter DataAdapterDocumentoDisciplina = new SqlDataAdapter(cmd);
+            DataSet dataSetDocumentoDisciplina = new DataSet();
+            DataAdapterDocumentoDisciplina.Fill(dataSetDocumentoDisciplina);
+            conn.Close();
+            return dataSetDocumentoDisciplina;
+
+
+        }
         [DataObjectMethod(DataObjectMethodType.Insert)]
         public void Insert(Modelo.Disciplina disciplina)
         {

@@ -20,16 +20,11 @@ namespace CPSI.DAL
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            foreach (int I in obj.idDocumento)
-            {
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "INSERT INTO AlunoDocumento (IdAluno,IdDocumento) VALUES (@IdAluno,@IdDocumento)";
-                cmd.Parameters.AddWithValue("@IdAluno", obj.idAluno);
-                cmd.Parameters.AddWithValue("@IdDocumento", I);
-                cmd.ExecuteNonQuery();
-
-            }
-
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "INSERT INTO AlunoDocumento (IdAluno,IdDocumento) VALUES (@IdAluno,@IdDocumento)";
+            cmd.Parameters.AddWithValue("@IdAluno", obj.idAluno);
+            cmd.Parameters.AddWithValue("@IdDocumento", obj.idDocumento);
+            cmd.ExecuteNonQuery();
             conn.Close();
         }
     }

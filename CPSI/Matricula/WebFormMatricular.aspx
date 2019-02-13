@@ -50,24 +50,29 @@
        <asp:label ID="TextBoxMatricularTurma" CssClass="font-weight-bold" runat="server"></asp:label>
        <asp:Button ID="ButtonMatricular" CssClass="btn btn-success" runat="server" Text="Confirmar" OnClick="ButtonMatricular_Click" />
    </asp:Panel>
-   <asp:Panel ID="PanelListaEspera" runat="server" Visible="false">
+   <asp:Panel ID="PanelListaEspera" runat="server" >
        <span>Confirmar Matricula de aluno </span>
-       <asp:label ID="TextBoxEsperaAluno" CssClass="m-2 font-weight-bold" runat="server"></asp:label>
+       <asp:label ID="TextBoxEsperaAluno"  CssClass="m-2 font-weight-bold" runat="server"></asp:label>
        <span class="font-weight-bold text-danger">Na lista de espera Turma</span>
        <asp:label ID="TextBoxEsperaTurma" runat="server"></asp:label>
-       <asp:Button ID="ButtonListaEspera" CssClass="btn btn-success" runat="server" Text="Confirmar" />
+       <span>Documentos Obrigatorios à disciplina</span>
+       <asp:Button ID="ButtonListaEspera" CssClass="btn btn-success" runat="server" Text="Confirmar" OnClick="ButtonListaEspera_Click" />
    </asp:Panel>
-  
-     <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" SelectMethod="SelectALLFiltro" TypeName="CPSI.DAL.DALAluno">
-                <SelectParameters>
-                    <asp:ControlParameter ControlID="TextBoxFiltroAluno" PropertyName="Text" Name="filtro" Type="String"></asp:ControlParameter>
-                </SelectParameters>
-     </asp:ObjectDataSource>
-            
      <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="Select" TypeName="CPSI.DAL.DALTurma">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="TextBoxFiltroTurma" Name="filtro" PropertyName="Text" Size="20" Type="String" />
                     <asp:ControlParameter ControlID="TextBoxAno" DefaultValue="0" Name="ano" PropertyName="Text" Type="String" />
                 </SelectParameters>
      </asp:ObjectDataSource>
+     <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" SelectMethod="SelectALLFiltro" TypeName="CPSI.DAL.DALAluno">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="TextBoxFiltroAluno" PropertyName="Text" Name="filtro" Type="String"></asp:ControlParameter>
+                </SelectParameters>
+     </asp:ObjectDataSource>
+    <asp:ObjectDataSource runat="server" ID="ObjectDataSource3" SelectMethod="selectALLData" TypeName="CPSI.DAL.DALDocumentoDisciplina">
+           <SelectParameters>
+               <asp:Parameter  Name="idDisciplina"   Type="String"></asp:Parameter>
+           </SelectParameters>
+    </asp:ObjectDataSource>
+   
 </asp:Content>

@@ -148,6 +148,15 @@ namespace CPSI.Matricula {
         protected global::System.Web.UI.WebControls.Button ButtonListaEspera;
         
         /// <summary>
+        /// Controle ObjectDataSource1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+        
+        /// <summary>
         /// Controle ObjectDataSource2.
         /// </summary>
         /// <remarks>
@@ -157,12 +166,12 @@ namespace CPSI.Matricula {
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource2;
         
         /// <summary>
-        /// Controle ObjectDataSource1.
+        /// Controle ObjectDataSource3.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource3;
     }
 }

@@ -13,8 +13,7 @@ namespace CPSI.Matricula
         protected void Page_Load(object sender, EventArgs e)
         {
             matricula =(Modelo.Matricula) Session["matricula"];
-            
-            
+             
         }
 
         protected void Button_Matricular_Click(object sender, EventArgs e)
