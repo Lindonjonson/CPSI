@@ -103,6 +103,15 @@ namespace CPSI.Matricula {
         protected global::System.Web.UI.WebControls.Label TextBoxMatricularTurma;
         
         /// <summary>
+        /// Controle CheckBoxListDocumentoDisciplina.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxListDocumentoDisciplina;
+        
+        /// <summary>
         /// Controle ButtonMatricular.
         /// </summary>
         /// <remarks>

@@ -35,11 +35,13 @@ namespace CPSI.Matricula
             GridViewAlunos.SelectedRow.BackColor = System.Drawing.Color.AliceBlue;
             
         }
+        public void CarregarDocumentosDisciplina(string idDisciplina)
+        {
+            CheckBoxListDocumentoDisciplina.DataSource = new DAL.DALDocumentoDisciplina().selectALLData(idDisciplina);
+            CheckBoxListDocumentoDisciplina.DataBind();
+           
 
-        
-
-        
-
+        }
         protected void VerificarDisponibilidade_Click(object sender, EventArgs e)
         {
             int IndexGridViewTurma = Convert.ToInt32(GridViewTurma.SelectedRow.RowIndex);
@@ -55,7 +57,9 @@ namespace CPSI.Matricula
             {
                 TextBoxMatricularAluno.Text = DalAluno.select(IdAluno).alunoNome;
                 TextBoxMatricularTurma.Text = DalTurma.Select(IdTurma).nomeTurma;
+                CarregarDocumentosDisciplina(DalTurma.Select(IdTurma).idDisciplina.ToString());
                 PanelMatricular.Visible = true;
+
             }
             else
             {
@@ -65,6 +69,7 @@ namespace CPSI.Matricula
                 PanelListaEspera.Visible = true;
 
             }
+            
 
 
         }

@@ -48,6 +48,8 @@
        <asp:label ID="TextBoxMatricularAluno" CssClass="font-weight-bold" runat="server"></asp:label>
        <span>Na Turma</span>
        <asp:label ID="TextBoxMatricularTurma" CssClass="font-weight-bold" runat="server"></asp:label>
+       <span>Documentos Obrigatorios à disciplina</span>
+       <asp:CheckBoxList ID="CheckBoxListDocumentoDisciplina" DataTextField="Documento" DataValueField="iddocumento" runat="server"></asp:CheckBoxList>
        <asp:Button ID="ButtonMatricular" CssClass="btn btn-success" runat="server" Text="Confirmar" OnClick="ButtonMatricular_Click" />
    </asp:Panel>
    <asp:Panel ID="PanelListaEspera" runat="server" >
@@ -55,7 +57,6 @@
        <asp:label ID="TextBoxEsperaAluno"  CssClass="m-2 font-weight-bold" runat="server"></asp:label>
        <span class="font-weight-bold text-danger">Na lista de espera Turma</span>
        <asp:label ID="TextBoxEsperaTurma" runat="server"></asp:label>
-       <span>Documentos Obrigatorios à disciplina</span>
        <asp:Button ID="ButtonListaEspera" CssClass="btn btn-success" runat="server" Text="Confirmar" OnClick="ButtonListaEspera_Click" />
    </asp:Panel>
      <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="Select" TypeName="CPSI.DAL.DALTurma">
@@ -74,5 +75,4 @@
                <asp:Parameter  Name="idDisciplina"   Type="String"></asp:Parameter>
            </SelectParameters>
     </asp:ObjectDataSource>
-   
 </asp:Content>
