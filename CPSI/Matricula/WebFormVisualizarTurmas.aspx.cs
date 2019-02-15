@@ -24,6 +24,14 @@ namespace CPSI.Matricula
                 Response.Redirect("~/Matricula/WebFormVisualizarMatriculados.aspx");
 
             }
+            if (e.CommandName == "Espera")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                DataKey keyIdTurma = GridViewTurmas.DataKeys[index];
+                Session["IdTurma"] = keyIdTurma.Value;
+                Response.Redirect("~/Matricula/WebFormVisualizarListaEspera.aspx");
+
+            }
         }
     }
 }

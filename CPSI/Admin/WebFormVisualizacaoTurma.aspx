@@ -13,6 +13,7 @@
             <asp:BoundField DataField="QtdVagas" HeaderText="Vagas" SortExpression="QtdVagas" />
             <asp:ButtonField ButtonType="link" CommandName="Editar" HeaderText="Editar" Text="Editar" /> 
             <asp:ButtonField ButtonType="link" CommandName="Matriculados" HeaderText="Matriculados" Text="Matriculados" /> 
+            <asp:ButtonField ButtonType="link" CommandName="Espera" HeaderText="Lista de espera" Text="Lista de esfera" /> 
         </Columns>
     </asp:GridView>
     <asp:Button ID="ButtonInserir" CssClass="btn btn-primary" runat="server" Text="Cadastrar nova turma" OnClick="Inserir_Click"/>
