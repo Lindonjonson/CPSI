@@ -12,23 +12,16 @@ namespace CPSI.Matricula
         Modelo.Matricula matricula;
         protected void Page_Load(object sender, EventArgs e)
         {
-             
-              matricula =  (Modelo.Matricula)Session["matricula"];
-              Modelo.Aluno aluno = new DAL.DALAluno().select(matricula.idAluno.ToString());
-              Modelo.Turma turma = new DAL.DALTurma().Select(matricula.idTurma.ToString());
-              LabelData.Text = matricula.dataMatricula.ToShortDateString();
-              
-         
-
-
+            CarregarDadosAluno();
         }
-
-        protected void Imprimir(object sender, EventArgs e)
+        public void CarregarDadosAluno()
         {
-            Session["IdAluno"] = matricula.idAluno;
-            Session["IdTurma"] = matricula.idTurma;
-            PanelImpressao.Visible = true;
-            Button_Imprimir.Visible = false;
+            matricula = (Modelo.Matricula)Session["matricula"];
+            Modelo.Aluno aluno = new DAL.DALAluno().select(matricula.idAluno.ToString());
+            Modelo.Turma turma = new DAL.DALTurma().Select(matricula.idTurma.ToString());
+            LabelData.Text = matricula.dataMatricula.ToShortDateString();
         }
+
+        
     }
 }
