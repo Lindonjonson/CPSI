@@ -86,6 +86,7 @@
     <Content Include="Matricula\WebFormMatricular.aspx" />
     <Content Include="Matricula\WebFormMatricularListaEspera.aspx" />
     <Content Include="Matricula\WebFormVisualizarAlunos.aspx" />
+    <Content Include="Matricula\WebFormVisualizarMatriculados.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -197,6 +198,13 @@
     </Compile>
     <Compile Include="Matricula\WebFormVisualizarAlunos.aspx.designer.cs">
       <DependentUpon>WebFormVisualizarAlunos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Matricula\WebFormVisualizarMatriculados.aspx.cs">
+      <DependentUpon>WebFormVisualizarMatriculados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Matricula\WebFormVisualizarMatriculados.aspx.designer.cs">
+      <DependentUpon>WebFormVisualizarMatriculados.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Aluno.cs" />
     <Compile Include="Modelo\AlunoDocumento.cs" />

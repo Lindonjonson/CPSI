@@ -84,7 +84,14 @@ namespace CPSI.Matricula
             int IdAluno = Convert.ToInt32(keysAlunoID.Value);
             Modelo.Matricula matricula = new Modelo.Matricula(IdAluno, IdTurma, 1, DateTime.Now);
             DAL.DALMatricula dalMatricula = new DAL.DALMatricula();
-            dalMatricula.Insert(matricula);
+            dalMatricula.Insert(matricula); 
+            DAL.DALAlunoDocumento dalAlunoDocumento = new DAL.DALAlunoDocumento(); 
+            foreach(ListItem I in CheckBoxListDocumentoDisciplina.Items)
+            {
+                 if (I.Selected) dalAlunoDocumento.insert(new Modelo.AlunoDocumento(Convert.ToInt32(IdAluno), Convert.ToInt32(I.Value)));
+               
+
+            }
             Session["matricula"] = matricula;
             Response.Redirect("~/Matricula/WebFormImprimirFichaInscricao.aspx");
         }
