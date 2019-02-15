@@ -10,25 +10,16 @@
 namespace CPSI.Matricula {
     
     
-    public partial class WebFormVisualizarMatriculados {
+    public partial class WebFormVisualizarTurmas {
         
         /// <summary>
-        /// Controle LabelNomeTurma.
+        /// Controle GridViewTurmas.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNomeTurma;
-        
-        /// <summary>
-        /// Controle GridViewMatriculados.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewMatriculados;
+        protected global::System.Web.UI.WebControls.GridView GridViewTurmas;
         
         /// <summary>
         /// Controle ObjectDataSource1.

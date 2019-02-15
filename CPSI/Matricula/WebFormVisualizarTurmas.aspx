@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true" CodeBehind="WebFormVisualizacaoTurma.aspx.cs" Inherits="CPSI.Admin.WebFormVisualizacaoTurma1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Matricula.Master" AutoEventWireup="true" CodeBehind="WebFormVisualizarTurmas.aspx.cs" Inherits="CPSI.Matricula.WebFormVisualizarTurmas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -11,10 +11,8 @@
             <asp:BoundField DataField="DataInicio" DataFormatString="{0:d}" HeaderText="Data Início" SortExpression="DataInicio" />
             <asp:BoundField DataField="DataFim" DataFormatString="{0:d}" HeaderText="Data Fim" SortExpression="DataFim" />
             <asp:BoundField DataField="QtdVagas" HeaderText="Vagas" SortExpression="QtdVagas" />
-            <asp:ButtonField ButtonType="link" CommandName="Editar" HeaderText="Editar" Text="Editar" /> 
             <asp:ButtonField ButtonType="link" CommandName="Matriculados" HeaderText="Matriculados" Text="Matriculados" /> 
         </Columns>
     </asp:GridView>
-    <asp:Button ID="ButtonInserir" CssClass="btn btn-primary" runat="server" Text="Cadastrar nova turma" OnClick="Inserir_Click"/>
     <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALTurma"></asp:ObjectDataSource>
 </asp:Content>

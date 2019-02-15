@@ -21,6 +21,9 @@
                                          <asp:HyperLink ID="HyperLink1" Cssclass="nav-link text-white" NavigateUrl="~/Matricula/WebFormVisualizarAlunos.aspx" runat="server">Alunos</asp:HyperLink>
                                      </li>
                                      <li class="nav-item"> 
+                                         <asp:HyperLink ID="HyperLink3" Cssclass="nav-link text-white" runat="server" NavigateUrl="~/Matricula/WebFormVisualizarTurmas.aspx">Turmas</asp:HyperLink>
+                                     </li>
+                                     <li class="nav-item"> 
                                          <asp:HyperLink ID="HyperLink2" Cssclass="nav-link text-white" runat="server" NavigateUrl="~/Matricula/WebFormMatricular.aspx">Matricular</asp:HyperLink>
                                      </li>
                                  </ul>

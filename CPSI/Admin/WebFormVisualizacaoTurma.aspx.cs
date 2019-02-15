@@ -26,6 +26,14 @@ namespace CPSI.Admin
                 Session["IdTurma"] = IdTurma;
                 Response.Redirect("~/Admin/WebFormGerenciarTurma.aspx");
             }
+            if (e.CommandName == "Matriculados")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                DataKey keyIdTurma = GridViewTurmas.DataKeys[index];
+                Session["IdTurma"] = keyIdTurma.Value;
+                Response.Redirect("~/Matricula/WebFormVisualizarMatriculados.aspx");
+
+            }
         }
 
         protected void Inserir_Click(object sender, EventArgs e)
