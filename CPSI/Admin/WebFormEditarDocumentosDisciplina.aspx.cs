@@ -14,13 +14,14 @@ namespace CPSI.Admin
         DAL.DALDisciplina dALDisciplina = new DAL.DALDisciplina();
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+            controleListaDocumentoDisciplina();
             disciplina = dALDisciplina.Select(Session["IdDisciplina"].ToString());
             LabelDisciplina.Text = disciplina.disciplina;
-            controleListaDocumentoDisciplina();
+            
         }
         public void controleListaDocumentoDisciplina()
         {
-
             if (IsPostBack)
             {
                 if (Session["ListIdDocumento"] == null)
@@ -29,10 +30,11 @@ namespace CPSI.Admin
                     ListIdDocumentoDisciplina = (List<int>)Session["ListIdDocumento"];
             }
             else
-            {   
+            {
                 ListIdDocumentoDisciplina = new List<int>();
 
-            } 
+            }
+
         }
         protected void GridViewDocumentos_Load(object sender, EventArgs e)
         {
@@ -47,14 +49,16 @@ namespace CPSI.Admin
                     if (disciplina.getDocumentoDisciplina().Exists(X => X.idDocumento == idDocumento))
                     {
                         GridViewDocumentos.Rows[index].BackColor = System.Drawing.Color.AliceBlue;
-                        if (ListIdDocumentoDisciplina.Exists(i => i == idDocumento))
+                        if (!(ListIdDocumentoDisciplina.Exists(i => i == idDocumento)))
                         {
                             ListIdDocumentoDisciplina.Add(idDocumento);
+                           
                         }
 
                     }
 
                 }
+                Session["ListIdDocumento"] = ListIdDocumentoDisciplina;
             }
            
         }
