@@ -21,6 +21,7 @@ namespace CPSI.Matricula
             {
                PanelAdicionarAluno.Visible = true;
             }
+           
         }
 
         protected void InserirAluno_Click(object sender, EventArgs e)

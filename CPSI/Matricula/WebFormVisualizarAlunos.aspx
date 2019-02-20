@@ -2,15 +2,31 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="form-inline w-25 mt-3 mb-3">
+
+<div class="form-row">
+    <div class="form-group col-md-5">
+     <div class="form-inline w-25 mt-3 mb-3">
         <div class="form-group">
             <label class="mr-1">Filtro:</label> 
             <asp:TextBox CssClass="form-control mr-1" ToolTip="Entre com informações sobre o aluno" ID="TextBoxFiltroAluno" runat="server" ></asp:TextBox>
             <asp:Button ID="Button_Consultar" runat="server" CssClass="btn btn-secondary" Text="Pesquisar aluno" OnClick="PesquisarAluno_Click" />
         </div>
     </div>
+    </div>
+    <div class="form-group col-md-5">
+    </div>
+      <div class="form-group col-md-2">
+          <div class="form-inline w-25 mt-3 mb-3">
+        <div class="form-group">
+                <asp:Button ID="ButtonInserir" CssClass="btn btn-primary" runat="server" Text="Cadastrar novo aluno" OnClick="ChamarTelaInserir_Click" />
+            </div>
+    </div>
+    </div>
+  </div>
+
+   
     
-    <asp:GridView ID="GridViewAlunos" CssClass="table table-hover" runat="server" ShowHeaderWhenEmpty="true" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" DataKeyNames="IdAluno" OnRowCommand="GridViewAlunos_RowCommand">
+    <asp:GridView ID="GridViewAlunos" CssClass="table table-hover" runat="server" ShowHeaderWhenEmpty="true" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" DataKeyNames="IdAluno" OnRowCommand="GridViewAlunos_RowCommand" AllowPaging="True">
         <Columns>
             
             <asp:BoundField DataField="AlunoNome" HeaderText="AlunoNome" SortExpression="AlunoNome"></asp:BoundField>
@@ -23,7 +39,6 @@
             <asp:ButtonField CommandName="Editar" HeaderText="Editar Aluno" Text="Editar Aluno" ButtonType="link" />
         </Columns>
     </asp:GridView>
-    <asp:Button ID="ButtonInserir" CssClass="btn btn-primary" runat="server" Text="Cadastrar novo aluno" OnClick="ChamarTelaInserir_Click" />
     <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectALLFiltro" TypeName="CPSI.DAL.DALAluno">
         <SelectParameters>
             <asp:ControlParameter ControlID="TextBoxFiltroAluno" PropertyName="Text" Name="filtro" Type="String"></asp:ControlParameter>

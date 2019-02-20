@@ -58,15 +58,6 @@ namespace CPSI.Matricula {
         protected global::System.Web.UI.WebControls.TextBox TextBoxRGOrgao;
         
         /// <summary>
-        /// Controle DropDownListEstadoCivil.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListEstadoCivil;
-        
-        /// <summary>
         /// Controle TextBoxNaturalidade.
         /// </summary>
         /// <remarks>
@@ -85,6 +76,15 @@ namespace CPSI.Matricula {
         protected global::System.Web.UI.WebControls.TextBox TextBoxNaturalidadeEstado;
         
         /// <summary>
+        /// Controle DropDownListEstadoCivil.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListEstadoCivil;
+        
+        /// <summary>
         /// Controle TextBoxEndereco.
         /// </summary>
         /// <remarks>
@@ -94,15 +94,6 @@ namespace CPSI.Matricula {
         protected global::System.Web.UI.WebControls.TextBox TextBoxEndereco;
         
         /// <summary>
-        /// Controle TextBoxEstado.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxEstado;
-        
-        /// <summary>
         /// Controle TextBoxCidade.
         /// </summary>
         /// <remarks>
@@ -110,6 +101,15 @@ namespace CPSI.Matricula {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxCidade;
+        
+        /// <summary>
+        /// Controle TextBoxEstado.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxEstado;
         
         /// <summary>
         /// Controle TextBoxBairro.

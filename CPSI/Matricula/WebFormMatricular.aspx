@@ -23,6 +23,7 @@
                     <asp:BoundField DataField="IdDisciplina" HeaderText="IdDisciplina" SortExpression="IdDisciplina" />
                 </Columns>
      </asp:GridView>
+    <br />
            <div class="form-inline w-50 mt-3 mb-3">
               <div class="form-group">
                   <label class="mr-2">Filtro:</label>
@@ -42,7 +43,7 @@
                     <asp:BoundField DataField="ContatoTelefone" HeaderText="Contato Telefone" SortExpression="ContatoTelefone"></asp:BoundField>
                 </Columns>
    </asp:GridView>
-   <asp:Button  runat="server" Text="Matricular" OnClick="VerificarDisponibilidade_Click"  />
+   <asp:Button  runat="server" Text="Matricular" class="btn btn-success" OnClick="VerificarDisponibilidade_Click"  />
    <asp:Panel ID="PanelMatricular" runat="server" Visible="false">
        <span>Confirmar Matricula de aluno </span>
        <asp:label ID="TextBoxMatricularAluno" CssClass="font-weight-bold" runat="server"></asp:label>

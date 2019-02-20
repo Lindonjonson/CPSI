@@ -26,7 +26,11 @@
                                        <li class="nav-item">
                                          <asp:HyperLink Cssclass="nav-link text-white" ID="HyperLink3" NavigateUrl="~/Admin/WebFormVisualizacaoTurma.aspx"  runat="server">Gerenciar Turma</asp:HyperLink>
                                       </li>
+                                     <li class="nav-item">
+                                         <asp:HyperLink Cssclass="nav-link text-white" ID="HyperLink4"  NavigateUrl="~/WebFormInicial.aspx"   runat="server">Sair</asp:HyperLink>
+                                      </li>
                                  </ul>
+                                 
                             </nav>
                       </div>
                       <div class="col-md-12">

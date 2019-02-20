@@ -31,15 +31,6 @@ namespace CPSI.Matricula {
         protected global::System.Web.UI.WebControls.Button Button_Consultar;
         
         /// <summary>
-        /// Controle GridViewAlunos.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewAlunos;
-        
-        /// <summary>
         /// Controle ButtonInserir.
         /// </summary>
         /// <remarks>
@@ -47,6 +38,15 @@ namespace CPSI.Matricula {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ButtonInserir;
+        
+        /// <summary>
+        /// Controle GridViewAlunos.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewAlunos;
         
         /// <summary>
         /// Controle ObjectDataSource1.
