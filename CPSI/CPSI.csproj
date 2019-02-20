@@ -81,9 +81,9 @@
     <Content Include="Assets\Icons\baseline_remove_circle_outline_black_18dp.png" />
     <Content Include="Assets\js\bootstrap.min.js" />
     <Content Include="Assets\js\jquery-3.3.1.min.js" />
-    <Content Include="Icons\baseline_add_circle_outline_black_18dp.png" />
-    <Content Include="Icons\baseline_remove_circle_outline_black_18dp.png" />
-    <Content Include="Icons\image_preview.png" />
+    <Content Include="Assets\Img\baseline_add_circle_outline_black_18dp.png" />
+    <Content Include="Assets\Img\baseline_remove_circle_outline_black_18dp.png" />
+    <Content Include="Assets\Img\CartazIdosos.png" />
     <Content Include="Matricula\WebFormGerenciarAluno.aspx" />
     <Content Include="Matricula\WebFormImprimirFichaInscricao.aspx" />
     <Content Include="Matricula\MatriculaInicial.aspx" />

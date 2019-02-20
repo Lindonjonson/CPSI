@@ -10,5 +10,5 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
       <br />
-    <img src="../Icons/image_preview.png" class="auto-style1" />
+    <img src="../Assets/Img/CartazIdosos.png" class="auto-style1" />
 </asp:Content>
