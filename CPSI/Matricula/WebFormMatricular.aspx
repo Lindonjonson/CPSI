@@ -2,7 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-          <div class="form-inline w-50 mt-3 mb-3">
+  <asp:Panel ID="PanelSelecaoTurma" runat="server">
+      <div class="form-inline w-50 mt-3 mb-3">
               <div class="form-group">
                   <label class="mr-2">Filtro:</label>
                   <asp:TextBox ID="TextBoxFiltroTurma" CssClass="form-control mr-2" runat="server"></asp:TextBox>
@@ -10,8 +11,8 @@
                   <asp:TextBox ID="TextBoxAno" CssClass="form-control mr-2" runat="server"></asp:TextBox>
                   <asp:Button ID="Button_Consulta" runat="server" CssClass="btn btn-secondary" Text="Pesquisar turma" OnClick="Pesquisar_Click" />
               </div>
-          </div> 
-    <asp:GridView ID="GridViewTurma" CssClass="table table-hover" DataSourceID="ObjectDataSource1"  ViewStateMode="Disabled" runat="server" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True" DataKeyNames="IdTurma" OnSelectedIndexChanged="GridViewTurma_SelectedIndexChanged" AllowPaging="True" PageSize="5">
+      </div> 
+      <asp:GridView ID="GridViewTurma" CssClass="table table-hover" DataSourceID="ObjectDataSource1"  ViewStateMode="Disabled" runat="server" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True" DataKeyNames="IdTurma" OnSelectedIndexChanged="GridViewTurma_SelectedIndexChanged" AllowPaging="True" PageSize="5">
                 <Columns>
                     <asp:CommandField ShowSelectButton="True" ButtonType="Link" HeaderText="Selecionar" />
                     <asp:BoundField DataField="NomeTurma" HeaderText="Turma" SortExpression="NomeTurma" />
@@ -23,16 +24,16 @@
                     <asp:BoundField DataField="IdDisciplina" HeaderText="IdDisciplina" SortExpression="IdDisciplina" />
                 </Columns>
      </asp:GridView>
-    <br />
-           <div class="form-inline w-50 mt-3 mb-3">
-              <div class="form-group">
-                  <label class="mr-2">Filtro:</label>
-                  <asp:TextBox ID="TextBoxFiltroAluno" CssClass="form-control mr-2" runat="server"></asp:TextBox>
-                  <asp:Button ID="Button_Consultar"  CssClass="btn btn-secondary" runat="server" Text="Pesquisar aluno" OnClick="Pesquisar_Click" />
-              </div>
+  </asp:Panel>
+  <asp:Panel ID="PanelSelecaoAluno" runat="server">
+     <div class="form-inline w-50 mt-3 mb-3">
+         <div class="form-group">
+            <label class="mr-2">Filtro:</label>
+            <asp:TextBox ID="TextBoxFiltroAluno" CssClass="form-control mr-2" runat="server"></asp:TextBox>
+            <asp:Button ID="Button_Consultar"  CssClass="btn btn-secondary" runat="server" Text="Pesquisar aluno" OnClick="Pesquisar_Click" />
           </div>
-            
-    <asp:GridView ID="GridViewAlunos" runat="server" AutoGenerateColumns="False" CssClass="table table-hover" ViewStateMode="Disabled" ShowHeaderWhenEmpty="True" DataKeyNames="IdAluno" OnSelectedIndexChanged="GridViewAlunos_SelectedIndexChanged" DataSourceID="ObjectDataSource2" AllowPaging="True" PageSize="5">
+     </div>
+      <asp:GridView ID="GridViewAlunos" runat="server" AutoGenerateColumns="False" CssClass="table table-hover" ViewStateMode="Disabled" ShowHeaderWhenEmpty="True" DataKeyNames="IdAluno" OnSelectedIndexChanged="GridViewAlunos_SelectedIndexChanged" DataSourceID="ObjectDataSource2" AllowPaging="True" PageSize="5">
                 <Columns>
                     <asp:CommandField ShowSelectButton="True" ButtonType="link" HeaderText="Selecionar" />
                     <asp:BoundField DataField="AlunoNome" HeaderText="Nome" SortExpression="AlunoNome"></asp:BoundField>
@@ -43,7 +44,33 @@
                     <asp:BoundField DataField="ContatoTelefone" HeaderText="Contato Telefone" SortExpression="ContatoTelefone"></asp:BoundField>
                 </Columns>
    </asp:GridView>
-   <asp:Button  runat="server" Text="Matricular" class="btn btn-success" OnClick="VerificarDisponibilidade_Click"  />
+  </asp:Panel>           
+  
+    <asp:Panel CssClass="card mb-3 mt-2" ID="PanelTurma" Visible="false" runat="server">
+        <div class="card-body">
+            <span class="font-weight-bold">Turma selecionada </span>
+            <asp:Label ID="LabelTurma" runat="server" Text="Label"></asp:Label>
+            <br />
+            <span>Com inicio em </span>
+            <asp:TextBox ID="LabelDataInicio" CssClass="m-2" ReadOnly="true"  runat="server" Text="Label"></asp:TextBox>
+            <span>e fim </span>
+            <asp:TextBox CssClass="m-2" ID="LabelDataFim" ReadOnly="true"  runat="server" Text="Label"></asp:TextBox>
+            <asp:Button ID="Button_CancelarSelecaoTurma" CssClass="btn btn-link" runat="server" Text="Trocar" OnClick="Button_CancelarSelecaoTurma_Click" />
+        </div>
+    </asp:Panel>
+    <asp:Panel CssClass="card  mb-3" ID="PanelAluno" Visible="false" runat="server">
+        <div class="card-body">
+             <span class="font-weight-bold">Aluno selecionado </span>
+            <asp:Label ID="LabelAlunoNome" runat="server" Text="Label"></asp:Label>
+            <br />
+            <span>de CPF </span>
+            <asp:TextBox ID="LabelAlunoCPF" CssClass="m-2" ReadOnly="true"  runat="server" Text="Label"></asp:TextBox>
+            <span>e RG </span>
+            <asp:TextBox CssClass="m-2" ID="LabelBoxAlunoRG" ReadOnly="true"  runat="server" Text="Label"></asp:TextBox>
+            <asp:Button ID="Button_CancelarSelecaoAluno" runat="server" CssClass="btn btn-link" Text="Trocar" OnClick="Button_CancelarSelecaoAluno_Click" />
+        </div>
+    </asp:Panel>
+ <asp:Button  runat="server" Text="Matricular" class="btn btn-success" OnClick="VerificarDisponibilidade_Click"  />
    <asp:Panel ID="PanelMatricular" runat="server" Visible="false">
        <span>Confirmar Matricula de aluno </span>
        <asp:label ID="TextBoxMatricularAluno" CssClass="font-weight-bold" runat="server"></asp:label>
@@ -53,13 +80,13 @@
        <asp:CheckBoxList ID="CheckBoxListDocumentoDisciplina" DataTextField="Documento" DataValueField="iddocumento" runat="server"></asp:CheckBoxList>
        <asp:Button ID="ButtonMatricular" CssClass="btn btn-success" runat="server" Text="Confirmar" OnClick="ButtonMatricular_Click" />
    </asp:Panel>
-   <asp:Panel ID="PanelListaEspera" runat="server" >
+   <asp:Panel ID="PanelListaEspera" Visible="false" runat="server" >
        <span>Confirmar Matricula de aluno </span>
        <asp:label ID="TextBoxEsperaAluno"  CssClass="m-2 font-weight-bold" runat="server"></asp:label>
        <span class="font-weight-bold text-danger">Na lista de espera Turma</span>
        <asp:label ID="TextBoxEsperaTurma" runat="server"></asp:label>
        <asp:Button ID="ButtonListaEspera" CssClass="btn btn-success" runat="server" Text="Confirmar" OnClick="ButtonListaEspera_Click" />
-   </asp:Panel>
+    </asp:Panel>
      <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="Select" TypeName="CPSI.DAL.DALTurma">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="TextBoxFiltroTurma" Name="filtro" PropertyName="Text" Size="20" Type="String" />

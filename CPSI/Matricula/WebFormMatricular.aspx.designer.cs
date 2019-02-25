@@ -13,6 +13,15 @@ namespace CPSI.Matricula {
     public partial class WebFormMatricular {
         
         /// <summary>
+        /// Controle PanelSelecaoTurma.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelSelecaoTurma;
+        
+        /// <summary>
         /// Controle TextBoxFiltroTurma.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace CPSI.Matricula {
         protected global::System.Web.UI.WebControls.GridView GridViewTurma;
         
         /// <summary>
+        /// Controle PanelSelecaoAluno.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelSelecaoAluno;
+        
+        /// <summary>
         /// Controle TextBoxFiltroAluno.
         /// </summary>
         /// <remarks>
@@ -74,6 +92,96 @@ namespace CPSI.Matricula {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridViewAlunos;
+        
+        /// <summary>
+        /// Controle PanelTurma.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelTurma;
+        
+        /// <summary>
+        /// Controle LabelTurma.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelTurma;
+        
+        /// <summary>
+        /// Controle LabelDataInicio.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox LabelDataInicio;
+        
+        /// <summary>
+        /// Controle LabelDataFim.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox LabelDataFim;
+        
+        /// <summary>
+        /// Controle Button_CancelarSelecaoTurma.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_CancelarSelecaoTurma;
+        
+        /// <summary>
+        /// Controle PanelAluno.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelAluno;
+        
+        /// <summary>
+        /// Controle LabelAlunoNome.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelAlunoNome;
+        
+        /// <summary>
+        /// Controle LabelAlunoCPF.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox LabelAlunoCPF;
+        
+        /// <summary>
+        /// Controle LabelBoxAlunoRG.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox LabelBoxAlunoRG;
+        
+        /// <summary>
+        /// Controle Button_CancelarSelecaoAluno.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_CancelarSelecaoAluno;
         
         /// <summary>
         /// Controle PanelMatricular.

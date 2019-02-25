@@ -13,8 +13,7 @@ namespace CPSI.Matricula
        
         protected void Page_Load(object sender, EventArgs e)
         {
-            PanelListaEspera.Visible = false;
-            PanelMatricular.Visible = false;
+            
         }
 
         protected void Pesquisar_Click(object sender, EventArgs e)
@@ -25,15 +24,41 @@ namespace CPSI.Matricula
       
         protected void GridViewTurma_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GridViewTurma.SelectedRow.BackColor = System.Drawing.Color.AliceBlue;
-            
+
+            int IndexGridViewTurma = Convert.ToInt32(GridViewTurma.SelectedRow.RowIndex);
+            DataKey keysTurmaID = GridViewTurma.DataKeys[IndexGridViewTurma];
+            string IdTurma = keysTurmaID.Value.ToString();
+            DAL.DALTurma DalTurma = new DAL.DALTurma();
+            LabelTurma.Text = DalTurma.Select(IdTurma).nomeTurma;
+            LabelDataInicio.Text= DalTurma.Select(IdTurma).dataInicio.ToShortDateString();
+            LabelDataFim.Text = DalTurma.Select(IdTurma).dataFim.ToShortDateString();
+            PanelSelecaoTurma.Visible = false;
+            PanelTurma.Visible = true;
         }
 
         protected void GridViewAlunos_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int IndexGridViewAluno = Convert.ToInt32(GridViewAlunos.SelectedRow.RowIndex);
+            DataKey keysAlunoID = GridViewAlunos.DataKeys[IndexGridViewAluno];
+            string IdAluno = keysAlunoID.Value.ToString();
+            DAL.DALAluno DalAluno = new DAL.DALAluno();
+            LabelAlunoNome.Text = DalAluno.select(IdAluno).alunoNome;
+            LabelAlunoCPF.Text = DalAluno.select(IdAluno).cpf;
+            LabelBoxAlunoRG.Text = DalAluno.select(IdAluno).rg;
+            PanelSelecaoAluno.Visible = false;
+            PanelAluno.Visible = true;
 
-            GridViewAlunos.SelectedRow.BackColor = System.Drawing.Color.AliceBlue;
-            
+        }
+        protected void Button_CancelarSelecaoTurma_Click(object sender, EventArgs e)
+        {
+            PanelSelecaoTurma.Visible = true;
+            PanelTurma.Visible = false;
+        }
+
+        protected void Button_CancelarSelecaoAluno_Click(object sender, EventArgs e)
+        {
+            PanelSelecaoAluno.Visible = true;
+            PanelAluno.Visible = false;
         }
         public void CarregarDocumentosDisciplina(string idDisciplina)
         {
@@ -42,6 +67,7 @@ namespace CPSI.Matricula
            
 
         }
+       
         protected void VerificarDisponibilidade_Click(object sender, EventArgs e)
         {
             int IndexGridViewTurma = Convert.ToInt32(GridViewTurma.SelectedRow.RowIndex);
@@ -114,5 +140,7 @@ namespace CPSI.Matricula
             PanelMatricular.Visible = false;
 
         }
+
+        
     }
 }
