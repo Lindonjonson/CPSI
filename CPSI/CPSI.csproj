@@ -88,7 +88,6 @@
     <Content Include="Matricula\WebFormImprimirFichaInscricao.aspx" />
     <Content Include="Matricula\MatriculaInicial.aspx" />
     <Content Include="Matricula\WebFormMatricular.aspx" />
-    <Content Include="Matricula\WebFormMatricularListaEspera.aspx" />
     <Content Include="Matricula\WebFormVisualizarAlunos.aspx" />
     <Content Include="Matricula\WebFormVisualizarListaEspera.aspx" />
     <Content Include="Matricula\WebFormVisualizarMatriculados.aspx" />
@@ -190,13 +189,6 @@
     </Compile>
     <Compile Include="Matricula\WebFormMatricular.aspx.designer.cs">
       <DependentUpon>WebFormMatricular.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Matricula\WebFormMatricularListaEspera.aspx.cs">
-      <DependentUpon>WebFormMatricularListaEspera.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Matricula\WebFormMatricularListaEspera.aspx.designer.cs">
-      <DependentUpon>WebFormMatricularListaEspera.aspx</DependentUpon>
     </Compile>
     <Compile Include="Matricula\WebFormVisualizarAlunos.aspx.cs">
       <DependentUpon>WebFormVisualizarAlunos.aspx</DependentUpon>
