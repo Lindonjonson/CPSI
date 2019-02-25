@@ -103,6 +103,15 @@ namespace CPSI.Matricula {
         protected global::System.Web.UI.WebControls.Panel PanelTurma;
         
         /// <summary>
+        /// Controle LabelTurmaStatus.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelTurmaStatus;
+        
+        /// <summary>
         /// Controle LabelTurma.
         /// </summary>
         /// <remarks>
@@ -193,24 +202,6 @@ namespace CPSI.Matricula {
         protected global::System.Web.UI.WebControls.Panel PanelMatricular;
         
         /// <summary>
-        /// Controle TextBoxMatricularAluno.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TextBoxMatricularAluno;
-        
-        /// <summary>
-        /// Controle TextBoxMatricularTurma.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TextBoxMatricularTurma;
-        
-        /// <summary>
         /// Controle CheckBoxListDocumentoDisciplina.
         /// </summary>
         /// <remarks>
@@ -236,24 +227,6 @@ namespace CPSI.Matricula {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel PanelListaEspera;
-        
-        /// <summary>
-        /// Controle TextBoxEsperaAluno.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TextBoxEsperaAluno;
-        
-        /// <summary>
-        /// Controle TextBoxEsperaTurma.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TextBoxEsperaTurma;
         
         /// <summary>
         /// Controle ButtonListaEspera.

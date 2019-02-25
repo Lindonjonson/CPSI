@@ -48,6 +48,8 @@
   
     <asp:Panel CssClass="card mb-3 mt-2" ID="PanelTurma" Visible="false" runat="server">
         <div class="card-body">
+            <asp:Label Visible="false" CssClass=" text-white font-weight-bold bg-danger" ID="LabelTurmaStatus" runat="server" Text="Turma cheia, disponível apenas para lista de espera"></asp:Label>
+            <br />
             <span class="font-weight-bold">Turma selecionada </span>
             <asp:Label ID="LabelTurma" runat="server" Text="Label"></asp:Label>
             <br />
@@ -70,23 +72,33 @@
             <asp:Button ID="Button_CancelarSelecaoAluno" runat="server" CssClass="btn btn-link" Text="Trocar" OnClick="Button_CancelarSelecaoAluno_Click" />
         </div>
     </asp:Panel>
- <asp:Button  runat="server" Text="Matricular" class="btn btn-success" OnClick="VerificarDisponibilidade_Click"  />
-   <asp:Panel ID="PanelMatricular" runat="server" Visible="false">
-       <span>Confirmar Matricula de aluno </span>
-       <asp:label ID="TextBoxMatricularAluno" CssClass="font-weight-bold" runat="server"></asp:label>
-       <span>Na Turma</span>
-       <asp:label ID="TextBoxMatricularTurma" CssClass="font-weight-bold" runat="server"></asp:label>
-       <span>Documentos Obrigatorios à disciplina</span>
-       <asp:CheckBoxList ID="CheckBoxListDocumentoDisciplina" DataTextField="Documento" DataValueField="iddocumento" runat="server"></asp:CheckBoxList>
-       <asp:Button ID="ButtonMatricular" CssClass="btn btn-success" runat="server" Text="Confirmar" OnClick="ButtonMatricular_Click" />
-   </asp:Panel>
-   <asp:Panel ID="PanelListaEspera" Visible="false" runat="server" >
-       <span>Confirmar Matricula de aluno </span>
-       <asp:label ID="TextBoxEsperaAluno"  CssClass="m-2 font-weight-bold" runat="server"></asp:label>
-       <span class="font-weight-bold text-danger">Na lista de espera Turma</span>
-       <asp:label ID="TextBoxEsperaTurma" runat="server"></asp:label>
-       <asp:Button ID="ButtonListaEspera" CssClass="btn btn-success" runat="server" Text="Confirmar" OnClick="ButtonListaEspera_Click" />
-    </asp:Panel>
+    <button type="button" class="btn btn btn-primary" data-toggle="modal" data-target="#ModalMatricular">Matricular</button>
+    <div class="modal fade" id="ModalMatricular" tabindex="-1" role="dialog" aria-labelledby="ModalMatricular" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                     <h5 class="modal-title">Matrícula</h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                     <asp:Panel ID="PanelMatricular" runat="server" Visible="false">
+                         <span>Confirmar Matricula de aluno </span>
+                         <span>Documentos Obrigatorios à disciplina</span>
+                         <asp:CheckBoxList ID="CheckBoxListDocumentoDisciplina" DataTextField="Documento" DataValueField="iddocumento" runat="server"></asp:CheckBoxList>
+                         <asp:Button ID="ButtonMatricular" CssClass="btn btn-success" runat="server" Text="Confirmar" OnClick="ButtonMatricular_Click" />
+                     </asp:Panel>
+                     <asp:Panel ID="PanelListaEspera" Visible="false" runat="server" >
+                          <span>Confirmar Matricula de aluno </span>
+                          <span class="font-weight-bold text-danger">Na lista de espera Turma</span>
+                          <asp:Button ID="ButtonListaEspera" CssClass="btn btn-success" runat="server" Text="Confirmar" OnClick="ButtonListaEspera_Click" />
+                     </asp:Panel>
+                 </div>
+               
+            </div>
+      </div>
+   </div>
      <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="Select" TypeName="CPSI.DAL.DALTurma">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="TextBoxFiltroTurma" Name="filtro" PropertyName="Text" Size="20" Type="String" />

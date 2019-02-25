@@ -32,6 +32,7 @@ namespace CPSI.Matricula
             LabelTurma.Text = DalTurma.Select(IdTurma).nomeTurma;
             LabelDataInicio.Text= DalTurma.Select(IdTurma).dataInicio.ToShortDateString();
             LabelDataFim.Text = DalTurma.Select(IdTurma).dataFim.ToShortDateString();
+            VerificarDisponibilidade();
             PanelSelecaoTurma.Visible = false;
             PanelTurma.Visible = true;
         }
@@ -68,30 +69,25 @@ namespace CPSI.Matricula
 
         }
        
-        protected void VerificarDisponibilidade_Click(object sender, EventArgs e)
+        protected void VerificarDisponibilidade()
         {
+            PanelMatricular.Visible = false;
+            PanelListaEspera.Visible = false;
             int IndexGridViewTurma = Convert.ToInt32(GridViewTurma.SelectedRow.RowIndex);
-            int IndexGridViewAluno = Convert.ToInt32(GridViewAlunos.SelectedRow.RowIndex);
             DataKey keysTurmaID = GridViewTurma.DataKeys[IndexGridViewTurma];
-            DataKey keysAlunoID = GridViewAlunos.DataKeys[IndexGridViewAluno];
             string IdTurma = keysTurmaID.Value.ToString();
-            string IdAluno = keysAlunoID.Value.ToString();
             DAL.DALTurma DalTurma = new DAL.DALTurma();
-            DAL.DALAluno DalAluno = new DAL.DALAluno();
             DAL.DALMatricula dALMatricula = new DAL.DALMatricula();
             if (dALMatricula.VagaDisponivel(IdTurma))
             {
-                TextBoxMatricularAluno.Text = DalAluno.select(IdAluno).alunoNome;
-                TextBoxMatricularTurma.Text = DalTurma.Select(IdTurma).nomeTurma;
-                CarregarDocumentosDisciplina(DalTurma.Select(IdTurma).idDisciplina.ToString());
+                CarregarDocumentosDisciplina(IdTurma);
+                LabelTurmaStatus.Visible = false;
                 PanelMatricular.Visible = true;
 
             }
             else
             {
-
-                TextBoxEsperaAluno.Text = DalAluno.select(IdAluno).alunoNome;
-                TextBoxEsperaTurma .Text = DalTurma.Select(IdTurma).nomeTurma;
+                LabelTurmaStatus.Visible = true;
                 PanelListaEspera.Visible = true;
 
             }
