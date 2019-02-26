@@ -36,7 +36,7 @@ namespace CPSI.DAL
 
                     documento = new Modelo.Documento(
                         int.Parse(dr["IdDocumento"].ToString()),
-                        dr["Documento"].ToString()
+                        dr["Documento"].ToString(),Convert.ToBoolean(dr["Validade"]),Convert.ToInt32(dr["Tipo"])
                         );
                     ListaDocumento.Add(documento);
 
@@ -66,6 +66,8 @@ namespace CPSI.DAL
             {
                 documento.idDocumento = int.Parse(dr["IdDocumento"].ToString());
                 documento.documento = dr["Documento"].ToString();
+                documento.validade = Convert.ToBoolean(dr["Validade"]);
+                documento.tipo = Convert.ToInt32(dr["Tipo"]);
 
             }
 
@@ -81,9 +83,11 @@ namespace CPSI.DAL
 
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            SqlCommand cmd = new SqlCommand("insert into Documento (IdDocumento,Documento) values(@IdDocumento,@Documento)", conn);
+            SqlCommand cmd = new SqlCommand("insert into Documento (IdDocumento,Documento,Tipo,Validade) values(@IdDocumento,@Documento,@Tipo,@Validade)", conn);
             cmd.Parameters.AddWithValue("@IdDocumento", GetIdMax());
             cmd.Parameters.AddWithValue("@Documento", obj.documento);
+            cmd.Parameters.AddWithValue("@Tipo", obj.tipo);
+            cmd.Parameters.AddWithValue("@Validade", obj.validade);
             cmd.ExecuteNonQuery();
             conn.Close();
 
@@ -110,9 +114,11 @@ namespace CPSI.DAL
 
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            SqlCommand cmd = new SqlCommand("UPDATE Documento SET Documento = @documento WHERE IdDocumento = @id", conn);
-            cmd.Parameters.AddWithValue("@documento", obj.documento);
-            cmd.Parameters.AddWithValue("@id", obj.idDocumento);
+            SqlCommand cmd = new SqlCommand("UPDATE Documento SET Documento =  @Documento,Tipo =  @Tipo,Validade =  @Validade WHERE IdDocumento =  @IdDocumento", conn);
+            cmd.Parameters.AddWithValue("@IdDocumento", obj.idDocumento);
+            cmd.Parameters.AddWithValue("@Documento", obj.documento);
+            cmd.Parameters.AddWithValue("@Tipo", obj.tipo);
+            cmd.Parameters.AddWithValue("@Validade", obj.validade);
             cmd.ExecuteNonQuery();
             conn.Close();
 

@@ -3,10 +3,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    <h4 class="mt-3 mb-3"> Tipos de Documento </h4>
-    <asp:GridView ID="GridViewDocumentos" runat="server" CssClass="table table-hover" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" ShowHeaderWhenEmpty="True" DataKeyNames="idDocumento" OnSelectedIndexChanged="GridViewDocumentos_SelectedIndexChanged" EnableViewState="False">
+    <asp:GridView ID="GridViewDocumentos" DataKeyNames="idDocumento" runat="server" CssClass="table table-hover" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" ShowHeaderWhenEmpty="True" OnSelectedIndexChanged="GridViewDocumentos_SelectedIndexChanged" EnableViewState="False" >
         <Columns>
             <asp:CommandField ShowEditButton="True" ShowSelectButton="True" HeaderText="Opera&#231;&#245;es" />
-            <asp:BoundField DataField="documento" HeaderText="Documento" SortExpression="documento" />
+            <asp:BoundField DataField="documento" HeaderText="Documento" SortExpression="documento"></asp:BoundField>
+            <asp:CheckBoxField DataField="validade" HeaderText="Validade" SortExpression="validade"></asp:CheckBoxField>
+            <asp:BoundField DataField="tipo" HeaderText="Tipo" SortExpression="tipo" />
         </Columns>
     </asp:GridView>
     <button type="button" data-toggle="modal" data-target="#ModalExcluirDocumento" class="btn btn-danger">Excluir Documento</button>
@@ -21,8 +23,19 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <asp:label  runat="server" Text="Nome documento:"></asp:label>
+                    <asp:label  runat="server" Text="Nome documento"></asp:label>
                     <asp:textbox runat="server" ID="txtDocumento"></asp:textbox>
+                    <br />
+                    <asp:label  runat="server" Text="Documento apresenta validade?"></asp:label>
+                    <asp:RadioButtonList ID="RadioButtonListValidadeDocumento" runat="server">
+                        <asp:ListItem Value="1">Sim</asp:ListItem>
+                        <asp:ListItem Value="0">Não</asp:ListItem>
+                    </asp:RadioButtonList>
+                    <asp:label  runat="server" Text="Tipo do documento"></asp:label>
+                    <asp:DropDownList ID="DropDownListDocumentostipo" runat="server">
+                        <asp:ListItem Value="1 ">Tipo 1 </asp:ListItem>
+                        <asp:ListItem Value="2 ">Tipo 2 </asp:ListItem>
+                    </asp:DropDownList>
                  </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
