@@ -91,7 +91,7 @@
                      </asp:Panel>
                      <asp:Panel ID="PanelListaEspera" Visible="false" runat="server" >
                           <span>Confirmar Matricula de aluno </span>
-                          <span class="font-weight-bold text-danger">Na lista de espera Turma</span>
+                          <span class="font-weight-bold text-danger">Na lista de espera</span>
                           <asp:Button ID="ButtonListaEspera" CssClass="btn btn-success" runat="server" Text="Confirmar" OnClick="ButtonListaEspera_Click" />
                      </asp:Panel>
                  </div>
