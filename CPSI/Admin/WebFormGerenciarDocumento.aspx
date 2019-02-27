@@ -33,8 +33,8 @@
                     </asp:RadioButtonList>
                     <asp:label  runat="server" Text="Tipo do documento"></asp:label>
                     <asp:DropDownList ID="DropDownListDocumentostipo" runat="server">
-                        <asp:ListItem Value="1 ">Tipo 1 </asp:ListItem>
-                        <asp:ListItem Value="2 ">Tipo 2 </asp:ListItem>
+                        <asp:ListItem Value="1">Documento ligado oa Aluno </asp:ListItem>
+                        <asp:ListItem Value="2">Documento ligado à Disciplina </asp:ListItem>
                     </asp:DropDownList>
                  </div>
                 <div class="modal-footer">
