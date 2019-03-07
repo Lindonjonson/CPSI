@@ -2,17 +2,39 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   <h4 class="mt-3 mb-3"> Tipos de Documento </h4>
-    <asp:GridView ID="GridViewDocumentos" DataKeyNames="idDocumento" runat="server" CssClass="table table-hover" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" ShowHeaderWhenEmpty="True" OnSelectedIndexChanged="GridViewDocumentos_SelectedIndexChanged" EnableViewState="False" >
-        <Columns>
-            <asp:CommandField ShowEditButton="True" ShowSelectButton="True" HeaderText="Opera&#231;&#245;es" />
-            <asp:BoundField DataField="documento" HeaderText="Documento" SortExpression="documento"></asp:BoundField>
-            <asp:CheckBoxField DataField="validade" HeaderText="Validade" SortExpression="validade"></asp:CheckBoxField>
-            <asp:BoundField DataField="tipo" HeaderText="Tipo" SortExpression="tipo" />
-        </Columns>
-    </asp:GridView>
-    <button type="button" data-toggle="modal" data-target="#ModalExcluirDocumento" class="btn btn-danger">Excluir Documento</button>
-    <button type="button" class="btn btn btn-primary" data-toggle="modal" data-target="#ModalCadastrarDocumento">Cadastrar Documento</button>
+    <asp:Panel ID="PanelVisualizaçãoDocumento" runat="server">
+        <h4 class="mt-3 mb-3"> Tipos de Documento </h4>
+        <asp:GridView ID="GridViewDocumentos" DataKeyNames="idDocumento" runat="server" CssClass="table table-hover" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" ShowHeaderWhenEmpty="True" OnSelectedIndexChanged="GridViewDocumentos_SelectedIndexChanged" OnRowCommand="GridViewDocumentos_RowCommand" EnableViewState="False" >
+            <Columns>
+                <asp:CommandField ShowSelectButton="True" HeaderText="Selecionar" ></asp:CommandField>
+                <asp:ButtonField CommandName="Update" HeaderText="Editar" Text="Editar"></asp:ButtonField>
+                <asp:BoundField DataField="documento" HeaderText="Documento" SortExpression="documento"></asp:BoundField>
+                <asp:CheckBoxField DataField="validade" HeaderText="Validade" SortExpression="validade"></asp:CheckBoxField>
+                <asp:BoundField DataField="tipo" HeaderText="Tipo" SortExpression="tipo" />
+            </Columns>
+        
+        </asp:GridView>
+        <button type="button" data-toggle="modal" data-target="#ModalExcluirDocumento" class="btn btn-danger">Excluir Documento</button>
+        <button type="button" class="btn btn btn-primary" data-toggle="modal" data-target="#ModalCadastrarDocumento">Cadastrar Documento</button>
+    </asp:Panel>
+   
+    <asp:Panel ID="PanelEdicaoDocumento" Visible="false" runat="server">
+      <label>Documento</label>
+      <asp:TextBox ID="TextBoxDocumento" runat="server"></asp:TextBox>
+      <label>Documento apresenta validade? </label>
+       <asp:RadioButtonList ID="RadioButtonListListValidadeAtualizacao" runat="server">
+           <asp:ListItem Value="1">Sim</asp:ListItem>
+           <asp:ListItem Value="0">Não</asp:ListItem>
+       </asp:RadioButtonList>
+        <label>Tipo de documento</label>
+        <asp:DropDownList ID="DropDownListTipoDocumentoAtualizacao" runat="server">
+            <asp:ListItem Value="1">Documento ligado ao Aluno </asp:ListItem>
+            <asp:ListItem Value="2">Documento ligado à Disciplina </asp:ListItem>
+            <asp:ListItem Value="3">Documento não apresentado </asp:ListItem>
+        </asp:DropDownList>
+        <asp:Button ID="ButtonAtualizarDocumento" runat="server" OnClick="ButtonAtualizarDocumento_Click"  Text="Confirmar" />
+        <asp:Button ID="ButtonCancelarEdicao" runat="server" Text="Cancelar Edição" OnClick="ButtonCancelarEdicao_Click" />
+    </asp:Panel>
     <div class="modal fade" id="ModalCadastrarDocumento" tabindex="-1" role="dialog" aria-labelledby="ModalCadastrarDocumento" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -27,14 +49,15 @@
                     <asp:textbox runat="server" ID="txtDocumento"></asp:textbox>
                     <br />
                     <asp:label  runat="server" Text="Documento apresenta validade?"></asp:label>
-                    <asp:RadioButtonList ID="RadioButtonListValidadeDocumento" runat="server">
+                    <asp:DropDownList ID="DropDownListValidadeInsercao" runat="server">
                         <asp:ListItem Value="1">Sim</asp:ListItem>
                         <asp:ListItem Value="0">Não</asp:ListItem>
-                    </asp:RadioButtonList>
+                    </asp:DropDownList>
                     <asp:label  runat="server" Text="Tipo do documento"></asp:label>
-                    <asp:DropDownList ID="DropDownListDocumentostipo" runat="server">
-                        <asp:ListItem Value="1">Documento ligado oa Aluno </asp:ListItem>
+                    <asp:DropDownList ID="DropDownListTipoDocumentoInsercao" runat="server">
+                        <asp:ListItem Value="1">Documento ligado ao Aluno </asp:ListItem>
                         <asp:ListItem Value="2">Documento ligado à Disciplina </asp:ListItem>
+                        <asp:ListItem Value="3">Documento não apresentado </asp:ListItem>
                     </asp:DropDownList>
                  </div>
                 <div class="modal-footer">

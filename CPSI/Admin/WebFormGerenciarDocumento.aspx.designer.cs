@@ -13,6 +13,15 @@ namespace CPSI.Admin.Documento {
     public partial class WebFormGerenciarDocumento {
         
         /// <summary>
+        /// Controle PanelVisualizaçãoDocumento.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelVisualizaçãoDocumento;
+        
+        /// <summary>
         /// Controle GridViewDocumentos.
         /// </summary>
         /// <remarks>
@@ -20,6 +29,60 @@ namespace CPSI.Admin.Documento {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridViewDocumentos;
+        
+        /// <summary>
+        /// Controle PanelEdicaoDocumento.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelEdicaoDocumento;
+        
+        /// <summary>
+        /// Controle TextBoxDocumento.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxDocumento;
+        
+        /// <summary>
+        /// Controle RadioButtonListListValidadeAtualizacao.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonListListValidadeAtualizacao;
+        
+        /// <summary>
+        /// Controle DropDownListTipoDocumentoAtualizacao.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListTipoDocumentoAtualizacao;
+        
+        /// <summary>
+        /// Controle ButtonAtualizarDocumento.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonAtualizarDocumento;
+        
+        /// <summary>
+        /// Controle ButtonCancelarEdicao.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonCancelarEdicao;
         
         /// <summary>
         /// Controle txtDocumento.
@@ -31,22 +94,22 @@ namespace CPSI.Admin.Documento {
         protected global::System.Web.UI.WebControls.TextBox txtDocumento;
         
         /// <summary>
-        /// Controle RadioButtonListValidadeDocumento.
+        /// Controle DropDownListValidadeInsercao.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonListValidadeDocumento;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListValidadeInsercao;
         
         /// <summary>
-        /// Controle DropDownListDocumentostipo.
+        /// Controle DropDownListTipoDocumentoInsercao.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListDocumentostipo;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListTipoDocumentoInsercao;
         
         /// <summary>
         /// Controle LabelDocumento.

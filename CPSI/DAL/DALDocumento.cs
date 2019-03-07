@@ -118,7 +118,7 @@ namespace CPSI.DAL
             cmd.Parameters.AddWithValue("@IdDocumento", obj.idDocumento);
             cmd.Parameters.AddWithValue("@Documento", obj.documento);
             cmd.Parameters.AddWithValue("@Tipo", obj.tipo);
-            cmd.Parameters.AddWithValue("@Validade", obj.validade);
+            cmd.Parameters.AddWithValue("@Validade",Convert.ToInt32(obj.validade));
             cmd.ExecuteNonQuery();
             conn.Close();
 
