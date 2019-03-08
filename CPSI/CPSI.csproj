@@ -239,6 +239,7 @@
     <Content Include="Master\Admin.Master" />
     <Content Include="Master\Matricula.Master" />
     <None Include="packages.config" />
+    <Content Include="TerceiraIdade.juth" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
