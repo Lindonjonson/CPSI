@@ -50,6 +50,37 @@ namespace CPSI.DAL
             return ListaDocumento;
         }
         [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Documento> SelectAll(string tipo)
+        {
+            Modelo.Documento documento;
+            List<Modelo.Documento> ListaDocumento = new List<Modelo.Documento>();
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("Select * from Documento Where Tipo=@Tipo", conn);
+            cmd.Parameters.AddWithValue("@Tipo", tipo);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+
+                while (dr.Read())
+                {
+
+                    documento = new Modelo.Documento(
+                        int.Parse(dr["IdDocumento"].ToString()),
+                        dr["Documento"].ToString(), Convert.ToBoolean(dr["Validade"]), Convert.ToInt32(dr["Tipo"])
+                        );
+                    ListaDocumento.Add(documento);
+
+                }
+            }
+
+            dr.Close();
+
+            conn.Close();
+
+            return ListaDocumento;
+        }
+        [DataObjectMethod(DataObjectMethodType.Select)]
         public Modelo.Documento Select(string ID)
         {
 
