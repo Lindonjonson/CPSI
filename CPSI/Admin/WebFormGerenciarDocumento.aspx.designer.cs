@@ -49,13 +49,13 @@ namespace CPSI.Admin.Documento {
         protected global::System.Web.UI.WebControls.TextBox TextBoxDocumento;
         
         /// <summary>
-        /// Controle RadioButtonListListValidadeAtualizacao.
+        /// Controle DropDownListValidadeAtualizacao.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonListListValidadeAtualizacao;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListValidadeAtualizacao;
         
         /// <summary>
         /// Controle DropDownListTipoDocumentoAtualizacao.

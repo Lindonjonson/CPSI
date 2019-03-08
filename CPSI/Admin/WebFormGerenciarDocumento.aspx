@@ -7,12 +7,10 @@
         <asp:GridView ID="GridViewDocumentos" DataKeyNames="idDocumento" runat="server" CssClass="table table-hover" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" ShowHeaderWhenEmpty="True" OnSelectedIndexChanged="GridViewDocumentos_SelectedIndexChanged" OnRowCommand="GridViewDocumentos_RowCommand" EnableViewState="False" >
             <Columns>
                 <asp:CommandField ShowSelectButton="True" HeaderText="Selecionar" ></asp:CommandField>
-                <asp:ButtonField CommandName="Update" HeaderText="Editar" Text="Editar"></asp:ButtonField>
+                <asp:ButtonField CommandName="Editar" HeaderText="Editar" Text="Editar"></asp:ButtonField>
                 <asp:BoundField DataField="documento" HeaderText="Documento" SortExpression="documento"></asp:BoundField>
                 <asp:CheckBoxField DataField="validade" HeaderText="Validade" SortExpression="validade"></asp:CheckBoxField>
-                <asp:BoundField DataField="tipo" HeaderText="Tipo" SortExpression="tipo" />
             </Columns>
-        
         </asp:GridView>
         <button type="button" data-toggle="modal" data-target="#ModalExcluirDocumento" class="btn btn-danger">Excluir Documento</button>
         <button type="button" class="btn btn btn-primary" data-toggle="modal" data-target="#ModalCadastrarDocumento">Cadastrar Documento</button>
@@ -22,10 +20,10 @@
       <label>Documento</label>
       <asp:TextBox ID="TextBoxDocumento" runat="server"></asp:TextBox>
       <label>Documento apresenta validade? </label>
-       <asp:RadioButtonList ID="RadioButtonListListValidadeAtualizacao" runat="server">
+      <asp:DropDownList ID="DropDownListValidadeAtualizacao" runat="server">
            <asp:ListItem Value="1">Sim</asp:ListItem>
            <asp:ListItem Value="0">Não</asp:ListItem>
-       </asp:RadioButtonList>
+       </asp:DropDownList>
         <label>Tipo de documento</label>
         <asp:DropDownList ID="DropDownListTipoDocumentoAtualizacao" runat="server">
             <asp:ListItem Value="1">Documento ligado ao Aluno </asp:ListItem>
@@ -89,5 +87,5 @@
             </div>
       </div>
    </div>
-<asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALDocumento" DataObjectTypeName="CPSI.Modelo.Documento" UpdateMethod="Update" DeleteMethod="Delete"></asp:ObjectDataSource>  
+<asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALDocumento" DataObjectTypeName="CPSI.Modelo.Documento" ></asp:ObjectDataSource>  
 </asp:Content>

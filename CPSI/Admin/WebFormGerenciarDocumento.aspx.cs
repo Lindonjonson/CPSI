@@ -38,15 +38,15 @@ namespace CPSI.Admin.Documento
         }
         protected void GridViewDocumentos_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if(e.CommandName == "Update")
+            if(e.CommandName == "Editar")
             {
                 int Index = Convert.ToInt32(e.CommandArgument);
                 DataKey keys = GridViewDocumentos.DataKeys[Index];
                 string IdDocumento = keys.Value.ToString();
                 Modelo.Documento documento = new DAL.DALDocumento().Select(IdDocumento);
                 TextBoxDocumento.Text = documento.documento;
-                RadioButtonListListValidadeAtualizacao.SelectedItem.Value = Convert.ToInt32(documento.validade).ToString();
-                DropDownListTipoDocumentoAtualizacao.SelectedItem.Value = documento.tipo.ToString();
+                DropDownListValidadeAtualizacao.SelectedValue = Convert.ToInt32(documento.validade).ToString();
+                DropDownListTipoDocumentoAtualizacao.SelectedValue = documento.tipo.ToString();
                 Session["Documento"] = documento;
                 PanelVisualizaçãoDocumento.Visible = false;
                 PanelEdicaoDocumento.Visible = true;
@@ -64,11 +64,10 @@ namespace CPSI.Admin.Documento
         {
             Modelo.Documento documento = (Modelo.Documento) Session["Documento"];
             documento.documento= TextBoxDocumento.Text;
-            documento.validade = Convert.ToBoolean(int.Parse(RadioButtonListListValidadeAtualizacao.SelectedItem.Value));
+            documento.validade = Convert.ToBoolean(int.Parse(DropDownListValidadeAtualizacao.SelectedItem.Value));
             documento.tipo = int.Parse(DropDownListTipoDocumentoAtualizacao.SelectedItem.Value);
-            Response.Write((Convert.ToBoolean(int.Parse(RadioButtonListListValidadeAtualizacao.SelectedItem.Value))).ToString());
-           /* new DAL.DALDocumento().Update(documento);
-            Response.Redirect(Request.RawUrl);  */
+            new DAL.DALDocumento().Update(documento); 
+            Response.Redirect(Request.RawUrl); 
 
         }
 
