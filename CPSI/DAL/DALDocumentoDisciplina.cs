@@ -19,11 +19,11 @@ namespace CPSI.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<int> SelectALL(string IdDisciplina)
+        public List<Modelo.DocumentoDisciplina> SelectALL(string IdDisciplina)
         {
 
 
-                List<int> ListDocumentoDisciplina = new List<int>();
+                List<Modelo.DocumentoDisciplina> ListDocumentoDisciplina = new List<Modelo.DocumentoDisciplina>();
                 SqlConnection conn = new SqlConnection(connectionString);
                 conn.Open();
                 SqlCommand cmd = conn.CreateCommand();
@@ -34,7 +34,8 @@ namespace CPSI.DAL
                 {
                     while (dr.Read())
                     {
-                       ListDocumentoDisciplina.Add(int.Parse(dr["idDocumento"].ToString()));
+                       ListDocumentoDisciplina.Add(new Modelo.DocumentoDisciplina(int.Parse(dr["IdDisciplina"].ToString()), int.Parse(dr["IdDocumento"].ToString())));
+                       
 
                     }
 
@@ -62,8 +63,7 @@ namespace CPSI.DAL
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            List<Modelo.DocumentoDisciplina> documentoDisciplinas= disciplina.getDocumentoDisciplina();
-            foreach (Modelo.DocumentoDisciplina I in documentoDisciplinas )
+            foreach (Modelo.DocumentoDisciplina I in disciplina.listDocumento )
             {
                   SqlCommand cmd = new SqlCommand("insert into DocumentoDisciplina (IdDisciplina, IdDocumento) values(@IdDisciplina, @IdDocumento)", conn);
                   cmd.Parameters.AddWithValue("@IdDisciplina",I.idDisciplina);

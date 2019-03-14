@@ -9,29 +9,23 @@ namespace CPSI.Modelo
     {
         public int idDisciplina { get; set; }
         public string disciplina { get; set; }
-        protected IList<int> listIddocumento;
+        public List<Modelo.DocumentoDisciplina> listDocumento;
         public Disciplina()
         {
             this.idDisciplina = 0;
             this.disciplina = "";
-           
-        }
+            listDocumento = new List<DocumentoDisciplina>();
+    }
         public Disciplina(int idDisciplina, string disciplina)
         {
             this.idDisciplina = idDisciplina;
             this.disciplina = disciplina;
-      
+            listDocumento = new List<DocumentoDisciplina>();
 
-        }
-        public void  addDocumentoDisciplina(IList<int> listIddocumento)
-        {
-            this.listIddocumento = listIddocumento;
-            
-            
         }
         public bool existDocumento()
         {
-            if (listIddocumento.Count > 0)
+            if (listDocumento.Count > 0)
             {
                 return true;
             }
@@ -41,17 +35,6 @@ namespace CPSI.Modelo
             }
 
         }
-        public List<DocumentoDisciplina> getDocumentoDisciplina()
-        {
-            List<Modelo.DocumentoDisciplina> listDocumentoDaDisciplinas = new List<DocumentoDisciplina>();
-            foreach (int i in listIddocumento)
-            {
-                listDocumentoDaDisciplinas.Add(new Modelo.DocumentoDisciplina(idDisciplina, i));
-            }
-            return listDocumentoDaDisciplinas;
-        }
-        
- 
        
     }
 }

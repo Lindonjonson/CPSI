@@ -46,7 +46,7 @@ namespace CPSI.Admin
 
                     DataKey key = GridViewDocumentos.DataKeys[index];
                     int idDocumento = Convert.ToInt32(key.Value);
-                    if (disciplina.getDocumentoDisciplina().Exists(X => X.idDocumento == idDocumento))
+                    if (disciplina.listDocumento.Exists(X => X.idDocumento == idDocumento))
                     {
                         GridViewDocumentos.Rows[index].BackColor = System.Drawing.Color.AliceBlue;
                         if (!(ListIdDocumentoDisciplina.Exists(i => i == idDocumento)))
@@ -65,8 +65,12 @@ namespace CPSI.Admin
        
         protected void Editar_Documentos(object sender, EventArgs e)
         {
-
-            disciplina.addDocumentoDisciplina(ListIdDocumentoDisciplina);
+            List<Modelo.DocumentoDisciplina> DocumentoDisciplina = new List<Modelo.DocumentoDisciplina>();
+            foreach(int I in ListIdDocumentoDisciplina)
+            {
+                DocumentoDisciplina.Add(new Modelo.DocumentoDisciplina(Convert.ToInt32(Session["IdDisciplina"]), I));
+            }
+            disciplina.listDocumento = DocumentoDisciplina;
             new DAL.DALDocumentoDisciplina().update(disciplina);
             Session.Remove("IdDisciplina");
             Session.Remove("ListIdDocumento");
