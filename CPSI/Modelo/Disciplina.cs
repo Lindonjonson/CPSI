@@ -9,19 +9,18 @@ namespace CPSI.Modelo
     {
         public int idDisciplina { get; set; }
         public string disciplina { get; set; }
-        private List<Modelo.DocumentoDisciplina> listDocumentoDaDisciplinas;
-        private IList<int> listIddocumento;
+        protected IList<int> listIddocumento;
         public Disciplina()
         {
             this.idDisciplina = 0;
             this.disciplina = "";
-            listDocumentoDaDisciplinas = new List<DocumentoDisciplina>();
+           
         }
         public Disciplina(int idDisciplina, string disciplina)
         {
             this.idDisciplina = idDisciplina;
             this.disciplina = disciplina;
-            listDocumentoDaDisciplinas = new List<DocumentoDisciplina>();
+      
 
         }
         public void  addDocumentoDisciplina(IList<int> listIddocumento)
@@ -44,6 +43,7 @@ namespace CPSI.Modelo
         }
         public List<DocumentoDisciplina> getDocumentoDisciplina()
         {
+            List<Modelo.DocumentoDisciplina> listDocumentoDaDisciplinas = new List<DocumentoDisciplina>();
             foreach (int i in listIddocumento)
             {
                 listDocumentoDaDisciplinas.Add(new Modelo.DocumentoDisciplina(idDisciplina, i));

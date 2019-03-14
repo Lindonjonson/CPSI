@@ -24,7 +24,7 @@ namespace CPSI.Modelo
         public string telefone2 { get; set; }
         public string contato { get; set; }
         public string contatoTelefone { get; set; }
-
+        public IList<Modelo.AlunoDocumento> ListAlunoDocumento;
         public Aluno()
         {
 
@@ -54,7 +54,17 @@ namespace CPSI.Modelo
             this.contato = Contato;
             this.contatoTelefone=ContatoTelefone;
 
-
+        }
+        public bool existDocumento()
+        {
+            if (ListAlunoDocumento.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
 
         }
 

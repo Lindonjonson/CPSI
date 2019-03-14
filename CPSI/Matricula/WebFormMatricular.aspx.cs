@@ -111,8 +111,7 @@ namespace CPSI.Matricula
             foreach(ListItem I in CheckBoxListDocumentoDisciplina.Items)
             {
                  if (I.Selected) dalAlunoDocumento.insert(new Modelo.AlunoDocumento(Convert.ToInt32(IdAluno), Convert.ToInt32(I.Value)));
-               
-
+             
             }
             Session["matricula"] = matricula;
             Response.Redirect("~/Matricula/WebFormImprimirFichaInscricao.aspx");

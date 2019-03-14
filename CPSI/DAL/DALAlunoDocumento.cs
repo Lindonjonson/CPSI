@@ -27,5 +27,19 @@ namespace CPSI.DAL
             cmd.ExecuteNonQuery();
             conn.Close();
         }
+        public void delete(Modelo.AlunoDocumento obj)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "DELETE FROM AlunoDocumento WHERE IdAluno=@IdAluno";
+            cmd.Parameters.AddWithValue("@IdDocumento", obj.idDocumento);
+            cmd.Parameters.AddWithValue("@IdAluno",obj.idAluno);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+        }
+        
+        
     }
 }
