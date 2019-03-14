@@ -28,7 +28,7 @@ namespace CPSI.Modelo
         public Aluno()
         {
 
-
+            ListAlunoDocumento = new List<Modelo.AlunoDocumento>();
 
         }
 
@@ -53,7 +53,7 @@ namespace CPSI.Modelo
             this.telefone2 = Telefone2;
             this.contato = Contato;
             this.contatoTelefone=ContatoTelefone;
-
+            ListAlunoDocumento = new List<Modelo.AlunoDocumento>();
         }
         public bool existDocumento()
         {

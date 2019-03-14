@@ -44,6 +44,11 @@ namespace CPSI.Matricula
             Aluno.telefone2 = TextBoxTelefone2.Text;
             Aluno.contato = TextBoxContato.Text;
             Aluno.contatoTelefone = TextBoxContatoTelefone.Text;
+            foreach (ListItem I in CheckBoxListDocumentosAluno.Items)
+            {
+                if (I.Selected)
+                    Aluno.ListAlunoDocumento.Add(new Modelo.AlunoDocumento(0, int.Parse(I.Value)));
+            }
             dALAluno.insert(Aluno);
             Response.Redirect("~/Matricula/WebFormVisualizarAlunos.aspx");
         }

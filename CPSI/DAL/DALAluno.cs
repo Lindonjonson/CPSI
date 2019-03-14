@@ -212,12 +212,13 @@ namespace CPSI.DAL
         [DataObjectMethod(DataObjectMethodType.Insert)]
         public void insert(Modelo.Aluno A)
         {
-
+            
+            A.idAluno = getMax();
             SqlConnection conn = new SqlConnection(connectioString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = "INSERT INTO Aluno (IdAluno,Aluno,DataNascimento,CPF,RG,RGOrgao,EstadoCivil,Naturalidade ,NaturalidadeEstado,Endereco,Bairro,Cidade,Estado,Telefone1,Telefone2,Contato,ContatoTelefone) VALUES(@IdAluno, @Aluno, @DataNascimento, @CPF, @RG, @RGOrgao, @EstadoCivil, @Naturalidade, @NaturalidadeEstado, @Endereco,@Bairro ,@Cidade, @Estado, @Telefone1, @Telefone2, @Contato, @ContatoTelefone)";
-            cmd.Parameters.AddWithValue("@IdAluno", getMax());
+            cmd.Parameters.AddWithValue("@IdAluno", A.idAluno);
             cmd.Parameters.AddWithValue("@Aluno", A.alunoNome);
             cmd.Parameters.AddWithValue("@DataNascimento", A.dataNascimento);
             cmd.Parameters.AddWithValue("@CPF", A.cpf);
@@ -235,7 +236,12 @@ namespace CPSI.DAL
             cmd.Parameters.AddWithValue("@Contato", A.contato);
             cmd.Parameters.AddWithValue("@ContatoTelefone", A.contatoTelefone);
             cmd.ExecuteNonQuery();
+            if (A.existDocumento())
+            {
+                new DAL.DALAlunoDocumento().insert(A);
+            }
             conn.Close();
+
 
         }
 
