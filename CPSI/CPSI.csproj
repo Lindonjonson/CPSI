@@ -84,6 +84,7 @@
     <Content Include="Assets\Img\baseline_add_circle_outline_black_18dp.png" />
     <Content Include="Assets\Img\baseline_remove_circle_outline_black_18dp.png" />
     <Content Include="Assets\Img\CartazIdosos.png" />
+    <Content Include="Assets\js\jquery.mask.js" />
     <Content Include="Matricula\WebFormGerenciarAluno.aspx" />
     <Content Include="Matricula\WebFormImprimirFichaInscricao.aspx" />
     <Content Include="Matricula\MatriculaInicial.aspx" />
