@@ -59,7 +59,7 @@
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALDisciplina" DataObjectTypeName="CPSI.Modelo.Disciplina" InsertMethod="Insert" UpdateMethod="Update"></asp:ObjectDataSource>
     <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALDocumento">
         <SelectParameters>
-            <asp:Parameter DefaultValue="2" Name="tipo" Type="String"></asp:Parameter>
+            <asp:Parameter DefaultValue="2" Name="FiltroTipo" Type="String"></asp:Parameter>
         </SelectParameters>
     </asp:ObjectDataSource>
 </asp:Content>

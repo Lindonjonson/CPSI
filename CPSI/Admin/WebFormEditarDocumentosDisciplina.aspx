@@ -32,7 +32,7 @@
    </div>
     <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALDocumento" >
         <SelectParameters>
-            <asp:Parameter DefaultValue="2" Name="tipo" Type="String"></asp:Parameter>
+            <asp:Parameter DefaultValue="2" Name="FiltroTipo" Type="String"></asp:Parameter>
         </SelectParameters>
     </asp:ObjectDataSource>
 </asp:Content> 
