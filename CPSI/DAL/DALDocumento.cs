@@ -22,7 +22,7 @@ namespace CPSI.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Documento> SelectAll()
         {
-            Modelo.Documento documento;
+           
             List<Modelo.Documento> ListaDocumento = new List<Modelo.Documento>();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
@@ -33,12 +33,38 @@ namespace CPSI.DAL
 
                 while (dr.Read())
                 {
+                    Modelo.Documento documento = new Modelo.Documento();
+                    int idDocumento=0;
+                    string nomeDocumento="";
+                    bool validade = false; 
+                    int tipo=0;
+                    try
+                    {  
+                        idDocumento = int.Parse(dr["IdDocumento"].ToString());
+                        nomeDocumento = dr["Documento"].ToString();
+                        validade = Convert.ToBoolean(dr["Validade"]);
+                        tipo = Convert.ToInt32(dr["Tipo"]);
+                    }
+                    catch (InvalidCastException)
+                    {
+                        idDocumento = 0;
+                        nomeDocumento = "";
+                        validade = false;
+                        tipo = 1;
 
-                    documento = new Modelo.Documento(
-                        int.Parse(dr["IdDocumento"].ToString()),
-                        dr["Documento"].ToString(),Convert.ToBoolean(dr["Validade"]),Convert.ToInt32(dr["Tipo"])
-                        );
-                    ListaDocumento.Add(documento);
+                 
+                    }
+                    finally
+                    {
+                        documento.idDocumento = idDocumento;
+                        documento.documento = nomeDocumento;
+                        documento.validade = validade;
+                        documento.tipo = tipo;
+                        if(documento.idDocumento!=0)
+                           ListaDocumento.Add(documento);
+
+                    }
+
 
                 }
             }
@@ -90,20 +116,41 @@ namespace CPSI.DAL
             SqlCommand cmd = new SqlCommand("select * from Documento where IdDocumento= @ID", conn);
             cmd.Parameters.AddWithValue("@ID", ID);
             SqlDataReader dr = cmd.ExecuteReader();
-
-
-
-            while (dr.Read())
+            if (dr.HasRows)
             {
-                documento.idDocumento = int.Parse(dr["IdDocumento"].ToString());
-                documento.documento = dr["Documento"].ToString();
-                documento.validade = Convert.ToBoolean(dr["Validade"]);
-                documento.tipo = Convert.ToInt32(dr["Tipo"]);
+                while (dr.Read())
+                {
+                    int idDocumento = 0;
+                    string nomeDocumento = "";
+                    bool validade = false;
+                    int tipo = 0;
+                    try
+                    {
+                        idDocumento = int.Parse(dr["IdDocumento"].ToString());
+                        nomeDocumento = dr["Documento"].ToString();
+                        validade = Convert.ToBoolean(dr["Validade"]);
+                        tipo = Convert.ToInt32(dr["Tipo"]);
+                    }
+                    catch (InvalidCastException)
+                    {
+                        validade = false;
+                        tipo = 1;
 
+
+                    }
+                    finally
+                    {
+                        documento.idDocumento = idDocumento;
+                        documento.documento = nomeDocumento;
+                        documento.validade = validade;
+                        documento.tipo = tipo;
+                        
+
+                    }
+                   
+
+                }
             }
-
-
-
             conn.Close();
             dr.Close();
             return documento;
