@@ -95,7 +95,7 @@
                               <asp:CheckBoxList ID="CheckBoxListDocumentosAluno" runat="server" DataSourceID="ObjectDataSource1" DataTextField="documento" DataValueField="idDocumento"></asp:CheckBoxList>
                               <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALDocumento">
                                   <SelectParameters>
-                                      <asp:Parameter DefaultValue="1" Name="tipo" Type="String"></asp:Parameter>
+                                      <asp:Parameter DefaultValue="1" Name="filtroTipo" Type="String"></asp:Parameter>
                                   </SelectParameters>
                               </asp:ObjectDataSource>
                           </div>

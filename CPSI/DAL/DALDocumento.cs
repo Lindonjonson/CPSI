@@ -45,23 +45,27 @@ namespace CPSI.DAL
                         validade = Convert.ToBoolean(dr["Validade"]);
                         tipo = Convert.ToInt32(dr["Tipo"]);
                     }
-                    catch (InvalidCastException)
+                    catch (FormatException)
                     {
-                        idDocumento = 0;
-                        nomeDocumento = "";
-                        validade = false;
-                        tipo = 1;
+                        if(!String.IsNullOrEmpty(dr["IdDocumento"].ToString()))
+                           idDocumento = int.Parse(dr["IdDocumento"].ToString());
+                        if (!String.IsNullOrEmpty(dr["Documento"].ToString()))
+                            nomeDocumento = dr["Documento"].ToString();
+                        if (!String.IsNullOrEmpty(dr["Validade"].ToString()))
+                            validade = Convert.ToBoolean(dr["Validade"]);
+                        if (!String.IsNullOrEmpty(dr["Tipo"].ToString()))
+                            tipo = Convert.ToInt32(dr["Tipo"]);
+                    
 
-                 
-                    }
+
+                     }
                     finally
                     {
                         documento.idDocumento = idDocumento;
                         documento.documento = nomeDocumento;
                         documento.validade = validade;
                         documento.tipo = tipo;
-                        if(documento.idDocumento!=0)
-                           ListaDocumento.Add(documento);
+                        ListaDocumento.Add(documento);
 
                     }
 
@@ -103,12 +107,16 @@ namespace CPSI.DAL
                         validade = Convert.ToBoolean(dr["Validade"]);
                         tipo = Convert.ToInt32(dr["Tipo"]);
                     }
-                    catch (InvalidCastException)
+                    catch (FormatException)
                     {
-                        idDocumento = 0;
-                        nomeDocumento = "";
-                        validade = false;
-                        tipo = 1;
+                        if (!String.IsNullOrEmpty(dr["IdDocumento"].ToString()))
+                            idDocumento = int.Parse(dr["IdDocumento"].ToString());
+                        if (!String.IsNullOrEmpty(dr["Documento"].ToString()))
+                            nomeDocumento = dr["Documento"].ToString();
+                        if (!String.IsNullOrEmpty(dr["Validade"].ToString()))
+                            validade = Convert.ToBoolean(dr["Validade"]);
+                        if (!String.IsNullOrEmpty(dr["Tipo"].ToString()))
+                            tipo = Convert.ToInt32(dr["Tipo"]);
 
 
                     }
@@ -118,8 +126,7 @@ namespace CPSI.DAL
                         documento.documento = nomeDocumento;
                         documento.validade = validade;
                         documento.tipo = tipo;
-                        if (documento.idDocumento != 0)
-                            ListaDocumento.Add(documento);
+                        ListaDocumento.Add(documento);
 
                     }
 
@@ -157,12 +164,16 @@ namespace CPSI.DAL
                         validade = Convert.ToBoolean(dr["Validade"]);
                         tipo = Convert.ToInt32(dr["Tipo"]);
                     }
-                    catch (InvalidCastException)
+                    catch (FormatException)
                     {
-                        idDocumento = 0;
-                        nomeDocumento = "";
-                        validade = false;
-                        tipo = 1;
+                        if (!String.IsNullOrEmpty(dr["IdDocumento"].ToString()))
+                            idDocumento = int.Parse(dr["IdDocumento"].ToString());
+                        if (!String.IsNullOrEmpty(dr["Documento"].ToString()))
+                            nomeDocumento = dr["Documento"].ToString();
+                        if (!String.IsNullOrEmpty(dr["Validade"].ToString()))
+                            validade = Convert.ToBoolean(dr["Validade"]);
+                        if (!String.IsNullOrEmpty(dr["Tipo"].ToString()))
+                            tipo = Convert.ToInt32(dr["Tipo"]);
 
 
                     }
