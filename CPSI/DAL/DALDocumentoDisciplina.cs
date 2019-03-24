@@ -66,10 +66,9 @@ namespace CPSI.DAL
             foreach (Modelo.DocumentoDisciplina I in disciplina.listDocumento )
             {
                   SqlCommand cmd = new SqlCommand("insert into DocumentoDisciplina (IdDisciplina, IdDocumento) values(@IdDisciplina, @IdDocumento)", conn);
-                  cmd.Parameters.AddWithValue("@IdDisciplina",I.idDisciplina);
+                  cmd.Parameters.AddWithValue("@IdDisciplina",disciplina.idDisciplina);
                   cmd.Parameters.AddWithValue("@IdDocumento", I.idDocumento);
                   cmd.ExecuteNonQuery(); 
-
 
             }
 

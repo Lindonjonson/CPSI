@@ -36,7 +36,7 @@ namespace CPSI.Admin.Disciplina
             foreach(ListItem I in CheckBoxListDocumentos.Items)
             {
                 if (I.Selected)
-                    disciplina.listDocumento.Add(new Modelo.DocumentoDisciplina(Convert.ToInt32(Session["IdDisciplina"]),int.Parse(I.Value)));
+                    disciplina.listDocumento.Add(new Modelo.DocumentoDisciplina(0,int.Parse(I.Value)));
             }
           
             DAL.DALDisciplina DALDisciplina = new DAL.DALDisciplina();

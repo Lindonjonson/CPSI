@@ -61,7 +61,7 @@ namespace CPSI.DAL
             conn.Open();
 
             if (obj.idDisciplina == 0)
-                obj.idDisciplina = GetIdMax() + 1;
+                obj.idDisciplina = GetIdMax();
 
             SqlCommand cmd = new SqlCommand("INSERT INTO Disciplina (IdDisciplina, Disciplina) VALUES(@idDisciplina,@Disciplina)", conn);
             cmd.Parameters.AddWithValue("@idDisciplina", obj.idDisciplina);
