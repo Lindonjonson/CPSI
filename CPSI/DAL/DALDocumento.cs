@@ -76,14 +76,14 @@ namespace CPSI.DAL
             return ListaDocumento;
         }
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Documento> SelectAll(string tipo)
+        public List<Modelo.Documento> SelectAll(string filtroTipo)
         {
-            Modelo.Documento documento;
+           
             List<Modelo.Documento> ListaDocumento = new List<Modelo.Documento>();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = new SqlCommand("Select * from Documento Where Tipo=@Tipo", conn);
-            cmd.Parameters.AddWithValue("@Tipo", tipo);
+            cmd.Parameters.AddWithValue("@Tipo", filtroTipo);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
@@ -91,11 +91,37 @@ namespace CPSI.DAL
                 while (dr.Read())
                 {
 
-                    documento = new Modelo.Documento(
-                        int.Parse(dr["IdDocumento"].ToString()),
-                        dr["Documento"].ToString(), Convert.ToBoolean(dr["Validade"]), Convert.ToInt32(dr["Tipo"])
-                        );
-                    ListaDocumento.Add(documento);
+                    Modelo.Documento documento = new Modelo.Documento();
+                    int idDocumento = 0;
+                    string nomeDocumento = "";
+                    bool validade = false;
+                    int tipo = 0;
+                    try
+                    {
+                        idDocumento = int.Parse(dr["IdDocumento"].ToString());
+                        nomeDocumento = dr["Documento"].ToString();
+                        validade = Convert.ToBoolean(dr["Validade"]);
+                        tipo = Convert.ToInt32(dr["Tipo"]);
+                    }
+                    catch (InvalidCastException)
+                    {
+                        idDocumento = 0;
+                        nomeDocumento = "";
+                        validade = false;
+                        tipo = 1;
+
+
+                    }
+                    finally
+                    {
+                        documento.idDocumento = idDocumento;
+                        documento.documento = nomeDocumento;
+                        documento.validade = validade;
+                        documento.tipo = tipo;
+                        if (documento.idDocumento != 0)
+                            ListaDocumento.Add(documento);
+
+                    }
 
                 }
             }
@@ -133,6 +159,8 @@ namespace CPSI.DAL
                     }
                     catch (InvalidCastException)
                     {
+                        idDocumento = 0;
+                        nomeDocumento = "";
                         validade = false;
                         tipo = 1;
 
