@@ -6,9 +6,11 @@
     <form>
           <div class="form-row">
             <div class="form-group col-md-5">
-             <label> Nome: </label>
-               <asp:TextBox ID="TextBoxAlunoNome" class="form-control" runat="server" placeholder="Digite o nome do aluno" />
+                 <label> Nome: </label>
+                 <asp:TextBox ID="TextBoxAlunoNome" class="form-control" runat="server" placeholder="Digite o nome do aluno" TextMode="SingleLine" />
             </div>
+              
+              
             <div class="form-group col-md-3">
                <label> Nascimento: </label>
                <asp:TextBox ID="TextBoxCalendarDataNascimento" class="form-control data-nascimento" runat="server" placeholder="00/00/0000" ></asp:TextBox>
@@ -31,7 +33,7 @@
             </div>
             <div class="form-group col-md-4">
                  <label> Naturalidade: </label>
-               <asp:TextBox ID="TextBoxNaturalidade" class="form-control" runat="server" placeholder="Digite a naturalida" />
+               <asp:TextBox ID="TextBoxNaturalidade" class="form-control" runat="server" placeholder="Digite a naturalidade" />
             </div>
               <div class="form-group col-md-2">
                   <label> Naturalidade Estado: </label>
@@ -71,35 +73,32 @@
 
             </div>
           </div>
-                  <div class="form-row">
-                        <div class="form-group col-md-6">
-                             <label>Primeiro Telefone: </label>
-                            <asp:TextBox ID="TextBoxTelefone1" class="form-control" runat="server" placeholder="(DDD) 0 0000-0000"  />
-    
-                        </div>
-                        <div class="form-group col-md-6">
-        
-                            <label>Segundo Telefone2: </label>
-                            <asp:TextBox ID="TextBoxTelefone2" class="form-control" runat="server"  placeholder="(DDD) 0 0000-0000"   />
-          
-                        </div>
-                          <div class="form-group col-md-6">
-                               <label>Nome do Contato de emergência: </label>
-                            <asp:TextBox ID="TextBoxContato" class="form-control" runat="server" placeholder="Digite o nome de algum parente" />
-                              </div>
-                              <div class="form-group col-md-6">
-                                   <label>Telefone Emergêncial:  </label>
-                            <asp:TextBox ID="TextBoxContatoTelefone" class="form-control" runat="server" placeholder="Digite o número do parente"  />
-                         </div>
-                          <div class="form-group col-md-6">
-                               <label>Documentos obrigatórios </label>
-                              <asp:CheckBoxList ID="CheckBoxListDocumentosAluno" runat="server" DataSourceID="ObjectDataSource1" DataTextField="documento" DataValueField="idDocumento"></asp:CheckBoxList>
+          <div class="form-row">
+               <div class="form-group col-md-6">
+                    <label>Primeiro Telefone: </label>
+                    <asp:TextBox ID="TextBoxTelefone1" class="form-control" runat="server" placeholder="(DDD) 0 0000-0000"  />
+               </div>
+               <div class="form-group col-md-6">
+                    <label>Segundo Telefone: </label>
+                    <asp:TextBox ID="TextBoxTelefone2" class="form-control" runat="server"  placeholder="(DDD) 0 0000-0000"   />
+               </div>
+               <div class="form-group col-md-6">
+                    <label>Nome do Contato de emergência: </label>
+                    <asp:TextBox ID="TextBoxContato" class="form-control" runat="server" placeholder="Digite o nome de algum parente" />
+               </div>
+               <div class="form-group col-md-6">
+                    <label>Telefone Emergêncial:  </label>
+                    <asp:TextBox ID="TextBoxContatoTelefone" class="form-control" runat="server" placeholder="Digite o número do parente"  />
+               </div>
+               <div class="form-group col-md-6">
+                    <label>Documentos obrigatórios </label>
+                    <asp:CheckBoxList ID="CheckBoxListDocumentosAluno" runat="server" DataSourceID="ObjectDataSource1" DataTextField="documento" DataValueField="idDocumento"></asp:CheckBoxList>
                               <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALDocumento">
                                   <SelectParameters>
                                       <asp:Parameter DefaultValue="1" Name="filtroTipo" Type="String"></asp:Parameter>
                                   </SelectParameters>
                               </asp:ObjectDataSource>
-                          </div>
+               </div>
 
     
           </div>
@@ -171,7 +170,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                   <span>Excluir turma?</span>
+                   <span>Excluir Aluno?</span>
                  </div>
                 <div class="modal-footer">
                     <asp:button ID="button3" runat="server" text="Excluir" CssClass="btn btn-danger" OnClick="Excluir_Click" />
