@@ -3,11 +3,11 @@
     <script type="text/javascript" src="../Assets/js/GerenciarAluno.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <form>
+    <form id="Form-aluno">
           <div class="form-row">
             <div class="form-group col-md-5">
                  <label> Nome: </label>
-                 <asp:TextBox ID="TextBoxAlunoNome" class="form-control" runat="server" placeholder="Digite o nome do aluno" TextMode="SingleLine" />
+                 <asp:TextBox ID="TextBoxAlunoNome" Name="NomeAluno" class="form-control" runat="server" placeholder="Digite o nome do aluno" TextMode="SingleLine" />
             </div>
               
               
@@ -104,13 +104,6 @@
           </div>
 
 </form>
-
-
-    <div class="form-group">
-       
-   
-       
-    </div>
     <asp:Panel ID="PanelAdicionarAluno" Visible="false" runat="server">
         <div align="center">
        <asp:button ID="button1" runat="server"  text="Cancelar"  CssClass="btn btn-danger" OnClick="Cancelar_Click" />
