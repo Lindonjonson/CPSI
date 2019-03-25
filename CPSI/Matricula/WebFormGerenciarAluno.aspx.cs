@@ -96,7 +96,6 @@ namespace CPSI.Matricula
             if (!IsPostBack)
             {
                 TextBoxAlunoNome.Text = Aluno.alunoNome;
-                TextBoxAlunoNome.Text = Aluno.alunoNome;
                 TextBoxCalendarDataNascimento.Text = Aluno.dataNascimento.ToShortDateString();
                 TextBoxCpf.Text = Aluno.cpf;
                 TextBoxRg.Text = Aluno.rg;
@@ -117,6 +116,188 @@ namespace CPSI.Matricula
 
 
         }
-       
+
+        protected void Button_Validar_Click(object sender, EventArgs e)
+        {
+            bool exibir = false; 
+            if (!String.IsNullOrEmpty(TextBoxAlunoNome.Text))
+            {
+                TextBoxAlunoNome.ReadOnly = true;
+                exibir = true;
+            }
+            else
+            {
+                TextBoxAlunoNome.BorderColor = System.Drawing.Color.Red;
+                exibir = false;
+            }
+               
+                
+            if (!String.IsNullOrEmpty(TextBoxCalendarDataNascimento.Text) && TextBoxCalendarDataNascimento.Text.Length==10)
+            {
+                TextBoxCalendarDataNascimento.ReadOnly = true;
+                exibir = true;
+            }
+
+            else
+            {
+                TextBoxCalendarDataNascimento.BorderColor = System.Drawing.Color.Red;
+                exibir = false;
+            }
+           
+            if (!String.IsNullOrEmpty(TextBoxCpf.Text) && TextBoxCpf.Text.Length == 14) 
+            {
+                TextBoxCpf.ReadOnly = true;
+                exibir = true;
+            }
+
+            else
+            {
+                TextBoxCpf.BorderColor = System.Drawing.Color.Red;
+                exibir = false;
+            }
+            
+            if (!String.IsNullOrEmpty(TextBoxRg.Text))
+            {
+                TextBoxRg.ReadOnly = true;
+                exibir = true;
+            }
+            else
+            {
+                TextBoxRg.BorderColor = System.Drawing.Color.Red;
+                exibir = false;
+            }
+            
+            if (!String.IsNullOrEmpty(TextBoxRGOrgao.Text))
+            {
+                TextBoxRGOrgao.ReadOnly = true;
+                exibir = true;
+            }
+            else
+            {
+                TextBoxRGOrgao.BorderColor = System.Drawing.Color.Red;
+                exibir = false;
+            }
+            
+            if (!String.IsNullOrEmpty(TextBoxNaturalidade.Text))
+            {
+                TextBoxNaturalidade.ReadOnly = true;
+                exibir = true;
+            }
+            else
+            {
+                TextBoxNaturalidade.BorderColor = System.Drawing.Color.Red;
+                exibir = false;
+            }
+           
+            if (!String.IsNullOrEmpty(TextBoxNaturalidadeEstado.Text))
+            {
+                TextBoxNaturalidadeEstado.ReadOnly = true;
+                exibir = true;
+            }
+            else
+            {
+                TextBoxNaturalidadeEstado.BorderColor = System.Drawing.Color.Red;
+                exibir = false;
+            }
+            
+            if (!String.IsNullOrEmpty(TextBoxEndereco.Text))
+            {
+                TextBoxEndereco.ReadOnly = true;
+                exibir = true;
+            }
+            else
+            {
+                TextBoxEndereco.BorderColor = System.Drawing.Color.Red;
+                exibir = false;
+            }
+           
+            if (!String.IsNullOrEmpty(TextBoxBairro.Text))
+            {
+                TextBoxBairro.ReadOnly = true;
+                exibir = true;
+            }
+            else
+            {
+                TextBoxBairro.BorderColor = System.Drawing.Color.Red;
+                exibir = false;
+            }
+           
+            if (!String.IsNullOrEmpty(TextBoxCidade.Text))
+            {
+                TextBoxCidade.ReadOnly = true;
+                exibir = true;
+            }
+            else
+            {
+                TextBoxCidade.BorderColor = System.Drawing.Color.Red;
+                exibir = false;
+            }
+            
+            if (!String.IsNullOrEmpty(TextBoxEstado.Text))
+            {
+                TextBoxEstado.ReadOnly = true;
+                exibir = true;
+
+            }
+            else
+            {
+                TextBoxEstado.BorderColor = System.Drawing.Color.Red;
+                exibir = false;
+            }
+           
+            if (!String.IsNullOrEmpty(TextBoxTelefone1.Text))
+            {
+                TextBoxTelefone1.ReadOnly = true;
+                exibir = true;
+            }
+            else
+            {
+                TextBoxTelefone1.BorderColor = System.Drawing.Color.Red;
+                exibir = false;
+            }
+           
+            if (!String.IsNullOrEmpty(TextBoxTelefone2.Text))
+            {
+                TextBoxTelefone2.ReadOnly = true;
+                exibir = true;
+            }
+            else
+            {
+                TextBoxTelefone2.BorderColor = System.Drawing.Color.Red;
+                exibir = false;
+            }
+           
+            if (!String.IsNullOrEmpty(TextBoxContato.Text))
+            {
+                TextBoxContato.ReadOnly = true;
+                exibir = true;
+            }
+            else
+            {
+                TextBoxContato.BorderColor = System.Drawing.Color.Red;
+                exibir = false;
+            }
+           
+            if (!String.IsNullOrEmpty(TextBoxContatoTelefone.Text))
+            {
+                TextBoxContatoTelefone.ReadOnly = true;
+                exibir = true;
+            }
+            else
+            {
+                TextBoxContatoTelefone.BorderColor = System.Drawing.Color.Red;
+                exibir = false;
+            }
+            if (exibir)
+            {
+                button_Inserir.Visible = true;
+                Button_Validar_Inserir.Visible = false;
+                button_Atualizar.Visible = true;
+                Button_Validar_Atualizar.Visible= false;
+            }
+            Response.Write(TextBoxCalendarDataNascimento.Text.Length);
+            
+
+        }
     }
 }

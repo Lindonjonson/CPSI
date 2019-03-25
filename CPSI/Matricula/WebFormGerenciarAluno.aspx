@@ -105,54 +105,16 @@
 
 </form>
     <asp:Panel ID="PanelAdicionarAluno" Visible="false" runat="server">
-        <div align="center">
-       <asp:button ID="button1" runat="server"  text="Cancelar"  CssClass="btn btn-danger" OnClick="Cancelar_Click" />
-       <button type="button" data-toggle="modal" data-target="#ModalCadastrarAluno" class="btn btn-success">Salvar</button></div>
+        <asp:button ID="button1" runat="server"  text="Cancelar"  CssClass="btn btn-danger" OnClick="Cancelar_Click" />
+        <asp:Button ID="Button_Validar_Inserir" class="btn btn-success" runat="server" OnClick="Button_Validar_Click" Text="Salvar" />
+       <asp:button ID="button_Inserir" Visible="false" runat="server"   text="Salvar"  CssClass="btn btn-success" OnClick="InserirAluno_Click" />
     </asp:Panel>
      <asp:Panel ID="PanelAlterarAluno" runat="server" Visible="false">
-         <button type="button" data-toggle="modal" data-target="#ModalEditarAluno" class="btn btn-warning text-white">Salvar</button>
+         <asp:Button ID="Button_Validar_Atualizar" CssClass="btn btn-warning" OnClick="Button_Validar_Click" runat="server" Text="Salvar" />
+         <asp:button ID="button_Atualizar" runat="server" Visible="false"  text="Salvar" CssClass="btn btn-warning" OnClick="EditarAluno_Click" />
          <button type="button" data-toggle="modal" data-target="#ModalExcluirAluno" class="btn btn-danger">Excluir</button>
-         <asp:button ID="button2" runat="server"  text="Cancelar"  CssClass="btn btn-success" OnClick="Cancelar_Click" />
+         <asp:button ID="button2" runat="server"   text="Cancelar"  CssClass="btn btn-success" OnClick="Cancelar_Click" />
     </asp:Panel>
-    <div class="modal fade" id="ModalCadastrarAluno" tabindex="-1" role="dialog" aria-labelledby="ModalCadastrarAluno" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                     <h5 class="modal-title">Confirmar cadastro de Aluno</h5>
-                   
-                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                         <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                  CADASTRO DE ALUNO
-                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <asp:button ID="button_Inserir" runat="server"  text="Salvar"  CssClass="btn btn-success" OnClick="InserirAluno_Click" />
-                </div>
-            </div>
-      </div>
-   </div>
-     <div class="modal fade" id="ModalEditarAluno" tabindex="-1" role="dialog" aria-labelledby="ModalEditarAluno" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                     <h5 class="modal-title">Confirmar edição de aluno</h5>
-                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                         <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                   <span>Cuidado, operação de risco</span>
-                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <asp:button ID="button_Atualizar" runat="server"  text="Salvar" CssClass="btn btn-warning" OnClick="EditarAluno_Click" />
-                </div>
-            </div>
-      </div>
-   </div>
     <div class="modal fade" id="ModalExcluirAluno" tabindex="-1" role="dialog" aria-labelledby="ModalExcluirAluno" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -168,7 +130,6 @@
                 <div class="modal-footer">
                     <asp:button ID="button3" runat="server" text="Excluir" CssClass="btn btn-danger" OnClick="Excluir_Click" />
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-
                 </div>
             </div>
       </div>
