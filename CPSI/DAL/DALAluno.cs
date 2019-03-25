@@ -248,7 +248,7 @@ namespace CPSI.DAL
                         aluno.endereco = endereco;
                         aluno.cidade = cidade;
                         aluno.bairro = bairro;
-                       aluno.estado = estado;
+                        aluno.estado = estado;
                         aluno.telefone1 = telefone1;
                         aluno.telefone2 = telefone2;
                         aluno.contato = contato;
@@ -368,7 +368,7 @@ namespace CPSI.DAL
                         aluno.endereco = endereco;
                         aluno.cidade = cidade;
                         aluno.bairro = bairro;
-                       aluno.estado = estado;
+                        aluno.estado = estado;
                         aluno.telefone1 = telefone1;
                         aluno.telefone2 = telefone2;
                         aluno.contato = contato;

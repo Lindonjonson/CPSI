@@ -124,6 +124,7 @@ namespace CPSI.Matricula
             {
                 TextBoxAlunoNome.ReadOnly = true;
                 exibir = true;
+                TextBoxAlunoNome.BorderColor = System.Drawing.Color.Green;
             }
             else
             {
@@ -136,6 +137,7 @@ namespace CPSI.Matricula
             {
                 TextBoxCalendarDataNascimento.ReadOnly = true;
                 exibir = true;
+                TextBoxCalendarDataNascimento.BorderColor = System.Drawing.Color.Green;
             }
 
             else
@@ -148,6 +150,7 @@ namespace CPSI.Matricula
             {
                 TextBoxCpf.ReadOnly = true;
                 exibir = true;
+                TextBoxCpf.BorderColor = System.Drawing.Color.Green;
             }
 
             else
@@ -160,6 +163,7 @@ namespace CPSI.Matricula
             {
                 TextBoxRg.ReadOnly = true;
                 exibir = true;
+                TextBoxRg.BorderColor = System.Drawing.Color.Green;
             }
             else
             {
@@ -171,6 +175,7 @@ namespace CPSI.Matricula
             {
                 TextBoxRGOrgao.ReadOnly = true;
                 exibir = true;
+                TextBoxRGOrgao.BorderColor = System.Drawing.Color.Green;
             }
             else
             {
@@ -182,6 +187,7 @@ namespace CPSI.Matricula
             {
                 TextBoxNaturalidade.ReadOnly = true;
                 exibir = true;
+                TextBoxNaturalidade.BorderColor = System.Drawing.Color.Green;
             }
             else
             {
@@ -193,6 +199,7 @@ namespace CPSI.Matricula
             {
                 TextBoxNaturalidadeEstado.ReadOnly = true;
                 exibir = true;
+                TextBoxNaturalidadeEstado.BorderColor = System.Drawing.Color.Green;
             }
             else
             {
@@ -204,6 +211,7 @@ namespace CPSI.Matricula
             {
                 TextBoxEndereco.ReadOnly = true;
                 exibir = true;
+                TextBoxEndereco.BorderColor = System.Drawing.Color.Green;
             }
             else
             {
@@ -215,6 +223,7 @@ namespace CPSI.Matricula
             {
                 TextBoxBairro.ReadOnly = true;
                 exibir = true;
+                TextBoxBairro.BorderColor = System.Drawing.Color.Green;
             }
             else
             {
@@ -226,6 +235,7 @@ namespace CPSI.Matricula
             {
                 TextBoxCidade.ReadOnly = true;
                 exibir = true;
+                TextBoxCidade.BorderColor = System.Drawing.Color.Green;
             }
             else
             {
@@ -237,7 +247,7 @@ namespace CPSI.Matricula
             {
                 TextBoxEstado.ReadOnly = true;
                 exibir = true;
-
+                TextBoxEstado.BorderColor = System.Drawing.Color.Green;
             }
             else
             {
@@ -249,6 +259,7 @@ namespace CPSI.Matricula
             {
                 TextBoxTelefone1.ReadOnly = true;
                 exibir = true;
+                TextBoxTelefone1.BorderColor = System.Drawing.Color.Green;
             }
             else
             {
@@ -260,6 +271,7 @@ namespace CPSI.Matricula
             {
                 TextBoxTelefone2.ReadOnly = true;
                 exibir = true;
+                TextBoxTelefone2.BorderColor = System.Drawing.Color.Green;
             }
             else
             {
@@ -271,6 +283,7 @@ namespace CPSI.Matricula
             {
                 TextBoxContato.ReadOnly = true;
                 exibir = true;
+                TextBoxContato.BorderColor = System.Drawing.Color.Green;
             }
             else
             {
@@ -282,6 +295,7 @@ namespace CPSI.Matricula
             {
                 TextBoxContatoTelefone.ReadOnly = true;
                 exibir = true;
+                TextBoxContatoTelefone.BorderColor = System.Drawing.Color.Green;
             }
             else
             {
@@ -295,8 +309,7 @@ namespace CPSI.Matricula
                 button_Atualizar.Visible = true;
                 Button_Validar_Atualizar.Visible= false;
             }
-            Response.Write(TextBoxCalendarDataNascimento.Text.Length);
-            
+           
 
         }
     }
