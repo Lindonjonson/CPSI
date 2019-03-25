@@ -4,6 +4,9 @@
 
 <html>
 <head runat="server">
+    <script type="text/javascript" src="../Assets/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../Assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../Assets/js/jquery.mask.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" href="../Assets/css/bootstrap.min.css"/>
     <title></title>
@@ -39,8 +42,5 @@
                 </div>
         </div>
     </form>
-    <script type="text/javascript" src="../Assets/js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="../Assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../Assets/js/jquery.mask.js"></script>
 </body>
 </html>

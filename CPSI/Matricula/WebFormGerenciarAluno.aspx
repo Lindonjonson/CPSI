@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Matricula.Master" AutoEventWireup="true" CodeBehind="WebFormGerenciarAluno.aspx.cs" Inherits="CPSI.Matricula.WebFormGerenciarAluno1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript" src="../Assets/js/GerenciarAluno.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form>
@@ -9,12 +10,12 @@
                <asp:TextBox ID="TextBoxAlunoNome" class="form-control" runat="server" placeholder="Digite o nome do aluno" />
             </div>
             <div class="form-group col-md-3">
-                  <label> Nascimento: </label>
-               <asp:TextBox ID="TextBoxCalendarDataNascimento" class="form-control" runat="server" placeholder="00/00/0000" ></asp:TextBox>
+               <label> Nascimento: </label>
+               <asp:TextBox ID="TextBoxCalendarDataNascimento" class="form-control data-nascimento" runat="server" placeholder="00/00/0000" ></asp:TextBox>
             </div>
               <div class="form-group col-md-4">
                    <label>  CPF: </label>
-               <asp:TextBox ID="TextBoxCpf"  class="form-control" runat="server" placeholder="000.000.000-00" />
+               <asp:TextBox ID="TextBoxCpf"  class="form-control CPF" runat="server" placeholder="000.000.000-00" />
             </div>
           </div>
           <div class="form-row">
@@ -30,7 +31,7 @@
             </div>
             <div class="form-group col-md-4">
                  <label> Naturalidade: </label>
-               <asp:TextBox ID="TextBoxNaturalidade" class="form-control" runat="server" placeholder="Digite a naturalidade" />
+               <asp:TextBox ID="TextBoxNaturalidade" class="form-control" runat="server" placeholder="Digite a naturalida" />
             </div>
               <div class="form-group col-md-2">
                   <label> Naturalidade Estado: </label>
@@ -180,4 +181,5 @@
             </div>
       </div>
    </div>  
+    
 </asp:Content>
