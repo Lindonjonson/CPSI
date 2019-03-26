@@ -51,8 +51,19 @@ namespace CPSI.DAL
             cmd.Parameters.AddWithValue("@IdAluno",M.idAluno);
             cmd.Parameters.AddWithValue("@Situacao",M.situacao);
             cmd.Parameters.AddWithValue("@DataMatricula",M.dataMatricula);
-            cmd.ExecuteNonQuery();
-            conn.Close();
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Aluno já matriculado na turma selecionada");
+            }
+            finally
+            {
+                conn.Close();
+            }
+            
 
 
         }
