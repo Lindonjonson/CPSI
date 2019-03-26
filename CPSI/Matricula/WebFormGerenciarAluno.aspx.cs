@@ -119,190 +119,190 @@ namespace CPSI.Matricula
 
         protected void Button_Validar_Click(object sender, EventArgs e)
         {
-            bool exibir = false; 
+            bool PermitirEnvio = false; 
             if (!String.IsNullOrEmpty(TextBoxAlunoNome.Text))
             {
                 TextBoxAlunoNome.ReadOnly = true;
-                exibir = true;
+                PermitirEnvio = true;
                 TextBoxAlunoNome.BorderColor = System.Drawing.Color.Green;
             }
             else
             {
                 TextBoxAlunoNome.BorderColor = System.Drawing.Color.Red;
-                exibir = false;
+                PermitirEnvio = false;
             }
                
                 
-            if (!String.IsNullOrEmpty(TextBoxCalendarDataNascimento.Text) && TextBoxCalendarDataNascimento.Text.Length==10)
+            if ((!String.IsNullOrEmpty(TextBoxCalendarDataNascimento.Text)) && (DateTime.TryParse(TextBoxCalendarDataNascimento.Text,out DateTime dataNascimento)) )
             {
                 TextBoxCalendarDataNascimento.ReadOnly = true;
-                exibir = true;
+                PermitirEnvio = true;
                 TextBoxCalendarDataNascimento.BorderColor = System.Drawing.Color.Green;
             }
 
             else
             {
                 TextBoxCalendarDataNascimento.BorderColor = System.Drawing.Color.Red;
-                exibir = false;
+                PermitirEnvio = false;
             }
            
-            if (!String.IsNullOrEmpty(TextBoxCpf.Text) && TextBoxCpf.Text.Length == 14) 
+            if ((!String.IsNullOrEmpty(TextBoxCpf.Text)) && (TextBoxCpf.Text.Length == 14)) 
             {
                 TextBoxCpf.ReadOnly = true;
-                exibir = true;
+                PermitirEnvio = true;
                 TextBoxCpf.BorderColor = System.Drawing.Color.Green;
             }
 
             else
             {
                 TextBoxCpf.BorderColor = System.Drawing.Color.Red;
-                exibir = false;
+                PermitirEnvio = false;
             }
             
             if (!String.IsNullOrEmpty(TextBoxRg.Text))
             {
                 TextBoxRg.ReadOnly = true;
-                exibir = true;
+                PermitirEnvio = true;
                 TextBoxRg.BorderColor = System.Drawing.Color.Green;
             }
             else
             {
                 TextBoxRg.BorderColor = System.Drawing.Color.Red;
-                exibir = false;
+                PermitirEnvio = false;
             }
             
             if (!String.IsNullOrEmpty(TextBoxRGOrgao.Text))
             {
                 TextBoxRGOrgao.ReadOnly = true;
-                exibir = true;
+                PermitirEnvio = true;
                 TextBoxRGOrgao.BorderColor = System.Drawing.Color.Green;
             }
             else
             {
                 TextBoxRGOrgao.BorderColor = System.Drawing.Color.Red;
-                exibir = false;
+                PermitirEnvio = false;
             }
             
             if (!String.IsNullOrEmpty(TextBoxNaturalidade.Text))
             {
                 TextBoxNaturalidade.ReadOnly = true;
-                exibir = true;
+                PermitirEnvio = true;
                 TextBoxNaturalidade.BorderColor = System.Drawing.Color.Green;
             }
             else
             {
                 TextBoxNaturalidade.BorderColor = System.Drawing.Color.Red;
-                exibir = false;
+                PermitirEnvio = false;
             }
            
             if (!String.IsNullOrEmpty(TextBoxNaturalidadeEstado.Text))
             {
                 TextBoxNaturalidadeEstado.ReadOnly = true;
-                exibir = true;
+                PermitirEnvio = true;
                 TextBoxNaturalidadeEstado.BorderColor = System.Drawing.Color.Green;
             }
             else
             {
                 TextBoxNaturalidadeEstado.BorderColor = System.Drawing.Color.Red;
-                exibir = false;
+                PermitirEnvio = false;
             }
             
             if (!String.IsNullOrEmpty(TextBoxEndereco.Text))
             {
                 TextBoxEndereco.ReadOnly = true;
-                exibir = true;
+                PermitirEnvio = true;
                 TextBoxEndereco.BorderColor = System.Drawing.Color.Green;
             }
             else
             {
                 TextBoxEndereco.BorderColor = System.Drawing.Color.Red;
-                exibir = false;
+                PermitirEnvio = false;
             }
            
             if (!String.IsNullOrEmpty(TextBoxBairro.Text))
             {
                 TextBoxBairro.ReadOnly = true;
-                exibir = true;
+                PermitirEnvio = true;
                 TextBoxBairro.BorderColor = System.Drawing.Color.Green;
             }
             else
             {
                 TextBoxBairro.BorderColor = System.Drawing.Color.Red;
-                exibir = false;
+                PermitirEnvio = false;
             }
            
             if (!String.IsNullOrEmpty(TextBoxCidade.Text))
             {
                 TextBoxCidade.ReadOnly = true;
-                exibir = true;
+                PermitirEnvio = true;
                 TextBoxCidade.BorderColor = System.Drawing.Color.Green;
             }
             else
             {
                 TextBoxCidade.BorderColor = System.Drawing.Color.Red;
-                exibir = false;
+                PermitirEnvio = false;
             }
             
             if (!String.IsNullOrEmpty(TextBoxEstado.Text))
             {
                 TextBoxEstado.ReadOnly = true;
-                exibir = true;
+                PermitirEnvio = true;
                 TextBoxEstado.BorderColor = System.Drawing.Color.Green;
             }
             else
             {
                 TextBoxEstado.BorderColor = System.Drawing.Color.Red;
-                exibir = false;
+                PermitirEnvio = false;
             }
            
             if (!String.IsNullOrEmpty(TextBoxTelefone1.Text))
             {
                 TextBoxTelefone1.ReadOnly = true;
-                exibir = true;
+                PermitirEnvio = true;
                 TextBoxTelefone1.BorderColor = System.Drawing.Color.Green;
             }
             else
             {
                 TextBoxTelefone1.BorderColor = System.Drawing.Color.Red;
-                exibir = false;
+                PermitirEnvio = false;
             }
            
             if (!String.IsNullOrEmpty(TextBoxTelefone2.Text))
             {
                 TextBoxTelefone2.ReadOnly = true;
-                exibir = true;
+                PermitirEnvio = true;
                 TextBoxTelefone2.BorderColor = System.Drawing.Color.Green;
             }
             else
             {
                 TextBoxTelefone2.BorderColor = System.Drawing.Color.Red;
-                exibir = false;
+                PermitirEnvio = false;
             }
            
             if (!String.IsNullOrEmpty(TextBoxContato.Text))
             {
                 TextBoxContato.ReadOnly = true;
-                exibir = true;
+                PermitirEnvio = true;
                 TextBoxContato.BorderColor = System.Drawing.Color.Green;
             }
             else
             {
                 TextBoxContato.BorderColor = System.Drawing.Color.Red;
-                exibir = false;
+                PermitirEnvio = false;
             }
            
             if (!String.IsNullOrEmpty(TextBoxContatoTelefone.Text))
             {
                 TextBoxContatoTelefone.ReadOnly = true;
-                exibir = true;
+                PermitirEnvio = true;
                 TextBoxContatoTelefone.BorderColor = System.Drawing.Color.Green;
             }
             else
             {
                 TextBoxContatoTelefone.BorderColor = System.Drawing.Color.Red;
-                exibir = false;
+                PermitirEnvio = false;
             }
-            if (exibir)
+            if (PermitirEnvio)
             {
                 button_Inserir.Visible = true;
                 Button_Validar_Inserir.Visible = false;
