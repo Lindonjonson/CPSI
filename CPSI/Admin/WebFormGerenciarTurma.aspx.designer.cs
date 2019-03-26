@@ -112,6 +112,15 @@ namespace CPSI.Admin {
         protected global::System.Web.UI.WebControls.Button button_Inserir;
         
         /// <summary>
+        /// Controle Button_Alterar_Inserir.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_Alterar_Inserir;
+        
+        /// <summary>
         /// Controle PanelAlterarTurma.
         /// </summary>
         /// <remarks>
@@ -146,6 +155,15 @@ namespace CPSI.Admin {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button button2;
+        
+        /// <summary>
+        /// Controle Button_Alterar_Editar.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_Alterar_Editar;
         
         /// <summary>
         /// Controle button_Excluir.

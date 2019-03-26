@@ -157,14 +157,41 @@ namespace CPSI.Admin
             if (PermitirEnvio)
             {
                 Button_Validar_Atualizar.Visible = false;
-                Button_Validar_Atualizar.Visible = true;
+                button_Atualizar.Visible = true;
                 Button_Validar_Inserir.Visible = false;
                 button_Inserir.Visible = true;
+                Button_Alterar_Editar.Visible = true;
+                Button_Alterar_Inserir.Visible = true;
 
             }
 
-           
-           
+
+
+        }
+
+        protected void Alterar_Click(object sender, EventArgs e)
+        {
+
+                TxtNomeTurma.ReadOnly = false; ;
+                TxtNomeTurma.BorderColor = System.Drawing.Color.White;
+                TxtAno.ReadOnly = false;
+                TxtAno.BorderColor = System.Drawing.Color.White;
+                TxtHorário.ReadOnly = false;
+                TxtHorário.BorderColor = System.Drawing.Color.White;
+                CalendarDataInicio.ReadOnly = false;
+                CalendarDataInicio.BorderColor = System.Drawing.Color.White;            
+                CalendarDataFim.ReadOnly = false;
+                CalendarDataFim.BorderColor = System.Drawing.Color.White;
+                TxtNumVagas.ReadOnly = false;
+                TxtNumVagas.BorderColor = System.Drawing.Color.White;
+                Button_Validar_Atualizar.Visible = true;
+                button_Atualizar.Visible =false;
+                Button_Validar_Inserir.Visible = true;
+                button_Inserir.Visible = false;
+
+
+
+
         }
     }
 }

@@ -12,7 +12,7 @@
     </div>
     <div class="form-group col-md-3">
 
-         <asp:Label  runat="server" Text="Label">Ano</asp:Label>
+        <asp:Label  runat="server" Text="Label">Ano</asp:Label>
         <asp:TextBox ID="TxtAno"  class="form-control" runat="server" TextMode="Number"></asp:TextBox>
     </div>
       <div class="form-group col-md-4">
@@ -51,35 +51,19 @@
     <asp:Panel ID="PanelAdicionarTurma" runat="server" Visible="false">
         <asp:button ID="button1" runat="server"  text="Cancelar"  CssClass="btn btn-danger" OnClick="Cancelar_Click" />
         <asp:Button ID="Button_Validar_Inserir" runat="server" Cssclass="btn btn-success" OnClick="Button_Validar_Click" Text="Salvar" />
-        <asp:button ID="button_Inserir" Visible="false" runat="server"  text="Salvar"  CssClass="btn btn-success" OnClick="InserirTurma_Click" />      
+        <asp:button ID="button_Inserir" Visible="false" runat="server"  text="Salvar"  CssClass="btn btn-success" OnClick="InserirTurma_Click" /> 
+        <asp:Button ID="Button_Alterar_Inserir" Visible="false" Onclick="Alterar_Click" CssClass="btn btn-link" runat="server"  Text="Alterar" />
     </asp:Panel>
     <asp:Panel ID="PanelAlterarTurma" runat="server" Visible="false">
          <asp:Button ID="Button_Validar_Atualizar" CssClass="btn btn-warning" OnClick="Button_Validar_Click" runat="server" Text="Salvar" />
          <asp:button ID="button_Atualizar" Visible="false" runat="server"  text="Salvar" CssClass="btn btn-warning" OnClick="AtualizarTurma_Click" />
          <button type="button" data-toggle="modal" data-target="#ModalExcluirTurma" class="btn btn-danger">Excluir</button>
          <asp:button ID="button2" runat="server"  text="Cancelar"  CssClass="btn btn-success" OnClick="Cancelar_Click" />
+         <asp:Button ID="Button_Alterar_Editar" Visible="false" Onclick="Alterar_Click" CssClass="btn btn-link" runat="server"  Text="Alterar" />
     </asp:Panel>
     
-   <div class="modal fade" id="ModalEditarTurma" tabindex="-1" role="dialog" aria-labelledby="ModalEditarTurma" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                     <h5 class="modal-title">Confirmar edição de turma de turma</h5>
-                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                         <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                   <span>Cuidado, operação de risco</span>
-                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                  
-
-                </div>
-            </div>
-      </div>
-   </div>
+    
+   
 <div class="modal fade" id="ModalExcluirTurma" tabindex="-1" role="dialog" aria-labelledby="ModalExcluirTurma" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
