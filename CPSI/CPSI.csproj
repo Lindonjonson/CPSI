@@ -98,6 +98,7 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="WebFormErro.aspx" />
     <Content Include="WebFormInicial.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -230,6 +231,13 @@
     <Compile Include="Modelo\Matricula.cs" />
     <Compile Include="Modelo\Turma.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebFormErro.aspx.cs">
+      <DependentUpon>WebFormErro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormErro.aspx.designer.cs">
+      <DependentUpon>WebFormErro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebFormInicial.aspx.cs">
       <DependentUpon>WebFormInicial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
