@@ -302,15 +302,56 @@ namespace CPSI.Matricula
                 TextBoxContatoTelefone.BorderColor = System.Drawing.Color.Red;
                 PermitirEnvio = false;
             }
+            Button_Alterar_Atualizar.Visible = true;
+            Button_Alterar_Inserir.Visible = true;
             if (PermitirEnvio)
             {
                 button_Inserir.Visible = true;
                 Button_Validar_Inserir.Visible = false;
                 button_Atualizar.Visible = true;
                 Button_Validar_Atualizar.Visible= false;
+               
             }
            
 
+        }
+
+        protected void Alterar_Click(object sender, EventArgs e)
+        {
+            TextBoxAlunoNome.ReadOnly = false;
+            TextBoxAlunoNome.BorderColor = System.Drawing.Color.White;
+            TextBoxCalendarDataNascimento.ReadOnly = false;
+            TextBoxCalendarDataNascimento.BorderColor= System.Drawing.Color.White;
+            TextBoxCpf.ReadOnly = false;
+            TextBoxCpf.BorderColor = System.Drawing.Color.White;
+            TextBoxRg.ReadOnly = false;
+            TextBoxRg.BorderColor = System.Drawing.Color.White;
+            TextBoxRGOrgao.ReadOnly = false;
+            TextBoxRGOrgao.BorderColor = System.Drawing.Color.White;
+            TextBoxNaturalidade.ReadOnly = false;
+            TextBoxNaturalidade.BorderColor = System.Drawing.Color.White;
+            TextBoxNaturalidadeEstado.ReadOnly = false;
+            TextBoxNaturalidadeEstado.BorderColor = System.Drawing.Color.White;
+            TextBoxEndereco.ReadOnly = false;
+            TextBoxEndereco.BorderColor = System.Drawing.Color.White;
+            TextBoxBairro.ReadOnly = false;
+            TextBoxBairro.BorderColor = System.Drawing.Color.White;
+            TextBoxCidade.ReadOnly = false;
+            TextBoxCidade.BorderColor = System.Drawing.Color.White;
+            TextBoxEstado.ReadOnly = false;
+            TextBoxEstado.BorderColor = System.Drawing.Color.White;
+            TextBoxTelefone1.ReadOnly = false;
+            TextBoxTelefone1.BorderColor = System.Drawing.Color.White;
+            TextBoxTelefone2.ReadOnly = false;
+            TextBoxTelefone2.BorderColor = System.Drawing.Color.White;
+            TextBoxContato.ReadOnly = false;
+            TextBoxContato.BorderColor = System.Drawing.Color.White;
+            TextBoxContatoTelefone.ReadOnly = false;
+            TextBoxContatoTelefone.BorderColor = System.Drawing.Color.White;
+            button_Inserir.Visible = false;
+            Button_Validar_Inserir.Visible = true;
+            button_Atualizar.Visible = false;
+            Button_Validar_Atualizar.Visible = true;
         }
     }
 }

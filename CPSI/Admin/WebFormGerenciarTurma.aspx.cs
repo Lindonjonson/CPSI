@@ -154,15 +154,15 @@ namespace CPSI.Admin
                 PermitirEnvio = false;
                 TxtNumVagas.BorderColor = System.Drawing.Color.Red;
             }
+            Button_Alterar_Editar.Visible = true;
+            Button_Alterar_Inserir.Visible = true;
             if (PermitirEnvio)
             {
                 Button_Validar_Atualizar.Visible = false;
                 button_Atualizar.Visible = true;
                 Button_Validar_Inserir.Visible = false;
                 button_Inserir.Visible = true;
-                Button_Alterar_Editar.Visible = true;
-                Button_Alterar_Inserir.Visible = true;
-
+ 
             }
 
 

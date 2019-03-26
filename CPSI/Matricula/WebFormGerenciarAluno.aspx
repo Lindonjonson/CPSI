@@ -107,13 +107,15 @@
     <asp:Panel ID="PanelAdicionarAluno" Visible="false" runat="server">
         <asp:button ID="button1" runat="server"  text="Cancelar"  CssClass="btn btn-danger" OnClick="Cancelar_Click" />
         <asp:Button ID="Button_Validar_Inserir" class="btn btn-success" runat="server" OnClick="Button_Validar_Click" Text="Salvar" />
-       <asp:button ID="button_Inserir" Visible="false" runat="server"   text="Salvar"  CssClass="btn btn-success" OnClick="InserirAluno_Click" />
+        <asp:button ID="button_Inserir" Visible="false" runat="server"   text="Salvar"  CssClass="btn btn-success" OnClick="InserirAluno_Click" />
+        <asp:Button ID="Button_Alterar_Inserir" Visible="false" CssClass="btn btn-link" OnClick="Alterar_Click" runat="server" Text="Alterar" />
     </asp:Panel>
      <asp:Panel ID="PanelAlterarAluno" runat="server" Visible="false">
          <asp:Button ID="Button_Validar_Atualizar" CssClass="btn btn-warning" OnClick="Button_Validar_Click" runat="server" Text="Salvar" />
          <asp:button ID="button_Atualizar" runat="server" Visible="false"  text="Salvar" CssClass="btn btn-warning" OnClick="EditarAluno_Click" />
          <button type="button" data-toggle="modal" data-target="#ModalExcluirAluno" class="btn btn-danger">Excluir</button>
          <asp:button ID="button2" runat="server"   text="Cancelar"  CssClass="btn btn-success" OnClick="Cancelar_Click" />
+         <asp:Button ID="Button_Alterar_Atualizar" Visible="false" CssClass="btn btn-link" OnClick="Alterar_Click" runat="server" Text="Alterar" />
     </asp:Panel>
     <div class="modal fade" id="ModalExcluirAluno" tabindex="-1" role="dialog" aria-labelledby="ModalExcluirAluno" aria-hidden="true">
         <div class="modal-dialog" role="document">

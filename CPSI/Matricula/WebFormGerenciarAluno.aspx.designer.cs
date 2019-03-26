@@ -211,6 +211,15 @@ namespace CPSI.Matricula {
         protected global::System.Web.UI.WebControls.Button button_Inserir;
         
         /// <summary>
+        /// Controle Button_Alterar_Inserir.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_Alterar_Inserir;
+        
+        /// <summary>
         /// Controle PanelAlterarAluno.
         /// </summary>
         /// <remarks>
@@ -245,6 +254,15 @@ namespace CPSI.Matricula {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button button2;
+        
+        /// <summary>
+        /// Controle Button_Alterar_Atualizar.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_Alterar_Atualizar;
         
         /// <summary>
         /// Controle button3.
