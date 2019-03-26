@@ -84,5 +84,87 @@ namespace CPSI.Admin
             }
 
         }
+
+        protected void Button_Validar_Click(object sender, EventArgs e)
+        {
+            bool PermitirEnvio = false;
+            if (!String.IsNullOrEmpty(TxtNomeTurma.Text))
+            {
+                TxtNomeTurma.ReadOnly = true;
+                TxtNomeTurma.BorderColor = System.Drawing.Color.Green;
+                PermitirEnvio = true;
+            }
+            else
+            {
+                PermitirEnvio = false;
+                TxtNomeTurma.BorderColor = System.Drawing.Color.Red;
+            }
+            if((!String.IsNullOrEmpty(TxtAno.Text)) && (int.TryParse(TxtAno.Text,out int ano)))
+            {
+                TxtAno.ReadOnly = true;
+                TxtAno.BorderColor = System.Drawing.Color.Green;
+                PermitirEnvio = true;
+            }
+            else
+            {
+                PermitirEnvio = false;
+                TxtAno.BorderColor = System.Drawing.Color.Red;
+            }
+            if (!String.IsNullOrEmpty(TxtHorário.Text))
+            {
+                TxtHorário.ReadOnly = true;
+                TxtHorário.BorderColor = System.Drawing.Color.Green;
+                PermitirEnvio = true;
+            }
+            else
+            {
+                PermitirEnvio = false;
+                TxtHorário.BorderColor = System.Drawing.Color.Red;
+            }
+            if ((!String.IsNullOrEmpty(CalendarDataInicio.Text)) && (DateTime.TryParse(CalendarDataInicio.Text,out DateTime datainicio)))
+            {
+                CalendarDataInicio.ReadOnly = true;
+                CalendarDataInicio.BorderColor = System.Drawing.Color.Green;
+                PermitirEnvio = true;
+            }
+            else
+            {
+                PermitirEnvio = false;
+                CalendarDataInicio.BorderColor = System.Drawing.Color.Red;
+            }
+            if ((!String.IsNullOrEmpty(CalendarDataFim.Text)) && (DateTime.TryParse(CalendarDataFim.Text, out DateTime datafim)))
+            {
+                CalendarDataFim.ReadOnly = true;
+                CalendarDataFim.BorderColor = System.Drawing.Color.Green;
+                PermitirEnvio = true;
+            }
+            else
+            {
+                PermitirEnvio = false;
+                CalendarDataFim.BorderColor = System.Drawing.Color.Red;
+            }
+             if((!String.IsNullOrEmpty(TxtNumVagas.Text)) && (int.TryParse(TxtNumVagas.Text,out int numVagas)))
+            {
+                TxtNumVagas.ReadOnly = true;
+                TxtNumVagas.BorderColor = System.Drawing.Color.Green;
+                PermitirEnvio = true;
+            }
+            else
+            {
+                PermitirEnvio = false;
+                TxtNumVagas.BorderColor = System.Drawing.Color.Red;
+            }
+            if (PermitirEnvio)
+            {
+                Button_Validar_Atualizar.Visible = false;
+                Button_Validar_Atualizar.Visible = true;
+                Button_Validar_Inserir.Visible = false;
+                button_Inserir.Visible = true;
+
+            }
+
+           
+           
+        }
     }
 }

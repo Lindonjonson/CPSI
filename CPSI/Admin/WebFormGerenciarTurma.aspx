@@ -1,12 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true" CodeBehind="WebFormGerenciarTurma.aspx.cs" Inherits="CPSI.Admin.WebFormVisualizarTurmas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript" src="../Assets/js/GerenciarTurma.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <br />
-     <form>
+    
+     
   <div class="form-row">
     <div class="form-group col-md-5">
-         <asp:Label  runat="server" Text="Label">Nome turma</asp:Label>
+        <asp:Label  runat="server" Text="Label">Nome turma</asp:Label>
         <asp:TextBox ID="TxtNomeTurma" class="form-control" runat="server" ValidationGroup="InserirTurma"></asp:TextBox>
     </div>
     <div class="form-group col-md-3">
@@ -25,11 +26,11 @@
     <div class="form-group col-md-6">
         
          <asp:Label  runat="server" Text="Label">Data início</asp:Label>
-        <asp:TextBox ID="CalendarDataInicio"  class="form-control" runat="server"></asp:TextBox>
+        <asp:TextBox ID="CalendarDataInicio"  class="form-control data-Turma" runat="server"></asp:TextBox>
     </div>
     <div class="form-group col-md-6">
         <asp:Label  runat="server" Text="Label">Data fim</asp:Label>
-        <asp:TextBox ID="CalendarDataFim"   class="form-control" runat="server"></asp:TextBox>
+        <asp:TextBox ID="CalendarDataFim"   class="form-control .data-Turma" runat="server"></asp:TextBox>
  
     </div>
       <div class="form-group col-md-6">
@@ -46,46 +47,19 @@
  
     </div>
   </div>
-         </form>
-    <div class="form-group">
-       
-      
-       
-        
-        
-       
-    </div>
-    <asp:Panel ID="PanelAdicionarTurma" runat="server" Visible="false"> <div align="center">
-       <asp:button ID="button1" runat="server"  text="Cancelar"  CssClass="btn btn-danger" OnClick="Cancelar_Click" />
-       
-       <button type="button" data-toggle="modal" data-target="#ModalCadastrarTurma" class="btn btn-success">Salvar</button></div>
+         
+    <asp:Panel ID="PanelAdicionarTurma" runat="server" Visible="false">
+        <asp:button ID="button1" runat="server"  text="Cancelar"  CssClass="btn btn-danger" OnClick="Cancelar_Click" />
+        <asp:Button ID="Button_Validar_Inserir" runat="server" Cssclass="btn btn-success" OnClick="Button_Validar_Click" Text="Salvar" />
+        <asp:button ID="button_Inserir" Visible="false" runat="server"  text="Salvar"  CssClass="btn btn-success" OnClick="InserirTurma_Click" />      
     </asp:Panel>
     <asp:Panel ID="PanelAlterarTurma" runat="server" Visible="false">
-         <button type="button" data-toggle="modal" data-target="#ModalEditarTurma" class="btn btn-warning text-white">Salvar</button>
+         <asp:Button ID="Button_Validar_Atualizar" CssClass="btn btn-warning" OnClick="Button_Validar_Click" runat="server" Text="Salvar" />
+         <asp:button ID="button_Atualizar" Visible="false" runat="server"  text="Salvar" CssClass="btn btn-warning" OnClick="AtualizarTurma_Click" />
          <button type="button" data-toggle="modal" data-target="#ModalExcluirTurma" class="btn btn-danger">Excluir</button>
          <asp:button ID="button2" runat="server"  text="Cancelar"  CssClass="btn btn-success" OnClick="Cancelar_Click" />
     </asp:Panel>
-
-    <div class="modal fade" id="ModalCadastrarTurma" tabindex="-1" role="dialog" aria-labelledby="ModalCadastrarTurma" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                     <h5 class="modal-title">Confirmar cadastro de turma</h5>
-                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                         <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                   
-                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <asp:button ID="button_Inserir" runat="server"  text="Salvar"  CssClass="btn btn-success" OnClick="InserirTurma_Click" />
-
-                </div>
-            </div>
-      </div>
-   </div>
+    
    <div class="modal fade" id="ModalEditarTurma" tabindex="-1" role="dialog" aria-labelledby="ModalEditarTurma" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -100,7 +74,7 @@
                  </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <asp:button ID="button_Atualizar" runat="server"  text="Salvar" CssClass="btn btn-warning" OnClick="AtualizarTurma_Click" />
+                  
 
                 </div>
             </div>
