@@ -30,7 +30,7 @@
     </div>
     <div class="form-group col-md-6">
         <asp:Label  runat="server" Text="Label">Data fim</asp:Label>
-        <asp:TextBox ID="CalendarDataFim"   class="form-control .data-Turma" runat="server"></asp:TextBox>
+        <asp:TextBox ID="CalendarDataFim"   class="form-control data-Turma" runat="server"></asp:TextBox>
  
     </div>
       <div class="form-group col-md-6">
