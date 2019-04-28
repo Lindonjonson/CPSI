@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:Literal ID="LiteralErro" Visible="false" runat="server"></asp:Literal>
     <asp:Panel ID="PanelSelecaoTurma" runat="server">
       <div class="form-inline w-50 mt-3 mb-3">
               <div class="form-group">

@@ -113,8 +113,9 @@ namespace CPSI.Matricula
             catch(Exception ex)
             {
 
-                Session["Erro"] = ex.Message;
-                Response.Redirect("~/WebFormErro.aspx");
+                LiteralErro.Text = ex.Message;
+                LiteralErro.Visible = true;
+                
                 
             }
             

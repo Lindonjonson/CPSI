@@ -13,6 +13,15 @@ namespace CPSI.Matricula {
     public partial class WebFormMatricular {
         
         /// <summary>
+        /// Controle LiteralErro.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal LiteralErro;
+        
+        /// <summary>
         /// Controle PanelSelecaoTurma.
         /// </summary>
         /// <remarks>
