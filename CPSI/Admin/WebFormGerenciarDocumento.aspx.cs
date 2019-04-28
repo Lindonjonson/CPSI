@@ -56,7 +56,7 @@ namespace CPSI.Admin.Documento
         protected void GridViewDocumentos_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewDocumentos.SelectedRow.BackColor = System.Drawing.Color.AliceBlue;
-            LabelDocumento.Text = GridViewDocumentos.SelectedRow.Cells[1].Text;
+            LabelDocumento.Text = GridViewDocumentos.SelectedRow.Cells[2].Text;
             
         }
 

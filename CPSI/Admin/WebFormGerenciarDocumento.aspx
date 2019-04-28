@@ -44,7 +44,7 @@
                 </div>
                 <div class="modal-body">
                     <asp:label  runat="server" Text="Nome documento"></asp:label>
-                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="d-block mb-2 font-weight-bold text-danger" ControlToValidate="txtDocumento" runat="server" ErrorMessage="Campo obrigatório" SetFocusOnError="True"></asp:RequiredFieldValidator>
+                    
                     <asp:textbox runat="server" ID="txtDocumento"></asp:textbox>
                     <br />
                     <asp:label  runat="server" Text="Documento apresenta validade?"></asp:label>

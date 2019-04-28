@@ -25,7 +25,6 @@
                 </div>
                 <div class="modal-body">
                     <span>Nome da disciplina</span>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="d-block mb-2 font-weight-bold text-danger" ControlToValidate="TxtNomeDisciplina" runat="server" ErrorMessage="Campo obrigatório" SetFocusOnError="True"></asp:RequiredFieldValidator>
                     <asp:TextBox runat="server" ID="TxtNomeDisciplina" PlaceHolder="nome disciplina"></asp:TextBox>
                     <label>Documentos obrigatorios para a disciplina</label>
                     <asp:CheckBoxList ID="CheckBoxListDocumentos" runat="server" DataSourceID="ObjectDataSource2" DataTextField="documento" DataValueField="idDocumento"></asp:CheckBoxList>
