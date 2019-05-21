@@ -61,13 +61,6 @@ namespace CPSI.Matricula
             PanelSelecaoAluno.Visible = true;
             PanelAluno.Visible = false;
         }
-        public void CarregarDocumentosDisciplina(string idDisciplina)
-        {
-            CheckBoxListDocumentoDisciplina.DataSource = new DAL.DALDocumentoDisciplina().selectALLData(idDisciplina);
-            CheckBoxListDocumentoDisciplina.DataBind();
-           
-
-        }
        
         protected void VerificarDisponibilidade()
         {
@@ -92,6 +85,13 @@ namespace CPSI.Matricula
 
             }
             
+
+
+        }
+        public void CarregarDocumentosDisciplina(string idDisciplina)
+        {
+            CheckBoxListDocumentoDisciplina.DataSource = new DAL.DALDocumentoDisciplina().selectALLData(idDisciplina);
+            CheckBoxListDocumentoDisciplina.DataBind();
 
 
         }
