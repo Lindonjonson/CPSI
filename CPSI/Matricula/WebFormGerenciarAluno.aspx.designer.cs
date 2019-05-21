@@ -265,6 +265,15 @@ namespace CPSI.Matricula {
         protected global::System.Web.UI.WebControls.Button Button_Alterar_Atualizar;
         
         /// <summary>
+        /// Controle Button_AlunoDocumento.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_AlunoDocumento;
+        
+        /// <summary>
         /// Controle button3.
         /// </summary>
         /// <remarks>

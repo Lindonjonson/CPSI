@@ -87,6 +87,7 @@
     <Content Include="Assets\Img\baseline_remove_circle_outline_black_18dp.png" />
     <Content Include="Assets\Img\CartazIdosos.png" />
     <Content Include="Assets\js\jquery.mask.js" />
+    <Content Include="Matricula\WebFormDocumentoAluno.aspx" />
     <Content Include="Matricula\WebFormGerenciarAluno.aspx" />
     <Content Include="Matricula\WebFormImprimirFichaInscricao.aspx" />
     <Content Include="Matricula\MatriculaInicial.aspx" />
@@ -164,6 +165,13 @@
     </Compile>
     <Compile Include="Master\Matricula.Master.designer.cs">
       <DependentUpon>Matricula.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Matricula\WebFormDocumentoAluno.aspx.cs">
+      <DependentUpon>WebFormDocumentoAluno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Matricula\WebFormDocumentoAluno.aspx.designer.cs">
+      <DependentUpon>WebFormDocumentoAluno.aspx</DependentUpon>
     </Compile>
     <Compile Include="Matricula\WebFormGerenciarAluno.aspx.cs">
       <DependentUpon>WebFormGerenciarAluno.aspx</DependentUpon>

@@ -304,6 +304,7 @@ namespace CPSI.Matricula
             }
             Button_Alterar_Atualizar.Visible = true;
             Button_Alterar_Inserir.Visible = true;
+            Button_AlunoDocumento.Visible = false;
             if (PermitirEnvio)
             {
                 button_Inserir.Visible = true;
@@ -352,6 +353,11 @@ namespace CPSI.Matricula
             Button_Validar_Inserir.Visible = true;
             button_Atualizar.Visible = false;
             Button_Validar_Atualizar.Visible = true;
+        }
+
+        protected void Button_AlunoDocumento_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Matricula/WebFormDocumentoAluno.aspx");
         }
     }
 }

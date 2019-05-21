@@ -116,6 +116,7 @@
          <button type="button" data-toggle="modal" data-target="#ModalExcluirAluno" class="btn btn-danger">Excluir</button>
          <asp:button ID="button2" runat="server"   text="Cancelar"  CssClass="btn btn-success" OnClick="Cancelar_Click" />
          <asp:Button ID="Button_Alterar_Atualizar" Visible="false" CssClass="btn btn-link" OnClick="Alterar_Click" runat="server" Text="Alterar" />
+         <asp:Button ID="Button_AlunoDocumento" runat="server" Text="Documentos do Aluno" OnClick="Button_AlunoDocumento_Click" />
     </asp:Panel>
     <div class="modal fade" id="ModalExcluirAluno" tabindex="-1" role="dialog" aria-labelledby="ModalExcluirAluno" aria-hidden="true">
         <div class="modal-dialog" role="document">
