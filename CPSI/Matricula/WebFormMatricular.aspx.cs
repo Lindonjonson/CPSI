@@ -80,7 +80,7 @@ namespace CPSI.Matricula
             DAL.DALMatricula dALMatricula = new DAL.DALMatricula();
             if (dALMatricula.VagaDisponivel(IdTurma))
             {
-                CarregarDocumentosDisciplina(IdTurma);
+                CarregarDocumentosDisciplina(DalTurma.Select(IdTurma).idDisciplina.ToString());
                 LabelTurmaStatus.Visible = false;
                 PanelMatricular.Visible = true;
 
