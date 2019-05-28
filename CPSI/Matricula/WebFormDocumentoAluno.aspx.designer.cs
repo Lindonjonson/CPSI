@@ -31,13 +31,13 @@ namespace CPSI.Matricula {
         protected global::System.Web.UI.WebControls.Literal LiteralCPF;
         
         /// <summary>
-        /// Controle GridViewAlunoDocumento.
+        /// Controle GridViewDocumentosCadastro.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewAlunoDocumento;
+        protected global::System.Web.UI.WebControls.GridView GridViewDocumentosCadastro;
         
         /// <summary>
         /// Controle ObjectDataSource1.
@@ -47,5 +47,23 @@ namespace CPSI.Matricula {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+        
+        /// <summary>
+        /// Controle GridViewDocumentosMatricula.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewDocumentosMatricula;
+        
+        /// <summary>
+        /// Controle ObjectDataSource2.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource2;
     }
 }

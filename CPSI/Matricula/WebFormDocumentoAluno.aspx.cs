@@ -14,6 +14,41 @@ namespace CPSI.Matricula
             Modelo.Aluno aluno = new DAL.DALAluno().select(Session["idAluno"].ToString());
             LiteralAluno.Text = aluno.alunoNome;
             LiteralCPF.Text = aluno.cpf;
+          
+        }
+        protected void GridViewDocumentosCadastro_Load(object sender, EventArgs e)
+        {
+            List<Modelo.AlunoDocumento> alunoDocumentos = new DAL.DALAlunoDocumento().SelectAll(Session["idAluno"].ToString());
+            for (int index=0; index < GridViewDocumentosCadastro.Rows.Count; index++)
+            {
+                DataKey keyIdDocumento = GridViewDocumentosCadastro.DataKeys[index];
+                int idDocumento= Convert.ToInt32(keyIdDocumento.Value);
+                if(!alunoDocumentos.Exists(documento => documento.idDocumento == idDocumento))
+                {
+
+                    GridViewDocumentosCadastro.Rows[index].Visible = false;
+
+                }
+
+            }
+           
+        }
+
+        protected void GridViewDocumentosMatricula_Load(object sender, EventArgs e)
+        {
+            List<Modelo.AlunoDocumento> alunoDocumentos = new DAL.DALAlunoDocumento().SelectAll(Session["idAluno"].ToString());
+            for (int index = 0; index < GridViewDocumentosMatricula.Rows.Count; index++)
+            {
+                DataKey keyIdDocumento = GridViewDocumentosMatricula.DataKeys[index];
+                int idDocumento = Convert.ToInt32(keyIdDocumento.Value);
+                if (!alunoDocumentos.Exists(documento => documento.idDocumento == idDocumento))
+                {
+
+                       GridViewDocumentosMatricula.Rows[index].Visible = false;
+
+                }
+
+            }
         }
     }
 }
