@@ -97,7 +97,7 @@
 
 </form>
     <asp:Panel ID="PanelAdicionarAluno" Visible="false" runat="server">
-         <div class="form-group col-md-6">
+         <div id="documentos" class="form-group col-md-6">
                     <label>Documentos obrigatórios </label>
                     <asp:CheckBoxList ID="CheckBoxListDocumentosAluno" runat="server" DataSourceID="ObjectDataSource1" DataTextField="documento" DataValueField="idDocumento"></asp:CheckBoxList>
                               <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALDocumento">
