@@ -157,6 +157,15 @@ namespace CPSI.Matricula {
         protected global::System.Web.UI.WebControls.TextBox TextBoxContatoTelefone;
         
         /// <summary>
+        /// Controle PanelAdicionarAluno.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelAdicionarAluno;
+        
+        /// <summary>
         /// Controle CheckBoxListDocumentosAluno.
         /// </summary>
         /// <remarks>
@@ -173,15 +182,6 @@ namespace CPSI.Matricula {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
-        
-        /// <summary>
-        /// Controle PanelAdicionarAluno.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelAdicionarAluno;
         
         /// <summary>
         /// Controle button1.

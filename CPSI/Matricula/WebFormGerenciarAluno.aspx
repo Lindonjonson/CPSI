@@ -90,7 +90,14 @@
                     <label>Telefone Emergêncial:  </label>
                     <asp:TextBox ID="TextBoxContatoTelefone" class="form-control" runat="server" placeholder="Digite o número do parente"  />
                </div>
-               <div class="form-group col-md-6">
+              
+
+    
+          </div>
+
+</form>
+    <asp:Panel ID="PanelAdicionarAluno" Visible="false" runat="server">
+         <div class="form-group col-md-6">
                     <label>Documentos obrigatórios </label>
                     <asp:CheckBoxList ID="CheckBoxListDocumentosAluno" runat="server" DataSourceID="ObjectDataSource1" DataTextField="documento" DataValueField="idDocumento"></asp:CheckBoxList>
                               <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALDocumento">
@@ -98,13 +105,7 @@
                                       <asp:Parameter DefaultValue="1" Name="filtroTipo" Type="String"></asp:Parameter>
                                   </SelectParameters>
                               </asp:ObjectDataSource>
-               </div>
-
-    
           </div>
-
-</form>
-    <asp:Panel ID="PanelAdicionarAluno" Visible="false" runat="server">
         <asp:button ID="button1" runat="server"  text="Cancelar"  CssClass="btn btn-danger" OnClick="Cancelar_Click" />
         <asp:Button ID="Button_Validar_Inserir" class="btn btn-success" runat="server" OnClick="Button_Validar_Click" Text="Salvar" />
         <asp:button ID="button_Inserir" Visible="false" runat="server"   text="Salvar"  CssClass="btn btn-success" OnClick="InserirAluno_Click" />
