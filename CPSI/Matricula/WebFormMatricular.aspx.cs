@@ -122,7 +122,11 @@ namespace CPSI.Matricula
             DAL.DALAlunoDocumento dalAlunoDocumento = new DAL.DALAlunoDocumento(); 
             foreach(ListItem I in CheckBoxListDocumentoDisciplina.Items)
             {
-                 if (I.Selected) dalAlunoDocumento.insert(new Modelo.AlunoDocumento(Convert.ToInt32(IdAluno), Convert.ToInt32(I.Value)));
+                if (I.Selected)
+                {
+                    dalAlunoDocumento.insert(new Modelo.AlunoDocumento(Convert.ToInt32(IdAluno), Convert.ToInt32(I.Value)));
+
+                } 
              
             }
             Session["matricula"] = matricula;

@@ -43,6 +43,18 @@ namespace CPSI.DAL
             cmd.ExecuteNonQuery();
             conn.Close();
         }
+        public void insertComValidade(Modelo.AlunoDocumento alunoDocumento)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "INSERT INTO AlunoDocumento (IdAluno,IdDocumento,DataValidade) VALUES (@IdAluno,@IdDocumento,@DataValidade)";
+            cmd.Parameters.AddWithValue("@IdAluno", alunoDocumento.idAluno);
+            cmd.Parameters.AddWithValue("@IdDocumento", alunoDocumento.idDocumento);
+            cmd.Parameters.AddWithValue("@DataValidade", alunoDocumento.DataValidade);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
         public void delete(Modelo.AlunoDocumento obj)
         {
             SqlConnection conn = new SqlConnection(connectionString);
