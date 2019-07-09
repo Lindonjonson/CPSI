@@ -21,8 +21,8 @@ namespace CPSI.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Turma> SelectAll()
         {
-            Modelo.Turma ATurma;
-            List<Modelo.Turma> aListTurma = new List<Modelo.Turma>();
+            Modelo.Turma Turma;
+            List<Modelo.Turma> ListTurma = new List<Modelo.Turma>();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
@@ -34,7 +34,7 @@ namespace CPSI.DAL
                 while (dr.Read())
                 {
 
-                    ATurma = new Modelo.Turma(
+                    Turma = new Modelo.Turma(
                         int.Parse(dr["IdTurma"].ToString()),
                         dr["Turma"].ToString(),
                         int.Parse(dr["Ano"].ToString()),
@@ -45,14 +45,14 @@ namespace CPSI.DAL
                         int.Parse(dr["IdDisciplina"].ToString()));
                         
 
-                    aListTurma.Add(ATurma);
+                    ListTurma.Add(Turma);
                 }
             }
 
             dr.Close();
             conn.Close();
 
-            return aListTurma;
+            return ListTurma;
         }
 
 
@@ -126,7 +126,7 @@ namespace CPSI.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public Modelo.Turma Select(string ID)
         {
-            Modelo.Turma ATurma = new Modelo.Turma();
+            Modelo.Turma Turma = new Modelo.Turma();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
@@ -136,19 +136,19 @@ namespace CPSI.DAL
             while (dr.Read())
             {
 
-                      ATurma.IdTurma=int.Parse(dr["IdTurma"].ToString());
-                      ATurma.NomeTurma= dr["Turma"].ToString();
-                      ATurma.ano= int.Parse(dr["Ano"].ToString());
-                      ATurma.horario = dr["Horario"].ToString();
-                      ATurma.DataInicio=  DateTime.Parse(dr["DataInicio"].ToString());
-                      ATurma.DataFim=  DateTime.Parse(dr["DataFim"].ToString());
-                      ATurma.QtdVagas=  int.Parse(dr["QtdVagas"].ToString());
-                      ATurma.IdDisciplina=  int.Parse(dr["IdDisciplina"].ToString());
+                      Turma.IdTurma=int.Parse(dr["IdTurma"].ToString());
+                      Turma.NomeTurma= dr["Turma"].ToString();
+                      Turma.ano= int.Parse(dr["Ano"].ToString());
+                      Turma.horario = dr["Horario"].ToString();
+                      Turma.DataInicio=  DateTime.Parse(dr["DataInicio"].ToString());
+                      Turma.DataFim=  DateTime.Parse(dr["DataFim"].ToString());
+                      Turma.QtdVagas=  int.Parse(dr["QtdVagas"].ToString());
+                      Turma.IdDisciplina=  int.Parse(dr["IdDisciplina"].ToString());
 
 
             }
             conn.Close();
-            return ATurma;
+            return Turma;
 
 
         }
@@ -159,10 +159,19 @@ namespace CPSI.DAL
             conn.Open();
             SqlCommand cmd = new SqlCommand("select Max(IdTurma) as Max From Turma",conn);
             SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
+            try
             {
-                max = (int.Parse(dr["Max"].ToString()))+1;
+                if (dr.Read())
+                {
+                    max = (int.Parse(dr["Max"].ToString())) + 1;
+                }
+
             }
+            catch(FormatException)
+            {
+                max = 1;
+
+            }            
             conn.Close();
             return max;
 

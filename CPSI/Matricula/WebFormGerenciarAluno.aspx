@@ -10,7 +10,7 @@
     <Columns>
         <asp:BoundField DataField="IdAluno" HeaderText="IdAluno" SortExpression="IdAluno" />
         <asp:BoundField DataField="AlunoNome" HeaderText="AlunoNome" SortExpression="AlunoNome" />
-        <asp:BoundField DataField="DataNascimento" HeaderText="DataNascimento" SortExpression="DataNascimento" />
+        <asp:BoundField DataField="DataNascimento" DataFormatString="{0:d}" HeaderText="DataNascimento" SortExpression="DataNascimento" />
         <asp:BoundField DataField="Cpf" HeaderText="Cpf" SortExpression="Cpf" />
         <asp:BoundField DataField="Rg" HeaderText="Rg" SortExpression="Rg" />
         <asp:BoundField DataField="RGOrgao" HeaderText="RGOrgao" SortExpression="RGOrgao" />
@@ -25,8 +25,7 @@
         <asp:BoundField DataField="Contato" HeaderText="Contato" SortExpression="Contato" />
         <asp:BoundField DataField="ContatoTelefone" HeaderText="ContatoTelefone" SortExpression="ContatoTelefone" />
         <asp:ButtonField CommandName="Editar" HeaderText="Editar Aluno" Text="Editar Aluno" ButtonType="Button" />
-        <asp:ButtonField ButtonType="Button" CommandName="Excluir" HeaderText="Excluir Aluno" Text="Excluir Aluno" />
-          <asp:ButtonField ButtonType="Button" CommandName="Matricular" HeaderText="Matricular Em turma" Text="Matricular em turma" />
+        <asp:ButtonField ButtonType="Button" CommandName="Matricular" HeaderText="Matricular Em turma" Text="Matricular em turma" />
     </Columns>
     </asp:GridView>
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectALL" TypeName="CPSI.DAL.DALAluno" DataObjectTypeName="CPSI.Modelo.Aluno" InsertMethod="Insert"></asp:ObjectDataSource>

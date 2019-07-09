@@ -12,10 +12,12 @@
     <asp:GridView ID="GridViewDisciplina" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" OnRowCommand="GridView1_RowCommand" EnableViewState="False" ShowHeaderWhenEmpty="True" DataKeyNames="idDisciplina">
         <Columns>
             <asp:BoundField DataField="disciplina" HeaderText="disciplina" SortExpression="disciplina" />
-            <asp:ButtonField ButtonType="Button" CommandName="Excluir" HeaderText="Excluir" Text="Excluir" />
             <asp:ButtonField ButtonType="Button" CommandName="Editar" HeaderText="Editar" Text="Editar" />
         </Columns>
     </asp:GridView>
     
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALDisciplina" DataObjectTypeName="CPSI.Modelo.Disciplina" InsertMethod="Insert"></asp:ObjectDataSource>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Insira o nome da disciplina" ControlToValidate="TxtNomeDisciplina"></asp:RequiredFieldValidator>
+ 
 </asp:Content>
+ 

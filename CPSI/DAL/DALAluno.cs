@@ -20,6 +20,10 @@ namespace CPSI.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Aluno> SelectALL()
         {
+            string strData;
+            DateTime Data;
+            int EstadoCivil;
+            string StrEstadoCivil;
             Modelo.Aluno aluno;
             List<Modelo.Aluno> alunos = new List<Modelo.Aluno>();
             SqlConnection conn = new SqlConnection(connectioString);
@@ -29,11 +33,22 @@ namespace CPSI.DAL
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
-               
+
                 while (dr.Read())
                 {
-                     aluno = new Modelo.Aluno(int.Parse(dr["IdAluno"].ToString()),dr["Aluno"].ToString(),DateTime.Parse(dr["DataNascimento"].ToString()),dr["CPF"].ToString(),dr["RG"].ToString(),dr["RGOrgao"].ToString(),int.Parse(dr["EstadoCivil"].ToString()) ,dr["Naturalidade"].ToString(),
-                                                          dr["NaturalidadeEstado"].ToString() ,dr["Endereco"].ToString(),dr["Cidade"].ToString(),dr["Estado"].ToString(),dr["Telefone1"].ToString(),dr["Telefone2"].ToString(),dr["Contato"].ToString(),dr["ContatoTelefone"].ToString());
+                    strData = dr["DataNascimento"].ToString();
+                    Data = DateTime.Parse("01/01/1900");
+                    if (strData != "") Data = DateTime.Parse(dr["DataNascimento"].ToString());
+                    StrEstadoCivil = dr["EstadoCivil"].ToString();
+                    EstadoCivil = 0;
+                    if (StrEstadoCivil != "") EstadoCivil = int.Parse(dr["EstadoCivil"].ToString());
+
+                    aluno = new Modelo.Aluno(int.Parse(dr["IdAluno"].ToString()), dr["Aluno"].ToString(),
+                         Data,
+                         dr["CPF"].ToString(), dr["RG"].ToString(), dr["RGOrgao"].ToString(),
+                         EstadoCivil,
+                         dr["Naturalidade"].ToString(),
+                         dr["NaturalidadeEstado"].ToString(), dr["Endereco"].ToString(), dr["Cidade"].ToString(), dr["Estado"].ToString(), dr["Telefone1"].ToString(), dr["Telefone2"].ToString(), dr["Contato"].ToString(), dr["ContatoTelefone"].ToString());
 
                     alunos.Add(aluno);
                 }
@@ -51,6 +66,10 @@ namespace CPSI.DAL
         public Modelo.Aluno Select(string id)
         {
 
+            string strData;
+            DateTime Data;
+            int EstadoCivil;
+            string StrEstadoCivil;
             Modelo.Aluno aluno= new Modelo.Aluno();
             SqlConnection conn = new SqlConnection(connectioString);
             conn.Open();
@@ -62,13 +81,18 @@ namespace CPSI.DAL
             {
                 while (dr.Read())
                 {
+                    strData = dr["DataNascimento"].ToString();
+                    Data = DateTime.Parse("01/01/1900");
+                    if (strData != "") Data = DateTime.Parse(dr["DataNascimento"].ToString());
+                    StrEstadoCivil = dr["EstadoCivil"].ToString();
+                    EstadoCivil = 0;
                     aluno.IdAluno = int.Parse(dr["IdAluno"].ToString());
                     aluno.AlunoNome = dr["Aluno"].ToString();
-                    aluno.DataNascimento = DateTime.Parse(dr["DataNascimento"].ToString());
+                    aluno.DataNascimento = Data;
                     aluno.Cpf = dr["CPF"].ToString();
                     aluno.Rg = dr["RG"].ToString();
                     aluno.RGOrgao = dr["RGOrgao"].ToString();
-                    aluno.EstadoCivil = int.Parse(dr["EstadoCivil"].ToString());
+                    aluno.EstadoCivil = EstadoCivil;
                     aluno.Naturalidade = dr["Naturalidade"].ToString();
                     aluno.NaturalidadeEstado = dr["NaturalidadeEstado"].ToString();
                     aluno.Endereco = dr["Endereco"].ToString();
@@ -169,18 +193,28 @@ namespace CPSI.DAL
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = "SELECT MAX(IdAluno) AS MAX FROM ALUNO";
             SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
+            try
             {
-               
-                    max = (int.Parse(dr["MAX"].ToString())+1);
+                if (dr.Read())
+                {
+
+                    max = (int.Parse(dr["MAX"].ToString()) + 1);
 
 
-                
+                }
+
 
             }
+            catch(FormatException)
+            {
+               
+                max = 1;
+              
 
+            }
             conn.Close();
             return max;
+
 
 
 

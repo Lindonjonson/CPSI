@@ -71,7 +71,6 @@
   <ItemGroup>
     <Content Include="Admin\WebFormEditarDisciplina.aspx" />
     <Content Include="Admin\WebFormGerenciarDisciplina.aspx" />
-    <Content Include="Admin\WebFormEditarDocumento.aspx" />
     <Content Include="Admin\WebFormGerenciarDocumento.aspx" />
     <Content Include="Admin\WebFormEditarTurma.aspx" />
     <Content Include="Admin\WebFormGerenciarTurma.aspx" />
@@ -117,13 +116,6 @@
     </Compile>
     <Compile Include="Admin\WebFormGerenciarDisciplina.aspx.designer.cs">
       <DependentUpon>WebFormGerenciarDisciplina.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\WebFormEditarDocumento.aspx.cs">
-      <DependentUpon>WebFormEditarDocumento.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\WebFormEditarDocumento.aspx.designer.cs">
-      <DependentUpon>WebFormEditarDocumento.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\WebFormGerenciarDocumento.aspx.cs">
       <DependentUpon>WebFormGerenciarDocumento.aspx</DependentUpon>

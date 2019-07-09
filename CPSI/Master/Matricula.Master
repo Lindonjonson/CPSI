@@ -5,6 +5,7 @@
 <html>
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" href="../Assets/CSS/PageEditarExclusao.css"/>
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -16,5 +17,6 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
+    <script type="text/javascript" src="../Assets/JS/PageEditarExclusao.js"></script>
 </body>
 </html>

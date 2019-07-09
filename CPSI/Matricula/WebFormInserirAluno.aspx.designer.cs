@@ -58,13 +58,13 @@ namespace CPSI.Matricula {
         protected global::System.Web.UI.WebControls.TextBox TextBoxRGOrgaox;
         
         /// <summary>
-        /// Controle TextBoxEstadoCivil.
+        /// Controle DropDownListEstadoCivil.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxEstadoCivil;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListEstadoCivil;
         
         /// <summary>
         /// Controle TextBoxNaturalidade.

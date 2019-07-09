@@ -23,5 +23,7 @@ namespace CPSI.Admin
             InsertTurma.Insert(Turma);
             Response.Redirect("~//Admin//WebFormGerenciarTurma.aspx");
         }
+
+        
     }
 }

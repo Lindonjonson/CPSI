@@ -22,29 +22,25 @@ namespace CPSI.Admin.Documento
             Response.Redirect("~\\Admin\\WebFormGerenciarDocumento.aspx");
         }
 
-        protected void GridViewDocumentos_RowCommand(object sender, GridViewCommandEventArgs e)
+      
+
+        protected void Excluir_Documento(object sender, EventArgs e)
         {
-            DAL.DALDocumento DALDocumento = new DAL.DALDocumento();
-            if (e.CommandName == "Excluir")
-            {
 
-                int Index = Convert.ToInt32(e.CommandArgument);
-                DataKey keys = GridViewDocumentos.DataKeys[Index];
-                string ID = keys.Value.ToString();
-                DALDocumento.Delete(ID);
-                Response.Redirect("~\\Admin\\WebFormGerenciarDocumento.aspx");
+          
+            int Index = Convert.ToInt32(GridViewDocumentos.SelectedRow.RowIndex);
+            DataKey keys = GridViewDocumentos.DataKeys[Index];
+            string IdDocumento = keys.Value.ToString();
+            DAL.DALDocumento dALDocumento = new DAL.DALDocumento();
+            dALDocumento.Delete(IdDocumento);
+            Response.Redirect(Request.RawUrl);
+        }
 
-            }
-            if (e.CommandName=="Editar")
-            {
-
-                int Index = Convert.ToInt32(e.CommandArgument);
-                DataKey keys = GridViewDocumentos.DataKeys[Index];
-                string IdDocumento = keys.Value.ToString();
-                Session["IdDocumento"] = IdDocumento;
-                Response.Redirect("~\\Admin\\WebFormEditarDocumento.aspx");
-
-            }
+        protected void GridViewDocumentos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GridViewDocumentos.SelectedRow.BackColor = System.Drawing.Color.OrangeRed;
+            LabelDocumento.Text = GridViewDocumentos.SelectedRow.Cells[1].Text;
+            
         }
     }
 }

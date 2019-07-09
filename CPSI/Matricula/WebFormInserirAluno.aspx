@@ -19,7 +19,13 @@
         <asp:TextBox ID="TextBoxRGOrgaox" runat="server"  />
         <br />
         EstadoCivil:
-        <asp:TextBox ID="TextBoxEstadoCivil" runat="server"  />
+        <asp:DropDownList ID="DropDownListEstadoCivil" runat="server">
+            <asp:ListItem Value="1">Solteiro</asp:ListItem>
+            <asp:ListItem Value="2">União estável </asp:ListItem>
+            <asp:ListItem Value="3">Casado</asp:ListItem>
+            <asp:ListItem Value="4">Divorciado </asp:ListItem>
+            <asp:ListItem Value="5">Viúvo</asp:ListItem>
+       </asp:DropDownList>
         <br />
         Naturalidade:
         <asp:TextBox ID="TextBoxNaturalidade" runat="server"  />
