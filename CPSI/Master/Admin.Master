@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="CPSI.Master.Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<link rel="stylesheet" href="../Assets/CSS/bootstrap.min.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <article>
+        <form id="form1" runat="server">
+            <div class="row">
+                <div class="col-md-3">
+                    <nav>
+                        <asp:Menu ID="Menu1" runat="server">
+                                    <Items>
+                                        <asp:MenuItem NavigateUrl="~/Admin/WebFormGerenciarDocumento.aspx" Text="Cadastro de Tipos de Documento" Value="Cadastro de Documento"></asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="~/Admin/WebFormGerenciarDisciplina.aspx" Text="Cadastro de Disciplina" Value="Cadastro de Disciplina"></asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="~/Admin/WebFormGerenciarTurma.aspx" Text="Cadastro de Turma" Value="Cadastro de Turma"></asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="~/Matricula/WebFormGerenciarAluno.aspx" Text="Cadastro Aluno" Value="Cadastro Aluno"></asp:MenuItem>
+                                    </Items>
+                        </asp:Menu>
+                     </nav>
+                </div>
+                <div  class="col-md-9">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+              
+                
+        </form>
+    </article>
+    <script type="text/javascript" src="../Assets/JS/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

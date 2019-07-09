@@ -1,0 +1,35 @@
+﻿1)ATIVIDADES DESENVOLVIDAS
+
+[X] CDU ADMINISTRADOR
+  [x]CADASTRAR DOCUMETOS
+  [x]CADASTRAR DISCIPLINA
+  [x]DEFINIR DOCUMENTAÇÃO EXIGIDA 
+  [x]CADASTRAR TURMA 
+
+[x]CDU CORDENADOR MATRICULA 
+  [x]Registra Inscricao em Lista de Espera
+  [x]Consultar Lista de Espera da Turma
+  [x]Inscreve na Lista de Espera da Turma
+  [x]Cadastra Aluno
+  [x]Realizar Matrícula
+  [x]Consultar Alunos Matriculados em Turma
+  [x]Editar Cadastro do Aluno
+  [x]Registrar Documentos Entregues
+  [x]Imprimir Ficha de Inscricao
+
+[ ]CDU Coordenação 
+  [ ]Registrar Trancamento/Cancelamento de Matrícula
+  [ ]Registrar Atestado Médico
+  [ ]Registrar Mudança de Turma
+  [ ]Visualizar Contato de Emergencia
+  [ ]Consultar Alunos Matriculados em Turma
+
+[ ]CDU Professor 
+  [ ]Imprimir Lista de Chamada
+  [ ]Registrar Presença do Aluno
+
+[ ]GLOBAL 
+  [ ]lOGIN 
+
+
+     
