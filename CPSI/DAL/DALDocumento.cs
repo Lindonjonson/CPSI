@@ -22,7 +22,7 @@ namespace CPSI.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Documento> SelectAll()
         {
-            Modelo.Documento documento;
+           
             List<Modelo.Documento> ListaDocumento = new List<Modelo.Documento>();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
@@ -33,12 +33,102 @@ namespace CPSI.DAL
 
                 while (dr.Read())
                 {
+                    Modelo.Documento documento = new Modelo.Documento();
+                    int idDocumento=0;
+                    string nomeDocumento="";
+                    bool validade = false; 
+                    int tipo=0;
+                    try
+                    {  
+                        idDocumento = int.Parse(dr["IdDocumento"].ToString());
+                        nomeDocumento = dr["Documento"].ToString();
+                        validade = Convert.ToBoolean(dr["Validade"]);
+                        tipo = Convert.ToInt32(dr["Tipo"]);
+                    }
+                    catch (FormatException)
+                    {
+                        if(!String.IsNullOrEmpty(dr["IdDocumento"].ToString()))
+                           idDocumento = int.Parse(dr["IdDocumento"].ToString());
+                        if (!String.IsNullOrEmpty(dr["Documento"].ToString()))
+                            nomeDocumento = dr["Documento"].ToString();
+                        if (!String.IsNullOrEmpty(dr["Validade"].ToString()))
+                            validade = Convert.ToBoolean(dr["Validade"]);
+                        if (!String.IsNullOrEmpty(dr["Tipo"].ToString()))
+                            tipo = Convert.ToInt32(dr["Tipo"]);
+                    
 
-                    documento = new Modelo.Documento(
-                        int.Parse(dr["IdDocumento"].ToString()),
-                        dr["Documento"].ToString()
-                        );
-                    ListaDocumento.Add(documento);
+
+                     }
+                    finally
+                    {
+                        documento.idDocumento = idDocumento;
+                        documento.documento = nomeDocumento;
+                        documento.validade = validade;
+                        documento.tipo = tipo;
+                        ListaDocumento.Add(documento);
+
+                    }
+
+
+                }
+            }
+
+            dr.Close();
+
+            conn.Close();
+
+            return ListaDocumento;
+        }
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Documento> SelectAll(string filtroTipo)
+        {
+           
+            List<Modelo.Documento> ListaDocumento = new List<Modelo.Documento>();
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("Select * from Documento Where Tipo=@Tipo", conn);
+            cmd.Parameters.AddWithValue("@Tipo", filtroTipo);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+
+                while (dr.Read())
+                {
+
+                    Modelo.Documento documento = new Modelo.Documento();
+                    int idDocumento = 0;
+                    string nomeDocumento = "";
+                    bool validade = false;
+                    int tipo = 0;
+                    try
+                    {
+                        idDocumento = int.Parse(dr["IdDocumento"].ToString());
+                        nomeDocumento = dr["Documento"].ToString();
+                        validade = Convert.ToBoolean(dr["Validade"]);
+                        tipo = Convert.ToInt32(dr["Tipo"]);
+                    }
+                    catch (FormatException)
+                    {
+                        if (!String.IsNullOrEmpty(dr["IdDocumento"].ToString()))
+                            idDocumento = int.Parse(dr["IdDocumento"].ToString());
+                        if (!String.IsNullOrEmpty(dr["Documento"].ToString()))
+                            nomeDocumento = dr["Documento"].ToString();
+                        if (!String.IsNullOrEmpty(dr["Validade"].ToString()))
+                            validade = Convert.ToBoolean(dr["Validade"]);
+                        if (!String.IsNullOrEmpty(dr["Tipo"].ToString()))
+                            tipo = Convert.ToInt32(dr["Tipo"]);
+
+
+                    }
+                    finally
+                    {
+                        documento.idDocumento = idDocumento;
+                        documento.documento = nomeDocumento;
+                        documento.validade = validade;
+                        documento.tipo = tipo;
+                        ListaDocumento.Add(documento);
+
+                    }
 
                 }
             }
@@ -59,18 +149,47 @@ namespace CPSI.DAL
             SqlCommand cmd = new SqlCommand("select * from Documento where IdDocumento= @ID", conn);
             cmd.Parameters.AddWithValue("@ID", ID);
             SqlDataReader dr = cmd.ExecuteReader();
-
-
-
-            while (dr.Read())
+            if (dr.HasRows)
             {
-                documento.idDocumento = int.Parse(dr["IdDocumento"].ToString());
-                documento.documento = dr["Documento"].ToString();
+                while (dr.Read())
+                {
+                    int idDocumento = 0;
+                    string nomeDocumento = "";
+                    bool validade = false;
+                    int tipo = 0;
+                    try
+                    {
+                        idDocumento = int.Parse(dr["IdDocumento"].ToString());
+                        nomeDocumento = dr["Documento"].ToString();
+                        validade = Convert.ToBoolean(dr["Validade"]);
+                        tipo = Convert.ToInt32(dr["Tipo"]);
+                    }
+                    catch (FormatException)
+                    {
+                        if (!String.IsNullOrEmpty(dr["IdDocumento"].ToString()))
+                            idDocumento = int.Parse(dr["IdDocumento"].ToString());
+                        if (!String.IsNullOrEmpty(dr["Documento"].ToString()))
+                            nomeDocumento = dr["Documento"].ToString();
+                        if (!String.IsNullOrEmpty(dr["Validade"].ToString()))
+                            validade = Convert.ToBoolean(dr["Validade"]);
+                        if (!String.IsNullOrEmpty(dr["Tipo"].ToString()))
+                            tipo = Convert.ToInt32(dr["Tipo"]);
 
+
+                    }
+                    finally
+                    {
+                        documento.idDocumento = idDocumento;
+                        documento.documento = nomeDocumento;
+                        documento.validade = validade;
+                        documento.tipo = tipo;
+                        
+
+                    }
+                   
+
+                }
             }
-
-
-
             conn.Close();
             dr.Close();
             return documento;
@@ -81,9 +200,11 @@ namespace CPSI.DAL
 
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            SqlCommand cmd = new SqlCommand("insert into Documento (IdDocumento,Documento) values(@IdDocumento,@Documento)", conn);
+            SqlCommand cmd = new SqlCommand("insert into Documento (IdDocumento,Documento,Tipo,Validade) values(@IdDocumento,@Documento,@Tipo,@Validade)", conn);
             cmd.Parameters.AddWithValue("@IdDocumento", GetIdMax());
             cmd.Parameters.AddWithValue("@Documento", obj.documento);
+            cmd.Parameters.AddWithValue("@Tipo", obj.tipo);
+            cmd.Parameters.AddWithValue("@Validade", obj.validade);
             cmd.ExecuteNonQuery();
             conn.Close();
 
@@ -110,9 +231,11 @@ namespace CPSI.DAL
 
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            SqlCommand cmd = new SqlCommand("UPDATE Documento SET Documento = @documento WHERE IdDocumento = @id", conn);
-            cmd.Parameters.AddWithValue("@documento", obj.documento);
-            cmd.Parameters.AddWithValue("@id", obj.idDocumento);
+            SqlCommand cmd = new SqlCommand("UPDATE Documento SET Documento =  @Documento,Tipo =  @Tipo,Validade =  @Validade WHERE IdDocumento =  @IdDocumento", conn);
+            cmd.Parameters.AddWithValue("@IdDocumento", obj.idDocumento);
+            cmd.Parameters.AddWithValue("@Documento", obj.documento);
+            cmd.Parameters.AddWithValue("@Tipo", obj.tipo);
+            cmd.Parameters.AddWithValue("@Validade",Convert.ToInt32(obj.validade));
             cmd.ExecuteNonQuery();
             conn.Close();
 

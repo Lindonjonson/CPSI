@@ -1,40 +1,48 @@
 ﻿ <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="CPSI.Master.Admin" %>
-
 <!DOCTYPE html>
-
 <html>
-<head runat="server">
-<link rel="stylesheet" href="../Assets/CSS/bootstrap.min.css" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
-</head>
-<body>
-    <article>
-        <form id="form1" runat="server">
-            <div class="row">
-                <div class="col-md-3">
-                    <nav>
-                        <asp:Menu ID="Menu1" runat="server">
-                                    <Items>
-                                        <asp:MenuItem NavigateUrl="~/Admin/WebFormGerenciarDocumento.aspx" Text="Cadastro de Tipos de Documento" Value="Cadastro de Documento"></asp:MenuItem>
-                                        <asp:MenuItem NavigateUrl="~/Admin/WebFormGerenciarDisciplina.aspx" Text="Cadastro de Disciplina" Value="Cadastro de Disciplina"></asp:MenuItem>
-                                        <asp:MenuItem NavigateUrl="~/Admin/WebFormGerenciarTurma.aspx" Text="Cadastro de Turma" Value="Cadastro de Turma"></asp:MenuItem>
-                                        <asp:MenuItem NavigateUrl="~/Matricula/WebFormGerenciarAluno.aspx" Text="Cadastro Aluno" Value="Cadastro Aluno"></asp:MenuItem>
-                                    </Items>
-                        </asp:Menu>
-                     </nav>
+  <head runat="server">
+ 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <script type="text/javascript" src="../Assets/js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="../Assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../Assets/js/jquery.mask.js"></script>
+        <title></title>
+        <link rel="stylesheet" href="../Assets/css/bootstrap.min.css">
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+   </head>
+    <body>
+        
+            <form id="form1"  runat="server">
+                <div class="container">
+                  <div class="row">
+                      <div class="col-md-12">
+                             <nav class="navbar navbar-expand-sm  navbar-light bg-primary">
+                                 <ul class="nav navbar-nav">
+                                      <li class="nav-item">
+                                        <asp:HyperLink  Cssclass="nav-link text-white" ID="HyperLink1" NavigateUrl="~/Admin/WebFormGerenciarDocumento.aspx"  runat="server">Gerenciar Documento</asp:HyperLink>
+                                      </li>
+                                      <li class="nav-item">
+                                        <asp:HyperLink Cssclass="nav-link text-white" ID="HyperLink2" NavigateUrl="~/Admin/WebFormGerenciarDisciplina.aspx"  runat="server">Gerenciar Disciplina</asp:HyperLink>
+                                      </li>
+                                       <li class="nav-item">
+                                         <asp:HyperLink Cssclass="nav-link text-white" ID="HyperLink3" NavigateUrl="~/Admin/WebFormVisualizacaoTurma.aspx"  runat="server">Gerenciar Turma</asp:HyperLink>
+                                      </li>
+                                     <li class="nav-item">
+                                         <asp:HyperLink Cssclass="nav-link text-white" ID="HyperLink4"  NavigateUrl="~/WebFormInicial.aspx"   runat="server">Sair</asp:HyperLink>
+                                      </li>
+                                 </ul>
+                                 
+                            </nav>
+                      </div>
+                      <div class="col-md-12">
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                      </div>
+                  </div>
                 </div>
-                <div  class="col-md-9">
-                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                    </asp:ContentPlaceHolder>
-                </div>
-            </div>
-              
-                
-        </form>
-    </article>
-    <script type="text/javascript" src="../Assets/JS/Scripts/bootstrap.min.js"></script>
-</body>
+            </form>
+     
+    </body>
 </html>

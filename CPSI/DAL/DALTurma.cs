@@ -26,7 +26,7 @@ namespace CPSI.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select * from Turma";
+            cmd.CommandText = "Select * from Turma order by DataInicio";
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
@@ -55,6 +55,46 @@ namespace CPSI.DAL
             return ListTurma;
         }
 
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Turma> Select(string filtro, string ano)
+        {
+            int iano;
+            Modelo.Turma Turma;
+
+            if (ano == "") iano = 0; else iano = Convert.ToInt32(ano);
+            List<Modelo.Turma> ListTurma = new List<Modelo.Turma>();
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * from Turma where ( (turma like '%" + filtro + "%') or (horario like '%" + filtro + "%') ) and ((ano = @ano) or (@ano = 0)) order by DataInicio";
+            cmd.Parameters.AddWithValue("@ano", iano);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+
+                while (dr.Read())
+                {
+
+                    Turma = new Modelo.Turma(
+                        int.Parse(dr["IdTurma"].ToString()),
+                        dr["Turma"].ToString(),
+                        int.Parse(dr["Ano"].ToString()),
+                        dr["Horario"].ToString(),
+                        DateTime.Parse(dr["DataInicio"].ToString()),
+                        DateTime.Parse(dr["DataFim"].ToString()),
+                        int.Parse(dr["QtdVagas"].ToString()),
+                        int.Parse(dr["IdDisciplina"].ToString()));
+
+
+                    ListTurma.Add(Turma);
+                }
+            }
+
+            dr.Close();
+            conn.Close();
+
+            return ListTurma;
+        }
 
 
         [DataObjectMethod(DataObjectMethodType.Insert)]
@@ -69,13 +109,13 @@ namespace CPSI.DAL
 
             SqlCommand cmd = new SqlCommand("INSERT INTO Turma(IdTurma, Turma, Ano, Horario, DataInicio, DataFim, QtdVagas, IdDisciplina)VALUES(@IdTurma, @Turma, @Ano, @Horario, @DataInicio, @DataFim, @QtdVagas, @IdDisciplina)", conn);
             cmd.Parameters.AddWithValue("@IdTurma", GetIdMax());
-            cmd.Parameters.AddWithValue("@Turma", obj.NomeTurma);
+            cmd.Parameters.AddWithValue("@Turma", obj.nomeTurma);
             cmd.Parameters.AddWithValue("@Ano", obj.ano);
             cmd.Parameters.AddWithValue("@Horario", obj.horario);
-            cmd.Parameters.AddWithValue("@DataInicio", obj.DataInicio);
-            cmd.Parameters.AddWithValue("@DataFim", obj.DataFim);
-            cmd.Parameters.AddWithValue("@QtdVagas", obj.QtdVagas);
-            cmd.Parameters.AddWithValue("@IdDisciplina", obj.IdDisciplina);
+            cmd.Parameters.AddWithValue("@DataInicio", obj.dataInicio);
+            cmd.Parameters.AddWithValue("@DataFim", obj.dataFim);
+            cmd.Parameters.AddWithValue("@QtdVagas", obj.qtdVagas);
+            cmd.Parameters.AddWithValue("@IdDisciplina", obj.idDisciplina);
 
 
 
@@ -95,14 +135,14 @@ namespace CPSI.DAL
 
 
             SqlCommand cmd = new SqlCommand("UPDATE Turma SET IdTurma = IdTurma, Turma = @Turma, Ano = @Ano,Horario = @Horario,DataInicio = @DataInicio,DataFim = @DataFim,QtdVagas = @QtdVagas,IdDisciplina = @IdDisciplina WHERE IdTurma=@IdTurma", conn);
-            cmd.Parameters.AddWithValue("@IdTurma", obj.IdTurma);
-            cmd.Parameters.AddWithValue("@Turma", obj.NomeTurma);
+            cmd.Parameters.AddWithValue("@IdTurma", obj.idTurma);
+            cmd.Parameters.AddWithValue("@Turma", obj.nomeTurma);
             cmd.Parameters.AddWithValue("@Ano", obj.ano);
             cmd.Parameters.AddWithValue("@Horario", obj.horario);
-            cmd.Parameters.AddWithValue("@DataInicio", obj.DataInicio);
-            cmd.Parameters.AddWithValue("@DataFim", obj.DataFim);
-            cmd.Parameters.AddWithValue("@QtdVagas", obj.QtdVagas);
-            cmd.Parameters.AddWithValue("@IdDisciplina", obj.IdDisciplina);
+            cmd.Parameters.AddWithValue("@DataInicio", obj.dataInicio);
+            cmd.Parameters.AddWithValue("@DataFim", obj.dataFim);
+            cmd.Parameters.AddWithValue("@QtdVagas", obj.qtdVagas);
+            cmd.Parameters.AddWithValue("@IdDisciplina", obj.idDisciplina);
 
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -113,14 +153,10 @@ namespace CPSI.DAL
         {
 
             SqlConnection conn = new SqlConnection(connectionString);
-
             conn.Open();
-
-
-
             SqlCommand cmd = new SqlCommand("DELETE FROM Turma WHERE idTurma = @IdTurma", conn);
             cmd.Parameters.AddWithValue("@IdTurma", id);
-            cmd.ExecuteNonQuery();
+            cmd.ExecuteNonQuery(); 
             conn.Close();
         }
         [DataObjectMethod(DataObjectMethodType.Select)]
@@ -136,14 +172,14 @@ namespace CPSI.DAL
             while (dr.Read())
             {
 
-                      Turma.IdTurma=int.Parse(dr["IdTurma"].ToString());
-                      Turma.NomeTurma= dr["Turma"].ToString();
+                      Turma.idTurma=int.Parse(dr["IdTurma"].ToString());
+                      Turma.nomeTurma= dr["Turma"].ToString();
                       Turma.ano= int.Parse(dr["Ano"].ToString());
                       Turma.horario = dr["Horario"].ToString();
-                      Turma.DataInicio=  DateTime.Parse(dr["DataInicio"].ToString());
-                      Turma.DataFim=  DateTime.Parse(dr["DataFim"].ToString());
-                      Turma.QtdVagas=  int.Parse(dr["QtdVagas"].ToString());
-                      Turma.IdDisciplina=  int.Parse(dr["IdDisciplina"].ToString());
+                      Turma.dataInicio=  DateTime.Parse(dr["DataInicio"].ToString());
+                      Turma.dataFim=  DateTime.Parse(dr["DataFim"].ToString());
+                      Turma.qtdVagas=  int.Parse(dr["QtdVagas"].ToString());
+                      Turma.idDisciplina=  int.Parse(dr["IdDisciplina"].ToString());
 
 
             }
@@ -176,6 +212,23 @@ namespace CPSI.DAL
             return max;
 
 
+
+        }
+        public int GetCountMatriculados(string IdTurma)
+        {
+            int Matriculados = 0;
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "SELECT COUNT(*) AS Matriculados FROM Matricula  where IdTurma=@IdTurma";
+            cmd.Parameters.AddWithValue("@IdTurma", IdTurma);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                Matriculados = int.Parse(dr["Matriculados"].ToString());
+            }
+            conn.Close();
+            return Matriculados;
 
         }
 

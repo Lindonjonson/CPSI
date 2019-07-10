@@ -22,31 +22,31 @@ namespace CPSI.Matricula {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Controle FormView1.
+        /// Controle TextBoxAluno.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView FormView1;
+        protected global::System.Web.UI.WebControls.Label TextBoxAluno;
         
         /// <summary>
-        /// Controle ObjectDataSource2.
+        /// Controle TextBoxCPF.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource2;
+        protected global::System.Web.UI.WebControls.Label TextBoxCPF;
         
         /// <summary>
-        /// Controle GridView1.
+        /// Controle TextBoxTurma.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.Label TextBoxTurma;
         
         /// <summary>
         /// Controle LabelData.
@@ -56,14 +56,5 @@ namespace CPSI.Matricula {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelData;
-        
-        /// <summary>
-        /// Controle ObjectDataSource1.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
     }
 }

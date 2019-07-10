@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace CPSI
 {
-    public partial class WebFormInicial : System.Web.UI.Page
-    {
-        protected void Page_Load(object sender, EventArgs e)
-        {
+	public partial class WebFormInicial : System.Web.UI.Page
+	{
+		protected void Page_Load(object sender, EventArgs e)
+		{
 
-        }
-    }
+		}
+	}
 }

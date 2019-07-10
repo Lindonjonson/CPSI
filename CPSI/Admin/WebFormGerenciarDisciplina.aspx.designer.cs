@@ -13,6 +13,15 @@ namespace CPSI.Admin.Disciplina {
     public partial class WebFormGerenciarCategoria {
         
         /// <summary>
+        /// Controle GridViewDisciplina.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewDisciplina;
+        
+        /// <summary>
         /// Controle TxtNomeDisciplina.
         /// </summary>
         /// <remarks>
@@ -22,31 +31,31 @@ namespace CPSI.Admin.Disciplina {
         protected global::System.Web.UI.WebControls.TextBox TxtNomeDisciplina;
         
         /// <summary>
-        /// Controle CheckBoxListDocumento.
+        /// Controle CheckBoxListDocumentos.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxListDocumento;
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxListDocumentos;
         
         /// <summary>
-        /// Controle ObjectDataSource2.
+        /// Controle LabelDisciplina.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource2;
+        protected global::System.Web.UI.WebControls.Label LabelDisciplina;
         
         /// <summary>
-        /// Controle GridViewDisciplina.
+        /// Controle Button3.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewDisciplina;
+        protected global::System.Web.UI.WebControls.Button Button3;
         
         /// <summary>
         /// Controle ObjectDataSource1.
@@ -58,12 +67,12 @@ namespace CPSI.Admin.Disciplina {
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
         
         /// <summary>
-        /// Controle RequiredFieldValidator1.
+        /// Controle ObjectDataSource2.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource2;
     }
 }

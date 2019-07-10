@@ -1,32 +1,142 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Matricula.Master" AutoEventWireup="true" CodeBehind="WebFormGerenciarAluno.aspx.cs" Inherits="CPSI.Matricula.WebFormGerenciarAluno" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Matricula.Master" AutoEventWireup="true" CodeBehind="WebFormGerenciarAluno.aspx.cs" Inherits="CPSI.Matricula.WebFormGerenciarAluno1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript" src="../Assets/js/GerenciarAluno.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     
-<asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Matricula/WebFormInserirAluno.aspx">Cadastrar aluno</asp:HyperLink>          
- <br />
-<label>Alunos</label>
-<asp:GridView ID="GridViewAlunos" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" OnRowCommand="GridView1_RowCommand" DataKeyNames="IdAluno" ShowHeaderWhenEmpty="True">
-    <Columns>
-        <asp:BoundField DataField="IdAluno" HeaderText="IdAluno" SortExpression="IdAluno" />
-        <asp:BoundField DataField="AlunoNome" HeaderText="AlunoNome" SortExpression="AlunoNome" />
-        <asp:BoundField DataField="DataNascimento" DataFormatString="{0:d}" HeaderText="DataNascimento" SortExpression="DataNascimento" />
-        <asp:BoundField DataField="Cpf" HeaderText="Cpf" SortExpression="Cpf" />
-        <asp:BoundField DataField="Rg" HeaderText="Rg" SortExpression="Rg" />
-        <asp:BoundField DataField="RGOrgao" HeaderText="RGOrgao" SortExpression="RGOrgao" />
-        <asp:BoundField DataField="EstadoCivil" HeaderText="EstadoCivil" SortExpression="EstadoCivil" />
-        <asp:BoundField DataField="Naturalidade" HeaderText="Naturalidade" SortExpression="Naturalidade" />
-        <asp:BoundField DataField="NaturalidadeEstado" HeaderText="NaturalidadeEstado" SortExpression="NaturalidadeEstado" />
-        <asp:BoundField DataField="Endereco" HeaderText="Endereco" SortExpression="Endereco" />
-        <asp:BoundField DataField="Cidade" HeaderText="Cidade" SortExpression="Cidade" />
-        <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
-        <asp:BoundField DataField="Telefone1" HeaderText="Telefone1" SortExpression="Telefone1" />
-        <asp:BoundField DataField="Telefone2" HeaderText="Telefone2" SortExpression="Telefone2" />
-        <asp:BoundField DataField="Contato" HeaderText="Contato" SortExpression="Contato" />
-        <asp:BoundField DataField="ContatoTelefone" HeaderText="ContatoTelefone" SortExpression="ContatoTelefone" />
-        <asp:ButtonField CommandName="Editar" HeaderText="Editar Aluno" Text="Editar Aluno" ButtonType="Button" />
-        <asp:ButtonField ButtonType="Button" CommandName="Matricular" HeaderText="Matricular Em turma" Text="Matricular em turma" />
-    </Columns>
-    </asp:GridView>
-    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectALL" TypeName="CPSI.DAL.DALAluno" DataObjectTypeName="CPSI.Modelo.Aluno" InsertMethod="Insert"></asp:ObjectDataSource>
+    <form id="Form-aluno">
+          <div class="form-row">
+            <div class="form-group col-md-5">
+                 <label> Nome: </label>
+                 <asp:TextBox ID="TextBoxAlunoNome" Name="NomeAluno" class="form-control" runat="server" placeholder="Digite o nome do aluno" TextMode="SingleLine" />
+            </div>
+              
+              
+            <div class="form-group col-md-3">
+               <label> Nascimento: </label>
+               <asp:TextBox ID="TextBoxCalendarDataNascimento" class="form-control data-nascimento" runat="server" placeholder="00/00/0000" ></asp:TextBox>
+            </div>
+              <div class="form-group col-md-4">
+                   <label>  CPF: </label>
+               <asp:TextBox ID="TextBoxCpf"  class="form-control CPF" runat="server" placeholder="000.000.000-00" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-3">
+                 <label> RG: </label>
+               <asp:TextBox class="form-control" ID="TextBoxRg" runat="server" placeholder="000.000"  />
+            </div>
+            <div class="form-group col-md-3">
+                 <label> RG Orgão: </label>
+               <asp:TextBox class="form-control" ID="TextBoxRGOrgao" runat="server" placeholder="ex: SSP/RN" />
+
+      
+            </div>
+            <div class="form-group col-md-4">
+                 <label> Naturalidade: </label>
+               <asp:TextBox ID="TextBoxNaturalidade" class="form-control" runat="server" placeholder="Digite a naturalidade" />
+            </div>
+              <div class="form-group col-md-2">
+                  <label> Naturalidade Estado: </label>
+                <asp:TextBox MaxLength="2" class="form-control" ID="TextBoxNaturalidadeEstado" runat="server"  placeholder="Ex: RN" />
+            </div>
+          </div>
+                <div class="form-row">
+            <div class="form-group col-md-4">
+                <label> Estado Civil: </label>
+                <asp:DropDownList class="form-control" ID="DropDownListEstadoCivil" runat="server">
+                    <asp:ListItem Value="1">Solteiro</asp:ListItem>
+                    <asp:ListItem Value="2">União estável </asp:ListItem>
+                    <asp:ListItem Value="3">Casado</asp:ListItem>
+                    <asp:ListItem Value="4">Divorciado </asp:ListItem>
+                    <asp:ListItem Value="5">Viúvo</asp:ListItem>
+               </asp:DropDownList>
+            </div>
+            <div class="form-group col-md-5">
+                <label> Endereço: </label>
+                <asp:TextBox ID="TextBoxEndereco"  class="form-control"  placeholder="Digite o endereço: rua+ cep + n°"   runat="server" />
+       
+
+      
+            </div>
+            <div class="form-group col-md-3">
+                <label> Cidade: </label>
+                <asp:TextBox class="form-control" ID="TextBoxCidade" runat="server" placeholder="Digite o nome da cidade" />
+       
+            </div>
+            <div class="form-group col-md-6">
+                <label>Estado: </label>
+                <asp:TextBox MaxLength="2" class="form-control"  ID="TextBoxEstado" runat="server" placeholder="Digite o Estado"  />
+            </div>
+                    <div class="form-group col-md-6">
+                         <label>Bairro: </label>
+                <asp:TextBox  ID="TextBoxBairro" class="form-control" runat="server" placeholder="Bairro"  />
+
+            </div>
+          </div>
+          <div class="form-row">
+               <div class="form-group col-md-6">
+                    <label>Primeiro Telefone: </label>
+                    <asp:TextBox ID="TextBoxTelefone1" class="form-control" runat="server" placeholder="(DDD) 0 0000-0000"  />
+               </div>
+               <div class="form-group col-md-6">
+                    <label>Segundo Telefone: </label>
+                    <asp:TextBox ID="TextBoxTelefone2" class="form-control" runat="server"  placeholder="(DDD) 0 0000-0000"   />
+               </div>
+               <div class="form-group col-md-6">
+                    <label>Nome do Contato de emergência: </label>
+                    <asp:TextBox ID="TextBoxContato" class="form-control" runat="server" placeholder="Digite o nome de algum parente" />
+               </div>
+               <div class="form-group col-md-6">
+                    <label>Telefone Emergêncial:  </label>
+                    <asp:TextBox ID="TextBoxContatoTelefone" class="form-control" runat="server" placeholder="Digite o número do parente"  />
+               </div>
+              
+
+    
+          </div>
+
+</form>
+    <asp:Panel ID="PanelAdicionarAluno" Visible="false" runat="server">
+         <div id="documentos" class="form-group col-md-6">
+                    <label>Documentos obrigatórios </label>
+                    <asp:CheckBoxList ID="CheckBoxListDocumentosAluno" runat="server" DataSourceID="ObjectDataSource1" DataTextField="documento" DataValueField="idDocumento"></asp:CheckBoxList>
+                              <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectAll" TypeName="CPSI.DAL.DALDocumento">
+                                  <SelectParameters>
+                                      <asp:Parameter DefaultValue="1" Name="filtroTipo" Type="String"></asp:Parameter>
+                                  </SelectParameters>
+                              </asp:ObjectDataSource>
+          </div>
+        <asp:button ID="button1" runat="server"  text="Cancelar"  CssClass="btn btn-danger" OnClick="Cancelar_Click" />
+        <asp:Button ID="Button_Validar_Inserir" class="btn btn-success" runat="server" OnClick="Button_Validar_Click" Text="Salvar" />
+        <asp:button ID="button_Inserir" Visible="false" runat="server"   text="Salvar"  CssClass="btn btn-success" OnClick="InserirAluno_Click" />
+        <asp:Button ID="Button_Alterar_Inserir" Visible="false" CssClass="btn btn-link" OnClick="Alterar_Click" runat="server" Text="Alterar" />
+    </asp:Panel>
+     <asp:Panel ID="PanelAlterarAluno" runat="server" Visible="false">
+         <asp:Button ID="Button_Validar_Atualizar" CssClass="btn btn-warning" OnClick="Button_Validar_Click" runat="server" Text="Salvar" />
+         <asp:button ID="button_Atualizar" runat="server" Visible="false"  text="Salvar" CssClass="btn btn-warning" OnClick="EditarAluno_Click" />
+         <button type="button" data-toggle="modal" data-target="#ModalExcluirAluno" class="btn btn-danger">Excluir</button>
+         <asp:button ID="button2" runat="server"   text="Cancelar"  CssClass="btn btn-success" OnClick="Cancelar_Click" />
+         <asp:Button ID="Button_Alterar_Atualizar" Visible="false" CssClass="btn btn-link" OnClick="Alterar_Click" runat="server" Text="Alterar" />
+         <asp:Button ID="Button_AlunoDocumento" runat="server" Text="Documentos do Aluno" OnClick="Button_AlunoDocumento_Click" />
+    </asp:Panel>
+    <div class="modal fade" id="ModalExcluirAluno" tabindex="-1" role="dialog" aria-labelledby="ModalExcluirAluno" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                     <h5 class="modal-title">Confirmar Exclusão do aluno</h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                   <span>Excluir Aluno?</span>
+                 </div>
+                <div class="modal-footer">
+                    <asp:button ID="button3" runat="server" text="Excluir" CssClass="btn btn-danger" OnClick="Excluir_Click" />
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+      </div>
+   </div>  
+    
 </asp:Content>

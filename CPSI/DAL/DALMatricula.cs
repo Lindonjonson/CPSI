@@ -47,12 +47,23 @@ namespace CPSI.DAL
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = "INSERT INTO Matricula (IdTurma,IdAluno,Situacao,DataMatricula)  VALUES (@IdTurma,@IdAluno,@Situacao,@DataMatricula)";
-            cmd.Parameters.AddWithValue("@IdTurma",M.IdTurma);
-            cmd.Parameters.AddWithValue("@IdAluno",M.IdAluno);
-            cmd.Parameters.AddWithValue("@Situacao",M.Situacao);
-            cmd.Parameters.AddWithValue("@DataMatricula",M.DataMatricula);
-            cmd.ExecuteNonQuery();
-            conn.Close();
+            cmd.Parameters.AddWithValue("@IdTurma",M.idTurma);
+            cmd.Parameters.AddWithValue("@IdAluno",M.idAluno);
+            cmd.Parameters.AddWithValue("@Situacao",M.situacao);
+            cmd.Parameters.AddWithValue("@DataMatricula",M.dataMatricula);
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Aluno já matriculado na turma selecionada");
+            }
+            finally
+            {
+                conn.Close();
+            }
+            
 
 
         }
@@ -76,9 +87,9 @@ namespace CPSI.DAL
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = "UPDATE Matricula SET Situacao = @Situacao WHERE IdTurma = @IdTurma  AND IdAluno = @IdAluno";
-            cmd.Parameters.AddWithValue("@Situacao", M.Situacao);
-            cmd.Parameters.AddWithValue("@IdTurma", M.IdTurma);
-            cmd.Parameters.AddWithValue("@IdAluno", M.IdAluno);
+            cmd.Parameters.AddWithValue("@Situacao", M.situacao);
+            cmd.Parameters.AddWithValue("@IdTurma", M.idTurma);
+            cmd.Parameters.AddWithValue("@IdAluno", M.idAluno);
             cmd.ExecuteNonQuery();
             conn.Close();
 
@@ -96,10 +107,10 @@ namespace CPSI.DAL
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                matricula.IdAluno = int.Parse(dr["IdAluno"].ToString());
-                matricula.IdTurma = int.Parse(dr["IdTurma"].ToString());
-                matricula.Situacao = int.Parse(dr["Situacao"].ToString());
-                matricula.DataMatricula = DateTime.Parse(dr["DataMatricula"].ToString());
+                matricula.idAluno = int.Parse(dr["IdAluno"].ToString());
+                matricula.idTurma = int.Parse(dr["IdTurma"].ToString());
+                matricula.situacao = int.Parse(dr["Situacao"].ToString());
+                matricula.dataMatricula = DateTime.Parse(dr["DataMatricula"].ToString());
                 
 
             }
@@ -108,23 +119,18 @@ namespace CPSI.DAL
 
 
         }
-        public int GetCountMatriculados(int IdTurma)
+        public bool VagaDisponivel(string IdTurma)
         {
-            int Matriculados=0;
-            SqlConnection conn = new SqlConnection(connectioString);
-            conn.Open();
-            SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "SELECT COUNT(*) AS Matriculados FROM Matricula  where IdTurma=@IdTurma";
-            cmd.Parameters.AddWithValue("@IdTurma",IdTurma);
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
-            {
-                Matriculados = int.Parse(dr["Matriculados"].ToString());
-            }
-            conn.Close();
-            return Matriculados;
-           
+
+            DALTurma dALTurma = new DALTurma();
+            Modelo.Turma turma = dALTurma.Select(IdTurma);
+            if (turma.qtdVagas >= (dALTurma.GetCountMatriculados(IdTurma)+1))
+                return true;
+            else
+                return false;
+
         }
+        
         
 
 

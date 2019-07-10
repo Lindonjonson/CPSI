@@ -27,7 +27,7 @@ namespace CPSI.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select * from Disciplina";
+            cmd.CommandText = "Select * from Disciplina Order by Disciplina";
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
@@ -53,7 +53,7 @@ namespace CPSI.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Insert)]
-        public int Insert(Modelo.Disciplina obj)
+        public void Insert(Modelo.Disciplina obj)
         {
             
             SqlConnection conn = new SqlConnection(connectionString);
@@ -61,17 +61,20 @@ namespace CPSI.DAL
             conn.Open();
 
             if (obj.idDisciplina == 0)
-                obj.idDisciplina = GetIdMax() + 1;
+                obj.idDisciplina = GetIdMax();
 
             SqlCommand cmd = new SqlCommand("INSERT INTO Disciplina (IdDisciplina, Disciplina) VALUES(@idDisciplina,@Disciplina)", conn);
             cmd.Parameters.AddWithValue("@idDisciplina", obj.idDisciplina);
-            cmd.Parameters.AddWithValue("@Disciplina", obj.disciplina);          
-
-         
+            cmd.Parameters.AddWithValue("@Disciplina", obj.disciplina);
             cmd.ExecuteNonQuery();
+            if (obj.existDocumento())
+            {
+                new DAL.DALDocumentoDisciplina().Insert(obj);
+               
+            }
             conn.Close();
 
-            return (obj.idDisciplina);
+           
         }
 
         [DataObjectMethod(DataObjectMethodType.Update)]
@@ -96,11 +99,7 @@ namespace CPSI.DAL
         {
 
             SqlConnection conn = new SqlConnection(connectionString);
-
             conn.Open();
-
-       
-
             SqlCommand cmd = new SqlCommand("DELETE FROM Disciplina WHERE idDisciplina = @idDisciplina", conn);
             cmd.Parameters.AddWithValue("@idDisciplina", id);
             cmd.ExecuteNonQuery();
@@ -125,6 +124,8 @@ namespace CPSI.DAL
                         
 
             }
+            DAL.DALDocumentoDisciplina dALDocumentoDisciplina = new DALDocumentoDisciplina();
+            disciplina.listDocumento=dALDocumentoDisciplina.SelectALL(disciplina.idDisciplina.ToString());
             conn.Close();
             return disciplina;
            

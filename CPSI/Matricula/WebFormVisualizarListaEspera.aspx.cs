@@ -11,7 +11,7 @@ namespace CPSI.Matricula
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            LabelNomeTurma.Text = new DAL.DALTurma().Select(Session["IdTurma"].ToString()).nomeTurma;
         }
     }
 }

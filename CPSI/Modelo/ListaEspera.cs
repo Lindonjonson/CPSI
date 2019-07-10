@@ -7,9 +7,9 @@ namespace CPSI.Modelo
 {
     public class ListaEspera
     {
-          public int IdTurma { get; set; }
+          public int idTurma { get; set; }
           public int IdAluno { get; set; }
-          public DateTime DataInscricao { get; set; }
+          public DateTime dataInscricao { get; set; }
 
           public ListaEspera()
           {
@@ -20,9 +20,9 @@ namespace CPSI.Modelo
           public ListaEspera(int IdTurma, int IdAluno,DateTime DataInscricao)
           {
 
-            this.DataInscricao = DataInscricao;
+            this.dataInscricao = DataInscricao;
             this.IdAluno = IdAluno;
-            this.IdTurma = IdTurma;
+            this.idTurma = IdTurma;
 
           }
     }

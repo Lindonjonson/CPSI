@@ -7,10 +7,10 @@ namespace CPSI.Modelo
 {
     public class Matricula
     {
-        public int IdAluno { get; set; }
-        public int IdTurma { get; set;}
-        public int Situacao { get; set;}
-        public DateTime DataMatricula { get; set;}
+        public int idAluno { get; set; }
+        public int idTurma { get; set;}
+        public int situacao { get; set;}
+        public DateTime dataMatricula { get; set;}
 
         public Matricula()
         {
@@ -22,17 +22,12 @@ namespace CPSI.Modelo
         public Matricula(int IdAluno, int IdTurma, int Situacao, DateTime DataMatricula)
         {
 
-            this.IdAluno = IdAluno;
-            this.IdTurma = IdTurma;
-            this.Situacao = Situacao;
-            this.DataMatricula = DataMatricula;
+            this.idAluno = IdAluno;
+            this.idTurma = IdTurma;
+            this.situacao = Situacao;
+            this.dataMatricula = DataMatricula;
 
         }
-        public void CancelarMatricula()
-        {
-
-            Situacao = 0;
-
-        }
+       
     }
 }
