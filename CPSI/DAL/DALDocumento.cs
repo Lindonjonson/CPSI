@@ -107,7 +107,7 @@ namespace CPSI.DAL
                         validade = Convert.ToBoolean(dr["Validade"]);
                         tipo = Convert.ToInt32(dr["Tipo"]);
                     }
-                    catch (FormatException)
+                    catch (Exception)
                     {
                         if (!String.IsNullOrEmpty(dr["IdDocumento"].ToString()))
                             idDocumento = int.Parse(dr["IdDocumento"].ToString());
@@ -164,7 +164,7 @@ namespace CPSI.DAL
                         validade = Convert.ToBoolean(dr["Validade"]);
                         tipo = Convert.ToInt32(dr["Tipo"]);
                     }
-                    catch (FormatException)
+                    catch (Exception)
                     {
                         if (!String.IsNullOrEmpty(dr["IdDocumento"].ToString()))
                             idDocumento = int.Parse(dr["IdDocumento"].ToString());

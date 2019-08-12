@@ -94,6 +94,7 @@
     <Content Include="Assets\JS\Scripts\bootstrap.bundle.min.js" />
     <Content Include="Assets\JS\Scripts\bootstrap.js" />
     <Content Include="Assets\JS\Scripts\bootstrap.min.js" />
+    <Content Include="Script\Correcao04082019.sql" />
     <Content Include="Script\CPSI 17 07 2019.sql" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
