@@ -17,7 +17,7 @@
                      <div class="card w-100" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">Módulo administrador</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Esfera administrativa</h6>
+                            <h6 class="card-subtitle mb-2 text-muted"></h6>
                             <p class="card-text">Gerenciar Documentos,Gerenciar Disciplinas, Gerenciar Turmas</p>
                             <asp:HyperLink ID="HyperLink1" CssClass="card-link" NavigateUrl="~/Admin/AdministradorInicial.aspx" runat="server">Entrar</asp:HyperLink>
                         </div>
@@ -29,7 +29,7 @@
                      <div class="card w-100" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">Módulo Matrícula</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Esfera administrativa</h6>
+                            <h6 class="card-subtitle mb-2 text-muted"></h6>
                             <p class="card-text">Visualizar turmas, Realizar Matrícula, Gerenciar Aluno</p>
                             <asp:HyperLink ID="HyperLink2" CssClass="card-link" NavigateUrl="~/Matricula/MatriculaInicial.aspx" runat="server">Entrar</asp:HyperLink>
                         </div>
@@ -40,10 +40,12 @@
                 <div class="col-md-12">
                      <div class="card w-100" style="width: 18rem;">
                         <div class="card-body">
-                            <h5 class="card-title">Módulo administrador</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Esfera administrativa</h6>
-                            <p class="card-text">Gerenciar Documentos,Gerenciar Disciplinas, Gerenciar Turmas</p>
-                            <asp:HyperLink ID="HyperLink3" CssClass="card-link" NavigateUrl="~/Admin/WebFormAdministradorInicial.aspx" runat="server">Entrar</asp:HyperLink>
+                            <h5 class="card-title">Módulo Coordenação</h5>
+                            <h6 class="card-subtitle mb-2 text-muted"></h6>
+                            <p class="card-text">Visualizar Documentação, Registrar Trancamento de Matrícula <br />
+                                Registrar Atestado Médico, Registrar Mudança de Turma, Visualizar Contato de Emergência
+                            </p>
+                            <asp:HyperLink ID="HyperLink3" CssClass="card-link" NavigateUrl="~/Coordenacao/CoordenacaoInicial.aspx" runat="server">Entrar</asp:HyperLink>
                         </div>
                     </div>
                 </div>

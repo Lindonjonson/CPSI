@@ -81,6 +81,7 @@
     <Content Include="Assets\Img\baseline_remove_circle_outline_black_18dp.png" />
     <Content Include="Assets\Img\CartazIdosos.png" />
     <Content Include="Assets\js\jquery.mask.js" />
+    <Content Include="Coordenacao\CoordenacaoInicial.aspx" />
     <Content Include="Matricula\WebFormDocumentoAluno.aspx" />
     <Content Include="Matricula\WebFormGerenciarAluno.aspx" />
     <Content Include="Matricula\WebFormImprimirFichaInscricao.aspx" />
@@ -144,6 +145,13 @@
     <Compile Include="Admin\WebFormVisualizacaoTurma.aspx.designer.cs">
       <DependentUpon>WebFormVisualizacaoTurma.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Coordenacao\CoordenacaoInicial.aspx.cs">
+      <DependentUpon>CoordenacaoInicial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Coordenacao\CoordenacaoInicial.aspx.designer.cs">
+      <DependentUpon>CoordenacaoInicial.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DAL\DALAluno.cs" />
     <Compile Include="DAL\DALAlunoDocumento.cs" />
     <Compile Include="DAL\DALDisciplina.cs" />
@@ -158,6 +166,13 @@
     </Compile>
     <Compile Include="Master\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Coordenacao.Master.cs">
+      <DependentUpon>Coordenacao.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\Coordenacao.Master.designer.cs">
+      <DependentUpon>Coordenacao.Master</DependentUpon>
     </Compile>
     <Compile Include="Master\Matricula.Master.cs">
       <DependentUpon>Matricula.Master</DependentUpon>
@@ -255,6 +270,7 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Master\Admin.Master" />
+    <Content Include="Master\Coordenacao.Master" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
